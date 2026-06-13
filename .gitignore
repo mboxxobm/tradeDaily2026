@@ -1,0 +1,41 @@
+# Ignore diary source data and generated media by default.
+*
+
+# Keep this repository focused on the app code and publishing scripts.
+!.gitignore
+!DEPLOYMENT.md
+!apps/
+!apps/README.md
+!apps/tradedaily-vercel-viewer/
+!apps/tradedaily-vercel-viewer/**
+!apps/tradedaily-local-workbench/
+!apps/tradedaily-local-workbench/**
+!scripts/
+!scripts/build_daily_manifest.py
+!scripts/r2_publish.py
+
+# Never commit generated installs, builds, local app state, or credentials.
+**/node_modules/
+**/.next/
+**/dist/
+**/out/
+**/.vercel/
+**/.env
+**/.env.*
+**/*.local
+**/.DS_Store
+**/Thumbs.db
+
+# Data stays in local/R2 storage, not GitHub.
+assets/
+TradeData2026/
+Temp/
+*.csv
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.mp3
+*.aiff
+*.wav
