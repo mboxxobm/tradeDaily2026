@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026-10-02 取引損益（円換算）</title>
+<style>
+:root{color-scheme:dark;--bg:#0f172a;--panel:#111827;--line:#334155;--text:#e5e7eb;--muted:#94a3b8;--green:#34d399;--red:#fb7185;--gray:#64748b;--accent:#60a5fa}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI","Noto Sans JP",sans-serif;line-height:1.5}.wrap{max-width:1280px;margin:0 auto;padding:28px 20px 48px}h1{font-size:clamp(24px,3vw,38px);margin:0 0 6px}h2{margin-top:32px;font-size:22px}.sub{color:var(--muted);margin:0 0 22px}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:18px 0 24px}.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}.card .label{color:var(--muted);font-size:13px}.card .value{font-size:25px;font-weight:700;margin-top:4px}.positive{color:var(--green)}.negative{color:var(--red)}.excluded{color:#cbd5e1}.chart-wrap{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px;overflow:auto}svg{display:block;width:100%;min-width:900px;height:auto}.legend{display:flex;gap:18px;flex-wrap:wrap;color:var(--muted);font-size:13px;margin:8px 4px 0}.swatch{display:inline-block;width:11px;height:11px;border-radius:2px;margin-right:5px;vertical-align:-1px}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:12px}table{border-collapse:collapse;width:100%;min-width:1100px;background:var(--panel)}th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}th{color:#cbd5e1;background:#1e293b;font-size:13px}td{font-size:14px}tr:last-child td{border-bottom:0}.note{color:var(--muted);font-size:13px;margin-top:12px}.pill{border-radius:999px;padding:2px 8px;font-size:12px}.pill.in{background:#064e3b;color:#a7f3d0}.pill.out{background:#334155;color:#cbd5e1}@media(max-width:760px){.cards{grid-template-columns:1fr}.wrap{padding:20px 12px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<h1>2026-10-02 取引損益（円換算）</h1>
+<p class="sub">対象日：2026年10月2日（日本時間）｜TDK・日経225は誤エントリーとして集計除外</p>
+<section class="cards" id="cards"></section>
+<section>
+<h2>損益グラフ</h2>
+<div class="chart-wrap">
+<svg id="chart" viewBox="0 0 1180 570" role="img" aria-label="2026年10月2日の取引別損益グラフ"></svg>
+<div class="legend">
+<span><i class="swatch" style="background:#34d399"></i>利益（集計）</span>
+<span><i class="swatch" style="background:#fb7185"></i>損失（集計）</span>
+<span><i class="swatch" style="background:#64748b"></i>除外取引</span>
+<span>青線：除外後の累積損益</span>
+</div>
+</div>
+</section>
+<section>
+<h2>取引一覧</h2>
+<div class="table-wrap"><table><thead><tr>
+<th>エントリー日</th><th>銘柄</th><th>方向</th><th>数量</th><th>エントリー時刻（JST）</th><th>エントリー価格</th><th>決済日時（JST）</th><th>決済価格</th><th>損益（USD）</th><th>損益（JPY）</th><th>集計</th>
+</tr></thead><tbody id="rows"></tbody></table></div>
+<p class="note">日経225のエントリー時刻は元CSVが分単位のため秒不明。複数回エントリーは秒単位の時刻をすべて表示。</p>
+</section>
+</main>
+<script>
+const trades = [{"name":"キオクシアホールディングス","shortName":"キオクシアHD","symbol":"TSE:285A","direction":"ロング","qty":300,"entryDate":"2026-10-02","entryTime":"09:12:33 / 09:12:35 / 09:17:58","entryPrice":"18,705（平均）","exitDate":"2026-10-02","exitTime":"09:32:17","exitPrice":"18,795","pnlUsd":170.802,"pnlJpy":27000,"included":true,"note":"分割エントリー"},{"name":"任天堂","shortName":"任天堂","symbol":"TSE:7974","direction":"ロング","qty":400,"entryDate":"2026-10-02","entryTime":"09:56:47","entryPrice":"7,882","exitDate":"2026-10-02","exitTime":"10:00:21","exitPrice":"7,902","pnlUsd":50.584,"pnlJpy":8000,"included":true,"note":""},{"name":"任天堂","shortName":"任天堂","symbol":"TSE:7974","direction":"ショート","qty":800,"entryDate":"2026-10-02","entryTime":"10:02:11 / 10:02:13","entryPrice":"7,898.5（平均）","exitDate":"2026-10-02","exitTime":"10:20:53","exitPrice":"7,876","pnlUsd":113.76,"pnlJpy":18000,"included":true,"note":"分割エントリー"},{"name":"キオクシアホールディングス","shortName":"キオクシアHD","symbol":"TSE:285A","direction":"ショート","qty":100,"entryDate":"2026-10-02","entryTime":"10:21:36","entryPrice":"18,975","exitDate":"2026-10-02","exitTime":"10:23:25","exitPrice":"19,015","pnlUsd":-25.28,"pnlJpy":-4000,"included":true,"note":""},{"name":"ソフトバンクグループ","shortName":"ソフトバンクG","symbol":"TSE:9984","direction":"ロング","qty":1000,"entryDate":"2026-10-02","entryTime":"15:06:56","entryPrice":"6,282","exitDate":"2026-10-02","exitTime":"15:25:46","exitPrice":"6,307","pnlUsd":158.45,"pnlJpy":25000,"included":true,"note":""},{"name":"東京エレクトロン","shortName":"東京エレクトロン","symbol":"TSE:8035","direction":"ロング","qty":100,"entryDate":"2026-09-29","entryTime":"11:14:01","entryPrice":"11,420","exitDate":"2026-10-02","exitTime":"15:28:09","exitPrice":"12,055","pnlUsd":402.463,"pnlJpy":63500,"included":true,"note":""},{"name":"TDK","shortName":"TDK","symbol":"TSE:6762","direction":"ショート","qty":1000,"entryDate":"2026-09-30","entryTime":"09:45:39","entryPrice":"2,989","exitDate":"2026-10-02","exitTime":"15:28:13","exitPrice":"3,288","pnlUsd":-1895.062,"pnlJpy":-299000,"included":false,"note":"本人申告：誤エントリーのため集計除外"},{"name":"日経225（OANDA）","shortName":"日経225","symbol":"OANDA:JP225YJPY","direction":"ショート","qty":1,"entryDate":"2026-09-16","entryTime":"10:54（秒データなし）","entryPrice":"63,178.7","exitDate":"2026-10-02","exitTime":"15:28:17","exitPrice":"68,259.2","pnlUsd":-32.200209,"pnlJpy":-5080.5,"included":false,"note":"本人申告：誤エントリーのため集計除外"}];
+const included = trades.filter(t => t.included);
+const sum = xs => xs.reduce((a,t) => a + t.pnlJpy, 0);
+const totalJpy = sum(trades), excludedJpy = sum(trades.filter(t => !t.included)), includedJpy = sum(included);
+const yen = n => (n >= 0 ? "+" : "") + n.toLocaleString("ja-JP",{maximumFractionDigits:2}) + "円";
+const usd = n => (n >= 0 ? "+" : "") + n.toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2}) + " USD";
+document.getElementById("cards").innerHTML = [
+  ["全8件", yen(totalJpy), totalJpy >= 0 ? "positive" : "negative"],
+  ["除外分（TDK・日経225）", yen(excludedJpy), "excluded"],
+  ["除外後の合計", yen(includedJpy), includedJpy >= 0 ? "positive" : "negative"]
+].map(([label,value,cls]) => '<div class="card"><div class="label">'+label+'</div><div class="value '+cls+'">'+value+'</div></div>').join("");
+document.getElementById("rows").innerHTML = trades.map(t => '<tr>'+
+  '<td>'+t.entryDate+'</td><td>'+t.name+'<br><span class="note">'+t.symbol+'</span></td><td>'+t.direction+'</td><td>'+t.qty.toLocaleString("ja-JP")+'</td>'+
+  '<td>'+t.entryTime+'</td><td>'+t.entryPrice+'</td><td>'+t.exitDate+' '+t.exitTime+'</td><td>'+t.exitPrice+'</td>'+
+  '<td class="'+(t.pnlUsd>=0?"positive":"negative")+'">'+usd(t.pnlUsd)+'</td><td class="'+(t.pnlJpy>=0?"positive":"negative")+'">'+yen(t.pnlJpy)+'</td>'+
+  '<td><span class="pill '+(t.included?"in":"out")+'">'+(t.included?"集計":"除外")+'</span></td></tr>').join("");
+
+const svg = document.getElementById("chart");
+const NS = "http://www.w3.org/2000/svg";
+const add = (tag,attrs,text) => { const e=document.createElementNS(NS,tag); Object.entries(attrs||{}).forEach(([k,v])=>e.setAttribute(k,v)); if(text!==undefined)e.textContent=text; svg.appendChild(e); return e; };
+const W=1180,H=570,L=90,R=30,T=42,B=150,CW=W-L-R,CH=H-T-B,zero=T+CH/2;
+const maxAbs=320000, scale=(CH/2)/maxAbs;
+[300000,150000,0,-150000,-300000].forEach(v => { const y=zero-v*scale; add("line",{x1:L,y1:y,x2:W-R,y2:y,stroke:v===0?"#cbd5e1":"#334155","stroke-width":v===0?1.5:1,"stroke-dasharray":v===0?"":"4 4"}); add("text",{x:L-12,y:y+5,fill:"#94a3b8","font-size":"13","text-anchor":"end"},(v>0?"+":"")+v.toLocaleString("ja-JP")+"円"); });
+const slot=CW/trades.length, barW=Math.min(82,slot*0.62);
+trades.forEach((t,i) => {
+  const x=L+slot*i+(slot-barW)/2, h=Math.abs(t.pnlJpy)*scale, y=t.pnlJpy>=0?zero-h:zero;
+  const color=t.included?(t.pnlJpy>=0?"#34d399":"#fb7185"):"#64748b";
+  add("rect",{x,y,width:barW,height:Math.max(h,2),rx:4,fill:color,opacity:t.included?0.92:0.62});
+  add("text",{x:x+barW/2,y:t.pnlJpy>=0?y-8:y+h+18,fill:color,"font-size":"12","text-anchor":"middle"},(t.pnlJpy>=0?"+":"")+Math.round(t.pnlJpy).toLocaleString("ja-JP"));
+  add("text",{x:x+barW/2,y:H-B+25,fill:"#cbd5e1","font-size":"12","text-anchor":"end",transform:"rotate(-42 "+(x+barW/2)+" "+(H-B+25)+")"},t.shortName+" "+t.direction);
+});
+let cumulative=0,path="";
+trades.forEach((t,i) => { if(t.included)cumulative+=t.pnlJpy; const x=L+slot*i+slot/2,y=zero-cumulative*scale; path+=(i===0?"M":"L")+x+" "+y+" "; add("circle",{cx:x,cy:y,r:4,fill:"#60a5fa",stroke:"#0f172a","stroke-width":2}); });
+add("path",{d:path,fill:"none",stroke:"#60a5fa","stroke-width":3});
+add("text",{x:L,y:24,fill:"#e5e7eb","font-size":"16","font-weight":"700"},"取引別実現損益（JPY）／青線は除外後の累積損益");
+</script>
+</body>
+</html>
