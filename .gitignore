@@ -19,6 +19,8 @@
 !success_trade_quiz_20261003/**
 success_trade_quiz_20261003/.DS_Store
 success_trade_quiz_20261003/**/.DS_Store
+success_trade_quiz_20261003/.DS_Store
+success_trade_quiz_20261003/**/.DS_Store
 
 # Never commit generated installs, builds, local app state, or credentials.
 **/node_modules/
@@ -47,3 +49,5 @@ Temp/
 *.wav
 !success_trade_quiz_20261003/
 !success_trade_quiz_20261003/**
+success_trade_quiz_20261003/.DS_Store
+success_trade_quiz_20261003/**/.DS_Store
