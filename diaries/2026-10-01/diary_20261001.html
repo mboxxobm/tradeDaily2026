@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../shared/chart_viewer.css?v=20261001-draft">
+<script defer src="../../shared/chart_viewer.js?v=20261001-draft"></script>
+<title>2026年10月1日（木）日本株デイトレード日誌｜285A・9984・6976と日経225</title>
+<style>
+:root{color-scheme:dark;--bg:#081019;--panel:#111d29;--panel2:#172938;--line:#30495d;--text:#edf5fa;--muted:#adbfcd;--blue:#83caff;--cyan:#6ce7d7;--yellow:#ffd766;--red:#ff8794;--green:#72e5ad;--orange:#f1b25b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;line-height:1.75}
+main{width:min(1500px,100%);margin:auto;padding:26px 24px 76px}h1{font-size:clamp(26px,3.4vw,48px);line-height:1.25;margin:0 0 12px}h2{font-size:clamp(21px,2.2vw,30px);line-height:1.35;border-left:5px solid var(--blue);padding-left:12px;margin:42px 0 15px}h3{font-size:clamp(17px,1.8vw,23px);line-height:1.4;color:#dff0ff;margin:28px 0 10px}p{margin:10px 0 16px}.muted,.small{color:var(--muted)}.small{font-size:13px}
+.notice,.key,.rule,.warning{border:1px solid var(--line);border-radius:12px;padding:14px 17px;margin:15px 0;background:#142536}.notice{background:#302811;border-color:#a17e28;color:#ffefb1}.key{background:#102c2c;border-color:#2f7e79}.warning{background:#2a1720;border-color:#8e4254}.nav{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 22px}.nav a{color:var(--blue);text-decoration:none;border:1px solid var(--line);background:#101d2a;border-radius:999px;padding:5px 12px;font-size:13px}.nav a:hover{border-color:var(--blue);background:#162c40}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:16px 0}.card,.panel{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:16px}.card .label{color:var(--muted);font-size:13px}.card .value{font-size:clamp(22px,2.6vw,34px);font-weight:750;margin:3px 0}.negative{color:var(--red)}.positive{color:var(--green)}.warn{color:var(--yellow)}.cyan{color:var(--cyan)}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}.table-wrap{overflow-x:auto;margin:12px 0 22px}table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);font-size:14px}th,td{border:1px solid var(--line);padding:8px 10px;vertical-align:top;text-align:left}th{background:var(--panel2);color:#e4f3ff;white-space:nowrap}.foot{margin-top:52px;border-top:1px solid var(--line);padding-top:18px;color:var(--muted);font-size:13px}code{background:#102333;border:1px solid #29465c;border-radius:5px;padding:1px 5px;color:#d6ecfb}a{color:var(--blue)}ul,ol{padding-left:24px}
+@media(max-width:800px){main{padding:18px 12px 52px}.two{grid-template-columns:1fr}table{font-size:13px}}
+</style>
+</head>
+<body>
+<main id="top">
+<h1>2026年10月1日（木）日本株デイトレード日誌｜285A・9984・6976と日経225</h1>
+<div class="notice"><strong>本番版・現時点確認分：</strong>実況ログは寄り前〜11:19ごろ、松井証券CSVは09:12までを確認。午後の実況、追加約定、板読みデータ、チャート画像は未受領のため、確認できた範囲だけを本番版として記録。<br><strong>CSV確認済み粗損益：</strong><span class="positive">＋500円</span>（手数料・税金を含まない概算）。現時点でCSV実約定を確認できた銘柄は285Aのみ。</div>
+<nav class="nav" aria-label="ページ内リンク"><a href="#summary">結論</a><a href="#data">データ</a><a href="#environment">環境認識</a><a href="#timeline">値動き</a><a href="#285a">285A実約定</a><a href="#9984">9984観察</a><a href="#method">検証方法</a><a href="#todo">追加待ち</a></nav>
+
+<section id="summary">
+<h2>0. 本日の結論</h2>
+<div class="grid">
+<div class="card"><div class="label">CSV確認済み粗損益</div><div class="value positive">＋500円</div><div class="small">手数料・税金を含まない概算</div></div>
+<div class="card"><div class="label">285A キオクシア</div><div class="value positive">＋500円</div><div class="small">2往復／09:08–09:12</div></div>
+<div class="card"><div class="label">1回目の往復</div><div class="value negative">−11,000円</div><div class="small">09:08買い → 09:09返済</div></div>
+<div class="card"><div class="label">2回目の往復</div><div class="value positive">＋11,500円</div><div class="small">09:10買い → 09:12返済</div></div>
+<div class="card"><div class="label">記録ステータス</div><div class="value warn">本番版</div><div class="small">確認済み範囲／追記予定</div></div>
+</div>
+<p>本日の中心テーマは、サポートで早く買うことではなく、<strong>下落が否定されたことを出来高・価格反応・上位足の方向で確認してから、どこで入るか</strong>だった。日経225は朝のニュートラルから、日足カップアンドハンドルの上抜けと%Rの上方向を観察した後、上目線へ更新した。</p>
+<div class="key"><strong>本日の一文：</strong>サポートで買うだけではオーバーシュートに狩られる。安値更新の停止、大出来高後の価格反応、指数の方向、無効化ラインを重ねて、早期確認案とブレイク確定待ち案を比較する。</div>
+</section>
+
+<section id="data">
+<h2>1. データの扱い</h2>
+<div class="two">
+<div class="panel"><h3>確定データ</h3><ul><li>松井証券CSV：<code>/Users/th/Downloads/stockorder_20261001.csv</code></li><li>CSV行数：4行。285Aの新規2行・返済2行。</li><li>実況ログ：<code>/Users/th/Downloads/2026-10-01_daytrading_log.md</code></li><li>実況記録範囲：寄り前〜11:19ごろ。</li></ul></div>
+<div class="panel"><h3>未確認・追加予定</h3><ul><li>午後の実況、追加の約定、板読みJSONL、出来高集計は未受領。</li><li>実況で読まれた36万株・約87万株などは本人の観察値として記録。</li><li>検討中の仮想エントリーと、CSV実約定は分離。</li><li>後日データ受領後、この本番版に追記する。</li></ul></div>
+</div>
+</section>
+
+<section id="environment">
+<h2>2. 朝の環境認識</h2>
+<div class="two">
+<div class="panel"><h3>日経225</h3><ul><li>寄り前は日足レンジと横向き60MAからニュートラル。</li><li>9月30日に上限へタッチして戻され、ブレイク起点付近まで戻した後、半値戻しの状態。</li><li>その後、日足カップアンドハンドルの上抜けと%Rの上方向を観察し、上目線へ更新。</li><li>場中の日足陽線形成と、日足終値での確定は分けて記録する。</li></ul></div>
+<div class="panel"><h3>NASDAQ・US100</h3><ul><li>前夜23時ごろから上昇に転じ、04:40ごろに大きな戻し・全戻しを観察。</li><li>60EMAはガイドになりにくく、60分足20SMAが機能しているように見えた。</li><li>月足・週足・日足はN字ダウで上方向。天井付近はダブルトップ状のクラスター・レンジ。</li><li>指数を追いかけず、個別銘柄の反応を確認する方針。</li></ul></div>
+<div class="panel"><h3>AMD（前夜）</h3><ul><li>大出来高の陰線後に買い戻され、安値切り上げから01:51ごろ上へブレイクしたと振り返った。</li><li>売りはロスカット、買いは利確したという本人報告。</li><li>604.2ドル付近で支持され、上昇トレンドに戻ったという見立て。外部確認はしていない。</li></ul></div>
+<div class="panel"><h3>市場全体の見方</h3><ul><li>朝は方向を決めず、サポートとVWAPの反応を確認。</li><li>日経225が上方向へ更新した後も、個別銘柄の売りが続くかは別に見る。</li><li>出来高だけで買いを確定せず、価格が下へ進まないことを重視する。</li></ul></div>
+</div>
+</section>
+
+<section id="timeline">
+<h2>3. 前場の実況タイムライン</h2>
+<div class="table-wrap"><table><thead><tr><th>時刻</th><th>対象</th><th>観察／説明</th><th>扱い</th></tr></thead><tbody>
+<tr><td>寄り前</td><td>日経225</td><td>日足レンジ、横向き60MAからニュートラル。</td><td>環境認識</td></tr>
+<tr><td>寄り前</td><td>NASDAQ・AMD</td><td>20SMA中心の上方向、前夜の大出来高後の買い戻しを振り返り。</td><td>前夜の観察</td></tr>
+<tr><td>09:08</td><td>285A</td><td>買い100株が約定。</td><td>CSV実約定</td></tr>
+<tr><td>09:09</td><td>285A</td><td>18,550円で返済。</td><td>CSV実約定・−11,000円</td></tr>
+<tr><td>09:10</td><td>285A</td><td>買い100株が約定。</td><td>CSV実約定</td></tr>
+<tr><td>09:12</td><td>285A</td><td>18,755円で返済。</td><td>CSV実約定・＋11,500円</td></tr>
+<tr><td>09:20ごろ</td><td>285A</td><td>30秒足で約36万株。下落が否定され、上へブレイクしたと観察。</td><td>実況観察／CSV対応未確認</td></tr>
+<tr><td>09:28ごろ</td><td>6976</td><td>サポート買いの含み損・サポート割れを仮定検証。VWAPを軸に下げ止まりを待つ。</td><td>仮想検証</td></tr>
+<tr><td>09:30ごろ</td><td>9984</td><td>2分足ピンバー。レンジ下限を下抜けた動きが否定されたと観察。</td><td>実況観察／実約定なし</td></tr>
+<tr><td>09:55–10:00</td><td>日経225</td><td>20分足の陽線形成、日足カップアンドハンドル上抜け、%R上方向を観察。</td><td>ニュートラル→上目線</td></tr>
+<tr><td>11:00台</td><td>個別銘柄</td><td>9984・6981・5803・6857などの上方向を観察。285Aで上昇に乗れなかった点を反省。</td><td>実況観察・反省</td></tr>
+<tr><td>11:19ごろ</td><td>全体</td><td>ブレイク確定を待つと遅くなる問題と、再現練習の方法を検討。</td><td>追加検証テーマ</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="285a">
+<h2>4. 285A キオクシア｜実約定と下落否定</h2>
+<div class="grid">
+<div class="card"><div class="label">CSV実約定</div><div class="value cyan">4件</div><div class="small">新規2件・返済2件</div></div>
+<div class="card"><div class="label">往復</div><div class="value">2回</div><div class="small">各100株</div></div>
+<div class="card"><div class="label">CSV粗損益</div><div class="value positive">＋500円</div><div class="small">手数料・税金を含まない</div></div>
+</div>
+<div class="table-wrap"><table><thead><tr><th>往復</th><th>ENTRY</th><th>EXIT</th><th>数量</th><th>粗損益</th></tr></thead><tbody>
+<tr><td>1</td><td>09:08 買い 18,660円</td><td>09:09 売り 18,550円</td><td>100株</td><td class="negative">−11,000円</td></tr>
+<tr><td>2</td><td>09:10 買い 18,640円</td><td>09:12 売り 18,755円</td><td>100株</td><td class="positive">＋11,500円</td></tr>
+<tr><th colspan="4">合計</th><th class="positive">＋500円</th></tr>
+</tbody></table></div>
+<div class="two">
+<div class="panel"><h3>取引の流れ</h3><ul><li>最初のLONGはリスクリワードを根拠に入ったが、サポート割れでロスカットになったと実況。</li><li>サポートで買うだけでは、オーバーシュートで狩られる可能性がある。</li><li>09:20ごろの30秒足で約36万株の出来高が出て、下落が否定され、上へブレイクしたと観察。</li><li>実況後半の高値更新は、今回のCSV4件とは一対一に対応付けない。</li></ul></div>
+<div class="panel"><h3>次回の確認条件</h3><ol><li>安値更新が止まっているか。</li><li>大出来高の後に価格が下へ進まないか。</li><li>日経225の方向と個別の売りが一致しているか。</li><li>早期確認案とブレイク確定待ち案の無効化ラインを先に置く。</li></ol></div>
+</div>
+<div class="warning"><strong>実況とCSVの分離：</strong>09:20以降の36万株・上方向へのブレイク・高値更新は実況観察。CSV損益は09:08〜09:12の約定だけから計算している。</div>
+</section>
+
+<section id="9984">
+<h2>5. 9984 ソフトバンクグループ｜9:30ピンバー観察</h2>
+<div class="panel"><ul><li>6,600円付近まで上昇していると観察した。</li><li>09:30の2分足で、レンジ下限を下抜けようとした動きが否定されたピンバーを確認。</li><li>出来高は約87万株という本人の暫定的な読み取りであり、確定値ではない。</li><li>2分足の引けで陽線になったという本人報告があり、下落否定・買い支えの候補とした。</li><li>その後も上方向へ向かっていると観察したが、新たなLONGエントリー・決済は未報告。</li></ul></div>
+<p>ロング目線の根拠は、レンジ下限からの下落否定、全体の上方向、1週間の出来高・ボラティリティ、日経平均への寄与、日足カップアンドハンドルのブレイク期待。ただし、これらは本人の整理であり、今回のCSV実約定とは別の観察である。</p>
+</section>
+
+<section id="stocks">
+<h2>6. 6976・5803・6857などの観察</h2>
+<div class="two">
+<div class="panel"><h3>6976 太陽誘電</h3><ul><li>サポートで買った場合の含み損・サポート割れを仮定検証。</li><li>押し安値は切り上がる一方、サポートを割る動きもあり、方向を急いで決めにくかった。</li><li>VWAPを軸に、2分足の押しで下がらないことを確認してから判断する。</li></ul></div>
+<div class="panel"><h3>5803 フジクラ</h3><ul><li>下降を観察し、下げ止まりを待つか、戻り売りで追うかを検討。</li><li>日経225はN字ダウで上方向と見ており、指数と個別の向きがずれる場面に注意。</li><li>実約定は今回のCSVで確認していない。</li></ul></div>
+<div class="panel"><h3>6857 アドバンテスト</h3><ul><li>上方向への動きを観察した。</li><li>一部の基準線名・価格は聞き取りが明確でないため推測で補わない。</li><li>実約定は今回のCSVで確認していない。</li></ul></div>
+<div class="panel"><h3>285Aとの比較</h3><ul><li>日経225が上方向でも、キオクシアが同じタイミングで加速するとは限らない。</li><li>指数、個別の価格反応、出来高の順に分けて判断する。</li></ul></div>
+</div>
+</section>
+
+<section id="method">
+<h2>7. 表示方法と再現性の検証</h2>
+<div class="two">
+<div class="panel"><h3>日本株はライン表示を試す</h3><ul><li>細かな値動きのノイズに振り回されないため、ライン表示が見やすい可能性を検証。</li><li>値動きの許容範囲や方向の変化を把握しやすいという所感。</li><li>表示方法を変えただけで、損切り条件・ENTRY条件を変更したわけではない。</li></ul></div>
+<div class="panel"><h3>米国株は短期ローソク足</h3><ul><li>米国株は2分足などの小さい時間足のローソク足で見る方針。</li><li>「買い足」は買い注文ではなく、小さい足の意味として扱う。</li></ul></div>
+<div class="panel"><h3>早期確認案</h3><ol><li>2分足で安値を更新しなくなる。</li><li>15秒足で小さな戻り高値を超える。</li><li>無効化ラインを置いて入る。</li></ol></div>
+<div class="panel"><h3>ブレイク確定待ち案</h3><ol><li>2分足のブレイクを確認する。</li><li>だましの可能性と、取り逃す値幅を比較する。</li><li>同じ許容損失で20例程度を反復検証する。</li></ol></div>
+</div>
+<div class="key"><strong>検証順：</strong>上位足の方向 → 指数 → 個別の安値更新停止 → 出来高と価格反応 → 無効化ライン → ENTRY。結果を知った後から、波形をきれいに整えて必ず取れたと判断しない。</div>
+</section>
+
+<section id="reflection">
+<h2>8. 本日の反省</h2>
+<blockquote class="panel"><strong>サポートで買うことより、サポートを割れないこと・割れた後に戻ることを確認する。</strong></blockquote>
+<ul><li>285Aでは最初のサポート買いが損切りになったが、その後に下落否定・上方向の反応が出た。</li><li>出来高だけで買いを確定せず、安値更新の停止と後続足の反応を合わせる。</li><li>日経225が上方向へ切り替わっても、個別銘柄の売りが続くかは別に確認する。</li><li>確定を待てば遅くなるが、早く入ればだましを受ける。両方を同じ許容損失で比較する。</li></ul>
+</section>
+
+<section id="todo">
+<h2>9. 今後の追記予定</h2>
+<div class="warning"><strong>未受領のため追記する項目：</strong>午後の実況、追加約定、285A以外の実約定、板読みJSONL、出来高・RVOL集計、チャート画像、最終損益。</div>
+<div class="panel"><ul><li>追加データ受領後、現在の「観察」「未確認」を「CSV確認」「画像確認」「実況のみ」に整理し直す。</li><li>午後の値動きや終日損益は、データが届くまで推測して埋めない。</li><li>9/30版と同じく、確定データと本人の実況・検討を分けたまま本番版へ更新する。</li></ul></div>
+</section>
+
+<section id="sources">
+<h2>10. 保存先と根拠</h2>
+<div class="two">
+<div class="panel"><h3>日誌</h3><p><a href="diary_20261001.md">Markdown版</a></p><p class="small">outputs/diary_20261001/diary_20261001.md</p></div>
+<div class="panel"><h3>実況ログ</h3><p class="small">/Users/th/Downloads/2026-10-01_daytrading_log.md</p><p>寄り前〜11:19ごろの実況を反映。外部データによる独立確認はしていない。</p></div>
+<div class="panel"><h3>松井証券CSV</h3><p class="small">/Users/th/Downloads/stockorder_20261001.csv</p><p>285Aの約定時間・約定単価・数量を採用。4行・2往復、粗損益＋500円。</p></div>
+<div class="panel"><h3>状態</h3><p><span class="warn">本番版・現時点確認分</span></p><p>午後・追加データを受領後に追記する。</p></div>
+</div>
+</section>
+
+<div class="foot">作成日：2026年10月1日｜日本株デイトレード日誌・本番版（現時点確認分）｜285A・9984・6976・5803・6857・日経225｜CSV確認は09:12まで、実況ログは11:19ごろまで｜午後・追加データは受領後に追記</div>
+</main>
+</body>
+</html>
