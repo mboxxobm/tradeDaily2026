@@ -1,0 +1,3023 @@
+{
+  "generatedAt": "2026-10-03T09:00:57.178Z",
+  "period": {
+    "from": "2026-05-01",
+    "to": "2026-08-31",
+    "latest_available_trade_date": "2026-08-28"
+  },
+  "caseCount": 108,
+  "questionCount": 216,
+  "positiveTradePnl": 345220,
+  "diaryPatternCaseCount": 5,
+  "boardDataCaseCount": 76,
+  "sameDay225CaseCount": 12,
+  "assets": {
+    "mainCharts": 76,
+    "contextCharts": 76,
+    "marketCharts": 5
+  },
+  "cases": [
+    {
+      "id": "W001",
+      "date": "20260501",
+      "code": "5803",
+      "name": "フジクラ",
+      "direction": "LONG",
+      "entryTime": "09:03",
+      "exitTime": "09:04",
+      "entryPrice": 5932,
+      "exitPrice": 5965,
+      "pnl": 3300,
+      "pattern": null,
+      "board": {
+        "available": false,
+        "sources": [],
+        "replay": false,
+        "events": false,
+        "code": "5803",
+        "date": "20260501"
+      },
+      "source": {
+        "csv": "stockorder_20260501 (1).csv",
+        "tick": "未取得／CSV中心",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W002",
+      "date": "20260501",
+      "code": "5803",
+      "name": "フジクラ",
+      "direction": "LONG",
+      "entryTime": "09:03",
+      "exitTime": "09:04",
+      "entryPrice": 5932,
+      "exitPrice": 5959,
+      "pnl": 2700,
+      "pattern": null,
+      "board": {
+        "available": false,
+        "sources": [],
+        "replay": false,
+        "events": false,
+        "code": "5803",
+        "date": "20260501"
+      },
+      "source": {
+        "csv": "stockorder_20260501 (1).csv",
+        "tick": "未取得／CSV中心",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W003",
+      "date": "20260507",
+      "code": "9984",
+      "name": "ＳＢＧ",
+      "direction": "LONG",
+      "entryTime": "09:32",
+      "exitTime": "09:33",
+      "entryPrice": 6014,
+      "exitPrice": 6021,
+      "pnl": 700,
+      "pattern": null,
+      "board": {
+        "available": false,
+        "sources": [],
+        "replay": false,
+        "events": false,
+        "code": "9984",
+        "date": "20260507"
+      },
+      "source": {
+        "csv": "stockorder_20260507 (1).csv",
+        "tick": "未取得／CSV中心",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W004",
+      "date": "20260507",
+      "code": "9984",
+      "name": "ＳＢＧ",
+      "direction": "LONG",
+      "entryTime": "09:32",
+      "exitTime": "09:33",
+      "entryPrice": 6008,
+      "exitPrice": 6028,
+      "pnl": 2000,
+      "pattern": null,
+      "board": {
+        "available": false,
+        "sources": [],
+        "replay": false,
+        "events": false,
+        "code": "9984",
+        "date": "20260507"
+      },
+      "source": {
+        "csv": "stockorder_20260507 (1).csv",
+        "tick": "未取得／CSV中心",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W005",
+      "date": "20260508",
+      "code": "1321",
+      "name": "野村日経平均",
+      "direction": "LONG",
+      "entryTime": "09:15",
+      "exitTime": "09:16",
+      "entryPrice": 65210,
+      "exitPrice": 65270,
+      "pnl": 2460,
+      "pattern": null,
+      "board": {
+        "available": false,
+        "sources": [],
+        "replay": false,
+        "events": false,
+        "code": "1321",
+        "date": "20260508"
+      },
+      "source": {
+        "csv": "stockorder_20260508 (1).csv",
+        "tick": "未取得／CSV中心",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W006",
+      "date": "20260511",
+      "code": "5016",
+      "name": "ＪＸ金属",
+      "direction": "LONG",
+      "entryTime": "09:06",
+      "exitTime": "09:06",
+      "entryPrice": 5545,
+      "exitPrice": 5554,
+      "pnl": 900,
+      "pattern": null,
+      "board": {
+        "available": false,
+        "sources": [],
+        "replay": false,
+        "events": false,
+        "code": "5016",
+        "date": "20260511"
+      },
+      "source": {
+        "csv": "stockorder_20260511 (1).csv",
+        "tick": "未取得／CSV中心",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W007",
+      "date": "20260511",
+      "code": "5016",
+      "name": "ＪＸ金属",
+      "direction": "SHORT",
+      "entryTime": "09:20",
+      "exitTime": "09:21",
+      "entryPrice": 5705,
+      "exitPrice": 5675,
+      "pnl": 3000,
+      "pattern": null,
+      "board": {
+        "available": false,
+        "sources": [],
+        "replay": false,
+        "events": false,
+        "code": "5016",
+        "date": "20260511"
+      },
+      "source": {
+        "csv": "stockorder_20260511 (1).csv",
+        "tick": "未取得／CSV中心",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W008",
+      "date": "20260511",
+      "code": "5016",
+      "name": "ＪＸ金属",
+      "direction": "LONG",
+      "entryTime": "09:48",
+      "exitTime": "09:49",
+      "entryPrice": 5727,
+      "exitPrice": 5767,
+      "pnl": 4000,
+      "pattern": null,
+      "board": {
+        "available": false,
+        "sources": [],
+        "replay": false,
+        "events": false,
+        "code": "5016",
+        "date": "20260511"
+      },
+      "source": {
+        "csv": "stockorder_20260511 (1).csv",
+        "tick": "未取得／CSV中心",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W009",
+      "date": "20260512",
+      "code": "5803",
+      "name": "フジクラ",
+      "direction": "LONG",
+      "entryTime": "10:04",
+      "exitTime": "10:05",
+      "entryPrice": 7372,
+      "exitPrice": 7411,
+      "pnl": 3900,
+      "pattern": null,
+      "board": {
+        "available": false,
+        "sources": [],
+        "replay": false,
+        "events": false,
+        "code": "5803",
+        "date": "20260512"
+      },
+      "source": {
+        "csv": "stockorder_20260512 (1).csv",
+        "tick": "未取得／CSV中心",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W010",
+      "date": "20260512",
+      "code": "7013",
+      "name": "ＩＨＩ",
+      "direction": "LONG",
+      "entryTime": "09:21",
+      "exitTime": "09:21",
+      "entryPrice": 2848,
+      "exitPrice": 2850,
+      "pnl": 200,
+      "pattern": null,
+      "board": {
+        "available": false,
+        "sources": [],
+        "replay": false,
+        "events": false,
+        "code": "7013",
+        "date": "20260512"
+      },
+      "source": {
+        "csv": "stockorder_20260512 (1).csv",
+        "tick": "未取得／CSV中心",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W011",
+      "date": "20260512",
+      "code": "8136",
+      "name": "サンリオ",
+      "direction": "SHORT",
+      "entryTime": "09:43",
+      "exitTime": "09:43",
+      "entryPrice": 870.9,
+      "exitPrice": 870.8,
+      "pnl": 10,
+      "pattern": null,
+      "board": {
+        "available": false,
+        "sources": [],
+        "replay": false,
+        "events": false,
+        "code": "8136",
+        "date": "20260512"
+      },
+      "source": {
+        "csv": "stockorder_20260512 (1).csv",
+        "tick": "未取得／CSV中心",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W012",
+      "date": "20260512",
+      "code": "8591",
+      "name": "オリックス",
+      "direction": "LONG",
+      "entryTime": "09:16",
+      "exitTime": "09:16",
+      "entryPrice": 5862,
+      "exitPrice": 5891,
+      "pnl": 2900,
+      "pattern": null,
+      "board": {
+        "available": false,
+        "sources": [],
+        "replay": false,
+        "events": false,
+        "code": "8591",
+        "date": "20260512"
+      },
+      "source": {
+        "csv": "stockorder_20260512 (1).csv",
+        "tick": "未取得／CSV中心",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W013",
+      "date": "20260522",
+      "code": "5803",
+      "name": "フジクラ",
+      "direction": "SHORT",
+      "entryTime": "09:50",
+      "exitTime": "09:51",
+      "entryPrice": 4770,
+      "exitPrice": 4769,
+      "pnl": 100,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "5803",
+        "date": "20260522"
+      },
+      "source": {
+        "csv": "stockorder_20260522.csv",
+        "tick": "未取得／CSV中心",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W014",
+      "date": "20260522",
+      "code": "5803",
+      "name": "フジクラ",
+      "direction": "SHORT",
+      "entryTime": "09:50",
+      "exitTime": "09:51",
+      "entryPrice": 4776,
+      "exitPrice": 4769,
+      "pnl": 700,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "5803",
+        "date": "20260522"
+      },
+      "source": {
+        "csv": "stockorder_20260522.csv",
+        "tick": "未取得／CSV中心",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W015",
+      "date": "20260522",
+      "code": "7974",
+      "name": "任天堂",
+      "direction": "LONG",
+      "entryTime": "09:05",
+      "exitTime": "09:06",
+      "entryPrice": 7236,
+      "exitPrice": 7242,
+      "pnl": 1200,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "7974",
+        "date": "20260522"
+      },
+      "source": {
+        "csv": "stockorder_20260522.csv",
+        "tick": "未取得／CSV中心",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W016",
+      "date": "20260522",
+      "code": "9984",
+      "name": "ＳＢＧ",
+      "direction": "SHORT",
+      "entryTime": "10:14",
+      "exitTime": "10:14",
+      "entryPrice": 6721,
+      "exitPrice": 6706,
+      "pnl": 1500,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "9984",
+        "date": "20260522"
+      },
+      "source": {
+        "csv": "stockorder_20260522.csv",
+        "tick": "未取得／CSV中心",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W017",
+      "date": "20260525",
+      "code": "6857",
+      "name": "アドテスト",
+      "direction": "SHORT",
+      "entryTime": "09:29",
+      "exitTime": "09:29",
+      "entryPrice": 28210,
+      "exitPrice": 28190,
+      "pnl": 2000,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "6857",
+        "date": "20260525"
+      },
+      "source": {
+        "csv": "stockorder_20260525_copy.csv",
+        "tick": "未取得／CSV中心",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W018",
+      "date": "20260525",
+      "code": "9984",
+      "name": "ＳＢＧ",
+      "direction": "LONG",
+      "entryTime": "12:42",
+      "exitTime": "12:43",
+      "entryPrice": 7079,
+      "exitPrice": 7106,
+      "pnl": 2700,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "9984",
+        "date": "20260525"
+      },
+      "source": {
+        "csv": "stockorder_20260525_copy.csv",
+        "tick": "未取得／CSV中心",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W019",
+      "date": "20260525",
+      "code": "9984",
+      "name": "ＳＢＧ",
+      "direction": "LONG",
+      "entryTime": "12:42",
+      "exitTime": "12:43",
+      "entryPrice": 7077,
+      "exitPrice": 7102,
+      "pnl": 2500,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "9984",
+        "date": "20260525"
+      },
+      "source": {
+        "csv": "stockorder_20260525_copy.csv",
+        "tick": "未取得／CSV中心",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W020",
+      "date": "20260525",
+      "code": "9984",
+      "name": "ＳＢＧ",
+      "direction": "LONG",
+      "entryTime": "12:42",
+      "exitTime": "12:43",
+      "entryPrice": 7090,
+      "exitPrice": 7107,
+      "pnl": 1700,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "9984",
+        "date": "20260525"
+      },
+      "source": {
+        "csv": "stockorder_20260525_copy.csv",
+        "tick": "未取得／CSV中心",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W021",
+      "date": "20260526",
+      "code": "6762",
+      "name": "ＴＤＫ",
+      "direction": "SHORT",
+      "entryTime": "09:32",
+      "exitTime": "09:33",
+      "entryPrice": 3804,
+      "exitPrice": 3788,
+      "pnl": 1600,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "6762",
+        "date": "20260526"
+      },
+      "source": {
+        "csv": "stockorder_20260526.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W022",
+      "date": "20260526",
+      "code": "9984",
+      "name": "ＳＢＧ",
+      "direction": "LONG",
+      "entryTime": "09:27",
+      "exitTime": "09:28",
+      "entryPrice": 7453,
+      "exitPrice": 7490,
+      "pnl": 3700,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "9984",
+        "date": "20260526"
+      },
+      "source": {
+        "csv": "stockorder_20260526.csv",
+        "tick": "未取得／CSV中心",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W023",
+      "date": "20260526",
+      "code": "9984",
+      "name": "ＳＢＧ",
+      "direction": "LONG",
+      "entryTime": "09:27",
+      "exitTime": "09:28",
+      "entryPrice": 7457,
+      "exitPrice": 7487,
+      "pnl": 3000,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "9984",
+        "date": "20260526"
+      },
+      "source": {
+        "csv": "stockorder_20260526.csv",
+        "tick": "未取得／CSV中心",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W024",
+      "date": "20260527",
+      "code": "7974",
+      "name": "任天堂",
+      "direction": "LONG",
+      "entryTime": "09:23",
+      "exitTime": "09:24",
+      "entryPrice": 7137,
+      "exitPrice": 7156,
+      "pnl": 3800,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "7974",
+        "date": "20260527"
+      },
+      "source": {
+        "csv": "stockorder_20260527.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W025",
+      "date": "20260527",
+      "code": "7974",
+      "name": "任天堂",
+      "direction": "LONG",
+      "entryTime": "09:23",
+      "exitTime": "09:24",
+      "entryPrice": 7136,
+      "exitPrice": 7154,
+      "pnl": 3600,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "7974",
+        "date": "20260527"
+      },
+      "source": {
+        "csv": "stockorder_20260527.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W026",
+      "date": "20260528",
+      "code": "6981",
+      "name": "村田製",
+      "direction": "SHORT",
+      "entryTime": "09:05",
+      "exitTime": "09:06",
+      "entryPrice": 8086,
+      "exitPrice": 8000,
+      "pnl": 8600,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "6981",
+        "date": "20260528"
+      },
+      "source": {
+        "csv": "stockorder_20260528.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W027",
+      "date": "20260529",
+      "code": "5803",
+      "name": "フジクラ",
+      "direction": "LONG",
+      "entryTime": "09:16",
+      "exitTime": "09:17",
+      "entryPrice": 4920,
+      "exitPrice": 4930,
+      "pnl": 1000,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "5803",
+        "date": "20260529"
+      },
+      "source": {
+        "csv": "stockorder_20260529.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W028",
+      "date": "20260529",
+      "code": "5803",
+      "name": "フジクラ",
+      "direction": "LONG",
+      "entryTime": "09:16",
+      "exitTime": "09:17",
+      "entryPrice": 4912,
+      "exitPrice": 4930,
+      "pnl": 1800,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "5803",
+        "date": "20260529"
+      },
+      "source": {
+        "csv": "stockorder_20260529.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W029",
+      "date": "20260604",
+      "code": "6762",
+      "name": "ＴＤＫ",
+      "direction": "LONG",
+      "entryTime": "09:16",
+      "exitTime": "09:16",
+      "entryPrice": 3954,
+      "exitPrice": 3973,
+      "pnl": 1900,
+      "pattern": null,
+      "board": {
+        "available": false,
+        "sources": [],
+        "replay": false,
+        "events": false,
+        "code": "6762",
+        "date": "20260604"
+      },
+      "source": {
+        "csv": "stockorder_20260604.csv",
+        "tick": "未取得／CSV中心",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W030",
+      "date": "20260604",
+      "code": "6762",
+      "name": "ＴＤＫ",
+      "direction": "LONG",
+      "entryTime": "09:16",
+      "exitTime": "09:16",
+      "entryPrice": 3957,
+      "exitPrice": 3978,
+      "pnl": 2100,
+      "pattern": null,
+      "board": {
+        "available": false,
+        "sources": [],
+        "replay": false,
+        "events": false,
+        "code": "6762",
+        "date": "20260604"
+      },
+      "source": {
+        "csv": "stockorder_20260604.csv",
+        "tick": "未取得／CSV中心",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W031",
+      "date": "20260604",
+      "code": "6976",
+      "name": "太陽誘電",
+      "direction": "SHORT",
+      "entryTime": "09:34",
+      "exitTime": "09:34",
+      "entryPrice": 16825,
+      "exitPrice": 16740,
+      "pnl": 8500,
+      "pattern": null,
+      "board": {
+        "available": false,
+        "sources": [],
+        "replay": false,
+        "events": false,
+        "code": "6976",
+        "date": "20260604"
+      },
+      "source": {
+        "csv": "stockorder_20260604.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W032",
+      "date": "20260610",
+      "code": "5803",
+      "name": "フジクラ",
+      "direction": "LONG",
+      "entryTime": "09:11",
+      "exitTime": "09:11",
+      "entryPrice": 4349,
+      "exitPrice": 4368,
+      "pnl": 1900,
+      "pattern": null,
+      "board": {
+        "available": false,
+        "sources": [],
+        "replay": false,
+        "events": false,
+        "code": "5803",
+        "date": "20260610"
+      },
+      "source": {
+        "csv": "stockorder_20260610.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W033",
+      "date": "20260610",
+      "code": "6976",
+      "name": "太陽誘電",
+      "direction": "SHORT",
+      "entryTime": "09:28",
+      "exitTime": "09:29",
+      "entryPrice": 17955,
+      "exitPrice": 17880,
+      "pnl": 7500,
+      "pattern": null,
+      "board": {
+        "available": false,
+        "sources": [],
+        "replay": false,
+        "events": false,
+        "code": "6976",
+        "date": "20260610"
+      },
+      "source": {
+        "csv": "stockorder_20260610.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W034",
+      "date": "20260610",
+      "code": "6976",
+      "name": "太陽誘電",
+      "direction": "LONG",
+      "entryTime": "09:54",
+      "exitTime": "09:54",
+      "entryPrice": 17010,
+      "exitPrice": 17095,
+      "pnl": 8500,
+      "pattern": null,
+      "board": {
+        "available": false,
+        "sources": [],
+        "replay": false,
+        "events": false,
+        "code": "6976",
+        "date": "20260610"
+      },
+      "source": {
+        "csv": "stockorder_20260610.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W035",
+      "date": "20260610",
+      "code": "6981",
+      "name": "村田製",
+      "direction": "SHORT",
+      "entryTime": "09:32",
+      "exitTime": "09:33",
+      "entryPrice": 9316,
+      "exitPrice": 9200,
+      "pnl": 11600,
+      "pattern": null,
+      "board": {
+        "available": false,
+        "sources": [],
+        "replay": false,
+        "events": false,
+        "code": "6981",
+        "date": "20260610"
+      },
+      "source": {
+        "csv": "stockorder_20260610.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W036",
+      "date": "20260610",
+      "code": "7203",
+      "name": "トヨタ",
+      "direction": "SHORT",
+      "entryTime": "09:08",
+      "exitTime": "09:08",
+      "entryPrice": 2831.5,
+      "exitPrice": 2830.5,
+      "pnl": 200,
+      "pattern": null,
+      "board": {
+        "available": false,
+        "sources": [],
+        "replay": false,
+        "events": false,
+        "code": "7203",
+        "date": "20260610"
+      },
+      "source": {
+        "csv": "stockorder_20260610.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W037",
+      "date": "20260610",
+      "code": "7203",
+      "name": "トヨタ",
+      "direction": "SHORT",
+      "entryTime": "09:08",
+      "exitTime": "09:08",
+      "entryPrice": 2831.5,
+      "exitPrice": 2830.5,
+      "pnl": 200,
+      "pattern": null,
+      "board": {
+        "available": false,
+        "sources": [],
+        "replay": false,
+        "events": false,
+        "code": "7203",
+        "date": "20260610"
+      },
+      "source": {
+        "csv": "stockorder_20260610.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W038",
+      "date": "20260611",
+      "code": "1321",
+      "name": "野村日経平均",
+      "direction": "LONG",
+      "entryTime": "09:28",
+      "exitTime": "09:29",
+      "entryPrice": 65800,
+      "exitPrice": 65850,
+      "pnl": 1100,
+      "pattern": null,
+      "board": {
+        "available": false,
+        "sources": [],
+        "replay": false,
+        "events": false,
+        "code": "1321",
+        "date": "20260611"
+      },
+      "source": {
+        "csv": "stockorder_20260611.csv",
+        "tick": "未取得／CSV中心",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W039",
+      "date": "20260611",
+      "code": "5803",
+      "name": "フジクラ",
+      "direction": "SHORT",
+      "entryTime": "09:08",
+      "exitTime": "09:09",
+      "entryPrice": 3952,
+      "exitPrice": 3943,
+      "pnl": 900,
+      "pattern": null,
+      "board": {
+        "available": false,
+        "sources": [],
+        "replay": false,
+        "events": false,
+        "code": "5803",
+        "date": "20260611"
+      },
+      "source": {
+        "csv": "stockorder_20260611.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W040",
+      "date": "20260611",
+      "code": "6976",
+      "name": "太陽誘電",
+      "direction": "LONG",
+      "entryTime": "09:39",
+      "exitTime": "09:40",
+      "entryPrice": 15015,
+      "exitPrice": 15140,
+      "pnl": 12500,
+      "pattern": null,
+      "board": {
+        "available": false,
+        "sources": [],
+        "replay": false,
+        "events": false,
+        "code": "6976",
+        "date": "20260611"
+      },
+      "source": {
+        "csv": "stockorder_20260611.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W041",
+      "date": "20260612",
+      "code": "6976",
+      "name": "太陽誘電",
+      "direction": "SHORT",
+      "entryTime": "09:11",
+      "exitTime": "09:11",
+      "entryPrice": 18975,
+      "exitPrice": 18930,
+      "pnl": 4500,
+      "pattern": null,
+      "board": {
+        "available": false,
+        "sources": [],
+        "replay": false,
+        "events": false,
+        "code": "6976",
+        "date": "20260612"
+      },
+      "source": {
+        "csv": "stockorder_20260612 (2).csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W042",
+      "date": "20260612",
+      "code": "6976",
+      "name": "太陽誘電",
+      "direction": "SHORT",
+      "entryTime": "09:11",
+      "exitTime": "09:11",
+      "entryPrice": 18935,
+      "exitPrice": 18750,
+      "pnl": 18500,
+      "pattern": null,
+      "board": {
+        "available": false,
+        "sources": [],
+        "replay": false,
+        "events": false,
+        "code": "6976",
+        "date": "20260612"
+      },
+      "source": {
+        "csv": "stockorder_20260612 (2).csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W043",
+      "date": "20260616",
+      "code": "5016",
+      "name": "ＪＸ金属",
+      "direction": "LONG",
+      "entryTime": "09:29",
+      "exitTime": "09:30",
+      "entryPrice": 4355,
+      "exitPrice": 4429,
+      "pnl": 7400,
+      "pattern": null,
+      "board": {
+        "available": false,
+        "sources": [],
+        "replay": false,
+        "events": false,
+        "code": "5016",
+        "date": "20260616"
+      },
+      "source": {
+        "csv": "stockorder_20260616.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W044",
+      "date": "20260616",
+      "code": "5016",
+      "name": "ＪＸ金属",
+      "direction": "LONG",
+      "entryTime": "09:29",
+      "exitTime": "09:30",
+      "entryPrice": 4356,
+      "exitPrice": 4432,
+      "pnl": 7600,
+      "pattern": null,
+      "board": {
+        "available": false,
+        "sources": [],
+        "replay": false,
+        "events": false,
+        "code": "5016",
+        "date": "20260616"
+      },
+      "source": {
+        "csv": "stockorder_20260616.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W045",
+      "date": "20260617",
+      "code": "6976",
+      "name": "太陽誘電",
+      "direction": "LONG",
+      "entryTime": "09:12",
+      "exitTime": "09:13",
+      "entryPrice": 19855,
+      "exitPrice": 19955,
+      "pnl": 10000,
+      "pattern": null,
+      "board": {
+        "available": false,
+        "sources": [],
+        "replay": false,
+        "events": false,
+        "code": "6976",
+        "date": "20260617"
+      },
+      "source": {
+        "csv": "stockorder_20260617.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W046",
+      "date": "20260617",
+      "code": "6976",
+      "name": "太陽誘電",
+      "direction": "SHORT",
+      "entryTime": "09:42",
+      "exitTime": "09:42",
+      "entryPrice": 19695,
+      "exitPrice": 19660,
+      "pnl": 3500,
+      "pattern": null,
+      "board": {
+        "available": false,
+        "sources": [],
+        "replay": false,
+        "events": false,
+        "code": "6976",
+        "date": "20260617"
+      },
+      "source": {
+        "csv": "stockorder_20260617.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W047",
+      "date": "20260618",
+      "code": "6976",
+      "name": "太陽誘電",
+      "direction": "LONG",
+      "entryTime": "09:26",
+      "exitTime": "09:27",
+      "entryPrice": 21060,
+      "exitPrice": 21165,
+      "pnl": 10500,
+      "pattern": null,
+      "board": {
+        "available": false,
+        "sources": [],
+        "replay": false,
+        "events": false,
+        "code": "6976",
+        "date": "20260618"
+      },
+      "source": {
+        "csv": "stockorder_20260618.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W048",
+      "date": "20260619",
+      "code": "6976",
+      "name": "太陽誘電",
+      "direction": "LONG",
+      "entryTime": "09:14",
+      "exitTime": "09:15",
+      "entryPrice": 19175,
+      "exitPrice": 19235,
+      "pnl": 6000,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "6976",
+        "date": "20260619"
+      },
+      "source": {
+        "csv": "stockorder_20260619.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W049",
+      "date": "20260623",
+      "code": "6981",
+      "name": "村田製",
+      "direction": "LONG",
+      "entryTime": "10:57",
+      "exitTime": "10:58",
+      "entryPrice": 11650,
+      "exitPrice": 11685,
+      "pnl": 3500,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "6981",
+        "date": "20260623"
+      },
+      "source": {
+        "csv": "stockorder_20260623 (3).csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W050",
+      "date": "20260624",
+      "code": "5803",
+      "name": "フジクラ",
+      "direction": "LONG",
+      "entryTime": "09:06",
+      "exitTime": "09:07",
+      "entryPrice": 6197,
+      "exitPrice": 6241,
+      "pnl": 4400,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "5803",
+        "date": "20260624"
+      },
+      "source": {
+        "csv": "stockorder_20260624 (2).csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W051",
+      "date": "20260624",
+      "code": "5803",
+      "name": "フジクラ",
+      "direction": "LONG",
+      "entryTime": "09:50",
+      "exitTime": "09:51",
+      "entryPrice": 6264,
+      "exitPrice": 6299,
+      "pnl": 3500,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "5803",
+        "date": "20260624"
+      },
+      "source": {
+        "csv": "stockorder_20260624 (2).csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W052",
+      "date": "20260624",
+      "code": "6976",
+      "name": "太陽誘電",
+      "direction": "LONG",
+      "entryTime": "09:32",
+      "exitTime": "09:32",
+      "entryPrice": 17185,
+      "exitPrice": 17205,
+      "pnl": 2000,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "6976",
+        "date": "20260624"
+      },
+      "source": {
+        "csv": "stockorder_20260624 (2).csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W053",
+      "date": "20260625",
+      "code": "5803",
+      "name": "フジクラ",
+      "direction": "SHORT",
+      "entryTime": "09:17",
+      "exitTime": "09:18",
+      "entryPrice": 6584,
+      "exitPrice": 6542,
+      "pnl": 4200,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "5803",
+        "date": "20260625"
+      },
+      "source": {
+        "csv": "stockorder_20260625 (1).csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W054",
+      "date": "20260625",
+      "code": "9984",
+      "name": "ＳＢＧ",
+      "direction": "SHORT",
+      "entryTime": "09:07",
+      "exitTime": "09:07",
+      "entryPrice": 6591,
+      "exitPrice": 6560,
+      "pnl": 3100,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "9984",
+        "date": "20260625"
+      },
+      "source": {
+        "csv": "stockorder_20260625 (1).csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W055",
+      "date": "20260625",
+      "code": "9984",
+      "name": "ＳＢＧ",
+      "direction": "LONG",
+      "entryTime": "09:29",
+      "exitTime": "09:30",
+      "entryPrice": 6419,
+      "exitPrice": 6427,
+      "pnl": 800,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "9984",
+        "date": "20260625"
+      },
+      "source": {
+        "csv": "stockorder_20260625 (1).csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W056",
+      "date": "20260626",
+      "code": "6976",
+      "name": "太陽誘電",
+      "direction": "SHORT",
+      "entryTime": "09:12",
+      "exitTime": "09:13",
+      "entryPrice": 17705,
+      "exitPrice": 17600,
+      "pnl": 10500,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "6976",
+        "date": "20260626"
+      },
+      "source": {
+        "csv": "stockorder_20260626.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W057",
+      "date": "20260626",
+      "code": "7203",
+      "name": "トヨタ",
+      "direction": "LONG",
+      "entryTime": "09:00",
+      "exitTime": "09:01",
+      "entryPrice": 2711.5,
+      "exitPrice": 2725.5,
+      "pnl": 2800,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "7203",
+        "date": "20260626"
+      },
+      "source": {
+        "csv": "stockorder_20260626.csv",
+        "tick": "未取得／CSV中心",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W058",
+      "date": "20260626",
+      "code": "7203",
+      "name": "トヨタ",
+      "direction": "LONG",
+      "entryTime": "09:00",
+      "exitTime": "09:01",
+      "entryPrice": 2714.5,
+      "exitPrice": 2724,
+      "pnl": 1900,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "7203",
+        "date": "20260626"
+      },
+      "source": {
+        "csv": "stockorder_20260626.csv",
+        "tick": "未取得／CSV中心",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W059",
+      "date": "20260629",
+      "code": "5803",
+      "name": "フジクラ",
+      "direction": "SHORT",
+      "entryTime": "10:18",
+      "exitTime": "10:18",
+      "entryPrice": 5789,
+      "exitPrice": 5786,
+      "pnl": 300,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "5803",
+        "date": "20260629"
+      },
+      "source": {
+        "csv": "stockorder_20260629.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W060",
+      "date": "20260630",
+      "code": "6762",
+      "name": "ＴＤＫ",
+      "direction": "SHORT",
+      "entryTime": "09:25",
+      "exitTime": "09:26",
+      "entryPrice": 3569,
+      "exitPrice": 3564,
+      "pnl": 500,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "6762",
+        "date": "20260630"
+      },
+      "source": {
+        "csv": "stockorder_20260630.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W061",
+      "date": "20260630",
+      "code": "6762",
+      "name": "ＴＤＫ",
+      "direction": "SHORT",
+      "entryTime": "09:25",
+      "exitTime": "09:26",
+      "entryPrice": 3567,
+      "exitPrice": 3563,
+      "pnl": 400,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "6762",
+        "date": "20260630"
+      },
+      "source": {
+        "csv": "stockorder_20260630.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W062",
+      "date": "20260701",
+      "code": "9984",
+      "name": "ＳＢＧ",
+      "direction": "LONG",
+      "entryTime": "09:04",
+      "exitTime": "09:05",
+      "entryPrice": 6155,
+      "exitPrice": 6179,
+      "pnl": 2400,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "9984",
+        "date": "20260701"
+      },
+      "source": {
+        "csv": "stockorder_20260701.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W063",
+      "date": "20260707",
+      "code": "6981",
+      "name": "村田製",
+      "direction": "LONG",
+      "entryTime": "10:10",
+      "exitTime": "10:11",
+      "entryPrice": 9580,
+      "exitPrice": 9586,
+      "pnl": 600,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "6981",
+        "date": "20260707"
+      },
+      "source": {
+        "csv": "stockorder_20260707.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W064",
+      "date": "20260708",
+      "code": "6976",
+      "name": "太陽誘電",
+      "direction": "SHORT",
+      "entryTime": "09:08",
+      "exitTime": "09:08",
+      "entryPrice": 16065,
+      "exitPrice": 16010,
+      "pnl": 5500,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "6976",
+        "date": "20260708"
+      },
+      "source": {
+        "csv": "stockorder_20260708.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W065",
+      "date": "20260709",
+      "code": "5803",
+      "name": "フジクラ",
+      "direction": "LONG",
+      "entryTime": "09:41",
+      "exitTime": "09:42",
+      "entryPrice": 5092,
+      "exitPrice": 5104,
+      "pnl": 1200,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "5803",
+        "date": "20260709"
+      },
+      "source": {
+        "csv": "stockorder_20260709.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W066",
+      "date": "20260710",
+      "code": "1321",
+      "name": "野村日経平均",
+      "direction": "LONG",
+      "entryTime": "09:43",
+      "exitTime": "09:44",
+      "entryPrice": 71110,
+      "exitPrice": 71140,
+      "pnl": 30,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "1321",
+        "date": "20260710"
+      },
+      "source": {
+        "csv": "stockorder_20260710.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W067",
+      "date": "20260710",
+      "code": "1321",
+      "name": "野村日経平均",
+      "direction": "LONG",
+      "entryTime": "09:43",
+      "exitTime": "09:44",
+      "entryPrice": 71110,
+      "exitPrice": 71140,
+      "pnl": 120,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "1321",
+        "date": "20260710"
+      },
+      "source": {
+        "csv": "stockorder_20260710.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W068",
+      "date": "20260710",
+      "code": "1321",
+      "name": "野村日経平均",
+      "direction": "LONG",
+      "entryTime": "09:43",
+      "exitTime": "09:44",
+      "entryPrice": 71120,
+      "exitPrice": 71140,
+      "pnl": 120,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "1321",
+        "date": "20260710"
+      },
+      "source": {
+        "csv": "stockorder_20260710.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W069",
+      "date": "20260710",
+      "code": "1321",
+      "name": "野村日経平均",
+      "direction": "LONG",
+      "entryTime": "09:43",
+      "exitTime": "09:44",
+      "entryPrice": 71120,
+      "exitPrice": 71140,
+      "pnl": 20,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "1321",
+        "date": "20260710"
+      },
+      "source": {
+        "csv": "stockorder_20260710.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W070",
+      "date": "20260710",
+      "code": "1321",
+      "name": "野村日経平均",
+      "direction": "LONG",
+      "entryTime": "09:43",
+      "exitTime": "09:44",
+      "entryPrice": 71110,
+      "exitPrice": 71140,
+      "pnl": 300,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "1321",
+        "date": "20260710"
+      },
+      "source": {
+        "csv": "stockorder_20260710.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W071",
+      "date": "20260710",
+      "code": "1321",
+      "name": "野村日経平均",
+      "direction": "LONG",
+      "entryTime": "09:43",
+      "exitTime": "09:44",
+      "entryPrice": 71110,
+      "exitPrice": 71120,
+      "pnl": 10,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "1321",
+        "date": "20260710"
+      },
+      "source": {
+        "csv": "stockorder_20260710.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W072",
+      "date": "20260713",
+      "code": "6981",
+      "name": "村田製",
+      "direction": "LONG",
+      "entryTime": "09:28",
+      "exitTime": "09:29",
+      "entryPrice": 9815,
+      "exitPrice": 9870,
+      "pnl": 5500,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "6981",
+        "date": "20260713"
+      },
+      "source": {
+        "csv": "stockorder_20260713 (1).csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W073",
+      "date": "20260714",
+      "code": "6976",
+      "name": "太陽誘電",
+      "direction": "SHORT",
+      "entryTime": "09:36",
+      "exitTime": "09:36",
+      "entryPrice": 11275,
+      "exitPrice": 11200,
+      "pnl": 7500,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "6976",
+        "date": "20260714"
+      },
+      "source": {
+        "csv": "stockorder_20260714 (1).csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W074",
+      "date": "20260715",
+      "code": "6981",
+      "name": "村田製",
+      "direction": "LONG",
+      "entryTime": "10:17",
+      "exitTime": "10:18",
+      "entryPrice": 8827,
+      "exitPrice": 8835,
+      "pnl": 800,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "6981",
+        "date": "20260715"
+      },
+      "source": {
+        "csv": "stockorder_20260715.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W075",
+      "date": "20260716",
+      "code": "6976",
+      "name": "太陽誘電",
+      "direction": "SHORT",
+      "entryTime": "09:12",
+      "exitTime": "09:12",
+      "entryPrice": 12455,
+      "exitPrice": 12315,
+      "pnl": 14000,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "6976",
+        "date": "20260716"
+      },
+      "source": {
+        "csv": "stockorder_20260716.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W076",
+      "date": "20260721",
+      "code": "5803",
+      "name": "フジクラ",
+      "direction": "SHORT",
+      "entryTime": "09:08",
+      "exitTime": "09:09",
+      "entryPrice": 4527,
+      "exitPrice": 4519,
+      "pnl": 800,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "5803",
+        "date": "20260721"
+      },
+      "source": {
+        "csv": "stockorder_20260721.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W077",
+      "date": "20260721",
+      "code": "6981",
+      "name": "村田製",
+      "direction": "SHORT",
+      "entryTime": "09:21",
+      "exitTime": "09:21",
+      "entryPrice": 7612,
+      "exitPrice": 7590,
+      "pnl": 2200,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "6981",
+        "date": "20260721"
+      },
+      "source": {
+        "csv": "stockorder_20260721.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W078",
+      "date": "20260722",
+      "code": "6976",
+      "name": "太陽誘電",
+      "direction": "SHORT",
+      "entryTime": "09:36",
+      "exitTime": "09:36",
+      "entryPrice": 13045,
+      "exitPrice": 12955,
+      "pnl": 9000,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "6976",
+        "date": "20260722"
+      },
+      "source": {
+        "csv": "stockorder_20260722.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W079",
+      "date": "20260723",
+      "code": "6976",
+      "name": "太陽誘電",
+      "direction": "LONG",
+      "entryTime": "10:41",
+      "exitTime": "10:41",
+      "entryPrice": 12560,
+      "exitPrice": 12570,
+      "pnl": 1000,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "6976",
+        "date": "20260723"
+      },
+      "source": {
+        "csv": "stockorder_20260723.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W080",
+      "date": "20260723",
+      "code": "6981",
+      "name": "村田製",
+      "direction": "SHORT",
+      "entryTime": "09:22",
+      "exitTime": "09:22",
+      "entryPrice": 8566,
+      "exitPrice": 8556,
+      "pnl": 1000,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "6981",
+        "date": "20260723"
+      },
+      "source": {
+        "csv": "stockorder_20260723.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W081",
+      "date": "20260724",
+      "code": "5803",
+      "name": "フジクラ",
+      "direction": "SHORT",
+      "entryTime": "09:10",
+      "exitTime": "09:11",
+      "entryPrice": 4646,
+      "exitPrice": 4635,
+      "pnl": 1100,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "5803",
+        "date": "20260724"
+      },
+      "source": {
+        "csv": "stockorder_20260724 (1).csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W082",
+      "date": "20260724",
+      "code": "6857",
+      "name": "アドテスト",
+      "direction": "SHORT",
+      "entryTime": "10:52",
+      "exitTime": "10:52",
+      "entryPrice": 28905,
+      "exitPrice": 28860,
+      "pnl": 4500,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "6857",
+        "date": "20260724"
+      },
+      "source": {
+        "csv": "stockorder_20260724 (1).csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W083",
+      "date": "20260728",
+      "code": "6976",
+      "name": "太陽誘電",
+      "direction": "SHORT",
+      "entryTime": "09:09",
+      "exitTime": "09:09",
+      "entryPrice": 10590,
+      "exitPrice": 10575,
+      "pnl": 1500,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "6976",
+        "date": "20260728"
+      },
+      "source": {
+        "csv": "stockorder_20260728.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W084",
+      "date": "20260730",
+      "code": "1321",
+      "name": "野村日経平均",
+      "direction": "LONG",
+      "entryTime": "09:00",
+      "exitTime": "09:00",
+      "entryPrice": 63520,
+      "exitPrice": 63710,
+      "pnl": 190,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "1321",
+        "date": "20260730"
+      },
+      "source": {
+        "csv": "stockorder_20260730.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W085",
+      "date": "20260804",
+      "code": "6857",
+      "name": "アドテスト",
+      "direction": "SHORT",
+      "entryTime": "10:03",
+      "exitTime": "10:04",
+      "entryPrice": 30870,
+      "exitPrice": 30740,
+      "pnl": 13000,
+      "pattern": null,
+      "board": {
+        "available": false,
+        "sources": [],
+        "replay": false,
+        "events": false,
+        "code": "6857",
+        "date": "20260804"
+      },
+      "source": {
+        "csv": "stockorder_20260804 (2).csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W086",
+      "date": "20260805",
+      "code": "6981",
+      "name": "村田製",
+      "direction": "LONG",
+      "entryTime": "09:04",
+      "exitTime": "09:04",
+      "entryPrice": 7408,
+      "exitPrice": 7422,
+      "pnl": 1400,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "6981",
+        "date": "20260805"
+      },
+      "source": {
+        "csv": "stockorder_20260805 (1).csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W087",
+      "date": "20260806",
+      "code": "9984",
+      "name": "ＳＢＧ",
+      "direction": "LONG",
+      "entryTime": "09:05",
+      "exitTime": "09:05",
+      "entryPrice": 5826,
+      "exitPrice": 5859,
+      "pnl": 3300,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "9984",
+        "date": "20260806"
+      },
+      "source": {
+        "csv": "stockorder_20260806.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W088",
+      "date": "20260807",
+      "code": "6315",
+      "name": "ＴＯＷＡ",
+      "direction": "LONG",
+      "entryTime": "09:03",
+      "exitTime": "09:03",
+      "entryPrice": 2860,
+      "exitPrice": 2865,
+      "pnl": 500,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "6315",
+        "date": "20260807"
+      },
+      "source": {
+        "csv": "stockorder_20260807.csv",
+        "tick": "未取得／CSV中心",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W089",
+      "date": "20260807",
+      "code": "6315",
+      "name": "ＴＯＷＡ",
+      "direction": "LONG",
+      "entryTime": "09:03",
+      "exitTime": "09:03",
+      "entryPrice": 2863,
+      "exitPrice": 2886,
+      "pnl": 2300,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "6315",
+        "date": "20260807"
+      },
+      "source": {
+        "csv": "stockorder_20260807.csv",
+        "tick": "未取得／CSV中心",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W090",
+      "date": "20260807",
+      "code": "6976",
+      "name": "太陽誘電",
+      "direction": "SHORT",
+      "entryTime": "09:35",
+      "exitTime": "09:36",
+      "entryPrice": 9726,
+      "exitPrice": 9688,
+      "pnl": 3800,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "6976",
+        "date": "20260807"
+      },
+      "source": {
+        "csv": "stockorder_20260807.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W091",
+      "date": "20260810",
+      "code": "7012",
+      "name": "川重",
+      "direction": "LONG",
+      "entryTime": "09:35",
+      "exitTime": "09:36",
+      "entryPrice": 2681,
+      "exitPrice": 2688,
+      "pnl": 700,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "7012",
+        "date": "20260810"
+      },
+      "source": {
+        "csv": "stockorder_20260810.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W092",
+      "date": "20260810",
+      "code": "7012",
+      "name": "川重",
+      "direction": "LONG",
+      "entryTime": "09:35",
+      "exitTime": "09:36",
+      "entryPrice": 2681.5,
+      "exitPrice": 2686,
+      "pnl": 450,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "7012",
+        "date": "20260810"
+      },
+      "source": {
+        "csv": "stockorder_20260810.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W093",
+      "date": "20260812",
+      "code": "5803",
+      "name": "フジクラ",
+      "direction": "SHORT",
+      "entryTime": "09:07",
+      "exitTime": "09:07",
+      "entryPrice": 5443,
+      "exitPrice": 5436,
+      "pnl": 700,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "5803",
+        "date": "20260812"
+      },
+      "source": {
+        "csv": "stockorder_20260812.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W094",
+      "date": "20260812",
+      "code": "6976",
+      "name": "太陽誘電",
+      "direction": "SHORT",
+      "entryTime": "09:08",
+      "exitTime": "09:08",
+      "entryPrice": 9453,
+      "exitPrice": 9399,
+      "pnl": 5400,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "BrisX"
+        ],
+        "replay": false,
+        "events": false,
+        "code": "6976",
+        "date": "20260812"
+      },
+      "source": {
+        "csv": "stockorder_20260812.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W095",
+      "date": "20260813",
+      "code": "5801",
+      "name": "古河電",
+      "direction": "LONG",
+      "entryTime": "09:58",
+      "exitTime": "09:58",
+      "entryPrice": 4260,
+      "exitPrice": 4263,
+      "pnl": 300,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "板読みTools",
+          "BrisX"
+        ],
+        "replay": true,
+        "events": false,
+        "code": "5801",
+        "date": "20260813"
+      },
+      "source": {
+        "csv": "stockorder_20260813.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W096",
+      "date": "20260813",
+      "code": "5801",
+      "name": "古河電",
+      "direction": "SHORT",
+      "entryTime": "10:02",
+      "exitTime": "10:03",
+      "entryPrice": 4272,
+      "exitPrice": 4263,
+      "pnl": 900,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "板読みTools",
+          "BrisX"
+        ],
+        "replay": true,
+        "events": false,
+        "code": "5801",
+        "date": "20260813"
+      },
+      "source": {
+        "csv": "stockorder_20260813.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W097",
+      "date": "20260813",
+      "code": "6976",
+      "name": "太陽誘電",
+      "direction": "LONG",
+      "entryTime": "09:01",
+      "exitTime": "09:01",
+      "entryPrice": 10390,
+      "exitPrice": 10445,
+      "pnl": 5500,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "板読みTools",
+          "BrisX"
+        ],
+        "replay": true,
+        "events": false,
+        "code": "6976",
+        "date": "20260813"
+      },
+      "source": {
+        "csv": "stockorder_20260813.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W098",
+      "date": "20260813",
+      "code": "6976",
+      "name": "太陽誘電",
+      "direction": "SHORT",
+      "entryTime": "09:20",
+      "exitTime": "09:21",
+      "entryPrice": 11235,
+      "exitPrice": 11180,
+      "pnl": 5500,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "板読みTools",
+          "BrisX"
+        ],
+        "replay": true,
+        "events": false,
+        "code": "6976",
+        "date": "20260813"
+      },
+      "source": {
+        "csv": "stockorder_20260813.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W099",
+      "date": "20260817",
+      "code": "5803",
+      "name": "フジクラ",
+      "direction": "LONG",
+      "entryTime": "09:33",
+      "exitTime": "09:33",
+      "entryPrice": 5864,
+      "exitPrice": 5865,
+      "pnl": 100,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "板読みTools",
+          "BrisX"
+        ],
+        "replay": true,
+        "events": true,
+        "code": "5803",
+        "date": "20260817"
+      },
+      "source": {
+        "csv": "stockorder_20260817.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W100",
+      "date": "20260817",
+      "code": "6976",
+      "name": "太陽誘電",
+      "direction": "LONG",
+      "entryTime": "09:17",
+      "exitTime": "09:18",
+      "entryPrice": 10775,
+      "exitPrice": 10805,
+      "pnl": 3000,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "板読みTools",
+          "BrisX"
+        ],
+        "replay": true,
+        "events": true,
+        "code": "6976",
+        "date": "20260817"
+      },
+      "source": {
+        "csv": "stockorder_20260817.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W101",
+      "date": "20260819",
+      "code": "6976",
+      "name": "太陽誘電",
+      "direction": "SHORT",
+      "entryTime": "10:14",
+      "exitTime": "10:14",
+      "entryPrice": 9794,
+      "exitPrice": 9771,
+      "pnl": 2300,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "板読みTools",
+          "BrisX"
+        ],
+        "replay": true,
+        "events": false,
+        "code": "6976",
+        "date": "20260819"
+      },
+      "source": {
+        "csv": "stockorder_20260819.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W102",
+      "date": "20260819",
+      "code": "6981",
+      "name": "村田製",
+      "direction": "SHORT",
+      "entryTime": "09:05",
+      "exitTime": "09:05",
+      "entryPrice": 7277,
+      "exitPrice": 7268,
+      "pnl": 900,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "板読みTools",
+          "BrisX"
+        ],
+        "replay": true,
+        "events": false,
+        "code": "6981",
+        "date": "20260819"
+      },
+      "source": {
+        "csv": "stockorder_20260819.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W103",
+      "date": "20260819",
+      "code": "6981",
+      "name": "村田製",
+      "direction": "SHORT",
+      "entryTime": "09:14",
+      "exitTime": "09:15",
+      "entryPrice": 7323,
+      "exitPrice": 7303,
+      "pnl": 2000,
+      "pattern": null,
+      "board": {
+        "available": true,
+        "sources": [
+          "板読みTools",
+          "BrisX"
+        ],
+        "replay": true,
+        "events": false,
+        "code": "6981",
+        "date": "20260819"
+      },
+      "source": {
+        "csv": "stockorder_20260819.csv",
+        "tick": "R2同期CSV",
+        "diary": "full_day_312_trade_charts manifest（取引履歴CSV集計）"
+      }
+    },
+    {
+      "id": "W104",
+      "date": "20260824",
+      "code": "6981",
+      "name": "村田製",
+      "direction": "LONG",
+      "entryTime": "09:00",
+      "exitTime": "09:01",
+      "entryPrice": 7050,
+      "exitPrice": 7072,
+      "pnl": 2200,
+      "pattern": {
+        "id": "P0",
+        "name": "型未確定／ルール外候補",
+        "ruleStatus": "PENDING_EVIDENCE",
+        "reason": "実約定は確認できるが、ENTRY前の型・トリガー・無効化値を同時に確認できない。",
+        "invalidation": "ENTRY前に型・トリガー・無効化値・第一TP・見送り条件を記録できなければ見送る。"
+      },
+      "board": {
+        "available": true,
+        "sources": [
+          "板読みTools",
+          "BrisX"
+        ],
+        "replay": true,
+        "events": false,
+        "code": "6981",
+        "date": "20260824"
+      },
+      "source": {
+        "csv": "stockorder_20260824 (1).csv",
+        "tick": "R2同期CSV",
+        "diary": "entry_pattern_database（日誌レビュー反映）"
+      }
+    },
+    {
+      "id": "W105",
+      "date": "20260824",
+      "code": "6981",
+      "name": "村田製",
+      "direction": "SHORT",
+      "entryTime": "09:43",
+      "exitTime": "09:44",
+      "entryPrice": 7168,
+      "exitPrice": 7150,
+      "pnl": 1800,
+      "pattern": {
+        "id": "P3",
+        "name": "戻り売り／下方向継続SELL",
+        "ruleStatus": "PROVISIONAL",
+        "reason": "6981の09:43。上げ止まり後の短期戻り売りと推定。",
+        "invalidation": "直近戻り高値を回復して維持したらSELL無効。"
+      },
+      "board": {
+        "available": true,
+        "sources": [
+          "板読みTools",
+          "BrisX"
+        ],
+        "replay": true,
+        "events": false,
+        "code": "6981",
+        "date": "20260824"
+      },
+      "source": {
+        "csv": "stockorder_20260824 (1).csv",
+        "tick": "R2同期CSV",
+        "diary": "entry_pattern_database（日誌レビュー反映）"
+      }
+    },
+    {
+      "id": "W106",
+      "date": "20260825",
+      "code": "1321",
+      "name": "野村日経平均",
+      "direction": "LONG",
+      "entryTime": "09:22",
+      "exitTime": "09:23",
+      "entryPrice": 67090,
+      "exitPrice": 67100,
+      "pnl": 10,
+      "pattern": {
+        "id": "P10",
+        "name": "225シンクロLONG／短期戻し",
+        "ruleStatus": "PROVISIONAL",
+        "reason": "1321の09:22。225の短期戻しを狙ったLONGとして仮分類。",
+        "invalidation": "225の基準値を維持できず、安値更新が再開したらLONG無効。"
+      },
+      "board": {
+        "available": true,
+        "sources": [
+          "板読みTools",
+          "BrisX"
+        ],
+        "replay": true,
+        "events": false,
+        "code": "1321",
+        "date": "20260825"
+      },
+      "source": {
+        "csv": "stockorder_20260825.csv",
+        "tick": "R2同期CSV",
+        "diary": "entry_pattern_database（日誌レビュー反映）"
+      }
+    },
+    {
+      "id": "W107",
+      "date": "20260828",
+      "code": "7974",
+      "name": "任天堂",
+      "direction": "LONG",
+      "entryTime": "09:15",
+      "exitTime": "09:16",
+      "entryPrice": 8948,
+      "exitPrice": 8958,
+      "pnl": 1000,
+      "pattern": {
+        "id": "P4",
+        "name": "板読み短期スキャル",
+        "ruleStatus": "RULE_IN_CANDIDATE",
+        "reason": "7974の09:15。買い板の強さと価格維持を見て短く取った板読みスキャル。",
+        "invalidation": "買い板の後退・価格維持失敗・VWAP割れのいずれかで撤退。"
+      },
+      "board": {
+        "available": true,
+        "sources": [
+          "板読みTools"
+        ],
+        "replay": true,
+        "events": false,
+        "code": "7974",
+        "date": "20260828"
+      },
+      "source": {
+        "csv": "stockorder_20260828 (1).csv",
+        "tick": "R2同期CSV",
+        "diary": "entry_pattern_database（日誌レビュー反映）"
+      }
+    },
+    {
+      "id": "W108",
+      "date": "20260828",
+      "code": "7974",
+      "name": "任天堂",
+      "direction": "LONG",
+      "entryTime": "09:15",
+      "exitTime": "09:16",
+      "entryPrice": 8955,
+      "exitPrice": 8959,
+      "pnl": 400,
+      "pattern": {
+        "id": "P4",
+        "name": "板読み短期スキャル",
+        "ruleStatus": "RULE_IN_CANDIDATE",
+        "reason": "7974の09:15。買い板の強さと価格維持を見て短く取った板読みスキャル。",
+        "invalidation": "買い板の後退・価格維持失敗・VWAP割れのいずれかで撤退。"
+      },
+      "board": {
+        "available": true,
+        "sources": [
+          "板読みTools"
+        ],
+        "replay": true,
+        "events": false,
+        "code": "7974",
+        "date": "20260828"
+      },
+      "source": {
+        "csv": "stockorder_20260828 (1).csv",
+        "tick": "R2同期CSV",
+        "diary": "entry_pattern_database（日誌レビュー反映）"
+      }
+    }
+  ]
+}

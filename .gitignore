@@ -3,6 +3,7 @@
 
 # Keep this repository focused on the app code and publishing scripts.
 !.gitignore
+!index.html
 !DEPLOYMENT.md
 !apps/
 !apps/README.md
@@ -13,6 +14,9 @@
 !scripts/
 !scripts/build_daily_manifest.py
 !scripts/r2_publish.py
+!scripts/build_success_trade_quiz_20261003.js
+!success_trade_quiz_20261003/
+!success_trade_quiz_20261003/**
 
 # Never commit generated installs, builds, local app state, or credentials.
 **/node_modules/
@@ -39,3 +43,5 @@ Temp/
 *.mp3
 *.aiff
 *.wav
+!success_trade_quiz_20261003/
+!success_trade_quiz_20261003/**
