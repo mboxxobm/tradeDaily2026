@@ -1,0 +1,75 @@
+{
+  "date": "2026-10-02",
+  "board_root": "/Volumes/Documents/043kabustationData/20261002fri",
+  "r2_root": "/Volumes/1000GB20260826/BrisX/GEMINIGravity/20261002_picked",
+  "output": "/Users/th/Documents/TradeDayReport20260821/outputs/diary_20261002/assets/board_walk_20261002.html",
+  "symbols": [
+    {
+      "code": "285A",
+      "name": "キオクシアHD",
+      "tape_bars": 1302,
+      "board_bars": 1365,
+      "tape_ticks": 79004,
+      "board_files": [
+        "/Volumes/Documents/043kabustationData/20261002fri/285A_20261002_082437.jsonl.gz",
+        "/Volumes/Documents/043kabustationData/20261002fri/285A_20261002_122500.jsonl.gz"
+      ]
+    },
+    {
+      "code": "5803",
+      "name": "フジクラ",
+      "tape_bars": 1302,
+      "board_bars": 1365,
+      "tape_ticks": 111606,
+      "board_files": [
+        "/Volumes/Documents/043kabustationData/20261002fri/5803_20261002_082437.jsonl.gz",
+        "/Volumes/Documents/043kabustationData/20261002fri/5803_20261002_122500.jsonl.gz"
+      ]
+    },
+    {
+      "code": "6976",
+      "name": "太陽誘電",
+      "tape_bars": 1302,
+      "board_bars": 1365,
+      "tape_ticks": 128750,
+      "board_files": [
+        "/Volumes/Documents/043kabustationData/20261002fri/6976_20261002_082437.jsonl.gz",
+        "/Volumes/Documents/043kabustationData/20261002fri/6976_20261002_122500.jsonl.gz"
+      ]
+    },
+    {
+      "code": "7974",
+      "name": "任天堂",
+      "tape_bars": 1293,
+      "board_bars": 1365,
+      "tape_ticks": 15985,
+      "board_files": [
+        "/Volumes/Documents/043kabustationData/20261002fri/7974_20261002_082437.jsonl.gz",
+        "/Volumes/Documents/043kabustationData/20261002fri/7974_20261002_122500.jsonl.gz"
+      ]
+    },
+    {
+      "code": "9984",
+      "name": "ソフトバンクG",
+      "tape_bars": 1302,
+      "board_bars": 1365,
+      "tape_ticks": 103366,
+      "board_files": [
+        "/Volumes/Documents/043kabustationData/20261002fri/9984_20261002_082437.jsonl.gz",
+        "/Volumes/Documents/043kabustationData/20261002fri/9984_20261002_122500.jsonl.gz"
+      ]
+    },
+    {
+      "code": "1321",
+      "name": "日経225連動ETF（地合い確認）",
+      "tape_bars": 1282,
+      "board_bars": 1365,
+      "tape_ticks": 7609,
+      "board_files": [
+        "/Volumes/Documents/043kabustationData/20261002fri/1321_20261002_082437.jsonl.gz",
+        "/Volumes/Documents/043kabustationData/20261002fri/1321_20261002_122500.jsonl.gz"
+      ]
+    }
+  ],
+  "bytes": 690619
+}
