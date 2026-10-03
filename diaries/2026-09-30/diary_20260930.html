@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../shared/chart_viewer.css?v=20260930-diary">
+<script defer src="../../shared/chart_viewer.js?v=20260930-diary"></script>
+<title>2026年9月30日（水）日本株デイトレード日誌｜285A・7974・6981と板読み</title>
+<style>
+:root{color-scheme:dark;--bg:#081019;--panel:#111d29;--panel2:#172938;--line:#30495d;--text:#edf5fa;--muted:#adbfcd;--blue:#83caff;--cyan:#6ce7d7;--yellow:#ffd766;--red:#ff8794;--green:#72e5ad;--orange:#f1b25b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;line-height:1.75}
+main{width:min(1500px,100%);margin:auto;padding:26px 24px 76px}h1{font-size:clamp(26px,3.4vw,48px);line-height:1.25;margin:0 0 12px}h2{font-size:clamp(21px,2.2vw,30px);line-height:1.35;border-left:5px solid var(--blue);padding-left:12px;margin:42px 0 15px}h3{font-size:clamp(17px,1.8vw,23px);line-height:1.4;color:#dff0ff;margin:28px 0 10px}p{margin:10px 0 16px}.muted,.small{color:var(--muted)}.small{font-size:13px}
+.notice,.key,.rule,.warning{border:1px solid var(--line);border-radius:12px;padding:14px 17px;margin:15px 0;background:#142536}.notice{background:#302811;border-color:#a17e28;color:#ffefb1}.key{background:#102c2c;border-color:#2f7e79}.warning{background:#2a1720;border-color:#8e4254}.nav{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 22px}.nav a{color:var(--blue);text-decoration:none;border:1px solid var(--line);background:#101d2a;border-radius:999px;padding:5px 12px;font-size:13px}.nav a:hover{border-color:var(--blue);background:#162c40}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:16px 0}.card,.panel{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:16px}.card .label{color:var(--muted);font-size:13px}.card .value{font-size:clamp(22px,2.6vw,34px);font-weight:750;margin:3px 0}.negative{color:var(--red)}.positive{color:var(--green)}.warn{color:var(--yellow)}.cyan{color:var(--cyan)}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}.table-wrap{overflow-x:auto;margin:12px 0 22px}table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);font-size:14px}th,td{border:1px solid var(--line);padding:8px 10px;vertical-align:top;text-align:left}th{background:var(--panel2);color:#e4f3ff;white-space:nowrap}.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:16px;margin:16px 0}.gallery figure,.wide-figure{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:10px}.gallery img,.wide-figure img{display:block;width:100%;height:auto;border-radius:8px;background:#05090d}.gallery figcaption,.wide-figure figcaption{color:var(--muted);font-size:13px;padding:8px 2px 2px}.foot{margin-top:52px;border-top:1px solid var(--line);padding-top:18px;color:var(--muted);font-size:13px}code{background:#102333;border:1px solid #29465c;border-radius:5px;padding:1px 5px;color:#d6ecfb}a{color:var(--blue)}ul,ol{padding-left:24px}
+@media(max-width:800px){main{padding:18px 12px 52px}.two{grid-template-columns:1fr}.gallery{grid-template-columns:1fr}table{font-size:13px}}
+</style>
+</head>
+<body>
+<main id="top">
+<h1>2026年9月30日（水）日本株デイトレード日誌｜285A・7974・6981と板読み</h1>
+<div class="notice"><strong>本番確定版：</strong>板読みデータは9:00〜11:35ごろと12:25〜15:31ごろ、松井証券CSVは12:44までを確認。11:35〜12:25ごろは昼休みのため板観測が空白で、そこは補間していない。CSVと板JSONLを分けて記録し、9:00〜15:30の終日チャートを反映した。<br><strong>CSV確認済み粗損益：</strong><span class="negative">−4,200円</span>（手数料・税引前概算）。285Aは+500円、7974は−3,000円、6981は−1,700円。9984・6857・1321は今回のCSVで実約定未確認。</div>
+<nav class="nav" aria-label="ページ内リンク"><a href="#summary">結論</a><a href="#environment">環境認識</a><a href="#timeline">値動き</a><a href="#board">285A板読み</a><a href="#tdk">TDKセル候補</a><a href="#compare">銘柄比較</a><a href="#trades">CSV実約定</a><a href="#charts">チャート</a><a href="#rules">再現性ルール</a><a href="#update">本番確認</a></nav>
+
+<section id="summary">
+<h2>0. 本日の結論</h2>
+<div class="grid">
+<div class="card"><div class="label">CSV確認済み粗損益</div><div class="value negative">−4,200円</div><div class="small">手数料・税引前／12:44まで</div></div>
+<div class="card"><div class="label">285A キオクシア</div><div class="value positive">+500円</div><div class="small">SHORT損切り後のLONGで回復</div></div>
+<div class="card"><div class="label">7974 任天堂</div><div class="value negative">−3,000円</div><div class="small">LONG 2回とも損切り</div></div>
+<div class="card"><div class="label">6981 村田製作所</div><div class="value negative">−1,700円</div><div class="small">12:32 LONG → 12:44返済</div></div>
+<div class="card"><div class="label">板データの範囲</div><div class="value warn">9:00–15:31</div><div class="small">昼休み11:35–12:25は空白</div></div>
+</div>
+<p>本日の中心テーマは、下方向の地合いまたは銘柄個別の下落の中で、<strong>売りが出ても価格が進まない場所を反転期待値ZONEとして読めるか</strong>だった。厚い買い板やRVOL上昇だけで反転を確定せず、安値更新の停止、後続足の縮小、VWAP・指数との位置関係、無効化ラインを合わせて判断する。</p>
+<div class="key"><strong>本日の一文：</strong>出来高は「いつもより動いている可能性」を知らせる合図、板は圧力と反応の候補、価格の停止と再上昇がENTRYの判断材料。285Aでは反発を複数回取れた一方、7974では支持の継続を確認できず、同じ「下げ止まり」に見える形でも銘柄ごとの再現性が違った。</div>
+</section>
+
+<section id="environment">
+<h2>1. 朝の環境認識</h2>
+<div class="two">
+<div class="panel"><h3>US100</h3><ul><li>9:29時点のWilliams %Rは約−47で中間付近。</li><li>前日の2時ごろからのレンジを上抜け、上昇後に同じ価格帯を試すダブルトップ状。</li><li>下降トレンドラインを上抜け、カップ・アンド・ハンドルのハンドル支持を割らずに戻す形を観察。</li><li>月足・週足はN字のダウで上方向、日足は高値付近のクラスター／レンジとして見た。</li></ul></div>
+<div class="panel"><h3>日経225</h3><ul><li>日足はレンジ上限付近。60EMAは上向きとの認識。</li><li>9:37ごろは下げたが本日安値を更新できず戻し、下方向の継続は未確認。</li><li>「%Rではまだ上方向で山がある」は日経平均の話で、285Aの指標とは分ける。</li><li>指数が上向きでも、個別の買いが続き期待どおり加速するとは限らない。</li></ul></div>
+</div>
+<p class="small">価格・方向・出来高は実況時点の観察を含む。市場データで独立検証できた部分は、下記の板JSONL・松井証券CSVを優先する。</p>
+</section>
+
+<section id="timeline">
+<h2>2. 前場の実況タイムライン</h2>
+<div class="table-wrap"><table><thead><tr><th>時刻</th><th>銘柄・対象</th><th>観察／本人の説明</th><th>確度</th></tr></thead><tbody>
+<tr><td>09:29</td><td>US100</td><td>%R約−47。レンジ上抜け、ハンドル支持を観察。</td><td>実況観察</td></tr>
+<tr><td>09:32</td><td>9984</td><td>6,252円、本日安値6,225円との画面読み取り。約4.97%ギャップアップ。</td><td>画面・実況観察</td></tr>
+<tr><td>09:37</td><td>日経225</td><td>下げたが本日安値を更新できず戻す。</td><td>実況観察</td></tr>
+<tr><td>09:24</td><td>6762 TDK</td><td>3,000円付近で約15万株の大出来高があったとの後日の振り返り。</td><td>実況観察・板未照合</td></tr>
+<tr><td>09:44</td><td>6762 TDK</td><td>それまでの支持帯を下抜けた場面を、セル候補として振り返った。</td><td>実行・約定は未確認</td></tr>
+<tr><td>10:02</td><td>285A</td><td>サポレジが効き、ピンバーから上昇したとの報告。</td><td>実況観察</td></tr>
+<tr><td>10:12–10:22</td><td>285A</td><td>SHORT損切り後、日経連動のLONG。18,445円の高値更新を後に訂正。</td><td>CSVで一部確認</td></tr>
+<tr><td>10:26–10:48</td><td>7974</td><td>7,850円付近の売り吸収を見てLONG。初回・再エントリーとも損切り。</td><td>CSVで確認</td></tr>
+<tr><td>10:48–11:07</td><td>285A</td><td>低ボラの中で再度LONG。実況の18,355円利確とは別に、CSVで2回の決済を確認。</td><td>CSVで確認</td></tr>
+<tr><td>11:08</td><td>285A</td><td>下方向を見てSHORTを検討。</td><td>実行は未確認</td></tr>
+<tr><td>11:12</td><td>285A</td><td>大陰線後に下がらない反応、ピンバー98,000株との報告。</td><td>数値・約定対応は未確認</td></tr>
+<tr><td>11:14–11:19</td><td>285A</td><td>後半の反発をLONG。18,330円付近で利確したとの実況。</td><td>CSVで18,265→18,300を確認</td></tr>
+<tr><td>11:55ごろ</td><td>6762 TDK</td><td>9:44セル候補を振り返り。リスク約4,400円、利確候補約8,200円という想定を共有。</td><td>実約定・SLは未確認</td></tr>
+<tr><td>12:32–12:44</td><td>6981</td><td>LONG 7,902円→7,885円、100株。</td><td>CSVで−1,700円を確認</td></tr>
+<tr><td>12:45–12:48</td><td>6981</td><td>CSV返済後の時間帯に下落し、支えられて7,911円方向へ戻したとの実況。</td><td>実況観察・板は取得済み</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="board">
+<h2>3. 285A キオクシア｜下げ止まりと反転期待値ZONE</h2>
+<div class="grid">
+<div class="card"><div class="label">終日レンジ</div><div class="value cyan">17,920–18,460円</div><div class="small">板JSONL 9:00–15:31</div></div>
+<div class="card"><div class="label">最終観測VWAP</div><div class="value">約18,212円</div><div class="small">最終観測価格18,095円</div></div>
+<div class="card"><div class="label">累積TradingVolume</div><div class="value">3,913万株</div><div class="small">板データの累積値</div></div>
+<div class="card"><div class="label">CSV確認損益</div><div class="value positive">+500円</div><div class="small">11:19まで／粗損益</div></div>
+</div>
+<p>実況では18,305円付近を割らず、約14万株の売りが出ても下がらなかったと観察した。この「売りの努力に対して価格の下落結果が小さい」という読みは、下落停止型・出来高反転の候補条件に合う。</p>
+<div class="two">
+<div class="panel"><h3>反転期待値ZONEの条件</h3><ol><li>陰線・大出来高・売り板など、下方向の圧力を確認する。</li><li>安値更新が止まり、後続足が縮小するかを見る。</li><li>買い板の厚さではなく、価格が下がらない反応を確認する。</li><li>18,305–18,315円を割った場合の無効化を先に決める。</li><li>VWAPまたは直近戻り高値までの値幅とリスクを比較してサイズを決める。</li></ol></div>
+<div class="panel"><h3>今回のCSV実績</h3><ul><li>10:12 SHORT 18,320→18,395円：<span class="negative">−7,500円</span></li><li>10:17 LONG 18,375→18,415円：<span class="positive">+4,000円</span></li><li>10:48 LONG 18,385→18,370円：<span class="negative">−1,500円</span></li><li>10:59 LONG 18,330→18,350円：<span class="positive">+2,000円</span></li><li>11:14 LONG 18,265→18,300円：<span class="positive">+3,500円</span></li></ul></div>
+</div>
+<div class="warning"><strong>実況とCSVの分離：</strong>18,355円での利確、18,285円までの急落、11:19ごろの18,330円付近利確は実況イベントとして記録する。今回のCSVの各約定と一対一に対応付けられないため、CSV損益にはCSVの約定だけを採用した。</div>
+</section>
+
+<section id="tdk">
+<h2>4. TDK（6762）｜9:44サポート割れのセル候補</h2>
+<p>11:55ごろの振り返りでは、TDKの1分足・2分足で3,000円付近の価格帯を確認した。9:24ごろに約15万株の大きな出来高が出た後、いったん支えられた価格帯を下方向へ抜け、9:44ごろのサポート割れがセル候補になったという整理である。</p>
+<div class="two">
+<div class="panel"><h3>パターンの読み</h3><ul><li>3,000円付近で買われた価格帯を、最初の観察基準にする。</li><li>大出来高の後に価格が上へ戻せず、支持帯を明確に割ったら下方向の継続候補とする。</li><li>利確候補は前日終値・前々日終値付近。振り返りではリスク約<strong>4,400円</strong>に対し、約<strong>8,200円</strong>の利確余地という想定が共有された。</li></ul></div>
+<div class="panel"><h3>確度と未確認</h3><ul><li>「高値ブレイクアップに沿ってのセル」という表現は残すが、どの高値・時間足を指すかは未照合。</li><li>今回の松井証券CSVにTDKの対応する実約定、正確なストップロス価格、数量はない。</li><li>実績トレードではなく、<strong>大出来高→支持崩れ→戻り売りを検証する仮説パターン</strong>として記録する。</li></ul></div>
+</div>
+<div class="key"><strong>再現性の条件：</strong>9:24の大出来高だけで売らず、①支持帯の再テスト、②反発失敗、③9:44の下抜け、④ストップ位置と前日・前々日終値までの値幅、の4点を事前に固定する。</div>
+</section>
+
+<section id="compare">
+<h2>5. 6981 村田製作所・7974・9984・6857・1321の比較</h2>
+<div class="table-wrap"><table><thead><tr><th>銘柄</th><th>終日レンジ</th><th>最終観測</th><th>VWAP</th><th>累積出来高</th><th>扱い</th></tr></thead><tbody>
+<tr><td>7974 任天堂</td><td>7,847–7,984円</td><td>7,944円</td><td>約7,929円</td><td>672.74万株</td><td>下げ止まりLONGを2回試したが、支持が継続せずCSV損益−3,000円。</td></tr>
+<tr><td>6981 村田製作所</td><td>7,825–8,248円</td><td>7,851円</td><td>約7,950円</td><td>2,463.27万株</td><td>12:32 LONG→12:44返済をCSV確認。粗損益−1,700円。昼休み以外は板確認済み。</td></tr>
+<tr><td>9984 ソフトバンクG</td><td>6,035–6,477円</td><td>6,430円</td><td>約6,381円</td><td>6,519.45万株</td><td>ギャップアップ後の下落・反発を終日観察。CSV実約定なし。</td></tr>
+<tr><td>6857 アドバンテスト</td><td>33,880–34,920円</td><td>34,260円</td><td>約34,283円</td><td>2,372.34万株</td><td>高ボラ・レンジ・出来高増加を終日観察。CSV実約定なし。</td></tr>
+<tr><td>1321 NF日経225</td><td>68,760–69,700円</td><td>69,620円</td><td>約69,226円</td><td>24.75万株</td><td>個別の方向確認に使う指数連動商品の終日観察。</td></tr>
+</tbody></table></div>
+<h3>6981 村田製作所の後場追記</h3>
+<p>実況では11:14ごろ、約10万株の売りが出ても価格が下がらない「中での強さ／支え」を観察し、LONGを検討した。その後、12:45〜12:48ごろに下落してから支えられ、7,911円方向へ戻す動きが報告された。一方、7,948円をダウの分岐点として、指数と村田製作所の方向が分かれる場面を意識していた。</p>
+<p>CSVで確認できる実約定は、<strong>12:32に7,902円で100株LONG、12:44に7,885円で返済、<span class="negative">−1,700円</span></strong>である。板JSONLは12:25以降15:31ごろまで取得できているため、12:32〜12:44の時間帯も板スナップショット・出来高・RVOL近似を確認できる。ただし、板数量は注文の存在を示すだけで、CSV約定の方向や因果を単独では確定しない。また、12:45〜12:48の実況観察はCSV返済後であり、今回のポジションを保有したままの反発とは扱わない。</p>
+<div class="key"><strong>村田製作所の判断：</strong>指数と個別の方向が食い違い、「分からない」と感じた時点で撤退したことは、再現性のあるリスク管理として残す。7,948円の分岐点を回復できない、または板データが連続していない場合は、サイズを落とすか見送る。</div>
+<p>同じ「下落後に止まったように見える形」でも、285Aは値幅と反発が複数回出た一方、7974は支持が続かなかった。出来高の突出だけでなく、価格反応の継続とVWAPへの戻りを確認する。6857は終盤でも価格がVWAPを下回り、上値追いを急がない整理とした。</p>
+</section>
+
+<section id="trades">
+<h2>6. 松井証券CSV実約定</h2>
+<div class="table-wrap"><table><thead><tr><th>銘柄</th><th>方向</th><th>ENTRY</th><th>EXIT</th><th>数量</th><th>粗損益</th></tr></thead><tbody>
+<tr><td>285A</td><td>SHORT</td><td>10:12 / 18,320円</td><td>10:15 / 18,395円</td><td>100</td><td class="negative">−7,500円</td></tr>
+<tr><td>285A</td><td>LONG</td><td>10:17 / 18,375円</td><td>10:22 / 18,415円</td><td>100</td><td class="positive">+4,000円</td></tr>
+<tr><td>7974</td><td>LONG</td><td>10:26 / 7,860円</td><td>10:39 / 7,854円</td><td>100</td><td class="negative">−600円</td></tr>
+<tr><td>7974</td><td>LONG</td><td>10:27 / 7,858円</td><td>10:39 / 7,853円</td><td>100</td><td class="negative">−500円</td></tr>
+<tr><td>7974</td><td>LONG</td><td>10:28 / 7,859円</td><td>10:39 / 7,854円</td><td>100</td><td class="negative">−500円</td></tr>
+<tr><td>7974</td><td>LONG</td><td>10:45 / 7,857円</td><td>10:47 / 7,853円</td><td>100</td><td class="negative">−400円</td></tr>
+<tr><td>7974</td><td>LONG</td><td>10:45 / 7,858円</td><td>10:47 / 7,853円</td><td>100</td><td class="negative">−500円</td></tr>
+<tr><td>7974</td><td>LONG</td><td>10:45 / 7,857円</td><td>10:48 / 7,852円</td><td>100</td><td class="negative">−500円</td></tr>
+<tr><td>285A</td><td>LONG</td><td>10:48 / 18,385円</td><td>10:54 / 18,370円</td><td>100</td><td class="negative">−1,500円</td></tr>
+<tr><td>285A</td><td>LONG</td><td>10:59 / 18,330円</td><td>11:07 / 18,350円</td><td>100</td><td class="positive">+2,000円</td></tr>
+<tr><td>285A</td><td>LONG</td><td>11:14 / 18,265円</td><td>11:19 / 18,300円</td><td>100</td><td class="positive">+3,500円</td></tr>
+<tr><td>6981</td><td>LONG</td><td>12:32 / 7,902円</td><td>12:44 / 7,885円</td><td>100</td><td class="negative">−1,700円</td></tr>
+<tr><th colspan="5">合計</th><th class="negative">−4,200円</th></tr>
+</tbody></table></div>
+<p class="small">CSVの状態欄は「−」だが、約定数・約定単価・約定時間が埋まった24行・12組を約定データとして集計した。手数料・税金は含めていない。6981の12:32〜12:44はCSV実績だが、板JSONLの取得範囲外である。</p>
+</section>
+
+<section id="charts">
+<h2>7. 9:00〜15:30軸の板読み・出来高チャート</h2>
+<p>板データは9:00〜11:35ごろと12:25〜15:31ごろ。チャートは9:00〜15:30の軸で、昼休みの空白だけを残している。価格、VWAP、CSV実約定、板IMB、出来高増分、RVOL近似を同じ時間軸で復習できるようにした。6981の12:32〜12:44はCSVマーカーと同時間帯の板反応を表示しているが、板数量だけで約定方向を確定してはいない。下部の4カードは、判断の根拠・実約定・再エントリー・終日観測を分けている。</p>
+<figure class="wide-figure"><img src="../../assets/2026-09-30/board_reading/board-reading-285A-20260930.png" alt="285A キオクシアホールディングス 2026年9月30日 終日板読みチャート"><figcaption>285A キオクシア｜9:00–15:31観測。18,305–18,315円の観察支持帯、CSV実約定、板IMB、出来高増分、RVOL近似を表示。昼休みの11:35–12:25ごろは空白として残している。</figcaption></figure>
+<div class="gallery">
+<figure><img src="../../assets/2026-09-30/board_reading/board-reading-7974-20260930.png" alt="7974 任天堂 2026年9月30日 終日板読みチャート"><figcaption>7974 任天堂｜下げ止まりLONGを2回試したが、CSVでは合計−3,000円。終日板と出来高を確認。</figcaption></figure>
+<figure><img src="../../assets/2026-09-30/board_reading/board-reading-6981-20260930.png" alt="6981 村田製作所 2026年9月30日 終日板読みチャート"><figcaption>6981 村田製作所｜板は9:00–11:35／12:25–15:31。昼休みのみ空白で、12:32〜12:44のCSV実約定と板反応を表示。</figcaption></figure>
+<figure><img src="../../assets/2026-09-30/board_reading/board-reading-9984-20260930.png" alt="9984 ソフトバンクグループ 2026年9月30日 終日板読みチャート"><figcaption>9984 ソフトバンクG｜終日の値幅と出来高。実約定なしの観察銘柄。</figcaption></figure>
+<figure><img src="../../assets/2026-09-30/board_reading/board-reading-6857-20260930.png" alt="6857 アドバンテスト 2026年9月30日 終日板読みチャート"><figcaption>6857 アドバンテスト｜高ボラ・レンジ・終盤VWAP下の観察。</figcaption></figure>
+<figure><img src="../../assets/2026-09-30/board_reading/board-reading-1321-20260930.png" alt="1321 NF日経225 2026年9月30日 終日板読みチャート"><figcaption>1321 NF日経225｜個別銘柄の地合い確認用に終日観察。</figcaption></figure>
+</div>
+<div class="key"><strong>RVOLの意味：</strong>このチャートのRVOL近似は、板JSONLの5分出来高増分を当日直前30本平均で割った補助表示。1.0xは平均、2.0x以上は異常候補。TradingViewの過去同時刻比較そのものではない。RVOLは指標合図であり、トレンド・売買方向・ENTRYを確定しない。</div>
+</section>
+
+<section id="rules">
+<h2>8. 再現性のある判断ルール</h2>
+<div class="two">
+<div class="panel"><h3>285Aで機能した考え方</h3><ol><li>大陰線・大出来高・売り板などの圧力を見る。</li><li>安値更新が止まり、後続足が縮小するか確認する。</li><li>18,305–18,315円を無効化ライン候補にする。</li><li>指数が上でも個別の買いが続くかを見る。</li><li>直近戻り高値・VWAP・売り壁を分割利確候補にする。</li></ol></div>
+<div class="panel"><h3>7974で見直すこと</h3><ol><li>出来高の突出は買いの確定ではない。</li><li>「売られても下がらない」がその後も続くかを確認する。</li><li>一度損切りした同じ価格帯で再エントリーする場合は、根拠が更新されたかを確認する。</li><li>低ボラ銘柄では先行LONGのサイズを下げ、VWAP回復を待つ。</li></ol></div>
+<div class="panel"><h3>TDKのセル候補</h3><ol><li>9:24の大出来高は注目価格帯の合図として扱い、出来高だけで売らない。</li><li>支持帯の再テストと反発失敗を確認し、9:44の下抜けで初めてセル候補にする。</li><li>ストップ位置と前日・前々日終値までの利確余地を先に決め、想定リスクと値幅が合わなければ見送る。</li></ol></div>
+<div class="panel"><h3>6981で見直すこと</h3><ol><li>売りが出ても下がらない反応は候補条件だが、指数と個別が逆向きなら反転確定とは扱わない。</li><li>7,948円の分岐点を回復できない、または板データが連続していない場合は、ロットを下げるか見送る。</li><li>「分からない」と感じた時点で撤退する判断は、再現性のあるリスク管理として残す。</li></ol></div>
+</div>
+<p><strong>判断順：</strong>大きなパターン → 指数・%R → 個別銘柄 → RVOL → 価格反応 → 板の吸収／継続 → ENTRY → 分割利確。</p>
+<div class="warning"><strong>無効化：</strong>支持帯を明確に割る、下落出来高が再増加する、VWAP回復に失敗する、または指数と個別の連動が崩れる場合は、反転期待値ZONEを継続しない。</div>
+</section>
+
+<section id="update">
+<h2>9. 本番確定の確認事項</h2>
+<ol><li>午前・午後のJSONLを読み込み、6銘柄の板データを9:00〜15:31ごろまで確認した。</li><li>午後JSONLの検証結果は parse error 0、missing book rows 0。11:35〜12:25ごろは昼休みのため、チャート上も空白のままとした。</li><li>次のコマンドでチャートとmanifestを再生成した。</li></ol>
+<pre><code>python3 /Users/th/Documents/TradeDayReport20260821/scripts/build_diary_20260930.py</code></pre>
+<ol start="4"><li>CSVの実現損益は、約定済み24行・12組を集計して<span class="negative">−4,200円</span>。実況報告の18,355円・18,330円などとの対応が確認できないものは、観察欄に残した。</li><li>昼休み以外の未取得帯がないことを確認し、本日誌を本番確定版として保存した。</li></ol>
+</section>
+
+<section id="sources">
+<h2>10. 保存先と根拠</h2>
+<div class="two">
+<div class="panel"><h3>日誌</h3><p><a href="diary_20260930.md">Markdown版</a></p><p class="small">outputs/diary_20260930/diary_20260930.md</p></div>
+<div class="panel"><h3>板読みデータ</h3><p class="small">/Volumes/Documents/043kabustationData/20260930wed/</p><p><a href="../../assets/2026-09-30/board_reading/manifest_20260930.json">集計manifest</a></p></div>
+<div class="panel"><h3>松井証券CSV</h3><p class="small">/Users/th/Downloads/stockorder_20260930 (1).csv</p><p>CSVで約定単価・数量・時刻が埋まった24行・12組を採用。最終約定は6981の12:44。板JSONLは同時間帯も取得済みだが、板数量だけで約定方向・因果は確定していない。</p></div>
+<div class="panel"><h3>実況メモ</h3><p>記録範囲は9:24〜13:00ごろ。TDKのセル候補と6981の後場観察を追加し、音声・共有写真の価格・出来高は、独立検証できないものを観察／未確認として分離。</p></div>
+</div>
+</section>
+
+<div class="foot">作成日：2026年9月30日｜日本株デイトレード日誌・本番確定版｜285A・7974・6981・9984・6857・1321｜CSV実約定12:44まで、板読み9:00–11:35／12:25–15:31｜昼休み空白・補間なし</div>
+</main>
+</body>
+</html>

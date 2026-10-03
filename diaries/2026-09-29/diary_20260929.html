@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../shared/chart_viewer.css?v=20260929-diary">
+<script defer src="../../shared/chart_viewer.js?v=20260929-diary"></script>
+<title>2026年9月29日（火）本番トレード日誌｜9984・285A実績と板読み復習</title>
+<style>
+:root{color-scheme:dark;--bg:#081019;--panel:#111d29;--panel2:#172938;--line:#30495d;--text:#edf5fa;--muted:#adbfcd;--blue:#83caff;--cyan:#6ce7d7;--yellow:#ffd766;--red:#ff8794;--green:#72e5ad;--orange:#f1b25b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;line-height:1.75}
+main{width:min(1500px,100%);margin:auto;padding:26px 24px 76px}h1{font-size:clamp(26px,3.4vw,48px);line-height:1.25;margin:0 0 12px}h2{font-size:clamp(21px,2.2vw,30px);line-height:1.35;border-left:5px solid var(--blue);padding-left:12px;margin:42px 0 15px}h3{font-size:clamp(17px,1.8vw,23px);line-height:1.4;color:#dff0ff;margin:28px 0 10px}p{margin:10px 0 16px}.muted,.small{color:var(--muted)}.small{font-size:13px}
+.notice,.key,.rule,.warning{border:1px solid var(--line);border-radius:12px;padding:14px 17px;margin:15px 0;background:#142536}.notice{background:#2b2511;border-color:#a17e28;color:#ffefb1}.key{background:#102c2c;border-color:#2f7e79}.warning{background:#2a1720;border-color:#8e4254}.nav{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 22px}.nav a{color:var(--blue);text-decoration:none;border:1px solid var(--line);background:#101d2a;border-radius:999px;padding:5px 12px;font-size:13px}.nav a:hover{border-color:var(--blue);background:#162c40}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:16px 0}.card,.panel{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:16px}.card .label{color:var(--muted);font-size:13px}.card .value{font-size:clamp(22px,2.6vw,34px);font-weight:750;margin:3px 0}.negative{color:var(--red)}.positive{color:var(--green)}.warn{color:var(--yellow)}.cyan{color:var(--cyan)}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}.table-wrap{overflow-x:auto;margin:12px 0 22px}table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);font-size:14px}th,td{border:1px solid var(--line);padding:8px 10px;vertical-align:top;text-align:left}th{background:var(--panel2);color:#e4f3ff;white-space:nowrap}.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:16px;margin:16px 0}.gallery figure,.wide-figure{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:10px}.gallery img,.wide-figure img{display:block;width:100%;height:auto;border-radius:8px;background:#05090d}.gallery figcaption,.wide-figure figcaption{color:var(--muted);font-size:13px;padding:8px 2px 2px}.foot{margin-top:52px;border-top:1px solid var(--line);padding-top:18px;color:var(--muted);font-size:13px}code{background:#102333;border:1px solid #29465c;border-radius:5px;padding:1px 5px;color:#d6ecfb}a{color:var(--blue)}
+@media(max-width:800px){main{padding:18px 12px 52px}.two{grid-template-columns:1fr}.gallery{grid-template-columns:1fr}table{font-size:13px}}
+</style>
+</head>
+<body>
+<main id="top">
+<h1>2026年9月29日（火）本番トレード日誌｜9984・285A実績と板読み復習</h1>
+<div class="notice"><strong>口座ステータス：</strong>松井証券の9月29日約定CSVで9984・285Aの約定を確認済み。<br><strong>本番粗損益：</strong>+4,900円（CSVの約定単価による手数料・税引前概算）。<br><strong>実績と検証：</strong>実約定とチャート上のENTRY候補・理想利確を分離して記録する。画像上の8035注文通知はCSVにないため、損益には含めない。<br><strong>中心テーマ：</strong>下落停止型・出来高反転の反転期待値ZONEと、再現性のある利確位置。</div>
+<nav class="nav" aria-label="ページ内リンク"><a href="#summary">結論</a><a href="#timeline">値動き</a><a href="#board">板読み</a><a href="#exit">利確</a><a href="#compare">7974比較</a><a href="#full-session-chart">9:00–15:30</a><a href="#evidence">画像</a><a href="#github-log">GitHub追記</a><a href="#links">保存先</a></nav>
+
+<section id="summary">
+<h2>0. 本日の結論</h2>
+<div class="grid">
+<div class="card"><div class="label">実績対象</div><div class="value cyan">9984・285A</div><div class="small">ソフトバンク・キオクシア</div></div>
+<div class="card"><div class="label">ENTRY候補</div><div class="value warn">6,023円</div><div class="small">10:16:15頃</div></div>
+<div class="card"><div class="label">第一利確</div><div class="value positive">6,135–6,145円</div><div class="small">VWAP・売り壁帯</div></div>
+<div class="card"><div class="label">午後安値</div><div class="value negative">5,931円</div><div class="small">14:37頃</div></div>
+</div>
+<p>9984は寄り直後に6,362円まで上昇した後、下落レッグを形成した。10:16:15頃、6,023円付近で6,018–6,020円の買い板が観測され、6,018円まで下げたものの下落が連続しなかった。この場所を、反転確定ではなく、<strong>下落停止型・出来高反転の反転期待値ZONE</strong>として記録する。</p>
+<p>本番CSVでは、9984を10:17に6,025円で買い、10:21に6,037円で売却して+1,200円。午後は9984のSHORT 2枚で+200円、285AのSHORT 1枚で+3,500円となり、CSV確認分の粗損益は合計+4,900円だった。</p>
+<p>その後は6,043円、6,135–6,145円、6,176–6,180円へ順に到達した。最も再現性が高い利確位置は、VWAPと売り壁が重なる<strong>6,135–6,145円</strong>。6,176–6,180円は、強さが続く場合だけ残りを伸ばす第二目標とする。</p>
+<div class="key"><strong>本日の一文：</strong>売りの努力に対して下落結果が小さくなった場所を反転期待値ZONEとして扱い、先に+2Rを処理し、VWAP・売り壁の第一利確帯で中心ポジションを確定する。VWAPを再び下回ったら、午前の反発仮説を午後まで引き継がない。</div>
+<h3>本日の実約定サマリー</h3>
+<div class="table-wrap"><table><thead><tr><th>銘柄</th><th>方向</th><th>ENTRY約定</th><th>EXIT約定</th><th>数量</th><th>粗損益（概算）</th></tr></thead><tbody>
+<tr><td>9984 ソフトバンク</td><td>LONG</td><td>10:17、6,025円</td><td>10:21、6,037円</td><td>100</td><td class="positive">+1,200円</td></tr>
+<tr><td>9984 ソフトバンク</td><td>SHORT</td><td>12:31 6,038円<br>12:32 6,048円</td><td>12:33 6,041円<br>6,043円</td><td>各100</td><td class="positive">+200円</td></tr>
+<tr><td>285A キオクシア</td><td>SHORT</td><td>12:33、17,705円</td><td>12:35、17,670円</td><td>100</td><td class="positive">+3,500円</td></tr>
+<tr><th colspan="5">合計</th><th class="positive">+4,900円</th></tr>
+</tbody></table></div>
+<p class="small">9984の朝の実約定は、板読み上のENTRY候補6,023円に近い6,025円で成立した。一方、チャート上の第一利確候補6,043円まで待たず、6,037円で手仕舞っている。</p>
+</section>
+
+<section id="timeline">
+<h2>1. 9984の9:00–15:30値動き</h2>
+<div class="table-wrap"><table><thead><tr><th>時刻・水準</th><th>観察内容</th><th>日誌上の扱い</th></tr></thead><tbody>
+<tr><td>09:00</td><td>寄り付き6,139円。</td><td>初期値</td></tr>
+<tr><td>09:01:30</td><td>寄り直後高値6,362円。</td><td>高値追随は見送り、下落後を待つ</td></tr>
+<tr><td>10:16:15</td><td>6,023円付近。直下6,020円に買い板。</td><td>ENTRY候補。反転確定ではない</td></tr>
+<tr><td>10:16:23</td><td>6,018円まで下落。</td><td>支持帯の最終確認・無効化候補</td></tr>
+<tr><td>10:17</td><td>松井証券CSVで9984を6,025円で100株買い約定。</td><td>チャート候補6,023円に近い本番ENTRY</td></tr>
+<tr><td>10:20頃</td><td>6,043円へ到達。</td><td>先行利確、約+2R目安</td></tr>
+<tr><td>10:21</td><td>松井証券CSVで9984を6,037円で100株売り約定。</td><td>朝のLONGを+1,200円で手仕舞い</td></tr>
+<tr><td>10:37–10:39</td><td>6,135–6,145円へ到達。VWAP約6,137円を回復。</td><td>第一利確のコアZONE</td></tr>
+<tr><td>10:40頃</td><td>6,150円付近に約43.5万株の売り壁。</td><td>壁の吸収を確認する場面</td></tr>
+<tr><td>10:43–10:48</td><td>6,176円、最終的に6,188円付近まで上昇。</td><td>第二利確・伸ばす分の候補</td></tr>
+<tr><td>11:00以降</td><td>VWAP下へ戻る。</td><td>午前の反転継続を停止</td></tr>
+<tr><td>14:37頃</td><td>午後安値5,931円。</td><td>反転仮説の一日継続を否定</td></tr>
+<tr><td>15:30頃</td><td>6,035円。VWAP約6,081円を回復できず。</td><td>終盤も上位足下方向を維持</td></tr>
+</tbody></table></div>
+<h3>午後の実約定</h3>
+<ul>
+<li>12:31に9984を6,038円で100株売り、12:32に6,048円で100株売り。</li>
+<li>12:33に6,041円と6,043円で各100株買い戻し。2枚合計の粗損益は+200円。</li>
+<li>285Aは12:33に17,705円で100株売り、12:35に17,670円で買い戻し。粗損益は+3,500円。</li>
+<li>画像には8035の11,420円・100株の成行買い通知が表示されているが、今回のCSVに8035の行はないため、実績・損益には含めず未照合として扱う。</li>
+</ul>
+</section>
+
+<section id="board">
+<h2>2. 板読みの根拠</h2>
+<div class="two">
+<div class="panel"><h3>10:16の反転期待値ZONE</h3><ul><li>ENTRY候補：6,023円。</li><li>直下6,020円付近に約40.7万株の買い板。</li><li>6,018円まで下げたが、安値更新が連続しなかった。</li><li>その後6,043円まで戻り、下落の結果が反転した。</li></ul><p class="small">「買い板が厚いから反発」ではなく、売りの努力に対する価格結果の小ささ、後続足の縮小、支持帯下に置ける無効化ラインを組み合わせて判定する。</p></div>
+<div class="panel"><h3>上昇後の売り壁</h3><ul><li>6,150円付近：約43.5万株。</li><li>6,180円付近：約15.5–15.8万株。</li><li>6,135–6,145円はVWAPと売り壁手前が重なる。</li><li>6,176–6,180円は戻り高値側の第二目標。</li></ul><p class="small">壁の吸収が確認できない場合、全量を残して上値を追わない。</p></div>
+</div>
+<h3>225％R下・60分足下降トレンド中のLONG</h3>
+<p>225の％Rは下側、60分足も下降目線であり、9984のLONGは順張りではなくカウンタートレンドLONGである。6,023円は上昇トレンド転換の確定ではなく、支持帯下を無効化ラインにした短期反発の仮説とする。</p>
+</section>
+
+<section id="exit">
+<h2>3. 再現性のある利確方法</h2>
+<div class="table-wrap"><table><thead><tr><th>段階</th><th>価格</th><th>根拠</th><th>扱い</th></tr></thead><tbody>
+<tr><td>先行利確</td><td>6,043円</td><td>6,023円から約+20円。初期リスク10円なら+2R。</td><td>一部を先に確定</td></tr>
+<tr><td>コア利確</td><td>6,135–6,145円</td><td>VWAP約6,137円と売り壁が重なる。</td><td>最も再現性の高い利確ZONE</td></tr>
+<tr><td>残りを伸ばす</td><td>6,176–6,180円</td><td>戻り高値側の売り壁。強さが継続した場合のみ。</td><td>必達ではない第二目標</td></tr>
+</tbody></table></div>
+<h3>本番約定との比較</h3>
+<p>9984の朝のLONGは、6,025円で買い、6,037円で売って+1,200円となった。チャート上の第一利確帯6,043円には届く前に手仕舞っているため、今回は「反転期待値ZONEへの進入」は再現したが、「第一利確帯まで保有」は実行していない。午後の9984 SHORTは合計+200円、285A SHORTは+3,500円だった。いずれも手数料・税引前であり、CSVにない注文は合算していない。</p>
+<div class="warning"><strong>無効化：</strong>6,018–6,020円を明確に割る、下落出来高が再増加する、または6,135–6,145円へ届かずVWAP回復にも失敗する場合は、反転期待値ZONEを継続しない。</div>
+</section>
+
+<section id="compare">
+<h2>4. 7974任天堂との比較</h2>
+<p>9984と7974は、どちらも225％Rが下側、60分足も下降目線の環境で、下落周辺からLONGを検討した比較例である。</p>
+<div class="table-wrap"><table><thead><tr><th>比較項目</th><th>9984 ソフトバンク</th><th>7974 任天堂</th></tr></thead><tbody>
+<tr><td>最近のボラティリティ</td><td>上昇</td><td>低下</td></tr>
+<tr><td>反転候補</td><td>10:16:15、6,023円付近</td><td>12:40:15頃の観察</td></tr>
+<tr><td>根拠</td><td>陰線・出来高後に下げが進まず、後続足も小さくなった</td><td>25,900株程度の売りとNダウ支持帯で一度停止</td></tr>
+<tr><td>その後</td><td>6,135–6,145円、6,176円方向へ反発</td><td>12:53に強い陰線で支持帯を割った</td></tr>
+<tr><td>判定</td><td>反転期待値ZONEが一時機能</td><td>低ボラによる支持割れの失敗例</td></tr>
+</tbody></table></div>
+<p>同じ「下落後に止まったように見える形」でも、ボラティリティの違いで支持帯の信頼度と反発の値幅が変わる。低ボラ銘柄では、反転確定前の先行LONGに追加条件を置く。</p>
+</section>
+
+<section id="full-session-chart">
+<h2>5. 9:00–15:30板読み復習チャート</h2>
+<figure class="wide-figure"><img src="../../assets/2026-09-29/board_reading/board-reading-9984-20260929.png" alt="9984 ソフトバンクグループ 2026年9月29日 9時から15時30分の板読み復習チャート"><figcaption>9984 ソフトバンクグループ｜9:00–15:30。5分集約の価格・累積出来高差分・VWAP・板の厚みを同じ時間軸で表示し、ENTRY候補、第一利確、第二利確、午後安値を記録。</figcaption></figure>
+<p>この形式を板読みデータがある日誌の標準とする。出来高欄には、添付されたRelative Volumeの考え方に合わせ、<code>RVOL = 当該バーの出来高 ÷ 直前30本の平均出来高</code> をオシレーターとして追加した。1.0xが平均、2.0x以上は出来高異常候補として見る。RVOLは異常値を検知し、板読みを開始するための指標合図として必要だが、トレンド・売買方向・ENTRYを確定するものではない。RVOL上昇を合図に、陰線・安値更新停止・板の反応・VWAP・相関を続けて読む。昼休みのデータ欠落は補間せず、実約定・DEMO・理想シナリオを分けて記録する。なお、このチャートの6,023円は板読み上の候補であり、松井証券CSVで確認した実約定は6,025円買い・6,037円売りである。9:00開始のため、オシレーター先頭部分は表示範囲内で利用できる直前本数による暫定値である。</p>
+</section>
+
+<section id="evidence">
+<h2>6. 画像資料</h2>
+<div class="gallery">
+<figure><img src="../../assets/2026-09-29/volume_accumulation/softbank_9984_20260929.png" alt="9984 ソフトバンクグループ 2026年9月29日チャート"><figcaption>9984 ソフトバンクグループ｜10:16の反転期待値ZONE、第一利確6,135–6,145円、第二利確6,176–6,180円。</figcaption></figure>
+<figure><img src="../../assets/2026-09-29/volume_accumulation/nintendo_7974_20260929.png" alt="7974 任天堂 2026年9月29日チャート"><figcaption>7974 任天堂｜低ボラティリティ下で支持帯を割った比較例。</figcaption></figure>
+</div>
+<p class="small">生成した9:00–15:30板読みチャート（RVOLオシレーター付き）：<code>/Users/th/.codex/visualizations/2026/09/10/01a08b56-f5f1-70c0-95ab-d3f4a4fe5ca5/board-reading-9984-20260929.html</code></p>
+</section>
+
+<section id="github-log">
+<h2>7. GitHubの2026-09-29 MDを追記・整理</h2>
+<div class="panel"><p><a href="https://github.com/mboxxobm/tradeDaily2026/blob/main/2026-09-29_daytrading_log.md">日本株デイトレード実況記録</a> と <a href="https://github.com/mboxxobm/tradeDaily2026/blob/main/2026-09-29_trade_review.md">トレード振り返り</a> を、本日誌の補足記録として整理した。</p><p class="small">GitHub MDは実況・観察・振り返り。時刻・価格・数量・損益の確定には松井証券CSVを優先する。MDにある9984の6,038円→6,100円は実況・検証上の記録であり、CSVで確認した実約定6,025円→6,037円（+1,200円）とは分けて保存する。</p></div>
+<div class="two">
+<div class="panel"><h3>地合いとシナリオ</h3><ul><li>日経平均は60分SMA・％R・CFD全体が下方向。15分足％R60、60分足％R15を確認し、-50以下を下方向として扱う。</li><li>NASDAQ（US100）はN字上昇を試す一方、インジケーターは下方向。下げ継続Sellか、下げ止まりからの反発LONGかを分ける。</li><li>大きく下げた後は、出来高急増、吸収、ピンバー、ダイバージェンス、安値更新失敗を確認してから反発を検討する。</li></ul></div>
+<div class="panel"><h3>周辺銘柄・特殊要因</h3><ul><li>285Aは3分割後、8035は5分割後、4062は2分割後の価格帯を基準に見る。</li><li>配当・権利落ちと実際の売り圧力を分け、前日比マイナスをすべて弱さと決めつけない。</li><li>6533はストップ高への再接近で、剥がれ後の売り板吸収と再張り付きの買いを観察する。</li></ul></div>
+</div>
+<div class="panel"><h3>RVOLの使い分け</h3><ul><li>15秒足出来高は、大口の瞬間的な売買、ピンバー、吸収、下げ止まり、ダイバージェンスを見る。</li><li>Relative Volume at Timeは、同時刻の過去平均との比較で、その日の出来高の温度感を見る。Anchorは1日、Lookbackは10前後を基準とする。</li><li>RVOLは異常値を検知し板読みを始める指標合図であり、トレンド・売買方向・ENTRYを確定しない。価格反応、板の圧力・反応・継続、VWAP、225との相関を続けて確認する。</li></ul></div>
+<div class="panel"><h3>9984の利確反省</h3><ol><li>大きな陰線・再下降の出来高・ピンバー状の買い反応から、下げ止まりと反発期待を置いた。</li><li>GitHub MDの6,038円→6,100円、最大約200ティック、3ロットで約3万円という内容は、実況・振り返り上の伸びしろであり、実績CSVの損益ではない。</li><li>実績CSVは10:17に6,025円で買い、10:21に6,037円で返済、+1,200円。課題は方向ではなく、VWAP・押し目の戻り高値・直近高値へ分ける利確とロット管理だった。</li></ol></div>
+<div class="panel"><h3>US100・サンディスクからの統合ルール</h3><p>US100はカップ＆ハンドルの支持帯で急落を受けた後、オーバーシュート、V字反発、N字上昇で戻した。小さなレンジだけで大きなパターンを否定しない。サンディスクでは「最近ボラが低い」という先入観が利確を早めたため、今後は<strong>大きなパターン → 指数・％R → 個別銘柄 → RVOL → 価格反応 → 板 → ENTRY → 分割利確</strong>の順で判断する。</p></div>
+</section>
+
+<section id="links">
+<h2>8. 保存先</h2>
+<div class="two">
+<div class="panel"><h3>本文</h3><p><a href="diary_20260929.md">Markdown版を開く</a></p><p class="small">outputs/diary_20260929/diary_20260929.md</p></div>
+<div class="panel"><h3>定義書</h3><p><a href="file:///Users/th/Documents/_TradeDaily/stopping_volume_reversal_long_definition.html">下落停止型・出来高反転 定義書</a></p><p class="small">9984の実データ照合を追記済み。</p></div>
+<div class="panel"><h3>板読み入力</h3><p class="small">/Volumes/1000GB20260826/2026BC_imac3/板読みTools/20260929tue/</p><p>9984の前場・後場ログを使用。</p></div>
+<div class="panel"><h3>実績区分</h3><p>松井証券の9月29日約定CSVで9984・285Aを確認済み。粗損益は+4,900円（手数料・税引前概算）。8035は画像通知のみでCSVにないため未照合。</p><p class="small">/Users/th/Downloads/stockorder_20260929.csv</p></div>
+</div>
+</section>
+
+<div class="foot">作成日：2026年9月29日｜本番日誌・板読み検証版｜9984・285Aの約定確認済み｜粗損益+4,900円（手数料・税引前概算）</div>
+</main>
+</body>
+</html>

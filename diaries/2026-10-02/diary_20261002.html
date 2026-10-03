@@ -1,0 +1,673 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>2026年10月2日（金）日本株デイトレード日誌｜R2歩み・松井証券・15秒足／2分足</title><style>
+:root{color-scheme:dark;--bg:#081019;--panel:#111d29;--panel2:#172938;--line:#30495d;--text:#edf5fa;--muted:#adbfcd;--blue:#83caff;--cyan:#6ce7d7;--yellow:#ffd766;--red:#ff8794;--green:#72e5ad;--orange:#f1b25b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;line-height:1.75}main{width:min(1500px,100%);margin:auto;padding:26px 24px 76px}h1{font-size:clamp(26px,3.4vw,48px);line-height:1.25;margin:0 0 18px}h2{font-size:clamp(21px,2.2vw,30px);line-height:1.35;border-left:5px solid var(--blue);padding-left:12px;margin:42px 0 15px}h3{font-size:clamp(17px,1.8vw,23px);line-height:1.4;color:#dff0ff;margin:28px 0 10px}p{margin:10px 0 16px}blockquote{margin:18px 0;padding:14px 18px;border-left:4px solid var(--yellow);background:#302811;color:#ffefb1;border-radius:0 10px 10px 0}table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);font-size:14px;margin:14px 0 24px;display:block;overflow-x:auto}th,td{border:1px solid var(--line);padding:8px 10px;vertical-align:top;text-align:left;min-width:90px}th{background:var(--panel2);color:#e4f3ff;white-space:nowrap}img{display:block;max-width:100%;height:auto;border-radius:9px;background:#05090d;border:1px solid var(--line);margin:14px 0 26px}code{background:#102333;border:1px solid #29465c;border-radius:5px;padding:1px 5px;color:#d6ecfb}pre{background:#0b141d;border:1px solid var(--line);border-radius:10px;padding:14px;overflow:auto}a{color:var(--blue)}li{margin:4px 0}.negative{color:var(--red)}.positive{color:var(--green)}.small{color:var(--muted);font-size:13px}.foot{margin-top:52px;border-top:1px solid var(--line);padding-top:18px;color:var(--muted);font-size:13px}@media(max-width:800px){main{padding:18px 12px 52px}table{font-size:13px}}
+</style></head><body><nav aria-label="サイトナビゲーション" style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 auto;padding:10px 3vw;background:#0d1721;border-bottom:1px solid #334655;font:13px/1.4 -apple-system,BlinkMacSystemFont,'Yu Gothic',Meiryo,sans-serif"><a href="../../../home.html" data-nav-local="../../../_TradeDaily/home.html" style="color:#9ed2ff;text-decoration:none">📈 TOP</a><a href="../../DairyHome.html" data-nav-local="../../../_TradeDaily/DairyHome.html" style="color:#9ed2ff;text-decoration:none">📚 日誌一覧</a><a href="../../../index.html#import" data-nav-local="../../../_TradeDaily/index.html#import" style="color:#9ed2ff;text-decoration:none">📂 CSVインポート</a></nav><!-- TRADE_NAV_SCRIPT --><script>(function(){if(location.protocol!=="file:")return;document.querySelectorAll("[data-nav-local]").forEach(function(link){link.href=link.dataset.navLocal;});})();</script><main><h1>2026年10月2日（金）日本株デイトレード日誌｜R2歩み・松井証券約定・15秒足／2分足</h1>
+<blockquote>
+<p><strong>本番確定版</strong>：GitHubの10月2日実況・日経振り返り・TodoList・場中議事録、松井証券の注文／約定CSV、R2歩みCSVを照合した。約定は62フィル、FIFOで31組に対応付けた。松井証券の受渡金額合計と約定ペアの価格差はどちらも <strong>−68,100円</strong>。15秒足・2分足、2分足の一目均衡表ガイド（遅行線26を含む）、本日寄り付き水平線、出来高・RVOL、ENTRY／EXITマーカーを銘柄別チャートに反映した。</p>
+</blockquote>
+<h2>記録の位置づけ</h2>
+<ul>
+<li>状態：<strong>本番／終日データ照合済み</strong>。</li>
+<li>実約定：松井証券CSVの「約定数・約定単価・約定時間」を基準にした。</li>
+<li>約定ペア：同一銘柄・同一方向をFIFOで対応付けた。価格差の合計は松井証券の受渡金額合計と一致した。</li>
+<li>実況：GitHubの日誌・議事録にある本人発言は、約定データで確認できたものと、本人の観察・振り返りを分けて記載した。</li>
+<li>歩み：<code>/Volumes/1000GB20260826/BrisX/GEMINIGravity/20261002_picked/qr-&lt;銘柄&gt;-20261002.csv</code> の「値段・株数・時刻」を使用した。</li>
+<li>出来高：R2歩みの株数を15秒足・2分足へ合計した。RVOLは「当該2分足出来高 ÷ 直前30本平均」で計算した。</li>
+<li>9:00と15:30の大きな株数はR2に含まれる寄り付き・引けの集計行。場中のENTRY判断では、寄り付き・引けの集計行と通常の場中バーを分けて見る。</li>
+</ul>
+<h2>0. 本日の結論</h2>
+<p>松井証券の実約定では、<strong>複数銘柄へ寄り付き直後から入り、下げ止まりを先回りしたLONGと、出来高を見て飛び乗ったSHORTが混在した</strong>。日経平均は上位足では上方向を意識できる一方、実際の場中は「ボラティリティの大きいレンジ」であり、個別銘柄の下げ止まりが継続するかを確認しないまま入ると、指数が上でも個別は下がる場面があった。</p>
+<table>
+<thead>
+<tr>
+<th>銘柄</th>
+<th style="text-align: right;">松井証券約定ペア</th>
+<th style="text-align: right;">受渡金額／価格差</th>
+<th>本日の扱い</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>285A キオクシアHD</td>
+<td style="text-align: right;">11組</td>
+<td style="text-align: right;"><strong>−35,500円</strong></td>
+<td>下げ止まりLONG、戻り売り、再LONGが混在。売りの継続を確認できずSHORTも損失。</td>
+</tr>
+<tr>
+<td>5803 フジクラ</td>
+<td style="text-align: right;">5組</td>
+<td style="text-align: right;"><strong>−13,300円</strong></td>
+<td>大出来高の下抜けへSHORT。買いの歩みで踏み上げられた。</td>
+</tr>
+<tr>
+<td>6976 太陽誘電</td>
+<td style="text-align: right;">1組</td>
+<td style="text-align: right;"><strong>＋3,000円</strong></td>
+<td>15秒足・2分足の下げ止まりからのLONGが機能した。</td>
+</tr>
+<tr>
+<td>7974 任天堂</td>
+<td style="text-align: right;">6組</td>
+<td style="text-align: right;"><strong>−2,500円</strong></td>
+<td>買い支え・ダブルボトム候補を見たが、支持の継続前に撤退。</td>
+</tr>
+<tr>
+<td>9984 ソフトバンクG</td>
+<td style="text-align: right;">8組</td>
+<td style="text-align: right;"><strong>−19,800円</strong></td>
+<td>寄り付きの飛び乗りLONGと、後場のLONG／SHORTがいずれも噛み合わなかった。</td>
+</tr>
+<tr>
+<td><strong>合計</strong></td>
+<td style="text-align: right;"><strong>31組・62フィル</strong></td>
+<td style="text-align: right;"><strong>−68,100円</strong></td>
+<td>松井証券の受渡金額合計と一致。</td>
+</tr>
+</tbody>
+</table>
+<h3>今日の一文</h3>
+<blockquote>
+<p><strong>上位足が上でも、ボラティリティの大きいレンジでは個別のENTRYを急がない。日経平均の位置、個別の価格反応、15秒足の出来高、2分足の出来高と遅行線を同じ画面で確認してから入る。</strong></p>
+</blockquote>
+<h2>1. 相場環境</h2>
+<h3>日経225・上位足</h3>
+<ul>
+<li>GitHubのTodoListでは、週足・日足は上昇と整理していた。</li>
+<li>一方、日経225は上昇トレンドの中にあるものの、1時間足では20SMAを割り込むレンジで、上にも下にも大きく振られやすい状態と振り返った。</li>
+<li>本人の表現では、<strong>「P.O.LONGなのに上がらないレンジ」</strong>。上方向優位という前提が、寄り付き後の個別銘柄の下落を否定する材料にはならなかった。</li>
+<li>1321日経225連動ETFのR2歩みでは、寄り付き価格71,290円、日中安値70,900円、高値71,530円、終値集計行71,040円。CFDそのものではなく、地合いの補助確認として使用した。</li>
+<li>5分足60EMAや%Rの数値は、今回のGitHub記録で確定値が提示されていないため推測していない。上位足の方向と場中のレンジ認識を分けて記録する。</li>
+</ul>
+<h3>個別との同期・不一致</h3>
+<ul>
+<li>日経平均が上方向でも、9984・285A・5803などは寄り付き後に売られた。</li>
+<li>6976は下落後に反発が出て、今回の実約定では唯一のプラス銘柄になった。</li>
+<li>7974は買い支えとダブルボトム候補が見えたが、価格がその後も安値を更新しないという継続確認が不足した。</li>
+<li>指数と個別の不一致が出た時は、指数の上方向だけを理由に個別LONGを増やさない。</li>
+</ul>
+<h2>2. 9:00–15:30 値動きと実況タイムライン</h2>
+<table>
+<thead>
+<tr>
+<th>時刻</th>
+<th>対象</th>
+<th>観察・約定</th>
+<th>扱い</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>09:00</td>
+<td>全体</td>
+<td>R2寄り付き集計。285A 19,145円、5803 5,450円、6976 10,015円、7974 7,900円、9984 6,649円、1321 71,290円。</td>
+<td>寄り付き水平線</td>
+</tr>
+<tr>
+<td>09:01–09:02</td>
+<td>9984</td>
+<td>LONG 6,667円 → EXIT 6,568円、100株。</td>
+<td><strong>−9,900円</strong></td>
+</tr>
+<tr>
+<td>09:04–09:13</td>
+<td>285A</td>
+<td>18,995円・18,860円のLONG、続いて18,635円LONG。最初の2本は下落、3本目は小幅利確。</td>
+<td><strong>−14,000円、−5,000円、＋500円</strong></td>
+</tr>
+<tr>
+<td>09:22–09:23</td>
+<td>6976</td>
+<td>LONG 9,772円 → EXIT 9,802円、100株。</td>
+<td><strong>＋3,000円</strong></td>
+</tr>
+<tr>
+<td>09:22</td>
+<td>9984</td>
+<td>6,447円LONG → 6,446円返済。</td>
+<td><strong>−100円</strong></td>
+</tr>
+<tr>
+<td>09:24–09:47</td>
+<td>285A</td>
+<td>18,750円SHORT、18,795・18,790円SHORT。戻りで損切り後、18,815・18,840円LONG。</td>
+<td>SHORT <strong>−4,500円</strong>、LONG <strong>−1,500円</strong></td>
+</tr>
+<tr>
+<td>09:52–09:53</td>
+<td>7974</td>
+<td>7,875・7,874・7,873円LONGを各100株。7,871・7,870・7,870円で返済。</td>
+<td><strong>−1,100円</strong></td>
+</tr>
+<tr>
+<td>09:53–10:07</td>
+<td>5803</td>
+<td>5,582・5,581円SHORT、続いて5,569・5,568・5,571円SHORT。買い戻しで返済。</td>
+<td><strong>−13,300円</strong></td>
+</tr>
+<tr>
+<td>10:02–10:03</td>
+<td>7974</td>
+<td>7,899・7,899・7,898円SHORT → 7,904・7,903・7,903円返済。</td>
+<td><strong>−1,400円</strong></td>
+</tr>
+<tr>
+<td>10:13–10:26</td>
+<td>285A</td>
+<td>18,985、18,970、18,955円SHORT。19,015、19,020、18,985円で返済。</td>
+<td><strong>−11,000円</strong></td>
+</tr>
+<tr>
+<td>14:36–14:55</td>
+<td>9984</td>
+<td>6,299・6,293・6,293円LONG → 6,267・6,268・6,268円で返済。後に6,268円・6,267円SHORT → 6,273・6,273・6,274円で返済。</td>
+<td><strong>−8,200円</strong></td>
+</tr>
+<tr>
+<td>15:30</td>
+<td>全体</td>
+<td>R2引け集計行。通常の15:30前の場中足とは分けて扱う。</td>
+<td>終日確認</td>
+</tr>
+</tbody>
+</table>
+<h2>3. 松井証券｜ENTRY・EXIT実績</h2>
+<h3>285A キオクシアHD</h3>
+<table>
+<thead>
+<tr>
+<th>方向</th>
+<th>ENTRY</th>
+<th>EXIT</th>
+<th style="text-align: right;">数量</th>
+<th style="text-align: right;">価格差損益</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LONG</td>
+<td>09:04 / 18,995円</td>
+<td>09:04 / 18,855円</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;"><strong>−14,000円</strong></td>
+</tr>
+<tr>
+<td>LONG</td>
+<td>09:05 / 18,860円</td>
+<td>09:06 / 18,810円</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;"><strong>−5,000円</strong></td>
+</tr>
+<tr>
+<td>LONG</td>
+<td>09:09 / 18,635円</td>
+<td>09:13 / 18,640円</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;"><strong>＋500円</strong></td>
+</tr>
+<tr>
+<td>SHORT</td>
+<td>09:24 / 18,750円</td>
+<td>09:27 / 18,755円</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;"><strong>−500円</strong></td>
+</tr>
+<tr>
+<td>SHORT</td>
+<td>09:31 / 18,795円</td>
+<td>09:31 / 18,815円</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;"><strong>−2,000円</strong></td>
+</tr>
+<tr>
+<td>SHORT</td>
+<td>09:32 / 18,790円</td>
+<td>09:37 / 18,810円</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;"><strong>−2,000円</strong></td>
+</tr>
+<tr>
+<td>LONG</td>
+<td>09:38 / 18,815円</td>
+<td>09:45 / 18,795円</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;"><strong>−2,000円</strong></td>
+</tr>
+<tr>
+<td>LONG</td>
+<td>09:45 / 18,840円</td>
+<td>09:47 / 18,845円</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;"><strong>＋500円</strong></td>
+</tr>
+<tr>
+<td>SHORT</td>
+<td>10:13 / 18,985円</td>
+<td>10:14 / 19,015円</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;"><strong>−3,000円</strong></td>
+</tr>
+<tr>
+<td>SHORT</td>
+<td>10:21 / 18,970円</td>
+<td>10:23 / 19,020円</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;"><strong>−5,000円</strong></td>
+</tr>
+<tr>
+<td>SHORT</td>
+<td>10:24 / 18,955円</td>
+<td>10:26 / 18,985円</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;"><strong>−3,000円</strong></td>
+</tr>
+<tr>
+<td><strong>小計</strong></td>
+<td></td>
+<td></td>
+<td style="text-align: right;"><strong>11組</strong></td>
+<td style="text-align: right;"><strong>−35,500円</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>読みの振り返り</strong>：15秒足で下げ止まりらしい陰線・買い戻しピンバーを見てLONGを検討したが、5分足では一つの押しにも見えた。戻り高値・ダウの分岐点まで届く前に下落し、SHORTへ切り替えた場面では、ネックライン下抜けが続かず陽線で戻された。大出来高だけではなく、出来高後に価格が進むか、次の安値更新が止まるかを先に確認する必要があった。</p>
+<h3>5803 フジクラ</h3>
+<table>
+<thead>
+<tr>
+<th>方向</th>
+<th>ENTRY</th>
+<th>EXIT</th>
+<th style="text-align: right;">数量</th>
+<th style="text-align: right;">価格差損益</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SHORT</td>
+<td>09:53 / 5,582円</td>
+<td>09:59 / 5,599円</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;"><strong>−1,700円</strong></td>
+</tr>
+<tr>
+<td>SHORT</td>
+<td>09:53 / 5,581円</td>
+<td>09:59 / 5,602円</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;"><strong>−2,100円</strong></td>
+</tr>
+<tr>
+<td>SHORT</td>
+<td>10:04 / 5,569円</td>
+<td>10:07 / 5,601円</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;"><strong>−3,200円</strong></td>
+</tr>
+<tr>
+<td>SHORT</td>
+<td>10:04 / 5,568円</td>
+<td>10:07 / 5,602円</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;"><strong>−3,400円</strong></td>
+</tr>
+<tr>
+<td>SHORT</td>
+<td>10:04 / 5,571円</td>
+<td>10:07 / 5,600円</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;"><strong>−2,900円</strong></td>
+</tr>
+<tr>
+<td><strong>小計</strong></td>
+<td></td>
+<td></td>
+<td style="text-align: right;"><strong>5組</strong></td>
+<td style="text-align: right;"><strong>−13,300円</strong></td>
+</tr>
+</tbody>
+</table>
+<p>GitHubの実況では、5,600円の切り番付近の大きな売り・クラスターレンジ・上への振りを見て、下抜けへ飛び乗ったと振り返っている。R2では09:52の2分足出来高が1,115,600株、RVOL約1.63倍、10:04のENTRY近傍の15秒足が61,000株だった。売り出来高の大きさだけでなく、買いの歩みが入った時に下落が続くかを確認してからSHORTにするべきだった。</p>
+<h3>6976 太陽誘電</h3>
+<table>
+<thead>
+<tr>
+<th>方向</th>
+<th>ENTRY</th>
+<th>EXIT</th>
+<th style="text-align: right;">数量</th>
+<th style="text-align: right;">価格差損益</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LONG</td>
+<td>09:22 / 9,772円</td>
+<td>09:23 / 9,802円</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;"><strong>＋3,000円</strong></td>
+</tr>
+</tbody>
+</table>
+<p>9,700円付近の下げ止まり、振り落とし後の買い戻し、15秒足のピンバーという実況上の読みと、松井証券のLONG実績が一致した。R2ではENTRY近傍の15秒足が51,800株、2分足が485,300株・RVOL約1.01倍、EXIT近傍の2分足が668,600株・RVOL約1.39倍だった。キリ番に触れただけで入らず、価格が安値更新を止めたことと出来高を合わせた点が、今回の中では最も整理しやすいENTRYだった。</p>
+<h3>7974 任天堂</h3>
+<table>
+<thead>
+<tr>
+<th>方向</th>
+<th>ENTRY</th>
+<th>EXIT</th>
+<th style="text-align: right;">数量</th>
+<th style="text-align: right;">価格差損益</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LONG</td>
+<td>09:52 / 7,875円</td>
+<td>09:53 / 7,871円</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">−400円</td>
+</tr>
+<tr>
+<td>LONG</td>
+<td>09:52 / 7,874円</td>
+<td>09:53 / 7,870円</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">−400円</td>
+</tr>
+<tr>
+<td>LONG</td>
+<td>09:52 / 7,873円</td>
+<td>09:53 / 7,870円</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">−300円</td>
+</tr>
+<tr>
+<td>SHORT</td>
+<td>10:02 / 7,899円</td>
+<td>10:03 / 7,904円</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">−500円</td>
+</tr>
+<tr>
+<td>SHORT</td>
+<td>10:02 / 7,899円</td>
+<td>10:03 / 7,903円</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">−400円</td>
+</tr>
+<tr>
+<td>SHORT</td>
+<td>10:02 / 7,898円</td>
+<td>10:03 / 7,903円</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">−500円</td>
+</tr>
+<tr>
+<td><strong>小計</strong></td>
+<td></td>
+<td></td>
+<td style="text-align: right;"><strong>6組</strong></td>
+<td style="text-align: right;"><strong>−2,500円</strong></td>
+</tr>
+</tbody>
+</table>
+<p>GitHubでは7,862円付近の買い支え、ダブルボトム、15秒足の大出来高と高値切り下げラインの上抜けをLONG候補として振り返った。しかし、実際の松井証券約定は09:52のLONG後にすぐ返済、10:02のSHORTも戻されて返済している。R2では09:52の2分足出来高は24,800株・RVOL約0.39倍、10:02は19,100株・RVOL約0.42倍で、実況で感じた「買い支え」を出来高の継続で裏付ける状態ではなかった。</p>
+<h3>9984 ソフトバンクグループ</h3>
+<table>
+<thead>
+<tr>
+<th>方向</th>
+<th>ENTRY</th>
+<th>EXIT</th>
+<th style="text-align: right;">数量</th>
+<th style="text-align: right;">価格差損益</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LONG</td>
+<td>09:01 / 6,667円</td>
+<td>09:02 / 6,568円</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;"><strong>−9,900円</strong></td>
+</tr>
+<tr>
+<td>LONG</td>
+<td>09:22 / 6,447円</td>
+<td>09:22 / 6,446円</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">−100円</td>
+</tr>
+<tr>
+<td>LONG</td>
+<td>14:36 / 6,299円</td>
+<td>14:54 / 6,267円</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">−3,200円</td>
+</tr>
+<tr>
+<td>LONG</td>
+<td>14:37 / 6,293円</td>
+<td>14:54 / 6,268円</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">−2,500円</td>
+</tr>
+<tr>
+<td>LONG</td>
+<td>14:38 / 6,293円</td>
+<td>14:54 / 6,268円</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">−2,500円</td>
+</tr>
+<tr>
+<td>SHORT</td>
+<td>14:54 / 6,268円</td>
+<td>14:55 / 6,273円</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">−500円</td>
+</tr>
+<tr>
+<td>SHORT</td>
+<td>14:55 / 6,267円</td>
+<td>14:55 / 6,273円</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">−600円</td>
+</tr>
+<tr>
+<td>SHORT</td>
+<td>14:55 / 6,269円</td>
+<td>14:55 / 6,274円</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">−500円</td>
+</tr>
+<tr>
+<td><strong>小計</strong></td>
+<td></td>
+<td></td>
+<td style="text-align: right;"><strong>8組</strong></td>
+<td style="text-align: right;"><strong>−19,800円</strong></td>
+</tr>
+</tbody>
+</table>
+<p>寄り付きのLONGは、日経平均の上方向と再上昇イメージを個別の値動きより優先した形になった。R2では09:00の寄り付き集計2,433,200株、09:02の2分足1,251,700株と売買が集中したが、価格は6,649円から下へ進んだ。後場は14:38の2分足が323,400株・RVOL約1.42倍、14:54は240,600株・RVOL約0.87倍で、出来高の増加だけでは反発の継続を確認できなかった。</p>
+<h2>4. 15秒足・2分足の出来高とR2歩み</h2>
+<h3>出来高の使い分け</h3>
+<ul>
+<li><strong>15秒足</strong>：ENTRY／EXITの直前に、売り・買いの歩みが集中したか、ピンバーの後に価格が伸びたかを確認する。</li>
+<li><strong>2分足</strong>：短時間の出来高を30本平均と比較し、銘柄がその時刻に普段より活発かを見る。RVOL 1.0倍は直前平均並み、2.0倍以上は異常候補とする。</li>
+<li><strong>価格反応</strong>：出来高が大きいこと自体は方向を確定しない。大出来高後に安値更新が止まるか、戻り高値を超えるか、VWAPや基準線を回復するかを合わせる。</li>
+<li><strong>初動の注意</strong>：9:00直後は直前30本平均が不足するため、RVOLを比較できない。15:30の引け集計行も極端な値になるため、ENTRY評価から除外する。</li>
+</ul>
+<h3>銘柄別の代表値</h3>
+<table>
+<thead>
+<tr>
+<th>銘柄</th>
+<th style="text-align: right;">R2総株数</th>
+<th>15秒足で見た約定近傍</th>
+<th>2分足で見た約定近傍</th>
+<th>最大値の扱い</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>285A</td>
+<td style="text-align: right;">41,082,900株</td>
+<td>09:04 136,300株、10:21 57,600株</td>
+<td>09:04 700,000株、10:22 418,700株／RVOL1.54倍</td>
+<td>09:00・15:30の集計を除くと、10:22の上昇・戻り局面を要確認。</td>
+</tr>
+<tr>
+<td>5803</td>
+<td style="text-align: right;">54,641,800株</td>
+<td>09:53 42,100株、10:04 61,000株</td>
+<td>09:54 381,200株／0.54倍、10:08 727,900株／1.25倍</td>
+<td>09:52 1,115,600株／1.63倍。売り飛び乗りの位置と重なる。</td>
+</tr>
+<tr>
+<td>6976</td>
+<td style="text-align: right;">35,239,300株</td>
+<td>09:22 51,800株、09:23 51,000株</td>
+<td>09:22 485,300株／1.01倍、09:24 668,600株／1.39倍</td>
+<td>下げ止まりと買い戻しの価格反応が続いた。</td>
+</tr>
+<tr>
+<td>7974</td>
+<td style="text-align: right;">5,995,900株</td>
+<td>09:52 2,900株、10:02 3,500株</td>
+<td>09:52 24,800株／0.39倍、10:02 19,100株／0.42倍</td>
+<td>取引時は出来高の継続が弱く、支持の確認が不足。</td>
+</tr>
+<tr>
+<td>9984</td>
+<td style="text-align: right;">59,835,800株</td>
+<td>09:01 208,600株、14:38 18,300株</td>
+<td>09:02 1,251,700株、14:38 323,400株／1.42倍</td>
+<td>寄り付き・引け集計を除き、後場も方向継続を要確認。</td>
+</tr>
+<tr>
+<td>1321</td>
+<td style="text-align: right;">229,793株</td>
+<td>地合い確認用</td>
+<td>09:52 4,779株／1.82倍、10:20 7,038株／4.82倍</td>
+<td>個別の直接ENTRY根拠にはしない。</td>
+</tr>
+</tbody>
+</table>
+<h2>5. 2分足の一目均衡表ガイド</h2>
+<p>各銘柄の2分足チャートには、以下を描画した。</p>
+<ul>
+<li>転換線9：直近9本の高値・安値の中間。</li>
+<li>基準線26：直近26本の高値・安値の中間。</li>
+<li><strong>遅行線26：26本前の終値を現在の時刻位置に表示したガイド</strong>。</li>
+<li>先行スパンA・B：2分足の一目の雲を薄く表示。</li>
+<li>VWAP：R2歩みの株数加重で当日累積。</li>
+<li><strong>寄り付き水平線</strong>：当日9:00のR2最初の価格を黄色の破線で表示。</li>
+<li>水色マーカー：松井証券のENTRY。黄色マーカー：EXIT。</li>
+</ul>
+<p>遅行線は、現在値が26本前の価格帯を上回っているか、または下回っているかを見るためのガイドであり、単独で売買方向を決めるものではない。2分足で基準線・VWAP・寄り付きラインのどこに価格がいるかを確認し、15秒足で反応と出来高を確認する順番にする。</p>
+<h2>6. 9:00–15:30 チャート</h2>
+<p>チャートは各銘柄につき、上から <strong>15秒足価格、15秒足出来高、2分足価格＋一目均衡表ガイド、2分足出来高＋RVOL</strong> の4段構成。昼休みはR2歩みに取引がないため、線を補間していない。</p>
+<h3>285A キオクシアHD</h3>
+<p><img alt="285A キオクシアHD｜15秒足・2分足・遅行線26・寄り付きライン" src="assets/chart_285A_15s_2m_ichimoku26.png" /></p>
+<h3>5803 フジクラ</h3>
+<p><img alt="5803 フジクラ｜15秒足・2分足・遅行線26・寄り付きライン" src="assets/chart_5803_15s_2m_ichimoku26.png" /></p>
+<h3>6976 太陽誘電</h3>
+<p><img alt="6976 太陽誘電｜15秒足・2分足・遅行線26・寄り付きライン" src="assets/chart_6976_15s_2m_ichimoku26.png" /></p>
+<h3>7974 任天堂</h3>
+<p><img alt="7974 任天堂｜15秒足・2分足・遅行線26・寄り付きライン" src="assets/chart_7974_15s_2m_ichimoku26.png" /></p>
+<h3>9984 ソフトバンクグループ</h3>
+<p><img alt="9984 ソフトバンクG｜15秒足・2分足・遅行線26・寄り付きライン" src="assets/chart_9984_15s_2m_ichimoku26.png" /></p>
+<h3>1321 日経225連動ETF｜地合い確認</h3>
+<p><img alt="1321 日経225連動ETF｜15秒足・2分足・遅行線26・寄り付きライン" src="assets/chart_1321_15s_2m_ichimoku26.png" /></p>
+<h2>6-1. 板＋歩み値で見るENTRYメモ（補足追記）</h2>
+<p>今回、日誌の価格チャートに加えて、<code>/Volumes/Documents/043kabustationData/20261002fri/</code> のKabuStation板スナップショットと、R2歩み値を15秒単位で同期した。板はBuy1〜Buy5とSell1〜Sell5の数量を合算し、歩み値は同じ15秒窓の株数を合計している。水色・赤色の縦線は松井証券CSVの実約定を示し、板に表示された数量そのものを約定数量とは扱っていない。</p>
+<p><a href="assets/board_walk_20261002.html">板＋歩み値のインタラクティブチャートを開く</a></p>
+<iframe title="板と歩み値の同期チャート" src="assets/board_walk_20261002.html" loading="lazy" style="display:block;width:100%;height:780px;margin:16px 0 28px;border:1px solid #30495d;border-radius:9px;background:#0d141d"></iframe>
+<h3>チャートの読み方</h3>
+<ul>
+<li>上段：R2歩みの15秒OHLC。松井証券のENTRY・EXITを時間と価格に重ねた。</li>
+<li>中段：R2歩みの15秒出来高と、板上位5本の買い・売り数量差。数量差は <code>(買い上位5本 − 売り上位5本) ÷ (買い上位5本 ＋ 売り上位5本)</code> で表示した。</li>
+<li>下段：板上位5本の数量と最良気配スプレッド。板の厚さは「その価格で実際に約定した」ことではなく、その時点の観測スナップショットである。</li>
+<li>実際のENTRY・EXITと損益は、板や実況ではなく松井証券の約定CSVを優先した。</li>
+</ul>
+<h3>今回のENTRYは何型だったか</h3>
+<table>
+<thead>
+<tr><th>銘柄・時刻</th><th>ENTRYの型</th><th>見えていた根拠</th><th>実約定の結果と評価</th></tr>
+</thead>
+<tbody>
+<tr><td>9984｜09:01・09:22</td><td>寄り付き方向先取り型</td><td>日経平均の上方向を背景に、個別も下げ止まって戻ると先に判断。</td><td>−9,900円、−100円。指数の上方向だけで個別LONGを許可したため、寄り付きの売りを受けた。</td></tr>
+<tr><td>285A｜09:04〜09:13</td><td>下げ止まり先回り型 → 15秒足の反応確認型</td><td>18,995円・18,860円では下げ止まりを先読み。18,635円ではSBIアラート、下げ終わりの陰線、15秒足の買い戻しを見て再試行。</td><td>最初の2本は−14,000円、−5,000円。3本目は＋500円。後の小幅プラスの方が、価格反応を確認してから入る形に近い。</td></tr>
+<tr><td>6976｜09:22</td><td>下抜け後の振り落とし・反転追随型</td><td>下落後に大出来高が出て、安値更新が止まり、15秒足で買い戻しが続いた。</td><td>＋3,000円。今回、下げ止まりLONGとして最も再現性を説明しやすいENTRY。</td></tr>
+<tr><td>285A｜09:24〜10:26</td><td>ネックライン下抜け・戻り売り追随型</td><td>18,735円付近のレジサポや、下方向のダウ継続を根拠にSHORT。</td><td>SHORT合計−11,000円。下抜け後に次の安値更新が続かず、陽線で戻された。大出来高だけではSHORTを確定しない。</td></tr>
+<tr><td>7974｜09:52〜10:03</td><td>支持帯LONG／ラウンドナンバー反落SHORT</td><td>7,860円付近の買い支え、7,875円付近の下げ止まり、7,900円手前の反応を観察。</td><td>LONG・SHORT合計−2,500円。支持が続くことと、戻り高値を超えることの確認が一拍足りなかった。</td></tr>
+<tr><td>5803｜09:53〜10:07</td><td>大陰線・大出来高への飛び乗りSHORT</td><td>5,600円付近の下抜けと大きな売りを見て、下落継続を想定。</td><td>−13,300円。買いの歩みが入り、売りが価格を進められなかった。出来高の大きさと方向の確定を分ける必要がある。</td></tr>
+<tr><td>9984｜14:36〜14:55</td><td>後場レンジ安値・遅行線反応の反発LONG → 反転SHORT</td><td>2分足のレンジ安値、遅行線26、15秒足の下げ止まりを見て反発を狙った。反発が続かずSHORTへ切り替え。</td><td>LONG−8,200円、SHORT−1,600円。反発の初動だけでなく、VWAP・基準線26・寄り付きラインを回復するまで待つべきだった。</td></tr>
+</tbody>
+</table>
+<h3>ENTRYの良し悪しを分けたポイント</h3>
+<p>今回のエントリーは、すべて同じ「下げ止まり狙い」ではなく、次の4種類が混ざっていた。</p>
+<ol>
+<li><strong>指数を背景にした先回りLONG</strong>：9984や285Aの寄り付き直後。日経平均が上でも、個別の売りが止まるまでは入らない。</li>
+<li><strong>下げ止まり確認後の反転LONG</strong>：6976のように、大出来高の後に安値更新が止まり、次の15秒足で買いが続いたもの。今回の基準形にする。</li>
+<li><strong>下抜け追随SHORT</strong>：285A・5803。下抜けの瞬間ではなく、次の戻りが抑えられ、再度安値を更新することまで確認する。</li>
+<li><strong>レンジ下限・上限での反転期待</strong>：7974・9984後場。板の厚さや一度のピンバーだけでなく、価格がサポレジを維持できるかを見る。</li>
+</ol>
+<h3>次回のENTRY確認順</h3>
+<p><code>日経平均のレンジ位置 → 個別のサポレジ → 板の数量差とスプレッド → 15秒足の次の一手 → 2分足のVWAP・基準線26・遅行線26・寄り付きライン → ENTRY</code></p>
+<p>板が厚く見えても価格が進むなら、その板は支えとして機能していない可能性がある。反転期待値ZONEでは、<strong>大出来高が出たこと</strong>ではなく、<strong>大出来高の後に価格が進まないこと、次の足で反応が続くこと、無効化ラインを置けること</strong>を3点セットで確認する。</p>
+<h2>7. 本日の反省</h2>
+<h3>寄り付き直後のENTRYが早かった</h3>
+<ul>
+<li>本人の振り返りでは、複数のポジションを短時間に増やしすぎた。</li>
+<li>9時5分ごろにもエントリーし、寄り付き後の売り圧力が落ち着く前に判断を急いだ。</li>
+<li>日経平均はボラティリティの大きいレンジだったのに、「レンジ下限で下げ止まり、もう一度上がる」というシナリオを個別銘柄へ先に適用した。</li>
+<li>個別の形を見ている間に、日経平均の位置とレンジの上限・下限を確認できていなかった。</li>
+</ul>
+<h3>出来高を方向と混同した</h3>
+<ul>
+<li>5803では大出来高の陰線を見てSHORTへ飛び乗ったが、買いの歩みが入り、下落が継続しなかった。</li>
+<li>7974では「買い支えがある」形を見たが、2分足の出来高は平均以下で、支持が続くことを確認できなかった。</li>
+<li>6976では、下抜け・振り落とし・大出来高の買い戻し・価格の安値更新停止が連続したため、同じ出来高でも読みの順番が違った。</li>
+</ul>
+<h3>銘柄を乗り換えすぎた</h3>
+<ul>
+<li>任天堂を保有していればダウの分岐点まで伸ばせた可能性があるという振り返りがある一方、フジクラへ乗り換えてSHORTを重ねた。</li>
+<li>乗り換えの前に、「いまのポジションを持ち続ける仮説が崩れたのか」「新しい銘柄のENTRY根拠があるのか」を声に出して分ける必要がある。</li>
+<li>「日経平均 → レンジ位置 → 個別の価格反応 → 15秒足出来高 → 2分足出来高／一目ガイド → ENTRY」の順番を固定する。</li>
+</ul>
+<h2>8. 次回の実行ルール</h2>
+<ol>
+<li>寄り付きから最初の数分は、日経平均の方向とレンジ位置を確認するまで、同時に複数銘柄へ入らない。</li>
+<li>「上位足が上」はLONGの許可条件ではなく、個別の下げ止まり確認を行うための背景とする。</li>
+<li>15秒足の大出来高が出たら、すぐに方向を決めず、次の足で安値・高値更新が続くかを見る。</li>
+<li>2分足では、価格とVWAP・基準線26・遅行線26・寄り付きラインの位置関係を確認する。</li>
+<li>ENTRY前に、無効化ライン、第一利確、最大損失、保有を継続する条件を声に出す。</li>
+<li>既存ポジションから別銘柄へ乗り換える時は、新しい銘柄のENTRY根拠をゼロから言える場合だけ実行する。</li>
+<li>反転期待値ZONEは「大出来高」ではなく、<strong>大出来高後に価格が進まないこと＋次の足で反応が続くこと</strong>を条件にする。</li>
+</ol>
+<h2>9. 参照元と保存物</h2>
+<h3>GitHub参照</h3>
+<ul>
+<li><a href="https://github.com/mboxxobm/tradeDaily2026/blob/main/2026-10-02_daytrading_log.md">2026-10-02_daytrading_log.md</a>：実況・銘柄別の観察・振り返り。</li>
+<li><a href="https://github.com/mboxxobm/tradeDaily2026/blob/main/2026-10-02_nikkei_review.md">2026-10-02_nikkei_review.md</a>：日経平均の上昇トレンド内・高ボラレンジの認識。</li>
+<li><a href="https://github.com/mboxxobm/tradeDaily2026/blob/main/2026-10-02_post_trade_todolist.md">2026-10-02_post_trade_todolist.md</a>：ルール外、利伸ばし、複数銘柄、リスク、プロセス評価の振り返り。</li>
+<li><a href="https://github.com/mboxxobm/tradeDaily2026/blob/main/trade_minutes_20261002.md">trade_minutes_20261002.md</a>：場中の本人発言、下げ止まり候補、15秒足の観察。</li>
+<li>GitHub内の <code>2026-10-02*.png</code>：TradingViewの15秒足・2分足・出来高表示、松井証券の板／注文画面の視覚資料。画面上のマーカーや実況の形状確認に使用し、数値の約定確定はCSVを優先した。</li>
+</ul>
+<h3>ローカル参照</h3>
+<ul>
+<li>松井証券注文／約定：<code>/Users/th/Downloads/stockorder_20261002.csv</code></li>
+<li>松井証券受渡：<code>/Users/th/Downloads/CurrentSettlement_20261002.csv</code>（受渡日2026/10/06の当日分を集計）</li>
+<li>R2歩み：<code>/Volumes/1000GB20260826/BrisX/GEMINIGravity/20261002_picked/</code></li>
+<li>板＋歩み値チャート：<code>assets/board_walk_20261002.html</code>（<code>/Volumes/Documents/043kabustationData/20261002fri/</code> のKabuStation板＋R2歩みの15秒同期）</li>
+<li>約定一覧：<code>executions_20261002.csv</code></li>
+<li>FIFO約定ペア：<code>paired_trades_20261002.csv</code></li>
+<li>銘柄別受渡集計：<code>settlement_summary_20261002.csv</code></li>
+<li>分析サマリー：<code>analysis_summary_20261002.json</code></li>
+</ul>
+<blockquote>
+<p><strong>確認上の注意</strong>：音声実況で報告された価格・出来高・アラートは、松井証券CSVやR2歩みで一対一に確認できないものを「実況観察」として残した。実際のENTRY・EXITと損益は、松井証券の約定CSVを優先した。</p>
+</blockquote><div class="foot">生成物：R2歩みCSV、松井証券約定CSV、GitHubの2026-10-02日誌・議事録を照合。チャートはassets/に保存。</div></main></body></html>
