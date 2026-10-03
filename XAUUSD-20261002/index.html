@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>XAUUSD 2026-10-02 チャート一覧</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0d1117;
+      --panel: #161b22;
+      --line: #30363d;
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --accent: #58a6ff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: radial-gradient(circle at top, #172033 0, var(--bg) 48%);
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+    .page {
+      width: min(1400px, 100%);
+      margin: 0 auto;
+      padding: 32px 20px 48px;
+    }
+    header {
+      margin-bottom: 24px;
+    }
+    h1 {
+      margin: 0 0 6px;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+    }
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 520px), 1fr));
+      gap: 20px;
+    }
+    figure {
+      margin: 0;
+      padding: 12px;
+      background: rgba(22, 27, 34, .92);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, .22);
+    }
+    .chart-button {
+      display: block;
+      width: 100%;
+      padding: 0;
+      border: 0;
+      border-radius: 9px;
+      overflow: hidden;
+      background: #000;
+      cursor: zoom-in;
+    }
+    .chart-button:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
+    }
+    .chart-button img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    figcaption {
+      padding: 10px 2px 2px;
+      font-weight: 700;
+      color: var(--text);
+    }
+    figcaption span {
+      margin-left: 8px;
+      color: var(--muted);
+      font-weight: 400;
+      font-size: .9rem;
+    }
+    footer {
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+    #lightbox[hidden] { display: none; }
+    #lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 10;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background: rgba(0, 0, 0, .86);
+    }
+    #lightbox img {
+      max-width: 96vw;
+      max-height: 88vh;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 20px 70px rgba(0, 0, 0, .65);
+    }
+    #close {
+      position: fixed;
+      top: 16px;
+      right: 20px;
+      border: 1px solid #6e7681;
+      border-radius: 999px;
+      padding: 7px 14px;
+      background: #21262d;
+      color: var(--text);
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    #lightbox-caption {
+      position: fixed;
+      bottom: 14px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      color: var(--text);
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <h1>XAUUSD チャート一覧</h1>
+      <p class="subtitle">2026年10月2日｜クリックすると画像を拡大表示できます。</p>
+    </header>
+
+    <section class="grid" aria-label="XAUUSDチャート">
+      <figure>
+        <button class="chart-button" type="button" data-image="XAUUSD_H4.png" data-caption="H4（4時間足）">
+          <img src="XAUUSD_H4.png" alt="XAUUSD H4（4時間足）" loading="lazy">
+        </button>
+        <figcaption>H4 <span>4時間足</span></figcaption>
+      </figure>
+      <figure>
+        <button class="chart-button" type="button" data-image="XAUUSD_M30.png" data-caption="M30（30分足）">
+          <img src="XAUUSD_M30.png" alt="XAUUSD M30（30分足）" loading="lazy">
+        </button>
+        <figcaption>M30 <span>30分足</span></figcaption>
+      </figure>
+      <figure>
+        <button class="chart-button" type="button" data-image="XAUUSD_M15.png" data-caption="M15（15分足）">
+          <img src="XAUUSD_M15.png" alt="XAUUSD M15（15分足）" loading="lazy">
+        </button>
+        <figcaption>M15 <span>15分足</span></figcaption>
+      </figure>
+      <figure>
+        <button class="chart-button" type="button" data-image="XAUUSD_M3.png" data-caption="M3（3分足）">
+          <img src="XAUUSD_M3.png" alt="XAUUSD M3（3分足）" loading="lazy">
+        </button>
+        <figcaption>M3 <span>3分足</span></figcaption>
+      </figure>
+    </section>
+
+    <footer>
+      画像ファイル：XAUUSD_H4.png / XAUUSD_M30.png / XAUUSD_M15.png / XAUUSD_M3.png
+    </footer>
+  </main>
+
+  <div id="lightbox" role="dialog" aria-modal="true" aria-label="チャート拡大表示" hidden>
+    <button id="close" type="button" aria-label="閉じる">閉じる ✕</button>
+    <img id="lightbox-image" alt="">
+    <div id="lightbox-caption"></div>
+  </div>
+
+  <script>
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightbox-image");
+    const lightboxCaption = document.getElementById("lightbox-caption");
+
+    function closeLightbox() {
+      lightbox.hidden = true;
+      lightboxImage.removeAttribute("src");
+    }
+
+    document.querySelectorAll(".chart-button").forEach((button) => {
+      button.addEventListener("click", () => {
+        lightboxImage.src = button.dataset.image;
+        lightboxImage.alt = button.dataset.caption;
+        lightboxCaption.textContent = button.dataset.caption;
+        lightbox.hidden = false;
+      });
+    });
+
+    document.getElementById("close").addEventListener("click", closeLightbox);
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) closeLightbox();
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !lightbox.hidden) closeLightbox();
+    });
+  </script>
+</body>
+</html>
