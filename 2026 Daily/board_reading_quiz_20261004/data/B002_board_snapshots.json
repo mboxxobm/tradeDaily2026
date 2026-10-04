@@ -1,0 +1,327 @@
+{
+  "id": "B002",
+  "date": "20260819",
+  "code": "6981",
+  "sourceFiles": [
+    "watchlist_1321-285A-7203-6857-9984-6976-6981-5803-7974-5801-4062_20260819_085459.jsonl.gz",
+    "watchlist_1321-285A-7203-6857-9984-6976-6981-5803-7974-5801-4062_20260819_122503.jsonl.gz"
+  ],
+  "entry": {
+    "observedAt": "2026-08-19T09:14:00.051",
+    "currentPriceTime": "2026-08-19T09:14:00+09:00",
+    "price": 7306,
+    "vwap": 7281.4591,
+    "volume": 4016900,
+    "sell": [
+      {
+        "price": 7306,
+        "qty": 100,
+        "level": 1,
+        "sign": "0101",
+        "time": "2026-08-19T09:13:59+09:00"
+      },
+      {
+        "price": 7307,
+        "qty": 700,
+        "level": 2,
+        "sign": "",
+        "time": ""
+      },
+      {
+        "price": 7308,
+        "qty": 300,
+        "level": 3,
+        "sign": "",
+        "time": ""
+      },
+      {
+        "price": 7309,
+        "qty": 700,
+        "level": 4,
+        "sign": "",
+        "time": ""
+      },
+      {
+        "price": 7310,
+        "qty": 700,
+        "level": 5,
+        "sign": "",
+        "time": ""
+      },
+      {
+        "price": 7311,
+        "qty": 1000,
+        "level": 6,
+        "sign": "",
+        "time": ""
+      },
+      {
+        "price": 7312,
+        "qty": 700,
+        "level": 7,
+        "sign": "",
+        "time": ""
+      },
+      {
+        "price": 7313,
+        "qty": 1500,
+        "level": 8,
+        "sign": "",
+        "time": ""
+      },
+      {
+        "price": 7314,
+        "qty": 1400,
+        "level": 9,
+        "sign": "",
+        "time": ""
+      },
+      {
+        "price": 7315,
+        "qty": 600,
+        "level": 10,
+        "sign": "",
+        "time": ""
+      }
+    ],
+    "buy": [
+      {
+        "price": 7304,
+        "qty": 900,
+        "level": 1,
+        "sign": "0101",
+        "time": "2026-08-19T09:13:59+09:00"
+      },
+      {
+        "price": 7303,
+        "qty": 500,
+        "level": 2,
+        "sign": "",
+        "time": ""
+      },
+      {
+        "price": 7302,
+        "qty": 900,
+        "level": 3,
+        "sign": "",
+        "time": ""
+      },
+      {
+        "price": 7301,
+        "qty": 2100,
+        "level": 4,
+        "sign": "",
+        "time": ""
+      },
+      {
+        "price": 7300,
+        "qty": 9700,
+        "level": 5,
+        "sign": "",
+        "time": ""
+      },
+      {
+        "price": 7299,
+        "qty": 1600,
+        "level": 6,
+        "sign": "",
+        "time": ""
+      },
+      {
+        "price": 7298,
+        "qty": 3200,
+        "level": 7,
+        "sign": "",
+        "time": ""
+      },
+      {
+        "price": 7297,
+        "qty": 1200,
+        "level": 8,
+        "sign": "",
+        "time": ""
+      },
+      {
+        "price": 7296,
+        "qty": 1800,
+        "level": 9,
+        "sign": "",
+        "time": ""
+      },
+      {
+        "price": 7295,
+        "qty": 4600,
+        "level": 10,
+        "sign": "",
+        "time": ""
+      }
+    ],
+    "metrics": {
+      "bestAsk": 7306,
+      "bestBid": 7304,
+      "spread": 2,
+      "buy5": 14100,
+      "sell5": 2500,
+      "imbalance": 0.6987951807228916
+    }
+  },
+  "after": {
+    "observedAt": "2026-08-19T09:15:00.068",
+    "currentPriceTime": "2026-08-19T09:14:59+09:00",
+    "price": 7319,
+    "vwap": 7282.4367,
+    "volume": 4124100,
+    "sell": [
+      {
+        "price": 7319,
+        "qty": 200,
+        "level": 1,
+        "sign": "0101",
+        "time": "2026-08-19T09:15:00+09:00"
+      },
+      {
+        "price": 7320,
+        "qty": 800,
+        "level": 2,
+        "sign": "",
+        "time": ""
+      },
+      {
+        "price": 7321,
+        "qty": 600,
+        "level": 3,
+        "sign": "",
+        "time": ""
+      },
+      {
+        "price": 7322,
+        "qty": 400,
+        "level": 4,
+        "sign": "",
+        "time": ""
+      },
+      {
+        "price": 7323,
+        "qty": 600,
+        "level": 5,
+        "sign": "",
+        "time": ""
+      },
+      {
+        "price": 7324,
+        "qty": 800,
+        "level": 6,
+        "sign": "",
+        "time": ""
+      },
+      {
+        "price": 7325,
+        "qty": 800,
+        "level": 7,
+        "sign": "",
+        "time": ""
+      },
+      {
+        "price": 7326,
+        "qty": 1700,
+        "level": 8,
+        "sign": "",
+        "time": ""
+      },
+      {
+        "price": 7327,
+        "qty": 900,
+        "level": 9,
+        "sign": "",
+        "time": ""
+      },
+      {
+        "price": 7328,
+        "qty": 1000,
+        "level": 10,
+        "sign": "",
+        "time": ""
+      }
+    ],
+    "buy": [
+      {
+        "price": 7317,
+        "qty": 700,
+        "level": 1,
+        "sign": "0101",
+        "time": "2026-08-19T09:15:00+09:00"
+      },
+      {
+        "price": 7316,
+        "qty": 400,
+        "level": 2,
+        "sign": "",
+        "time": ""
+      },
+      {
+        "price": 7315,
+        "qty": 700,
+        "level": 3,
+        "sign": "",
+        "time": ""
+      },
+      {
+        "price": 7314,
+        "qty": 1000,
+        "level": 4,
+        "sign": "",
+        "time": ""
+      },
+      {
+        "price": 7313,
+        "qty": 800,
+        "level": 5,
+        "sign": "",
+        "time": ""
+      },
+      {
+        "price": 7312,
+        "qty": 700,
+        "level": 6,
+        "sign": "",
+        "time": ""
+      },
+      {
+        "price": 7311,
+        "qty": 2100,
+        "level": 7,
+        "sign": "",
+        "time": ""
+      },
+      {
+        "price": 7310,
+        "qty": 3200,
+        "level": 8,
+        "sign": "",
+        "time": ""
+      },
+      {
+        "price": 7309,
+        "qty": 1700,
+        "level": 9,
+        "sign": "",
+        "time": ""
+      },
+      {
+        "price": 7308,
+        "qty": 2700,
+        "level": 10,
+        "sign": "",
+        "time": ""
+      }
+    ],
+    "metrics": {
+      "bestAsk": 7319,
+      "bestBid": 7317,
+      "spread": 2,
+      "buy5": 3600,
+      "sell5": 2600,
+      "imbalance": 0.16129032258064516
+    }
+  }
+}

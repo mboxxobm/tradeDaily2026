@@ -1,0 +1,48 @@
+{
+  "generatedAt": "2026-10-04T05:48:57.036Z",
+  "caseCount": 3,
+  "imageCount": 9,
+  "source": "板読みTools jsonl.gz + full_day trade diary manifest",
+  "rawSourceSize": "約4.9GB（全量はGitHubへコピーせず）",
+  "cases": [
+    {
+      "id": "B001",
+      "date": "20260828",
+      "code": "7974",
+      "entryTime": "09:15:00",
+      "exitTime": "09:16:00",
+      "pnl": 1000,
+      "sourceFiles": [
+        "watchlist_1321-285A-7203-6857-9984-6976-6981-5803-7974-5801-4062_20260828_084121.jsonl.gz",
+        "watchlist_1321-285A-7203-6857-9984-6976-6981-5803-7974-5801-4062_20260828_122502.jsonl.gz"
+      ],
+      "diaryCsv": "stockorder_20260828 (1).csv"
+    },
+    {
+      "id": "B002",
+      "date": "20260819",
+      "code": "6981",
+      "entryTime": "09:14:00",
+      "exitTime": "09:15:00",
+      "pnl": 2000,
+      "sourceFiles": [
+        "watchlist_1321-285A-7203-6857-9984-6976-6981-5803-7974-5801-4062_20260819_085459.jsonl.gz",
+        "watchlist_1321-285A-7203-6857-9984-6976-6981-5803-7974-5801-4062_20260819_122503.jsonl.gz"
+      ],
+      "diaryCsv": "stockorder_20260819.csv"
+    },
+    {
+      "id": "B003",
+      "date": "20260824",
+      "code": "6981",
+      "entryTime": "09:43:00",
+      "exitTime": "09:44:00",
+      "pnl": 1800,
+      "sourceFiles": [
+        "watchlist_1321-285A-7203-6857-9984-6976-6981-5803-7974-5801-4062_20260824_085228.jsonl.gz",
+        "watchlist_1321-285A-7203-6857-9984-6976-6981-5803-7974-5801-4062_20260824_122502.jsonl.gz"
+      ],
+      "diaryCsv": "stockorder_20260824 (1).csv"
+    }
+  ]
+}

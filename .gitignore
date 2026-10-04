@@ -15,8 +15,12 @@
 !scripts/build_daily_manifest.py
 !scripts/r2_publish.py
 !scripts/build_success_trade_quiz_20261003.js
+!scripts/build_board_reading_quiz_20261004.js
 !success_trade_quiz_20261003/
 !success_trade_quiz_20261003/**
+!2026 Daily/
+!2026 Daily/board_reading_quiz_20261004/
+!2026 Daily/board_reading_quiz_20261004/**
 success_trade_quiz_20261003/.DS_Store
 success_trade_quiz_20261003/**/.DS_Store
 success_trade_quiz_20261003/.DS_Store
@@ -49,5 +53,8 @@ Temp/
 *.wav
 !success_trade_quiz_20261003/
 !success_trade_quiz_20261003/**
+!2026 Daily/
+!2026 Daily/board_reading_quiz_20261004/
+!2026 Daily/board_reading_quiz_20261004/**
 success_trade_quiz_20261003/.DS_Store
 success_trade_quiz_20261003/**/.DS_Store

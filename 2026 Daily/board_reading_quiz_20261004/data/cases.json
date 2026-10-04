@@ -1,0 +1,1103 @@
+[
+  {
+    "id": "B001",
+    "date": "20260828",
+    "dateDisplay": "2026/08/28",
+    "code": "7974",
+    "name": "任天堂",
+    "direction": "LONG",
+    "entryTime": "09:15:00",
+    "exitTime": "09:16:00",
+    "entryPrice": 8948,
+    "exitPrice": 8958,
+    "pnl": 1000,
+    "groupPnl": 1400,
+    "diaryCsv": "stockorder_20260828 (1).csv",
+    "sourceFiles": [
+      "watchlist_1321-285A-7203-6857-9984-6976-6981-5803-7974-5801-4062_20260828_084121.jsonl.gz",
+      "watchlist_1321-285A-7203-6857-9984-6976-6981-5803-7974-5801-4062_20260828_122502.jsonl.gz"
+    ],
+    "entrySnapshot": {
+      "observedAt": "2026-08-28T09:15:00.134",
+      "currentPriceTime": "2026-08-28T09:14:58+09:00",
+      "price": 8940,
+      "vwap": 8872.2539,
+      "volume": 1059200,
+      "sell": [
+        {
+          "price": 8941,
+          "qty": 2100,
+          "level": 1,
+          "sign": "0101",
+          "time": "2026-08-28T09:15:00+09:00"
+        },
+        {
+          "price": 8942,
+          "qty": 1100,
+          "level": 2,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 8943,
+          "qty": 1100,
+          "level": 3,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 8944,
+          "qty": 4600,
+          "level": 4,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 8945,
+          "qty": 4200,
+          "level": 5,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 8946,
+          "qty": 7100,
+          "level": 6,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 8947,
+          "qty": 2300,
+          "level": 7,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 8948,
+          "qty": 5400,
+          "level": 8,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 8949,
+          "qty": 9700,
+          "level": 9,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 8950,
+          "qty": 24700,
+          "level": 10,
+          "sign": "",
+          "time": ""
+        }
+      ],
+      "buy": [
+        {
+          "price": 8939,
+          "qty": 100,
+          "level": 1,
+          "sign": "0101",
+          "time": "2026-08-28T09:15:00+09:00"
+        },
+        {
+          "price": 8938,
+          "qty": 1100,
+          "level": 2,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 8937,
+          "qty": 900,
+          "level": 3,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 8936,
+          "qty": 500,
+          "level": 4,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 8935,
+          "qty": 1500,
+          "level": 5,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 8934,
+          "qty": 1100,
+          "level": 6,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 8933,
+          "qty": 1700,
+          "level": 7,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 8932,
+          "qty": 2400,
+          "level": 8,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 8931,
+          "qty": 1500,
+          "level": 9,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 8930,
+          "qty": 1800,
+          "level": 10,
+          "sign": "",
+          "time": ""
+        }
+      ],
+      "metrics": {
+        "bestAsk": 8941,
+        "bestBid": 8939,
+        "spread": 2,
+        "buy5": 4100,
+        "sell5": 13100,
+        "imbalance": -0.5232558139534884
+      }
+    },
+    "afterSnapshot": {
+      "observedAt": "2026-08-28T09:16:00.166",
+      "currentPriceTime": "2026-08-28T09:15:59+09:00",
+      "price": 8955,
+      "vwap": 8879.2264,
+      "volume": 1161900,
+      "sell": [
+        {
+          "price": 8957,
+          "qty": 100,
+          "level": 1,
+          "sign": "0101",
+          "time": "2026-08-28T09:16:00+09:00"
+        },
+        {
+          "price": 8958,
+          "qty": 200,
+          "level": 2,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 8959,
+          "qty": 700,
+          "level": 3,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 8960,
+          "qty": 2100,
+          "level": 4,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 8961,
+          "qty": 900,
+          "level": 5,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 8962,
+          "qty": 1800,
+          "level": 6,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 8963,
+          "qty": 1900,
+          "level": 7,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 8964,
+          "qty": 2200,
+          "level": 8,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 8965,
+          "qty": 2400,
+          "level": 9,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 8966,
+          "qty": 14200,
+          "level": 10,
+          "sign": "",
+          "time": ""
+        }
+      ],
+      "buy": [
+        {
+          "price": 8955,
+          "qty": 100,
+          "level": 1,
+          "sign": "0101",
+          "time": "2026-08-28T09:16:00+09:00"
+        },
+        {
+          "price": 8954,
+          "qty": 800,
+          "level": 2,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 8953,
+          "qty": 2300,
+          "level": 3,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 8952,
+          "qty": 2800,
+          "level": 4,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 8951,
+          "qty": 2300,
+          "level": 5,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 8950,
+          "qty": 2000,
+          "level": 6,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 8949,
+          "qty": 1700,
+          "level": 7,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 8948,
+          "qty": 1900,
+          "level": 8,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 8947,
+          "qty": 1800,
+          "level": 9,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 8946,
+          "qty": 1200,
+          "level": 10,
+          "sign": "",
+          "time": ""
+        }
+      ],
+      "metrics": {
+        "bestAsk": 8957,
+        "bestBid": 8955,
+        "spread": 2,
+        "buy5": 8300,
+        "sell5": 4000,
+        "imbalance": 0.34959349593495936
+      }
+    },
+    "imbalanceText": "-52.3%",
+    "observation": "現在値 8,940円、VWAP 8,872.254円、最良買い 8,939円、最良売り 8,941円、スプレッド 2円。",
+    "roundText": "8,900円（ENTRYとの差 +48円）",
+    "dowHint": "安値切り上げ→高値更新の順番。高値更新に失敗したら追い買いしない。",
+    "boardHint": "LONGの根拠：上位5段の需給差は-52.3%。ENTRY下の買い板が残り、売り1〜3段を約定で吸収して価格が維持されるかを確認する。",
+    "assets": {
+      "before": "assets/20260828_7974_before.svg",
+      "board": "assets/20260828_7974_entry_board.svg",
+      "after": "assets/20260828_7974_after.svg"
+    },
+    "quiz": {
+      "q1": {
+        "answer": "A",
+        "choices": {
+          "A": "ENTRY後に安値を切り上げ、高値更新方向へ進む",
+          "B": "ENTRYを割って逆行し、損切り方向へ進む",
+          "C": "ENTRY付近で往復し、方向が出ない",
+          "D": "一度上がっても高値を失い、見送る"
+        }
+      },
+      "q2": {
+        "answer": "A",
+        "choices": {
+          "A": "買い板がENTRY下で残り、売り板を吸収してENTRY上を維持する",
+          "B": "キリ番だけを理由に板を見ずに入る",
+          "C": "逆行したらロットを追加して損切りを後ろへ動かす",
+          "D": "225や上位足と逆向きでも一瞬の値動きだけで入る"
+        }
+      }
+    }
+  },
+  {
+    "id": "B002",
+    "date": "20260819",
+    "dateDisplay": "2026/08/19",
+    "code": "6981",
+    "name": "村田製作所",
+    "direction": "SHORT",
+    "entryTime": "09:14:00",
+    "exitTime": "09:15:00",
+    "entryPrice": 7323,
+    "exitPrice": 7303,
+    "pnl": 2000,
+    "groupPnl": 500,
+    "diaryCsv": "stockorder_20260819.csv",
+    "sourceFiles": [
+      "watchlist_1321-285A-7203-6857-9984-6976-6981-5803-7974-5801-4062_20260819_085459.jsonl.gz",
+      "watchlist_1321-285A-7203-6857-9984-6976-6981-5803-7974-5801-4062_20260819_122503.jsonl.gz"
+    ],
+    "entrySnapshot": {
+      "observedAt": "2026-08-19T09:14:00.051",
+      "currentPriceTime": "2026-08-19T09:14:00+09:00",
+      "price": 7306,
+      "vwap": 7281.4591,
+      "volume": 4016900,
+      "sell": [
+        {
+          "price": 7306,
+          "qty": 100,
+          "level": 1,
+          "sign": "0101",
+          "time": "2026-08-19T09:13:59+09:00"
+        },
+        {
+          "price": 7307,
+          "qty": 700,
+          "level": 2,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7308,
+          "qty": 300,
+          "level": 3,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7309,
+          "qty": 700,
+          "level": 4,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7310,
+          "qty": 700,
+          "level": 5,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7311,
+          "qty": 1000,
+          "level": 6,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7312,
+          "qty": 700,
+          "level": 7,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7313,
+          "qty": 1500,
+          "level": 8,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7314,
+          "qty": 1400,
+          "level": 9,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7315,
+          "qty": 600,
+          "level": 10,
+          "sign": "",
+          "time": ""
+        }
+      ],
+      "buy": [
+        {
+          "price": 7304,
+          "qty": 900,
+          "level": 1,
+          "sign": "0101",
+          "time": "2026-08-19T09:13:59+09:00"
+        },
+        {
+          "price": 7303,
+          "qty": 500,
+          "level": 2,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7302,
+          "qty": 900,
+          "level": 3,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7301,
+          "qty": 2100,
+          "level": 4,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7300,
+          "qty": 9700,
+          "level": 5,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7299,
+          "qty": 1600,
+          "level": 6,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7298,
+          "qty": 3200,
+          "level": 7,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7297,
+          "qty": 1200,
+          "level": 8,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7296,
+          "qty": 1800,
+          "level": 9,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7295,
+          "qty": 4600,
+          "level": 10,
+          "sign": "",
+          "time": ""
+        }
+      ],
+      "metrics": {
+        "bestAsk": 7306,
+        "bestBid": 7304,
+        "spread": 2,
+        "buy5": 14100,
+        "sell5": 2500,
+        "imbalance": 0.6987951807228916
+      }
+    },
+    "afterSnapshot": {
+      "observedAt": "2026-08-19T09:15:00.068",
+      "currentPriceTime": "2026-08-19T09:14:59+09:00",
+      "price": 7319,
+      "vwap": 7282.4367,
+      "volume": 4124100,
+      "sell": [
+        {
+          "price": 7319,
+          "qty": 200,
+          "level": 1,
+          "sign": "0101",
+          "time": "2026-08-19T09:15:00+09:00"
+        },
+        {
+          "price": 7320,
+          "qty": 800,
+          "level": 2,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7321,
+          "qty": 600,
+          "level": 3,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7322,
+          "qty": 400,
+          "level": 4,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7323,
+          "qty": 600,
+          "level": 5,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7324,
+          "qty": 800,
+          "level": 6,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7325,
+          "qty": 800,
+          "level": 7,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7326,
+          "qty": 1700,
+          "level": 8,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7327,
+          "qty": 900,
+          "level": 9,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7328,
+          "qty": 1000,
+          "level": 10,
+          "sign": "",
+          "time": ""
+        }
+      ],
+      "buy": [
+        {
+          "price": 7317,
+          "qty": 700,
+          "level": 1,
+          "sign": "0101",
+          "time": "2026-08-19T09:15:00+09:00"
+        },
+        {
+          "price": 7316,
+          "qty": 400,
+          "level": 2,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7315,
+          "qty": 700,
+          "level": 3,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7314,
+          "qty": 1000,
+          "level": 4,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7313,
+          "qty": 800,
+          "level": 5,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7312,
+          "qty": 700,
+          "level": 6,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7311,
+          "qty": 2100,
+          "level": 7,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7310,
+          "qty": 3200,
+          "level": 8,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7309,
+          "qty": 1700,
+          "level": 9,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7308,
+          "qty": 2700,
+          "level": 10,
+          "sign": "",
+          "time": ""
+        }
+      ],
+      "metrics": {
+        "bestAsk": 7319,
+        "bestBid": 7317,
+        "spread": 2,
+        "buy5": 3600,
+        "sell5": 2600,
+        "imbalance": 0.16129032258064516
+      }
+    },
+    "imbalanceText": "+69.9%",
+    "observation": "現在値 7,306円、VWAP 7,281.459円、最良買い 7,304円、最良売り 7,306円、スプレッド 2円。",
+    "roundText": "7,300円（ENTRYとの差 +23円）",
+    "dowHint": "高値切り下げ→安値更新の順番。安値更新に失敗したら追い売りしない。",
+    "boardHint": "SHORTの根拠：上位5段の需給差は69.9%。ENTRY上の売り板が残り、買い1〜3段を消化してENTRY下へ定着するかを確認する。",
+    "assets": {
+      "before": "assets/20260819_6981_before.svg",
+      "board": "assets/20260819_6981_entry_board.svg",
+      "after": "assets/20260819_6981_after.svg"
+    },
+    "quiz": {
+      "q1": {
+        "answer": "A",
+        "choices": {
+          "A": "ENTRY後に戻り高値を抑え、安値更新方向へ進む",
+          "B": "ENTRYを上抜いて逆行し、損切り方向へ進む",
+          "C": "ENTRY付近で往復し、方向が出ない",
+          "D": "一度下がっても安値を失い、見送る"
+        }
+      },
+      "q2": {
+        "answer": "A",
+        "choices": {
+          "A": "売り板がENTRY上で残り、買い板を消化してENTRY下へ定着する",
+          "B": "キリ番だけを理由に板を見ずに入る",
+          "C": "逆行したらロットを追加して損切りを後ろへ動かす",
+          "D": "225や上位足と逆向きでも一瞬の値動きだけで入る"
+        }
+      }
+    }
+  },
+  {
+    "id": "B003",
+    "date": "20260824",
+    "dateDisplay": "2026/08/24",
+    "code": "6981",
+    "name": "村田製作所",
+    "direction": "SHORT",
+    "entryTime": "09:43:00",
+    "exitTime": "09:44:00",
+    "entryPrice": 7168,
+    "exitPrice": 7150,
+    "pnl": 1800,
+    "groupPnl": -100,
+    "diaryCsv": "stockorder_20260824 (1).csv",
+    "sourceFiles": [
+      "watchlist_1321-285A-7203-6857-9984-6976-6981-5803-7974-5801-4062_20260824_085228.jsonl.gz",
+      "watchlist_1321-285A-7203-6857-9984-6976-6981-5803-7974-5801-4062_20260824_122502.jsonl.gz"
+    ],
+    "entrySnapshot": {
+      "observedAt": "2026-08-24T09:42:59.985",
+      "currentPriceTime": "2026-08-24T09:43:00+09:00",
+      "price": 7178,
+      "vwap": 7093.5575,
+      "volume": 3561900,
+      "sell": [
+        {
+          "price": 7179,
+          "qty": 500,
+          "level": 1,
+          "sign": "0101",
+          "time": "2026-08-24T09:43:00+09:00"
+        },
+        {
+          "price": 7180,
+          "qty": 500,
+          "level": 2,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7181,
+          "qty": 800,
+          "level": 3,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7182,
+          "qty": 3000,
+          "level": 4,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7183,
+          "qty": 2000,
+          "level": 5,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7184,
+          "qty": 2400,
+          "level": 6,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7185,
+          "qty": 4000,
+          "level": 7,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7186,
+          "qty": 4400,
+          "level": 8,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7187,
+          "qty": 3000,
+          "level": 9,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7188,
+          "qty": 3200,
+          "level": 10,
+          "sign": "",
+          "time": ""
+        }
+      ],
+      "buy": [
+        {
+          "price": 7177,
+          "qty": 300,
+          "level": 1,
+          "sign": "0101",
+          "time": "2026-08-24T09:43:00+09:00"
+        },
+        {
+          "price": 7176,
+          "qty": 700,
+          "level": 2,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7175,
+          "qty": 700,
+          "level": 3,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7174,
+          "qty": 900,
+          "level": 4,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7173,
+          "qty": 1800,
+          "level": 5,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7172,
+          "qty": 2200,
+          "level": 6,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7171,
+          "qty": 2200,
+          "level": 7,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7170,
+          "qty": 4500,
+          "level": 8,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7169,
+          "qty": 3100,
+          "level": 9,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7168,
+          "qty": 2500,
+          "level": 10,
+          "sign": "",
+          "time": ""
+        }
+      ],
+      "metrics": {
+        "bestAsk": 7179,
+        "bestBid": 7177,
+        "spread": 2,
+        "buy5": 4400,
+        "sell5": 6800,
+        "imbalance": -0.21428571428571427
+      }
+    },
+    "afterSnapshot": {
+      "observedAt": "2026-08-24T09:44:00.067",
+      "currentPriceTime": "2026-08-24T09:44:00+09:00",
+      "price": 7157,
+      "vwap": 7094.6542,
+      "volume": 3615200,
+      "sell": [
+        {
+          "price": 7157,
+          "qty": 100,
+          "level": 1,
+          "sign": "0101",
+          "time": "2026-08-24T09:44:00+09:00"
+        },
+        {
+          "price": 7158,
+          "qty": 700,
+          "level": 2,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7159,
+          "qty": 1600,
+          "level": 3,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7160,
+          "qty": 1500,
+          "level": 4,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7161,
+          "qty": 1700,
+          "level": 5,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7162,
+          "qty": 2700,
+          "level": 6,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7163,
+          "qty": 2900,
+          "level": 7,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7164,
+          "qty": 2800,
+          "level": 8,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7165,
+          "qty": 2900,
+          "level": 9,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7166,
+          "qty": 2400,
+          "level": 10,
+          "sign": "",
+          "time": ""
+        }
+      ],
+      "buy": [
+        {
+          "price": 7156,
+          "qty": 100,
+          "level": 1,
+          "sign": "0101",
+          "time": "2026-08-24T09:44:00+09:00"
+        },
+        {
+          "price": 7155,
+          "qty": 600,
+          "level": 2,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7154,
+          "qty": 1400,
+          "level": 3,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7153,
+          "qty": 1600,
+          "level": 4,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7152,
+          "qty": 2300,
+          "level": 5,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7151,
+          "qty": 2400,
+          "level": 6,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7150,
+          "qty": 3600,
+          "level": 7,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7149,
+          "qty": 3200,
+          "level": 8,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7148,
+          "qty": 2300,
+          "level": 9,
+          "sign": "",
+          "time": ""
+        },
+        {
+          "price": 7147,
+          "qty": 2200,
+          "level": 10,
+          "sign": "",
+          "time": ""
+        }
+      ],
+      "metrics": {
+        "bestAsk": 7157,
+        "bestBid": 7156,
+        "spread": 1,
+        "buy5": 6000,
+        "sell5": 5600,
+        "imbalance": 0.034482758620689655
+      }
+    },
+    "imbalanceText": "-21.4%",
+    "observation": "現在値 7,178円、VWAP 7,093.558円、最良買い 7,177円、最良売り 7,179円、スプレッド 2円。",
+    "roundText": "7,200円（ENTRYとの差 -32円）",
+    "dowHint": "高値切り下げ→安値更新の順番。安値更新に失敗したら追い売りしない。",
+    "boardHint": "SHORTの根拠：上位5段の需給差は-21.4%。ENTRY上の売り板が残り、買い1〜3段を消化してENTRY下へ定着するかを確認する。",
+    "assets": {
+      "before": "assets/20260824_6981_before.svg",
+      "board": "assets/20260824_6981_entry_board.svg",
+      "after": "assets/20260824_6981_after.svg"
+    },
+    "quiz": {
+      "q1": {
+        "answer": "A",
+        "choices": {
+          "A": "ENTRY後に戻り高値を抑え、安値更新方向へ進む",
+          "B": "ENTRYを上抜いて逆行し、損切り方向へ進む",
+          "C": "ENTRY付近で往復し、方向が出ない",
+          "D": "一度下がっても安値を失い、見送る"
+        }
+      },
+      "q2": {
+        "answer": "A",
+        "choices": {
+          "A": "売り板がENTRY上で残り、買い板を消化してENTRY下へ定着する",
+          "B": "キリ番だけを理由に板を見ずに入る",
+          "C": "逆行したらロットを追加して損切りを後ろへ動かす",
+          "D": "225や上位足と逆向きでも一瞬の値動きだけで入る"
+        }
+      }
+    }
+  }
+]
