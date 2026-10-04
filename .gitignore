@@ -17,10 +17,12 @@
 !scripts/build_success_trade_quiz_20261003.js
 !scripts/build_board_reading_quiz_20261004.js
 !scripts/r2_fetch_walk_csv.py
+!scripts/build_annual_trade_dashboard.py
 !R2_DATA_SOURCES.md
 !success_trade_quiz_20261003/
 !success_trade_quiz_20261003/**
 !2026 Daily/
+!2026 Daily/annual_trade_dashboard.html
 !2026 Daily/board_reading_quiz_20261004/
 !2026 Daily/board_reading_quiz_20261004/**
 success_trade_quiz_20261003/.DS_Store
