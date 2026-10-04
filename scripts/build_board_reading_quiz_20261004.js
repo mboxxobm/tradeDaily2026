@@ -151,24 +151,47 @@ function pickSnapshot(snapshots, targetEpoch) {
 function aggregateBars(points, startEpoch, endEpoch) {
   const bars = new Map();
   const barMs = 15 * 1000;
-  for (const point of points) {
-    if (!Number.isFinite(point.price) || point.t < startEpoch || point.t > endEpoch) continue;
+  const sorted = [...points].filter((point) => Number.isFinite(point.t) && Number.isFinite(point.price)).sort((a, b) => a.t - b.t);
+  let previous = null;
+  for (const point of sorted) {
+    let volumeDelta = 0;
+    if (previous && Number.isFinite(point.volume) && Number.isFinite(previous.volume)) {
+      volumeDelta = point.volume >= previous.volume ? point.volume - previous.volume : point.volume;
+    }
+    const priceDelta = previous ? Math.sign(point.price - previous.price) : 0;
+    previous = point;
+    if (point.t < startEpoch || point.t > endEpoch) continue;
     const bucket = startEpoch + Math.floor((point.t - startEpoch) / barMs) * barMs;
     const existing = bars.get(bucket);
     if (!existing) {
-      bars.set(bucket, { t: bucket, open: point.price, high: point.price, low: point.price, close: point.price, vwap: point.vwap, volume: 0, ticks: 1 });
+      bars.set(bucket, { t: bucket, open: point.price, high: point.price, low: point.price, close: point.price, vwap: point.vwap, volume: volumeDelta, delta: volumeDelta * priceDelta, ticks: 1 });
       continue;
     }
     existing.high = Math.max(existing.high, point.price);
     existing.low = Math.min(existing.low, point.price);
     existing.close = point.price;
     if (Number.isFinite(point.vwap)) existing.vwap = point.vwap;
+    existing.volume += volumeDelta;
+    existing.delta += volumeDelta * priceDelta;
     existing.ticks += 1;
   }
   const result = [...bars.values()].sort((a, b) => a.t - b.t);
-  for (let index = 1; index < result.length; index += 1) {
-    const previous = result[index - 1];
-    if (Number.isFinite(previous.volume) && Number.isFinite(result[index].volume)) result[index].volume = Math.max(0, result[index].volume - previous.volume);
+  for (let index = 0; index < result.length; index += 1) {
+    const prior = result.slice(Math.max(0, index - 30), index).map((bar) => bar.volume);
+    result[index].rvol = prior.length ? result[index].volume / (prior.reduce((sum, value) => sum + value, 0) / prior.length || 1) : null;
+    const lsmaWindow = result.slice(Math.max(0, index - 49), index + 1).map((bar) => bar.volume);
+    const stdevWindow = result.slice(Math.max(0, index - 20), index + 1).map((bar) => bar.volume);
+    const n = lsmaWindow.length;
+    const sumY = lsmaWindow.reduce((sum, value) => sum + value, 0);
+    const sumXY = lsmaWindow.reduce((sum, value, at) => sum + value * at, 0);
+    const sumX = n * (n - 1) / 2;
+    const sumX2 = n * (n - 1) * (2 * n - 1) / 6;
+    const slope = n > 1 ? (n * sumXY - sumX * sumY) / (n * sumX2 - sumX * sumX || 1) : 0;
+    const intercept = n ? (sumY - slope * sumX) / n : 0;
+    const lsma50 = intercept + slope * (n - 1);
+    const mean = stdevWindow.reduce((sum, value) => sum + value, 0) / Math.max(1, stdevWindow.length);
+    const stdev21 = Math.sqrt(stdevWindow.reduce((sum, value) => sum + ((value - mean) ** 2), 0) / Math.max(1, stdevWindow.length));
+    result[index].largeVolume = (result[index].volume - lsma50) > stdev21;
   }
   return result;
 }
@@ -208,15 +231,21 @@ function snapshotForOutput(snapshot) {
 
 function chartSvg(item, bars, mode) {
   const W = 1200;
-  const H = 560;
-  const margins = { left: 82, right: 28, top: 58, bottom: 46 };
-  const volumeHeight = 82;
-  const priceBottom = H - margins.bottom - volumeHeight;
+  const H = 730;
+  const margins = { left: 82, right: 28, top: 78, bottom: 42 };
+  const priceBottom = 405;
+  const volTop = 442;
+  const volHeight = 62;
+  const deltaTop = 523;
+  const deltaHeight = 55;
+  const rvolTop = 600;
+  const rvolHeight = 48;
   const start = epoch(dateTime(item.date, '09:00:00'));
   const entryEpoch = epoch(dateTime(item.date, item.entryTime));
   const exitEpoch = epoch(dateTime(item.date, item.exitTime));
   const lastEpoch = bars.length ? bars.at(-1).t + 15000 : exitEpoch + 60000;
-  const end = mode === 'before' ? Math.max(entryEpoch + 30000, start + 60000) : Math.max(lastEpoch, exitEpoch + 60000);
+  const sessionEnd = epoch(dateTime(item.date, '15:30:00'));
+  const end = mode === 'before' ? sessionEnd : Math.max(sessionEnd, lastEpoch, exitEpoch + 60000);
   const visible = bars.filter((bar) => bar.t >= start && bar.t <= end);
   const fallbackPrice = item.entryPrice;
   const lows = visible.map((bar) => bar.low).filter(Number.isFinite);
@@ -229,27 +258,37 @@ function chartSvg(item, bars, mode) {
   const y = (price) => margins.top + ((high - price) / Math.max(0.0001, high - low)) * plotHeight;
   const barWidth = Math.max(1, Math.min(9, plotWidth / Math.max(1, visible.length) * 0.72));
   const maxVolume = Math.max(1, ...visible.map((bar) => bar.volume || 0));
-  const title = `${item.dateDisplay} ${item.code} ${item.name}｜${mode === 'before' ? 'BEFORE 9:00→ENTRY' : 'AFTER 板データ連動'}`;
+  const maxDelta = Math.max(1, ...visible.map((bar) => Math.abs(bar.delta || 0)));
+  const maxRvol = Math.max(2, ...visible.map((bar) => bar.rvol || 0));
+  const largeBar = visible.filter((bar) => (bar.rvol || 0) >= 2 || bar.largeVolume).sort((a, b) => b.volume - a.volume)[0];
+  const largeSummary = largeBar
+    ? `大口候補 ${new Date(largeBar.t + 9 * 60 * 60 * 1000).toISOString().slice(11, 16)} 出来高 ${fmtQty(largeBar.volume)} / 推定Δ ${largeBar.delta >= 0 ? '+' : '−'}${fmtQty(Math.abs(largeBar.delta))} / RVOL ${largeBar.rvol.toFixed(1)}x`
+    : 'RVOL 2倍以上のバーなし';
+  const title = `${item.dateDisplay} ${item.code} ${item.name}｜${mode === 'before' ? 'BEFORE 9:00→引け（ENTRY以降を非表示）' : 'AFTER 板データ連動'}`;
   const lines = [];
   lines.push(`<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${escXml(title)}">`);
-  lines.push('<style>text{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",Meiryo,sans-serif}.title{fill:#edf6fb;font-size:20px;font-weight:800}.sub{fill:#a7bac7;font-size:12px}.grid{stroke:#29465a;stroke-width:1}.axis{fill:#a7bac7;font-size:11px}.up{fill:#5ce09f;stroke:#5ce09f}.down{fill:#ff8b98;stroke:#ff8b98}.wick{stroke-width:1}.vwap{fill:none;stroke:#f4c95d;stroke-width:1.6;stroke-dasharray:5 4}.entry{stroke:#f59e0b;stroke-width:2;stroke-dasharray:7 5}.exit{stroke:#77e3a9;stroke-width:2;stroke-dasharray:5 4}.label{fill:#071019;font-size:11px;font-weight:800}.box{fill:#f59e0b}.exitbox{fill:#77e3a9}</style>');
+  lines.push('<style>text{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",Meiryo,sans-serif}.title{fill:#edf6fb;font-size:20px;font-weight:800}.sub{fill:#a7bac7;font-size:12px}.grid{stroke:#29465a;stroke-width:1}.axis{fill:#a7bac7;font-size:11px}.up{fill:#5ce09f;stroke:#5ce09f}.down{fill:#ff8b98;stroke:#ff8b98}.wick{stroke-width:1}.vwap{fill:none;stroke:#f4c95d;stroke-width:1.6;stroke-dasharray:5 4}.entry{stroke:#f59e0b;stroke-width:2;stroke-dasharray:7 5}.exit{stroke:#77e3a9;stroke-width:2;stroke-dasharray:5 4}.label{fill:#071019;font-size:11px;font-weight:800}.box{fill:#f59e0b}.exitbox{fill:#77e3a9}.panel{fill:#0d1b27;stroke:#29465a}.axisline{stroke:#607887;stroke-width:1}.delta-pos{fill:#5ce09f}.delta-neg{fill:#ff8b98}.rvol{fill:none;stroke:#71d8ef;stroke-width:2}.large{stroke:#f4c95d;stroke-width:2}.mask{fill:#071019;fill-opacity:.94}.masktext{fill:#edf6fb;font-size:17px;font-weight:800}</style>');
   lines.push('<rect width="100%" height="100%" fill="#0b1219"/>');
   lines.push(`<text x="${margins.left}" y="27" class="title">${escXml(title)}</text>`);
-  lines.push(`<text x="${margins.left}" y="45" class="sub">15秒足／板読みToolsのcurrent_price・VWAPから生成　${visible.length}本　黄色=VWAP</text>`);
+  lines.push(`<text x="${margins.left}" y="48" class="sub">15秒足｜黄色=VWAP｜出来高バー・推定デルタ・RVOL（直前30本平均比）　${visible.length}本　｜　${escXml(largeSummary)}</text>`);
   for (let i = 0; i <= 5; i += 1) {
     const price = low + (high - low) * (i / 5);
     const yy = y(price);
     lines.push(`<line x1="${margins.left}" y1="${yy.toFixed(2)}" x2="${W - margins.right}" y2="${yy.toFixed(2)}" class="grid"/>`);
     lines.push(`<text x="${margins.left - 8}" y="${(yy + 4).toFixed(2)}" text-anchor="end" class="axis">${escXml(fmtPrice(price))}</text>`);
   }
-  const tickCount = mode === 'before' ? 4 : 8;
+  for (const [top, height, name] of [[volTop, volHeight, '出来高'], [deltaTop, deltaHeight, '推定Δ'], [rvolTop, rvolHeight, 'RVOL']]) {
+    lines.push(`<rect x="${margins.left}" y="${top}" width="${plotWidth}" height="${height}" class="panel"/>`);
+    lines.push(`<text x="${margins.left - 8}" y="${top + 13}" text-anchor="end" class="axis">${name}</text>`);
+  }
+  const tickCount = 8;
   for (let i = 0; i <= tickCount; i += 1) {
     const time = start + (end - start) * (i / tickCount);
     const xx = x(time);
     const d = new Date(time);
     const label = `${pad(d.getUTCHours() + 9 > 23 ? d.getUTCHours() - 15 : d.getUTCHours() + 9)}:${pad(d.getUTCMinutes())}`;
-    lines.push(`<line x1="${xx.toFixed(2)}" y1="${margins.top}" x2="${xx.toFixed(2)}" y2="${priceBottom}" class="grid" opacity=".45"/>`);
-    lines.push(`<text x="${xx.toFixed(2)}" y="${H - 20}" text-anchor="middle" class="axis">${label}</text>`);
+    lines.push(`<line x1="${xx.toFixed(2)}" y1="${margins.top}" x2="${xx.toFixed(2)}" y2="${rvolTop + rvolHeight}" class="grid" opacity=".45"/>`);
+    lines.push(`<text x="${xx.toFixed(2)}" y="${H - 22}" text-anchor="middle" class="axis">${label}</text>`);
   }
   for (const bar of visible) {
     const xx = x(bar.t + 7500);
@@ -262,8 +301,13 @@ function chartSvg(item, bars, mode) {
     const height = Math.max(1.4, Math.abs(yyClose - yyOpen));
     lines.push(`<line x1="${xx.toFixed(2)}" y1="${yyHigh.toFixed(2)}" x2="${xx.toFixed(2)}" y2="${yyLow.toFixed(2)}" class="${color} wick"/>`);
     lines.push(`<rect x="${(xx - barWidth / 2).toFixed(2)}" y="${top.toFixed(2)}" width="${barWidth.toFixed(2)}" height="${height.toFixed(2)}" class="${color}"/>`);
-    const vh = (bar.volume || 0) / maxVolume * volumeHeight;
-    if (vh > 0) lines.push(`<rect x="${(xx - barWidth / 2).toFixed(2)}" y="${(H - margins.bottom - vh).toFixed(2)}" width="${barWidth.toFixed(2)}" height="${vh.toFixed(2)}" class="${color}" opacity=".38"/>`);
+    const vh = (bar.volume || 0) / maxVolume * (volHeight - 8);
+    if (vh > 0) lines.push(`<rect x="${(xx - barWidth / 2).toFixed(2)}" y="${(volTop + volHeight - vh).toFixed(2)}" width="${barWidth.toFixed(2)}" height="${vh.toFixed(2)}" class="${color}" opacity=".8"/>`);
+    const dh = Math.abs(bar.delta || 0) / maxDelta * (deltaHeight / 2 - 4);
+    if (dh > 0) lines.push(`<rect x="${(xx - barWidth / 2).toFixed(2)}" y="${bar.delta >= 0 ? deltaTop + deltaHeight / 2 - dh : deltaTop + deltaHeight / 2}" width="${barWidth.toFixed(2)}" height="${dh.toFixed(2)}" class="${bar.delta >= 0 ? 'delta-pos' : 'delta-neg'}"/>`);
+    const rh = bar.rvol ? Math.min(rvolHeight - 5, bar.rvol / maxRvol * (rvolHeight - 5)) : 0;
+    if (rh > 0) lines.push(`<rect x="${(xx - barWidth / 2).toFixed(2)}" y="${(rvolTop + rvolHeight - rh).toFixed(2)}" width="${barWidth.toFixed(2)}" height="${rh.toFixed(2)}" fill="#71d8ef" opacity=".55"/>`);
+    if ((bar.rvol || 0) >= 2 || bar.largeVolume) lines.push(`<circle cx="${xx.toFixed(2)}" cy="${(volTop + 5).toFixed(2)}" r="3.2" fill="#f4c95d" class="large"/>`);
   }
   const vwapPoints = visible.filter((bar) => Number.isFinite(bar.vwap)).map((bar) => `${x(bar.t + 7500).toFixed(2)},${y(bar.vwap).toFixed(2)}`);
   if (vwapPoints.length > 1) lines.push(`<polyline points="${vwapPoints.join(' ')}" class="vwap"/>`);
@@ -275,7 +319,12 @@ function chartSvg(item, bars, mode) {
     lines.push(`<line x1="${exitX.toFixed(2)}" y1="${margins.top}" x2="${exitX.toFixed(2)}" y2="${priceBottom}" class="exit"/>`);
     lines.push(`<rect x="${Math.min(W - 138, exitX + 6).toFixed(2)}" y="${margins.top + 36}" width="111" height="21" rx="5" class="exitbox"/><text x="${Math.min(W - 132, exitX + 12).toFixed(2)}" y="${margins.top + 51}" class="label">EXIT ${escXml(item.exitTime)}</text>`);
   }
-  lines.push(`<text x="${margins.left}" y="${H - 4}" class="sub">ENTRY ${escXml(fmtPrice(item.entryPrice))}円 → EXIT ${escXml(fmtPrice(item.exitPrice))}円　損益 ${escXml(fmtYen(item.pnl))}</text>`);
+  if (mode === 'before') {
+    lines.push(`<rect x="${entryX.toFixed(2)}" y="${margins.top}" width="${Math.max(0, W - margins.right - entryX).toFixed(2)}" height="${rvolTop + rvolHeight - margins.top}" class="mask"/>`);
+    lines.push(`<text x="${Math.min(W - 210, entryX + 16).toFixed(2)}" y="${margins.top + 32}" class="masktext">ENTRY以降はAFTERで公開</text>`);
+  }
+  lines.push(`<line x1="${margins.left}" y1="${deltaTop + deltaHeight / 2}" x2="${W - margins.right}" y2="${deltaTop + deltaHeight / 2}" class="axisline"/>`);
+  lines.push(`<text x="${margins.left}" y="${H - 4}" class="sub">推定Δ=価格上昇時＋出来高／下落時−出来高（同値は0）｜RVOL=直前30本平均比｜点=RVOL 2倍以上または出来高異常</text>`);
   lines.push('</svg>');
   return lines.join('');
 }
@@ -291,32 +340,32 @@ function boardSvg(item, snapshot, afterSnapshot) {
   lines.push('<rect width="100%" height="100%" fill="#0b1219"/>');
   lines.push(`<text x="50" y="34" class="title">${escXml(item.dateDisplay)} ${escXml(item.code)} ${escXml(item.name)}｜ENTRY時点の板</text>`);
   lines.push(`<text x="50" y="55" class="sub">板読みTools　${escXml(snapshot.currentPriceTime || snapshot.observedAt)}　現在値 ${escXml(fmtPrice(snapshot.price))}円　VWAP ${escXml(fmtPrice(snapshot.vwap))}円</text>`);
-  lines.push(`<text x="50" y="91" class="head">売り板（上）</text><text x="690" y="91" class="bidhead">買い板（下）</text>`);
-  lines.push(`<text x="50" y="111" class="muted">価格　数量　厚み</text><text x="690" y="111" class="muted">価格　数量　厚み</text>`);
+  lines.push(`<text x="50" y="91" class="head">売り注文（上）</text><text x="50" y="111" class="muted">数量・板の厚み</text><text x="600" y="111" class="muted">価格</text>`);
+  lines.push(`<text x="740" y="91" class="bidhead">買い注文（下）</text><text x="740" y="111" class="muted">価格</text><text x="900" y="111" class="muted">数量・板の厚み</text>`);
   for (let index = 0; index < 10; index += 1) {
-    const y = 137 + index * 39;
-    const sell = snapshot.sell[index];
+    const sellY = 133 + index * 21;
+    const buyY = 356 + index * 21;
+    const sell = snapshot.sell[9 - index];
     const buy = snapshot.buy[index];
-    lines.push(`<line x1="50" y1="${y + 18}" x2="1150" y2="${y + 18}" class="row" opacity=".65"/>`);
     if (sell) {
       const width = 380 * sell.qty / maxQty;
-      lines.push(`<rect x="260" y="${y - 13}" width="${width.toFixed(2)}" height="24" rx="4" class="sellbar"/>`);
-      lines.push(`<text x="50" y="${y + 4}" class="label">${escXml(fmtPrice(sell.price))}</text><text x="174" y="${y + 4}" class="label">${escXml(fmtQty(sell.qty))}</text>`);
-      if (index < 3) lines.push(`<text x="${Math.min(645, 273 + width).toFixed(2)}" y="${y + 4}" class="muted">L${index + 1}</text>`);
+      lines.push(`<line x1="50" y1="${sellY + 10}" x2="1150" y2="${sellY + 10}" class="row" opacity=".5"/><rect x="${(580 - width).toFixed(2)}" y="${sellY - 9}" width="${width.toFixed(2)}" height="16" rx="4" class="sellbar"/>`);
+      lines.push(`<text x="${(570 - width).toFixed(2)}" y="${sellY + 4}" text-anchor="end" class="label">${escXml(fmtQty(sell.qty))}</text><text x="610" y="${sellY + 4}" class="label">${escXml(fmtPrice(sell.price))}</text>`);
+      if (sell.level <= 3) lines.push(`<text x="${Math.max(65, 562 - width).toFixed(2)}" y="${sellY + 4}" text-anchor="end" class="muted">L${sell.level}</text>`);
     }
     if (buy) {
       const width = 380 * buy.qty / maxQty;
-      lines.push(`<rect x="900" y="${y - 13}" width="${width.toFixed(2)}" height="24" rx="4" class="buybar"/>`);
-      lines.push(`<text x="690" y="${y + 4}" class="label">${escXml(fmtPrice(buy.price))}</text><text x="814" y="${y + 4}" class="label">${escXml(fmtQty(buy.qty))}</text>`);
-      if (index < 3) lines.push(`<text x="${Math.max(662, 925 - width).toFixed(2)}" y="${y + 4}" class="muted">L${index + 1}</text>`);
+      lines.push(`<line x1="50" y1="${buyY + 10}" x2="1150" y2="${buyY + 10}" class="row" opacity=".5"/><rect x="900" y="${buyY - 9}" width="${width.toFixed(2)}" height="16" rx="4" class="buybar"/>`);
+      lines.push(`<text x="750" y="${buyY + 4}" class="label">${escXml(fmtPrice(buy.price))}</text><text x="${Math.min(1140, 912 + width).toFixed(2)}" y="${buyY + 4}" class="label">${escXml(fmtQty(buy.qty))}</text>`);
+      if (index < 3) lines.push(`<text x="${Math.min(1170, 915 + width).toFixed(2)}" y="${buyY + 4}" class="muted">L${index + 1}</text>`);
     }
   }
-  const boxY = 545;
+  const boxY = 575;
   const imbalanceText = metrics.imbalance === null ? '—' : `${metrics.imbalance >= 0 ? '+' : ''}${(metrics.imbalance * 100).toFixed(1)}%`;
   lines.push(`<rect x="50" y="${boxY}" width="1100" height="96" rx="10" class="center"/>`);
   lines.push(`<text x="72" y="${boxY + 28}" class="label">最良買い ${escXml(fmtPrice(metrics.bestBid))}　最良売り ${escXml(fmtPrice(metrics.bestAsk))}　スプレッド ${escXml(fmtPrice(metrics.spread))}</text>`);
   lines.push(`<text x="72" y="${boxY + 52}" class="label">買い上位5段 ${escXml(fmtQty(metrics.buy5))}　／　売り上位5段 ${escXml(fmtQty(metrics.sell5))}　／　需給差 ${escXml(imbalanceText)}</text>`);
-  lines.push(`<text x="72" y="${boxY + 76}" class="muted">ENTRY後の板変化：${escXml(boardChangeText(snapshot, afterSnapshot))}</text>`);
+  lines.push(`<text x="72" y="${boxY + 76}" class="muted">数量だけでは方向を決めず、歩み値で板を吸収したかを確認。</text>`);
   lines.push('</svg>');
   return lines.join('');
 }
@@ -369,7 +418,7 @@ function renderPage(cases) {
   const card = (item, index) => {
     const choices = item.quiz;
     const radio = (name, data) => Object.entries(data.choices).map(([key, text]) => `<label class="option"><input type="radio" name="${item.id}-${name}" value="${key}"><span><strong>${key}.</strong> ${escHtml(text)}</span></label>`).join('');
-    return `<details class="case" data-id="${item.id}" ${index === 0 ? 'open' : ''}><summary class="case-head"><div><span class="num">${escHtml(item.id)}</span><h2>${escHtml(item.code)} ${escHtml(item.name)}</h2><p>${escHtml(item.dateDisplay)} ${escHtml(item.entryTime)} / ENTRY ${escHtml(fmtPrice(item.entryPrice))}円 / 実績 ${escHtml(fmtYen(item.pnl))} ${escHtml(item.direction)}</p></div><span class="tag">板読みTools</span></summary><div class="body"><div class="facts"><span>ENTRY ${escHtml(item.entryTime)} / EXIT ${escHtml(item.exitTime)}</span><span>VWAP ${escHtml(fmtPrice(item.entrySnapshot.vwap))}円</span><span>上位5段差 ${escHtml(item.imbalanceText)}</span></div><div class="image-grid"><figure><img class="zoomable" src="${escHtml(item.assets.before)}" alt="${escHtml(item.dateDisplay)} ${escHtml(item.code)} BEFORE"><figcaption>① BEFORE：9時からENTRYまでの15秒足</figcaption></figure><figure><img class="zoomable" src="${escHtml(item.assets.board)}" alt="${escHtml(item.dateDisplay)} ${escHtml(item.code)} ENTRY板"><figcaption>② ENTRY時点：板読みToolsの板10段</figcaption></figure></div><div class="hint"><strong>数値観察：</strong>${escHtml(item.observation)}</div><form class="quiz"><div class="questions"><fieldset><legend>1. ENTRY後のチャートはどうなる？</legend>${radio('q1', choices.q1)}</fieldset><fieldset><legend>2. ENTRY時点の板読みはどれ？</legend>${radio('q2', choices.q2)}</fieldset></div><button class="answer" type="button">回答してAFTERを見る</button><span class="message">2問選択してください。</span></form><section class="after"><div class="after-title">③ AFTER：答え合わせ</div><img class="zoomable after-image" src="${escHtml(item.assets.after)}" alt="${escHtml(item.dateDisplay)} ${escHtml(item.code)} AFTER"><p><strong>板読みの再現ポイント：</strong>${escHtml(item.boardHint)}</p><p><strong>キリ番：</strong>${escHtml(item.roundText)}　<strong>ダウ理論：</strong>${escHtml(item.dowHint)}</p><p class="source">出典：${escHtml(item.sourceFiles.join(' / '))} ／ 日誌CSV：${escHtml(item.diaryCsv)}</p></section></div></details>`;
+    return `<details class="case" data-id="${item.id}" ${index === 0 ? 'open' : ''}><summary class="case-head"><div><span class="num">${escHtml(item.id)}</span><h2>${escHtml(item.code)} ${escHtml(item.name)}</h2><p>${escHtml(item.dateDisplay)} ${escHtml(item.entryTime)} / ENTRY ${escHtml(fmtPrice(item.entryPrice))}円 / ${escHtml(item.direction)}</p></div><span class="tag">板読みTools</span></summary><div class="body"><div class="facts"><span>ENTRY ${escHtml(item.entryTime)} / EXIT ${escHtml(item.exitTime)}</span><span>VWAP ${escHtml(fmtPrice(item.entrySnapshot.vwap))}円</span><span>上位5段差 ${escHtml(item.imbalanceText)}</span></div><div class="image-grid"><figure><img class="zoomable" src="${escHtml(item.assets.before)}" alt="${escHtml(item.dateDisplay)} ${escHtml(item.code)} BEFORE"><figcaption>① BEFORE：9時から引けまでのチャート。ENTRYより右を隠しています。</figcaption></figure><figure><img class="zoomable" src="${escHtml(item.assets.board)}" alt="${escHtml(item.dateDisplay)} ${escHtml(item.code)} ENTRY板"><figcaption>② ENTRY時点：売り注文を上、買い注文を下に表示</figcaption></figure></div><div class="hint"><strong>数値観察：</strong>${escHtml(item.observation)}</div><form class="quiz"><div class="questions"><fieldset><legend>1. ENTRY後のチャートはどうなる？</legend>${radio('q1', choices.q1)}</fieldset><fieldset><legend>2. ENTRY時点の板読みはどれ？</legend>${radio('q2', choices.q2)}</fieldset></div><button class="answer" type="button">回答してAFTERを見る</button><span class="message">2問選択してください。</span></form><section class="after"><div class="after-title">③ AFTER：答え合わせ　実績 ${escHtml(fmtYen(item.pnl))}</div><img class="zoomable after-image" src="${escHtml(item.assets.after)}" alt="${escHtml(item.dateDisplay)} ${escHtml(item.code)} AFTER"><p><strong>板読みの再現ポイント：</strong>${escHtml(item.boardHint)}</p><p><strong>キリ番：</strong>${escHtml(item.roundText)}　<strong>ダウ理論：</strong>${escHtml(item.dowHint)}</p><p class="source">出典：${escHtml(item.sourceFiles.join(' / '))} ／ 日誌CSV：${escHtml(item.diaryCsv)}</p></section></div></details>`;
   };
   return `<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>板読み連動トレード復習クイズ｜2026</title><style>
 :root{--bg:#071019;--panel:#102131;--line:#2b4a60;--text:#edf6fb;--muted:#a7bac7;--cyan:#71d8ef;--green:#77e3a9;--red:#ff8b98;--yellow:#f4c95d}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 15% 0,#17344a 0,#071019 42rem);color:var(--text);font:14px/1.6 -apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",Meiryo,sans-serif}main{width:min(1220px,calc(100% - 24px));margin:auto;padding:25px 0 65px}header,.notice,.case{border:1px solid var(--line);border-radius:15px;background:rgba(16,33,49,.94);box-shadow:0 15px 38px rgba(0,0,0,.2)}header{padding:25px}h1{margin:0 0 8px;font-size:clamp(27px,4vw,42px)}h1 small{color:var(--cyan);font-size:12px;letter-spacing:.15em;display:block;margin-bottom:9px}.lead{margin:0;color:#c8d9e4}.notice{margin:13px 0;padding:13px 16px;color:#c8d9e4}.notice strong{color:var(--yellow)}.case-list{display:grid;gap:13px}.case{overflow:hidden}.case-head{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:15px 18px;cursor:pointer;list-style:none;background:rgba(20,49,70,.82)}.case-head::-webkit-details-marker{display:none}.case-head:after{content:"＋";font-size:20px;color:var(--cyan)}.case[open]>.case-head:after{content:"−"}.case-head>div{display:grid;grid-template-columns:auto 1fr;column-gap:11px;align-items:center}.case-head h2{margin:0;font-size:19px}.case-head p{grid-column:2;margin:2px 0 0;color:var(--muted);font-size:12px}.num{grid-row:span 2;color:var(--cyan);border:1px solid rgba(113,216,239,.4);border-radius:10px;padding:9px 8px;font-weight:800}.tag{border:1px solid rgba(113,216,239,.35);border-radius:999px;padding:4px 9px;color:var(--cyan);font-size:11px}.body{padding:18px}.facts{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:11px}.facts span{border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:4px 8px;color:var(--muted);font-size:12px}.image-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.image-grid figure{margin:0;border:1px solid var(--line);border-radius:11px;overflow:hidden;background:#0b1219}.image-grid img{display:block;width:100%;height:auto;cursor:zoom-in}.image-grid figcaption{padding:8px 10px;color:#c8d9e4;background:#07111a;font-size:12px}.hint{margin-top:11px;padding:11px;border-left:3px solid var(--yellow);background:rgba(244,201,93,.07);color:#dbe7ed}.hint strong{color:var(--yellow)}.questions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin-top:15px}fieldset{margin:0;padding:12px;border:1px solid rgba(255,255,255,.14);border-radius:10px;background:rgba(255,255,255,.025)}legend{font-weight:800}.option{display:flex;gap:7px;margin-top:7px;padding:7px;border:1px solid rgba(255,255,255,.12);border-radius:8px;cursor:pointer;color:#c8d9e4}.option input{accent-color:var(--cyan);margin-top:4px}.option strong{color:var(--cyan)}.answer{margin-top:13px;border:0;border-radius:8px;background:var(--cyan);color:#06141c;padding:9px 13px;font-weight:800;cursor:pointer}.message{margin-left:8px;color:var(--muted);font-size:12px}.after{display:none;margin-top:18px;padding-top:17px;border-top:1px solid rgba(255,255,255,.14)}.after.show{display:block}.after-title{color:var(--green);font-weight:850;margin-bottom:8px}.after-image{display:block;width:100%;cursor:zoom-in;border:1px solid var(--line);border-radius:10px}.after p{margin:8px 0;color:#c8d9e4}.source{font-size:11px;color:var(--muted)!important}.lightbox{width:min(96vw,1400px);max-height:94vh;padding:42px 14px 14px;background:rgba(3,10,17,.97);border:1px solid rgba(113,216,239,.5);border-radius:13px}.lightbox::backdrop{background:rgba(0,0,0,.8)}.lightbox img{display:block;width:100%;max-height:82vh;object-fit:contain}.close{position:absolute;right:9px;top:7px;border:1px solid rgba(255,255,255,.2);border-radius:99px;background:rgba(255,255,255,.1);color:var(--text);font-size:22px;width:34px;height:34px}.caption{text-align:center;color:var(--muted);font-size:12px;margin:7px 0 0}@media(max-width:800px){main{width:min(100% - 14px,650px)}.image-grid,.questions{grid-template-columns:1fr}.case-head{display:block}.case-head>div{display:block}.case-head p{margin-left:0}.tag{display:inline-block;margin-top:8px}.message{display:block;margin:7px 0 0}}</style></head><body><main><header><h1><small>BOARD READING × TRADE REVIEW</small>板読み連動トレード復習クイズ</h1><p class="lead">板読みToolsの実データと、日誌のプラス約定を突き合わせた3ケースです。1ケースにつき「BEFOREチャート・ENTRY板・AFTERチャート」の3枚に整理しています。</p></header><div class="notice"><strong>解き方：</strong>①9時からENTRYまでの値動き、②ENTRY時点の板10段と需給差を見て、2問に答えてください。回答後に③AFTERを表示します。板の厚さだけで決めず、約定・価格維持・VWAP・キリ番を一緒に確認します。</div><section class="case-list">${cases.map(card).join('')}</section><footer class="notice">元データ：板読みToolsのjsonl.gzから選択ケースの銘柄・価格・板10段だけを抽出。4.9GBの生データ全量はGitHubへコピーせず、クイズ再現に必要な抜粋JSONと生成SVGを保存しています。</footer></main><dialog id="lightbox" class="lightbox"><button id="close" class="close" type="button">×</button><img id="lightbox-image" alt=""><p id="caption" class="caption"></p></dialog><script>const cases=${JSON.stringify(cases)};const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));document.querySelectorAll('.case').forEach(card=>{const id=card.dataset.id;const item=cases.find(v=>v.id===id);const button=card.querySelector('.answer');button.addEventListener('click',()=>{const a=card.querySelector('input[name="'+id+'-q1"]:checked');const b=card.querySelector('input[name="'+id+'-q2"]:checked');const message=card.querySelector('.message');if(!a||!b){message.textContent='2問とも選択してください。';return}const score=Number(a.value===item.quiz.q1.answer)+Number(b.value===item.quiz.q2.answer);message.textContent=score+' / 2 問正解。板の数値と価格の反応を答え合わせします。';card.querySelector('.after').classList.add('show');card.querySelectorAll('input').forEach(input=>input.disabled=true)})});const lightbox=document.getElementById('lightbox'),image=document.getElementById('lightbox-image'),caption=document.getElementById('caption');document.addEventListener('click',event=>{const target=event.target.closest('.zoomable');if(!target)return;image.src=target.src;image.alt=target.alt;caption.textContent=target.alt+'｜クリックまたはEscで閉じる';lightbox.showModal()});document.getElementById('close').addEventListener('click',()=>lightbox.close());lightbox.addEventListener('click',event=>{if(event.target===lightbox)lightbox.close()});</script></body></html>`;
