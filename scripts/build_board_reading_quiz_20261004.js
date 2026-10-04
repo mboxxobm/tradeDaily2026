@@ -334,20 +334,34 @@ function boardChangeText(entry, after) {
 function boardHint(item) {
   const m = item.entrySnapshot.metrics;
   const imbalance = m.imbalance === null ? '需給差を算出できない' : `上位5段の需給差は${(m.imbalance * 100).toFixed(1)}%`;
-  if (item.direction === 'LONG') return `LONGの根拠：${imbalance}。ENTRY下の買い板が残り、売り1〜3段を約定で吸収して価格が維持されるかを確認する。`;
-  return `SHORTの根拠：${imbalance}。ENTRY上の売り板が残り、買い1〜3段を消化してENTRY下へ定着するかを確認する。`;
+  if (item.direction === 'LONG' && m.imbalance !== null && m.imbalance < 0) {
+    return `LONGの確認点：${imbalance}で売り板優位に見えるため、売り1〜3段を買いが約定で吸収し、ENTRY上を維持できるかを確認する。`;
+  }
+  if (item.direction === 'SHORT' && m.imbalance !== null && m.imbalance > 0) {
+    return `SHORTの確認点：${imbalance}で買い板優位に見えるため、買い1〜3段を売りが約定で消化し、ENTRY下へ定着できるかを確認する。`;
+  }
+  if (item.direction === 'LONG') return `LONGの確認点：${imbalance}。ENTRY下の買い板が残り、売り1〜3段を約定で吸収してENTRY上を維持できるかを確認する。`;
+  return `SHORTの確認点：${imbalance}。ENTRY上の売り板が残り、買い1〜3段を消化してENTRY下へ定着できるかを確認する。`;
 }
 
 function quizChoices(item) {
+  const imbalance = item.metrics?.imbalance;
+  const q2Correct = item.direction === 'LONG'
+    ? (imbalance !== null && imbalance < 0
+      ? '売り板の厚さを買いが約定で吸収し、ENTRY上を維持できるか確認する'
+      : '買い板優位がENTRY下で残り、売り1〜3段を吸収できるか確認する')
+    : (imbalance !== null && imbalance > 0
+      ? '買い板の厚さを売りが約定で消化し、ENTRY下へ定着できるか確認する'
+      : '売り板優位がENTRY上で残り、買い1〜3段を消化できるか確認する');
   if (item.direction === 'LONG') {
     return {
       q1: { answer: 'A', choices: { A: 'ENTRY後に安値を切り上げ、高値更新方向へ進む', B: 'ENTRYを割って逆行し、損切り方向へ進む', C: 'ENTRY付近で往復し、方向が出ない', D: '一度上がっても高値を失い、見送る' } },
-      q2: { answer: 'A', choices: { A: '買い板がENTRY下で残り、売り板を吸収してENTRY上を維持する', B: 'キリ番だけを理由に板を見ずに入る', C: '逆行したらロットを追加して損切りを後ろへ動かす', D: '225や上位足と逆向きでも一瞬の値動きだけで入る' } },
+      q2: { answer: 'A', choices: { A: q2Correct, B: 'キリ番だけを理由に板を見ずに入る', C: '逆行したらロットを追加して損切りを後ろへ動かす', D: '225や上位足と逆向きでも一瞬の値動きだけで入る' } },
     };
   }
   return {
     q1: { answer: 'A', choices: { A: 'ENTRY後に戻り高値を抑え、安値更新方向へ進む', B: 'ENTRYを上抜いて逆行し、損切り方向へ進む', C: 'ENTRY付近で往復し、方向が出ない', D: '一度下がっても安値を失い、見送る' } },
-    q2: { answer: 'A', choices: { A: '売り板がENTRY上で残り、買い板を消化してENTRY下へ定着する', B: 'キリ番だけを理由に板を見ずに入る', C: '逆行したらロットを追加して損切りを後ろへ動かす', D: '225や上位足と逆向きでも一瞬の値動きだけで入る' } },
+    q2: { answer: 'A', choices: { A: q2Correct, B: 'キリ番だけを理由に板を見ずに入る', C: '逆行したらロットを追加して損切りを後ろへ動かす', D: '225や上位足と逆向きでも一瞬の値動きだけで入る' } },
   };
 }
 
@@ -415,7 +429,7 @@ async function main() {
       dowHint: direction === 'LONG' ? '安値切り上げ→高値更新の順番。高値更新に失敗したら追い買いしない。' : '高値切り下げ→安値更新の順番。安値更新に失敗したら追い売りしない。',
       boardHint: '',
       assets: { before: `assets/${beforeName}`, board: `assets/${boardName}`, after: `assets/${afterName}` },
-      quiz: quizChoices({ direction }),
+      quiz: quizChoices({ direction, metrics }),
     };
     item.boardHint = boardHint(item);
     fs.writeFileSync(path.join(ASSET_DIR, beforeName), chartSvg(item, beforeBars, 'before'), 'utf8');
