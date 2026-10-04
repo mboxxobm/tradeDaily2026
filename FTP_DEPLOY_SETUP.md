@@ -25,7 +25,7 @@ DomainKing 側が既存サイトのマスターです。現在のダッシュボ
 - `FTP_PORT`: サーバー指定のポート。明示がなければFTPSは通常 `21`
 - `FTP_DEPLOY_ENABLED`: 設定確認後に `true` にする
 
-`FTP_DEPLOY_ENABLED` が `true` になるまで公開ワークフローは動きません。設定後は `Actions → Deploy to DomainKing subdomain → Run workflow` で初回転送できます。以後はGitHub `main` の更新時に専用サブフォルダだけを同期します。
+`FTP_DEPLOY_ENABLED` が `true` になるまで公開ワークフローは動きません。設定後は `Actions → Import GitHub pages into DomainKing → Run workflow` を手動実行して初回取り込みを行います。確認後の正本はDomainKingです。今後のDomainKing更新をGitHubにも反映する方法は、初回取り込み後に決められます。
 
 ## 3. 既存サイトとの統合
 
