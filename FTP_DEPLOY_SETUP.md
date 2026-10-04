@@ -1,10 +1,12 @@
-# DomainKing サブドメインへの公開設定
+# DomainKing サブドメインへの追加ページ公開設定
 
-GitHub の `main` ブランチにある静的サイト一式を、GitHub Actions からレンタルサーバーへ転送します。転送先のサブドメイン用ディレクトリだけを対象にしてください。
+DomainKing 側が既存サイトのマスターです。現在のダッシュボードや `022tradeDaily/DairyHome.html` を置き換えず、GitHubで今日追加した日誌・グラフ・学習ページを専用サブフォルダに公開して、既存トップからリンクする形にします。
+
+公開URLの想定は `https://matsuicsv.laggy.jp/022tradeDaily/codex2026/` です。FTP上の実際のフォルダ名・階層はサーバーの設定に合わせてください。
 
 ## 1. FTP/S の専用アカウントを作る
 
-可能なら FTPS を使い、サブドメインの公開フォルダだけにアクセスできるアカウントを作ります。通常のFTPは接続中に認証情報が暗号化されません。サーバーがSFTPしか対応していない場合は、ワークフローの転送方式を切り替える必要があるため、まだ有効化しないでください。
+サブフォルダだけにアクセスできるFTPアカウントを作ります。可能ならFTPSを使います。通常のFTPは接続中に認証情報が暗号化されません。SFTPのみ対応の場合はワークフローの方式変更が必要です。
 
 ## 2. GitHub に接続情報を登録する
 
@@ -12,21 +14,23 @@ GitHub の `main` ブランチにある静的サイト一式を、GitHub Actions
 
 ### Repository secrets
 
-- `FTP_SERVER`: サーバーから指定された接続先ホスト名
-- `FTP_USERNAME`: サブドメイン用FTPアカウント
+- `FTP_SERVER`: サーバー指定の接続先ホスト名
+- `FTP_USERNAME`: サブフォルダ用FTPアカウント
 - `FTP_PASSWORD`: そのアカウントのパスワード
 
 ### Repository variables
 
-- `FTP_SERVER_DIR`: サブドメインの公開フォルダ。例の値をそのまま使わず、サーバーの管理画面で確認した実際のパスを入力。末尾に `/` を付ける
-- `FTP_PROTOCOL`: `ftps`（推奨）。サーバーがFTPS非対応なら接続方式を確認してから設定
+- `FTP_SERVER_DIR`: `codex2026` の公開フォルダ。実際のFTPパスを確認し、末尾に `/` を付ける
+- `FTP_PROTOCOL`: `ftps`（推奨）
 - `FTP_PORT`: サーバー指定のポート。明示がなければFTPSは通常 `21`
-- `FTP_DEPLOY_ENABLED`: 接続情報と公開フォルダを確認してから `true` にする
+- `FTP_DEPLOY_ENABLED`: 設定確認後に `true` にする
 
-`FTP_DEPLOY_ENABLED` が `true` になるまで、FTP公開ワークフローは実行されません。設定後は `Actions → Deploy to DomainKing subdomain → Run workflow` で初回転送できます。以後は `main` への更新で自動転送されます。
+FTPパスワードがチャットに書かれてしまったため、そのパスワードは使わず、サーバー管理画面で変更してから新しい値をSecretsに登録してください。
 
-## 3. 転送先の注意
+`FTP_DEPLOY_ENABLED` が `true` になるまで公開ワークフローは動きません。設定後は `Actions → Deploy to DomainKing subdomain → Run workflow` で初回転送できます。以後はGitHub `main` の更新時に専用サブフォルダだけを同期します。
 
-この転送はGitHub上のサイト一式をサブドメインの公開フォルダへ同期します。既存の別サイトやメール設定用ファイルがある場所ではなく、このサイト専用の公開フォルダを指定してください。初回は既存ファイルのバックアップを取ってください。
+## 3. 既存サイトとの統合
 
-GitHub Pages は切替確認が済むまで残しています。サブドメインでトップページ、日誌、画像、グラフが表示できることを確認してから、公開先を一本化できます。
+同期先は新しい `codex2026` フォルダだけにしてください。DomainKingのドメイン直下や既存の `022tradeDaily` フォルダを同期先にすると、マスター側のファイルを上書きするおそれがあります。
+
+初回公開を確認した後、DomainKingの既存トップ／日誌トップに `/022tradeDaily/codex2026/` へのリンクを追加します。既存のトップページや日誌は保持します。GitHub Pagesは切替確認まで残します。
