@@ -439,16 +439,28 @@ function quizChoices(item) {
   const gap = item.entryPrice - item.vwap;
   const gapPct = item.vwap ? gap / item.vwap * 100 : 0;
   const side = gap >= 0 ? '上' : '下';
-  const q1Correct = Number.isFinite(item.vwap)
-    ? `ENTRY価格はVWAPより${fmtPrice(Math.abs(gap))}円（${Math.abs(gapPct).toFixed(2)}%）${side}。これは平均約定価格に対する位置で、方向の確定には価格がその位置を保つか確認が必要。`
-    : 'この時点ではVWAPを取得できないため、VWAPとの上下を材料にした判断は保留する。';
+  const rangeCard = (item.beforeAnalysis || []).find((metric) => metric.label === 'ENTRY前の高値・安値');
+  const rangePosition = Number(rangeCard?.detail.match(/位置 ([-+−\d.]+)%/)?.[1]);
+  const rangeText = rangeCard ? `${rangeCard.value}の値幅に対して${Number.isFinite(rangePosition) ? `${rangePosition}%` : '—'}の位置` : 'ENTRY前レンジの位置は算出なし';
+  const rangeContext = !Number.isFinite(rangePosition) ? 'ENTRY前レンジとの比較はできない'
+    : rangePosition > 100 ? 'ENTRY価格はENTRY前の高値を上回っている'
+      : rangePosition >= 80 ? 'ENTRY価格はENTRY前レンジの上側にある'
+        : rangePosition >= 60 ? 'ENTRY価格はENTRY前レンジの上寄りにある'
+          : rangePosition <= 20 ? 'ENTRY価格はENTRY前レンジの下側にある'
+            : rangePosition <= 40 ? 'ENTRY価格はENTRY前レンジの下寄りにある' : 'ENTRY価格はENTRY前レンジの中央付近にある';
+  const q1Observation = Number.isFinite(item.vwap)
+    ? `VWAPより${fmtPrice(Math.abs(gap))}円（${Math.abs(gapPct).toFixed(2)}%）${side}、${rangeContext}（${rangeText}）`
+    : 'VWAPがなく、VWAPとの位置関係は比較できない';
+  const q1Correct = `${q1Observation}。これは価格の位置を示す事実で、次の値動きの保証ではない。`;
+  const q1Explanation = `${q1Observation}。VWAPとレンジはENTRY前の位置情報。${item.direction === 'LONG' ? 'LONGならENTRY上を保ち、高値を更新するか' : 'SHORTならENTRY下へ進み、戻り高値を切り下げるか'}を見て、仮説が続くか判断する。`;
   const q1WrongSide = side === '上' ? '下' : '上';
-  const q1Wrong = `ENTRY価格はVWAPより${fmtPrice(Math.abs(gap))}円${q1WrongSide}にある。`;
+  const q1Wrong = `ENTRY価格はVWAPより${fmtPrice(Math.abs(gap))}円${q1WrongSide}で、${rangeContext}。`;
   const imbalanceText = imbalance === null ? '算出なし' : `${imbalance >= 0 ? '+' : ''}${(imbalance * 100).toFixed(1)}%`;
   const boardBias = imbalance === null ? '偏りなし' : imbalance < 0 ? '売り板優位' : '買い板優位';
   const q2Correct = item.direction === 'LONG'
-    ? '板の数量は未約定の注文。売り1〜3段が買いの約定で減り、価格がENTRY上を保てるかを歩み値と値動きで確認する。'
-    : '板の数量は未約定の注文。買い1〜3段が売りの約定で減り、価格がENTRY下を保てるかを歩み値と値動きで確認する。';
+    ? '買いの約定で売り1〜3段が消化され、価格がENTRY上を保つか確認。ENTRYを割ればLONGの根拠は弱まる。'
+    : '売りの約定で買い1〜3段が消化され、価格がENTRY下へ進むか確認。買い板で反発すればSHORTの根拠は弱まる。';
+  const q2Explanation = `${item.direction === 'LONG' ? '売り板' : '買い板'}の表示数量は未約定注文。${q2Correct}歩み値で実際の約定、チャートで価格維持を合わせて見る。`;
   const makeChoices = (correct, wrong, correctIndex) => {
     const keys = ['A', 'B', 'C', 'D'];
     const choices = {};
@@ -459,26 +471,26 @@ function quizChoices(item) {
   const caseIndex = Math.max(0, Number(String(item.id || '').slice(-1)) - 1) % 4;
   const q1 = makeChoices(q1Correct, [
     q1Wrong,
-    `${side === '上' ? 'ENTRY価格がVWAPより上なら' : 'ENTRY価格がVWAPより下なら'}、その時点で同方向への値動きが確定している。`,
-    'VWAPは表示されていても売買判断には使えず、板の数量だけでENTRYを決める。',
+    `${side === '上' ? 'VWAPの上にいるため' : 'VWAPの下にいるため'}、${item.direction}方向の値動きはすでに確定しており、ENTRY後の確認は不要。`,
+    `${rangeContext}ため、次の値動きも必ず同じ方向へ続く。`,
   ], caseIndex);
   const q2 = makeChoices(q2Correct, [
-    `${boardBias}なので、板の偏りが示す方向へ価格が動くと決めてENTRYする。`,
+    `${boardBias}の側がこの先も優勢だとみなし、その方向への値動きを待たずに入る。`,
     '表示数量はすべて約定する前提で、厚い板は必ず支持または抵抗として残る。',
     '板は変化するので需給差は読まず、価格や歩み値も確認しない。',
   ], (caseIndex + 1) % 4);
   return {
     q1: {
-      question: `ENTRY価格 ${fmtPrice(item.entryPrice)}円とVWAP ${fmtPrice(item.vwap)}円の関係を正しく説明しているのは？`,
+      question: `ENTRY ${fmtPrice(item.entryPrice)}円、VWAP ${fmtPrice(item.vwap)}円。${rangeText}。この時点で言えることは？`,
       ...q1,
-      purpose: 'VWAPに対する価格の位置を正しく読む練習。VWAPの上か下かは相場の位置情報であり、それだけで上昇・下落を断定しないことを確認する。',
-      explanation: q1Correct,
+      purpose: 'VWAP差とENTRY前レンジを合わせ、事実と予測を分ける練習。位置は方向の根拠の一つだが、ENTRY後に保てるかを確かめる条件も必要。',
+      explanation: q1Explanation,
     },
     q2: {
-      question: `上位5段の需給差は${imbalanceText}（${boardBias}）。${item.direction}で確認すべきことは？`,
+      question: `板の需給差は${imbalanceText}（${boardBias}）。${item.direction}の根拠を確かめる値動きは？`,
       ...q2,
-      purpose: '板の数量はその瞬間の未約定注文で、取消や追加もある。数字の偏りを予言と誤解せず、歩み値の約定と価格の反応で確かめる練習。',
-      explanation: q2Correct,
+      purpose: '表示された板数量を約定済み数量や確定した支持・抵抗と混同しない練習。歩み値で注文が消化されたか、価格がENTRYを維持・突破したかを確認する。',
+      explanation: q2Explanation,
     },
   };
 }
@@ -524,6 +536,7 @@ async function main() {
     const metrics = entryOutput.metrics;
     const round = roundInfo(number(trade.entry_price));
     const direction = spec.direction;
+    const beforeAnalysis = buildBeforeAnalysis(beforeBars, entryOutput, number(trade.entry_price));
     const observation = `現在値 ${fmtPrice(entryOutput.price)}円、VWAP ${fmtPrice(entryOutput.vwap)}円、最良買い ${fmtPrice(metrics.bestBid)}円、最良売り ${fmtPrice(metrics.bestAsk)}円、スプレッド ${fmtPrice(metrics.spread)}円。`;
     const item = {
       id: spec.id,
@@ -542,14 +555,14 @@ async function main() {
       sourceFiles: spec.sourceFiles,
       entrySnapshot: entryOutput,
       afterSnapshot: afterOutput,
-      beforeAnalysis: buildBeforeAnalysis(beforeBars, entryOutput, number(trade.entry_price)),
+      beforeAnalysis,
       imbalanceText: metrics.imbalance === null ? '—' : `${metrics.imbalance >= 0 ? '+' : ''}${(metrics.imbalance * 100).toFixed(1)}%`,
       observation,
       roundText: `${fmtPrice(round.level)}円（ENTRYとの差 ${round.distance >= 0 ? '+' : ''}${fmtPrice(round.distance)}円）`,
       dowHint: direction === 'LONG' ? '安値切り上げ→高値更新の順番。高値更新に失敗したら追い買いしない。' : '高値切り下げ→安値更新の順番。安値更新に失敗したら追い売りしない。',
       boardHint: '',
       assets: { before: `assets/${beforeName}`, board: `assets/${boardName}`, after: `assets/${afterName}` },
-      quiz: quizChoices({ id: spec.id, direction, metrics, entryPrice: number(trade.entry_price), vwap: entryOutput.vwap }),
+      quiz: quizChoices({ id: spec.id, direction, metrics, entryPrice: number(trade.entry_price), vwap: entryOutput.vwap, beforeAnalysis }),
     };
     item.boardHint = boardHint(item);
     fs.writeFileSync(path.join(ASSET_DIR, beforeName), chartSvg(item, beforeBars, 'before'), 'utf8');
