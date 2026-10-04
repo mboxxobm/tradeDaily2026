@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b1020">
+<meta name="description" content="日誌からまとめたトレードルール。9時台の見送り、勝ちやすい場面、エントリー前の確認項目。">
+<title>トレードルール｜勝ちやすい場面だけを選ぶ</title>
+<style>
+:root{color-scheme:dark;--bg:#0b1020;--panel:#151e32;--line:#34425e;--text:#edf3ff;--muted:#b8c5d9;--blue:#91caff;--gold:#ffe08a;--green:#a7e6bd}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:linear-gradient(180deg,#111a2b 0,var(--bg) 380px);color:var(--text);font:17px/1.72 -apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif}
+main{width:min(820px,100%);margin:auto;padding:20px 16px calc(52px + env(safe-area-inset-bottom))}
+header,section,.callout{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px;margin:0 0 16px}
+h1{font-size:clamp(1.7rem,7vw,2.25rem);line-height:1.32;margin:0 0 9px}
+h2{font-size:1.28rem;line-height:1.4;margin:0 0 14px;color:#dcecff}
+h3{font-size:1.04rem;line-height:1.45;margin:22px 0 8px;color:#dcecff}
+p{margin:8px 0 13px}
+ul,ol{padding-left:1.35em;margin:9px 0}
+li{padding-left:2px;margin:7px 0}
+a{color:var(--blue);text-underline-offset:3px}
+a:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:4px}
+.sub,.note{color:var(--muted);font-size:.94rem}
+.callout{border-color:#806c33;background:#292516;color:#fff2c1;font-size:1.12rem}
+.callout strong{color:#fff}
+.rule{border-left:4px solid var(--gold);padding-left:13px}
+.checklist{list-style:none;padding:0}
+.checklist li{padding-left:1.8em;position:relative}
+.checklist li::before{content:"□";position:absolute;left:0;color:var(--green);font-size:1.15em;line-height:1.4}
+.tag{display:inline-block;border:1px solid #497754;border-radius:999px;padding:2px 9px;color:var(--green);font-size:.82rem;margin-bottom:9px}
+.nav{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 16px}
+.nav a{display:inline-block;padding:9px 13px;background:var(--panel);border:1px solid var(--line);border-radius:999px;text-decoration:none}
+footer{color:var(--muted);font-size:.92rem;padding:8px 4px 24px}
+@media(max-width:480px){body{font-size:16px}main{padding:12px 11px calc(36px + env(safe-area-inset-bottom))}header,section,.callout{border-radius:13px;padding:16px}h2{font-size:1.18rem}}
+@media print{body{background:#fff;color:#111;font-size:11pt}header,section,.callout{background:#fff;color:#111;border:1px solid #bbb;break-inside:avoid}.sub,.note,footer{color:#444}h2,h3{color:#111}.nav{display:none}a{color:#111}}
+</style>
+</head>
+<body>
+<main>
+<header>
+<span class="tag">トレードルール再確認</span>
+<h1>勝ちやすい場面だけを選ぶ</h1>
+<p class="sub">日誌から整理した、日本株デイトレードのエントリー基準｜更新 2026-10-04</p>
+<nav class="nav" aria-label="関連資料"><a href="trading-rules.md">Markdown版</a><a href="index.html">日誌トップ</a></nav>
+</header>
+
+<div class="callout"><strong>一文ルール：</strong>9:00〜9:05は原則見送り。真空ゾーンの実際のブレイクだけ例外とし、それ以外は日経平均・個別銘柄・価格反応・損失幅がそろうまで待つ。</div>
+
+<section>
+<h2>「勝てるところ」の意味</h2>
+<p>勝ちが確定している場所ではありません。<strong>相場の位置、個別銘柄の値動き、出来高への反応、損切り位置と利幅がそろい、同じ条件を繰り返し検証できる場面</strong>です。条件が足りなければ見送ります。少数の日誌だけで勝率が証明されたわけではありません。</p>
+</section>
+
+<section>
+<h2>最優先ルール</h2>
+<ol>
+<li><strong>9:00〜9:05は新規エントリーをしない。</strong> 寄り直後の値動きと需給を確認します。</li>
+<li>この時間帯の例外は<strong>真空ゾーンのブレイクだけ</strong>。板の空白・薄い価格帯が実際に抜けて値が走るポイントに限ります。抜ける前の予想では入りません。</li>
+<li>日経平均の方向やボラティリティの印象<strong>だけ</strong>で個別銘柄に入りません。指数は環境認識、個別の値動きでエントリーを確認します。</li>
+<li>条件が揃わなければノートレード。見送ることもルールの実行です。</li>
+</ol>
+</section>
+
+<section>
+<h2>エントリー候補になる4条件</h2>
+<h3>1｜位置に根拠がある</h3>
+<p>サポート・レジスタンス、レンジ上限／下限、前日高安、VWAP、出来高が集中した価格帯などで反応している。レンジ中央や伸び切った位置への飛び乗りは避けます。</p>
+<h3>2｜個別銘柄で価格の反応を確認する</h3>
+<p>大出来高だけでは入りません。大きな売買の後に価格が進まない、安値／高値更新に失敗する、ピンバーや切り返しが出る、次の足でも反応が続く、という売買の結果を見ます。</p>
+<ul>
+<li>サポートを一度割った後、大出来高のピンバーで買い戻され、安値更新が止まる。</li>
+<li>ダブルボトム候補に出来高の反応が重なり、切り下げラインを上抜く。</li>
+<li>買われていたサポートが崩れ、下抜け後も価格がその下で推移する。</li>
+<li>トレンド方向への押し目で直近安値／高値を更新せず、再びトレンド方向へ動く。</li>
+</ul>
+<p><strong>位置＋価格反応＋次の値動き</strong>をセットで見ます。形の名前や節目へのタッチだけでは入りません。</p>
+<h3>3｜指数と個別を別々に確認する</h3>
+<p>日経平均では上位足の方向とレンジ内の位置を確認し、次に個別銘柄のサポレジ、短期の高値・安値、板・歩み値、出来高と価格の反応を見ます。指数が上でも個別は下がることがあります。シンクロ銘柄は補助材料とし、動きが食い違うときは個別側の根拠が明確になるまで待ちます。</p>
+<h3>4｜損失を限定でき、利幅が残っている</h3>
+<p>シナリオが崩れる無効化ライン、許容損失、利確候補を発注前に決めます。次のサポレジやVWAPまでの値幅に対して損切り幅が大きい、すでに伸びた後、損切り位置が決められない場合は見送ります。最初のポジションへの反応を確認する前に同時保有を増やしません。</p>
+</section>
+
+<section>
+<h2>見送る条件</h2>
+<ul>
+<li>9:00〜9:05で、真空ゾーンの実ブレイクではない。</li>
+<li>根拠が指数の方向、ボラティリティ、出来高の大きさだけ。</li>
+<li>価格が反応したか確認できていない。大出来高の後も次の足が続くか不明。</li>
+<li>レンジ中央、またはロングでレンジ上端など、利幅が残っていない。</li>
+<li>ブレイク前の先回り、伸びた後の飛び乗り。</li>
+<li>無効化ライン・許容損失・利確候補を事前に説明できない。</li>
+<li>指数と個別の動きが食い違い、個別の確認材料もない。</li>
+</ul>
+</section>
+
+<section>
+<h2>発注直前のチェック</h2>
+<ul class="checklist">
+<li>時刻を確認した。9:00〜9:05なら真空ゾーンの実ブレイクに限っている。</li>
+<li>日経平均の上位足の方向とレンジ内の位置を説明できる。</li>
+<li>個別の重要価格帯と、そこで起きた価格反応を説明できる。</li>
+<li>出来高の後に価格が進んだか止まったか、次の足が続いたかを確認した。</li>
+<li>ブレイク、リテスト、切り返しなどのエントリーの引き金が起きた。</li>
+<li>無効化ライン、許容損失、利確候補を決めた。リスクリワードが悪ければ見送る。</li>
+<li>現在のポジションと相場の反応を見てから、追加や乗り換えを判断する。</li>
+</ul>
+<p class="rule"><strong>ひとつでも説明できない項目があれば、入らずに待つ。</strong></p>
+</section>
+
+<section>
+<h2>日誌から読み取れる参考例</h2>
+<ul>
+<li><strong>9/29 ソフトバンクG：</strong>大きな売りの後に買い戻しのピンバーが出てロング。記録上は6,038円から6,100円まで上昇しました。出来高の大きさだけでなく、売りの後に買われた反応を見た例です。利確を早めた点は別の改善課題です。</li>
+<li><strong>10/2 太陽誘電：</strong>9,700円付近を一度下抜けた後、大出来高の買い戻しピンバーが出た場面をロング候補として振り返りました。音声記録の約定価格には不整合があり、細部は未確定です。</li>
+<li><strong>10/2 任天堂：</strong>ダブルボトム候補、大出来高の下げ止まり、切り下げライン上抜けをロング候補として振り返りました。振り返り上の候補・試算を確定損益と混同しません。</li>
+<li><strong>10/2 ソフトバンクG：</strong>レンジと認識できる中で上昇に飛び乗り、損切りが遅れました。指数の上向きより、レンジの位置と個別のエントリー位置を優先すべき反例です。</li>
+</ul>
+</section>
+
+<section>
+<h2>根拠にした日誌</h2>
+<ul>
+<li><a href="2026-09-29_daytrading_log.md">9/29 トレード記録</a> ／ <a href="2026-09-29_trade_review.md">振り返り</a></li>
+<li><a href="2026-09-30_daytrading_log.md">9/30 トレード記録</a></li>
+<li><a href="2026-10-01_daytrading_log.md">10/1 トレード記録</a></li>
+<li><a href="2026-10-02/2026-10-02_daytrading_log.md">10/2 トレード記録</a> ／ <a href="diaries/2026-10-02/diary_20261002.html">照合済み日誌HTML</a></li>
+<li><a href="weekly_reports/weekly_report_2026-W40_20260928-20261002.md">9/28〜10/2 週報</a></li>
+</ul>
+</section>
+
+<footer>この基準は日誌から整理した検証用ルールで、利益を保証するものではありません。勝ち・負け・見送りを同じ条件で記録し、再現性を確認してください。</footer>
+</main>
+</body>
+</html>
