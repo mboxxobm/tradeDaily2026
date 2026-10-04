@@ -1,9 +1,6 @@
-name: Deploy to DomainKing subdomain
+name: Import GitHub pages into DomainKing
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
 
 permissions:
@@ -14,15 +11,15 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  deploy:
-    # Keep deployment inactive until the server settings and target directory are checked.
+  import:
+    # Manual one-time import only. DomainKing remains the production master.
     if: ${{ vars.FTP_DEPLOY_ENABLED == 'true' }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout site
+      - name: Checkout GitHub additions
         uses: actions/checkout@v4
 
-      - name: Sync static site over FTP or FTPS
+      - name: Sync pages into the dedicated DomainKing subfolder
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
