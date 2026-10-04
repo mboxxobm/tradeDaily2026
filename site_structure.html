@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07131f">
+<title>TradeDaily2026｜サイト構成・導線図</title>
+<style>
+:root{color-scheme:dark;--bg:#07131f;--surface:#0d1e2d;--surface-2:#10283b;--line:#29465e;--ink:#eaf3fb;--muted:#9eb3c6;--teal:#48d3c6;--blue:#78baff;--orange:#ffae5d;--green:#55d69b;--shadow:0 12px 28px rgba(0,0,0,.24)}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 85% 0,#12334a 0,transparent 34%),var(--bg);color:var(--ink);font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif}main{max-width:1180px;margin:auto;padding:18px 16px 46px}a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}.hero{padding:26px 28px 24px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(135deg,#0d2234,#0b1826);box-shadow:var(--shadow)}.eyebrow{color:var(--teal);font-size:12px;font-weight:800;letter-spacing:.14em}.hero h1{margin:8px 0 6px;font-size:31px;line-height:1.25}.hero p{max-width:850px;color:var(--muted);margin:0}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:17px}.actions a{display:inline-flex;align-items:center;min-height:36px;padding:6px 11px;border:1px solid var(--line);border-radius:9px;background:#0a1927;font-size:13px;font-weight:700}.section-title{margin:30px 0 12px;color:var(--teal);font-size:13px;letter-spacing:.12em}.flow{position:relative}.top-node{position:relative;max-width:380px;margin:0 auto 28px;text-align:center;border:1px solid var(--teal);border-radius:14px;background:#0e3440;padding:14px 18px;box-shadow:0 0 0 5px #48d3c61a}.top-node:after{content:"↓";position:absolute;left:50%;bottom:-30px;transform:translateX(-50%);color:var(--teal);font-size:24px}.node-title{font-weight:800;font-size:17px}.node-meta{color:var(--muted);font-size:12px}.branch-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.branch{position:relative;min-width:0;border:1px solid var(--line);border-radius:15px;background:var(--surface);padding:17px 18px 16px;box-shadow:var(--shadow)}.branch:before{content:"";display:block;width:34px;height:4px;border-radius:4px;background:var(--accent,var(--teal));margin-bottom:10px}.branch h2{margin:0 0 3px;font-size:19px}.branch>p{margin:0 0 11px;color:var(--muted);font-size:13px}.branch ul{margin:0;padding-left:19px}.branch li{margin:5px 0}.branch li::marker{color:var(--accent,var(--teal))}.route{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:14px}.route-step{position:relative;border:1px solid var(--line);border-radius:12px;background:var(--surface-2);padding:13px 12px;min-height:108px}.route-step:not(:last-child):after{content:"→";position:absolute;right:-15px;top:36px;color:var(--teal);font-size:22px;z-index:1}.route-step b{display:block;color:var(--teal);font-size:13px;margin-bottom:5px}.route-step span{display:block;color:var(--muted);font-size:13px}.legend{display:flex;gap:15px;flex-wrap:wrap;margin-top:18px;color:var(--muted);font-size:12px}.legend i{display:inline-block;width:11px;height:11px;border-radius:50%;vertical-align:-1px;margin-right:5px;background:var(--teal)}.legend i.blue{background:var(--blue)}.legend i.orange{background:var(--orange)}.legend i.green{background:var(--green)}.note{margin-top:23px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);padding-top:14px}@media(max-width:760px){main{padding:10px 10px 34px}.hero{padding:20px 17px}.hero h1{font-size:25px}.branch-grid{grid-template-columns:1fr;gap:10px}.route{grid-template-columns:1fr 1fr;gap:9px}.route-step:not(:last-child):after{content:"↓";right:auto;left:50%;top:auto;bottom:-18px;transform:translateX(-50%);font-size:19px}.route-step:nth-child(2):after{display:none}.route-step:nth-child(4):after{display:none}.actions a{flex:1 1 auto;justify-content:center}}
+@media(max-width:430px){.route{grid-template-columns:1fr}.route-step:not(:last-child):after,.route-step:nth-child(2):after,.route-step:nth-child(4):after{display:block;right:auto;left:50%;top:auto;bottom:-18px;transform:translateX(-50%)}.route-step:last-child:after{display:none}}
+</style>
+</head>
+<body>
+<main>
+<header class="hero">
+  <div class="eyebrow">TRADE DAILY 2026 / SITE MAP</div>
+  <h1>TOP INDEXからのサイト構成・導線図</h1>
+  <p>日誌を読む入口、CSVから集計した年間レビュー、週次レポート、ルール／クイズの位置関係をまとめています。スマートフォンでは縦に並び、上から順番に辿れます。</p>
+  <nav class="actions" aria-label="主要ページ"><a href="./index.html">TOP INDEXへ戻る</a><a href="./2026%20Daily/annual_trade_dashboard.html">年間レビュー（ライト）</a><a href="./2026%20Daily/annual_trade_dashboard_dark.html">年間レビュー（ダーク）</a><a href="./2026%20Daily/">CSVまとめ</a></nav>
+</header>
+
+<section aria-labelledby="map-title">
+  <h2 id="map-title" class="section-title">SITE STRUCTURE / 構成図</h2>
+  <div class="flow">
+    <div class="top-node"><div class="node-title">TOP INDEX</div><div class="node-meta">index.html｜全ページへの入口</div></div>
+    <div class="branch-grid">
+      <article class="branch" style="--accent:var(--teal)">
+        <h2>① 日誌・日別記録</h2>
+        <p>その日の実況、トレード判断、チャート画像を見る場所。</p>
+        <ul>
+          <li><a href="./2026-10-02/">2026-10-02 日別トレードページ</a></li>
+          <li><a href="./diaries/2026-10-02/diary_20261002.html">通常日誌 HTML</a></li>
+          <li><a href="./diaries/2026-10-02/diary_20261002_ny.html">NY時間の日誌</a></li>
+          <li><a href="./2026-10-02/index.html">チャート／画像一覧</a></li>
+        </ul>
+      </article>
+      <article class="branch" style="--accent:var(--blue)">
+        <h2>② CSV・年間ビジュアル</h2>
+        <p>松井証券CSVを集計し、銘柄・期間・方向で絞り込む場所。</p>
+        <ul>
+          <li><a href="./2026%20Daily/">取引CSVまとめ</a></li>
+          <li><a href="./2026%20Daily/annual_trade_dashboard.html">年間レビュー（ライト）</a></li>
+          <li><a href="./2026%20Daily/annual_trade_dashboard_dark.html">年間レビュー（ダーク）</a></li>
+          <li><a href="./2026%20Daily/trade_data_2025_2026/manifest.json">CSV一覧・チェック値</a></li>
+        </ul>
+      </article>
+      <article class="branch" style="--accent:var(--orange)">
+        <h2>③ 週次レポート</h2>
+        <p>一週間の損益、傾向、改善点をまとめて振り返る場所。</p>
+        <ul>
+          <li><a href="./weekly_reports/weekly_report_2026-W40_20260928-20261002.html">2026-W40 HTML</a></li>
+          <li><a href="./weekly_reports/weekly_report_2026-W40_20260928-20261002.md">2026-W40 Markdown</a></li>
+          <li>今後の週も同じフォルダに追加</li>
+        </ul>
+      </article>
+      <article class="branch" style="--accent:var(--green)">
+        <h2>④ ルール・復習</h2>
+        <p>エントリー前の確認と、過去トレードの反復学習。</p>
+        <ul>
+          <li><a href="./trading-rules.html">トレードルール</a></li>
+          <li><a href="./trading-quizzes.html">トレードクイズ一覧</a></li>
+          <li><a href="./success_trade_quiz_20261003/">勝ちトレード復習クイズ</a></li>
+          <li><a href="./2026%20Daily/board_reading_quiz_20261004/">板読み連動クイズ</a></li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="route-title">
+  <h2 id="route-title" class="section-title">RECOMMENDED ROUTE / おすすめの見る順番</h2>
+  <div class="route">
+    <div class="route-step"><b>STEP 1｜日誌</b><span>まず当日のシナリオ・エントリー理由を確認。</span></div>
+    <div class="route-step"><b>STEP 2｜チャート</b><span>画像と出来高で、実際の形状を確認。</span></div>
+    <div class="route-step"><b>STEP 3｜年間レビュー</b><span>銘柄検索・期間・ロング／ショートで傾向を見る。</span></div>
+    <div class="route-step"><b>STEP 4｜週次</b><span>共通した課題を一週間単位で整理。</span></div>
+  </div>
+  <div class="legend"><span><i></i>日別の記録</span><span><i class="blue"></i>データ集計</span><span><i class="orange"></i>週次の振り返り</span><span><i class="green"></i>ルール・学習</span></div>
+</section>
+
+<p class="note">更新時は、日別日誌を追加したあと、CSVが揃った時点で年間レビューを再生成します。保存済みCSVの範囲は年間レビュー画面のフッターに明記しています。</p>
+</main>
+</body>
+</html>

@@ -19,7 +19,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 CSV_DIR = ROOT / "2026 Daily" / "trade_data_2025_2026"
-OUTPUT = ROOT / "2026 Daily" / "annual_trade_dashboard.html"
+LIGHT_OUTPUT = ROOT / "2026 Daily" / "annual_trade_dashboard.html"
+DARK_OUTPUT = ROOT / "2026 Daily" / "annual_trade_dashboard_dark.html"
 
 
 def to_number(value: str) -> float:
@@ -315,6 +316,7 @@ HTML = r'''<!doctype html>
 <style>
 :root{--ink:#18324a;--muted:#6b7b8d;--line:#dce6ef;--bg:#f3f7fa;--card:#fff;--teal:#117d76;--blue:#2a79b8;--orange:#ec7b1b;--red:#c84a45;--green:#1a9662;--soft:#eef5f7;--shadow:0 7px 22px rgba(26,57,84,.08)}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif}main{max-width:1500px;margin:22px auto;padding:0 18px}.hero,.panel,.metric{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}.hero{padding:25px 27px;margin-bottom:15px}.eyebrow{color:var(--teal);font-weight:800;letter-spacing:.12em;font-size:12px}.hero h1{font-size:30px;line-height:1.25;margin:8px 0 7px;letter-spacing:.01em}.hero p{margin:4px 0;color:var(--muted);max-width:920px}.toolbar{display:flex;gap:10px;align-items:end;flex-wrap:wrap;margin-top:20px}.control{display:flex;flex-direction:column;gap:5px;color:var(--muted);font-size:12px;font-weight:700;min-width:190px}.control.wide{min-width:300px;flex:1}.control input,.control select{height:42px;border:1px solid #cbd8e3;border-radius:10px;background:#fff;color:var(--ink);padding:0 12px;font:inherit;font-size:14px}.button{height:42px;border:1px solid #c5d5e3;border-radius:10px;background:#fff;color:var(--ink);padding:0 16px;font-weight:700;cursor:pointer}.button:hover{border-color:var(--teal);color:var(--teal)}.filter-state{margin-top:12px;color:var(--muted);min-height:22px}.filter-state strong{color:var(--ink)}.cards{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:11px;margin-bottom:15px}.metric{padding:15px 17px}.metric span{display:block;color:var(--muted);font-size:12px}.metric strong{display:block;font-size:25px;margin-top:3px;letter-spacing:.01em}.metric small{display:block;color:var(--muted);margin-top:3px}.positive{color:var(--green)!important}.negative{color:var(--red)!important}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;margin-bottom:15px}.panel{padding:19px 20px;min-width:0}.panel h2{font-size:18px;line-height:1.3;margin:0 0 3px}.panel h2:before{content:"";display:inline-block;width:5px;height:20px;background:var(--teal);border-radius:5px;vertical-align:-4px;margin-right:9px}.panel .sub{margin:0 0 10px;color:var(--muted);font-size:12px}.chart-wrap{overflow:hidden;min-height:290px}.chart{width:100%;height:auto;display:block}.axis{font-size:11px;fill:#6e7d8c}.gridline{stroke:#e4ebf0;stroke-width:1}.zero{stroke:#9eb0be;stroke-width:1.4}.tip{font-size:11px;fill:#496073}.legend{font-size:12px;color:var(--muted);margin-top:7px}.swatch{display:inline-block;width:19px;height:10px;border-radius:3px;vertical-align:-1px;margin-right:4px}.table-wrap{overflow:auto;max-height:530px;border:1px solid #e5ecf1;border-radius:10px}table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;white-space:nowrap}th,td{padding:8px 10px;border-bottom:1px solid #edf1f4;text-align:right}th:first-child,td:first-child{text-align:left}thead th{position:sticky;top:0;background:#f4f8fa;color:#52687c;font-size:12px}tbody tr:hover{background:#f6fafb}.dir-long{color:var(--blue);font-weight:700}.dir-short{color:#9b5c22;font-weight:700}.right{text-align:right}.empty{padding:28px;text-align:center;color:var(--muted);background:#f7fafb;border-radius:10px}.note{color:var(--muted);font-size:12px;margin:10px 0 0}.tag{display:inline-flex;align-items:center;border:1px solid #cce1e5;background:#f0f8f8;color:#176b68;border-radius:999px;padding:3px 9px;font-size:12px;font-weight:700;margin:0 5px 5px 0}.footer{color:var(--muted);font-size:12px;padding:5px 4px 35px}.summary-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}.mini{border:1px solid var(--line);border-radius:10px;background:#f9fbfc;padding:9px 12px}.mini b{display:block;font-size:16px}.rank-label{font-size:12px;fill:#29455c}.rank-value{font-size:11px;fill:#5d7081}.bar-pos{fill:#1a9662}.bar-neg{fill:#d0635b}.bar-neutral{fill:#9ab2c0}.bar-time{fill:#3789a9}.bar-time-neg{fill:#d0635b}@media(max-width:1080px){.cards{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:720px){main{padding:0 10px;margin:10px auto}.hero,.panel{padding:15px}.hero h1{font-size:24px}.cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.metric{padding:12px}.metric strong{font-size:20px}.grid{grid-template-columns:1fr;gap:10px}.control,.control.wide{min-width:100%;flex:1}.toolbar .button{width:100%}.chart-wrap{min-height:240px}.panel h2{font-size:17px}}
+.theme-nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.theme-nav a{display:inline-flex;align-items:center;min-height:34px;padding:6px 10px;border:1px solid var(--line);border-radius:9px;color:var(--blue);background:var(--card);text-decoration:none;font-size:12px;font-weight:700}.theme-nav a:hover{border-color:var(--teal);color:var(--teal)}.swatch-teal{background:#117d76}.swatch-zero{background:#9eb0be}.swatch-green{background:#1a9662}.swatch-red{background:#d0635b}
 </style>
 </head>
 <body>
@@ -330,6 +332,7 @@ HTML = r'''<!doctype html>
       <button class="button" id="clearButton" type="button">フィルターをクリア</button>
     </div>
     <div class="filter-state" id="filterState" aria-live="polite"></div>
+    <nav class="theme-nav" aria-label="表示切り替え"><a href="./annual_trade_dashboard.html">☀ ライト版</a><a href="./annual_trade_dashboard_dark.html">☾ ダーク版</a><a href="../site_structure.html">サイト構成・導線図</a></nav>
   </header>
 
   <section class="cards" id="kpis" aria-label="集計サマリー"></section>
@@ -465,13 +468,29 @@ $('sourceNote').textContent=`出典：${DATA.meta.startDate ? fmtDate(DATA.meta.
 '''
 
 
+DARK_CSS = r'''
+:root{color-scheme:dark;--ink:#e7f0f8;--muted:#9fb2c4;--line:#294156;--bg:#07131f;--card:#0d1e2d;--teal:#46d2c5;--blue:#76baff;--orange:#ffad5b;--red:#ff807a;--green:#52d69c;--soft:#102b3e;--shadow:0 10px 30px rgba(0,0,0,.28)}
+body{background:var(--bg);color:var(--ink)}.hero,.panel,.metric{background:var(--card);border-color:var(--line);box-shadow:var(--shadow)}.hero p,.panel .sub,.filter-state,.metric span,.metric small,.legend,.footer,.note{color:var(--muted)}.filter-state strong{color:var(--ink)}.control{color:var(--muted)}.control input,.control select,.button{border-color:#3b566d;background:#0a1826;color:var(--ink)}.control input::placeholder{color:#7e96aa}.button:hover{border-color:var(--teal);color:var(--teal)}.theme-nav a{border-color:#3b566d;background:#0a1826;color:var(--blue)}.theme-nav a:hover{border-color:var(--teal);color:var(--teal)}.chart .axis{fill:#a9bdcf!important}.chart .gridline{stroke:#294052!important}.chart .zero{stroke:#7893a8!important}.chart .tip{fill:#a9bdcf!important}.chart .rank-label{fill:#d4e4f0!important}.chart .rank-value{fill:#a9bdcf!important}.chart polyline{stroke:var(--teal)!important}.chart circle{fill:var(--teal)!important}.bar-pos{fill:var(--green)!important}.bar-neg,.bar-time-neg{fill:var(--red)!important}.bar-neutral{fill:#7290a5!important}.bar-time{fill:#56b2d4!important}.legend .swatch{opacity:.95}.legend .swatch:first-of-type{background:var(--teal)!important}.legend .swatch:last-of-type{background:#7893a8!important}.table-wrap{border-color:#294156}th,td{border-bottom-color:#203548}thead th{background:#122b3d;color:#c6d9e9}tbody tr:hover{background:#142e42}.dir-long{color:var(--blue)}.dir-short{color:var(--orange)}.empty{background:#102638;color:var(--muted)}.tag{border-color:#31576a;background:#10333d;color:#8ce5dd}.mini{border-color:var(--line);background:#102638}.positive{color:var(--green)!important}.negative{color:var(--red)!important}
+'''
+
+
+def render_html(embedded: str, dark: bool = False) -> str:
+    html = HTML.replace("__DATA__", embedded)
+    if dark:
+        html = html.replace("<title>年間トレードビジュアルレビュー</title>", "<title>年間トレードビジュアルレビュー｜ダークモード</title>")
+        html = html.replace("<div class=\"eyebrow\">TRADE DAILY / VISUAL REVIEW</div>", "<div class=\"eyebrow\">TRADE DAILY / VISUAL REVIEW / DARK</div>")
+        html = html.replace("</style>", DARK_CSS + "</style>", 1)
+    return html
+
+
 def main() -> None:
     data = build_data()
     embedded = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
-    OUTPUT.write_text(HTML.replace("__DATA__", embedded), encoding="utf-8")
+    LIGHT_OUTPUT.write_text(render_html(embedded), encoding="utf-8")
+    DARK_OUTPUT.write_text(render_html(embedded, dark=True), encoding="utf-8")
     meta = data["meta"]
     print(
-        f"generated {OUTPUT} | {meta['startDate']}–{meta['endDate']} | "
+        f"generated {LIGHT_OUTPUT} and {DARK_OUTPUT} | {meta['startDate']}–{meta['endDate']} | "
         f"{meta['fileCount']} files / {meta['closedPairs']} pairs / "
         f"{sum(row['pnl'] for row in data['daily']):,.0f} JPY"
     )
