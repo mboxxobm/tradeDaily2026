@@ -381,10 +381,11 @@ HTML = r'''<!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>年間トレードビジュアルレビュー</title>
 <style>
-:root{--ink:#18324a;--muted:#6b7b8d;--line:#dce6ef;--bg:#f3f7fa;--card:#fff;--teal:#117d76;--blue:#2a79b8;--orange:#ec7b1b;--red:#c84a45;--green:#1a9662;--soft:#eef5f7;--shadow:0 7px 22px rgba(26,57,84,.08)}
+:root{--ink:#18324a;--muted:#6b7b8d;--line:#dce6ef;--bg:#f3f7fa;--card:#fff;--teal:#117d76;--blue:#2a79b8;--orange:#ec7b1b;--red:#c84a45;--green:#1a9662;--soft:#eef5f7;--shadow:0 7px 22px rgba(26,57,84,.08);--donut-positive:#117d76;--donut-positive-2:#2a79b8;--donut-negative:#c84a45;--donut-negative-2:#ec7b1b;--donut-neutral:#9ab2c0}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif}main{max-width:1500px;margin:22px auto;padding:0 18px}.hero,.panel,.metric{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}.hero{padding:25px 27px;margin-bottom:15px}.eyebrow{color:var(--teal);font-weight:800;letter-spacing:.12em;font-size:12px}.hero h1{font-size:30px;line-height:1.25;margin:8px 0 7px;letter-spacing:.01em}.hero p{margin:4px 0;color:var(--muted);max-width:920px}.toolbar{display:flex;gap:10px;align-items:end;flex-wrap:wrap;margin-top:20px}.control{display:flex;flex-direction:column;gap:5px;color:var(--muted);font-size:12px;font-weight:700;min-width:190px}.control.wide{min-width:300px;flex:1}.control input,.control select{height:42px;border:1px solid #cbd8e3;border-radius:10px;background:#fff;color:var(--ink);padding:0 12px;font:inherit;font-size:14px}.button{height:42px;border:1px solid #c5d5e3;border-radius:10px;background:#fff;color:var(--ink);padding:0 16px;font-weight:700;cursor:pointer}.button:hover{border-color:var(--teal);color:var(--teal)}.filter-state{margin-top:12px;color:var(--muted);min-height:22px}.filter-state strong{color:var(--ink)}.cards{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:11px;margin-bottom:15px}.metric{padding:15px 17px}.metric span{display:block;color:var(--muted);font-size:12px}.metric strong{display:block;font-size:25px;margin-top:3px;letter-spacing:.01em}.metric small{display:block;color:var(--muted);margin-top:3px}.positive{color:var(--green)!important}.negative{color:var(--red)!important}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;margin-bottom:15px}.panel{padding:19px 20px;min-width:0}.panel h2{font-size:18px;line-height:1.3;margin:0 0 3px}.panel h2:before{content:"";display:inline-block;width:5px;height:20px;background:var(--teal);border-radius:5px;vertical-align:-4px;margin-right:9px}.panel .sub{margin:0 0 10px;color:var(--muted);font-size:12px}.chart-wrap{overflow:hidden;min-height:290px}.chart{width:100%;height:auto;display:block}.axis{font-size:11px;fill:#6e7d8c}.gridline{stroke:#e4ebf0;stroke-width:1}.zero{stroke:#9eb0be;stroke-width:1.4}.tip{font-size:11px;fill:#496073}.legend{font-size:12px;color:var(--muted);margin-top:7px}.swatch{display:inline-block;width:19px;height:10px;border-radius:3px;vertical-align:-1px;margin-right:4px}.table-wrap{overflow:auto;max-height:530px;border:1px solid #e5ecf1;border-radius:10px}table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;white-space:nowrap}th,td{padding:8px 10px;border-bottom:1px solid #edf1f4;text-align:right}th:first-child,td:first-child{text-align:left}thead th{position:sticky;top:0;background:#f4f8fa;color:#52687c;font-size:12px}tbody tr:hover{background:#f6fafb}.dir-long{color:var(--blue);font-weight:700}.dir-short{color:#9b5c22;font-weight:700}.right{text-align:right}.empty{padding:28px;text-align:center;color:var(--muted);background:#f7fafb;border-radius:10px}.note{color:var(--muted);font-size:12px;margin:10px 0 0}.tag{display:inline-flex;align-items:center;border:1px solid #cce1e5;background:#f0f8f8;color:#176b68;border-radius:999px;padding:3px 9px;font-size:12px;font-weight:700;margin:0 5px 5px 0}.footer{color:var(--muted);font-size:12px;padding:5px 4px 35px}.summary-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}.mini{border:1px solid var(--line);border-radius:10px;background:#f9fbfc;padding:9px 12px}.mini b{display:block;font-size:16px}.rank-label{font-size:12px;fill:#29455c}.rank-value{font-size:11px;fill:#5d7081}.bar-pos{fill:#1a9662}.bar-neg{fill:#d0635b}.bar-neutral{fill:#9ab2c0}.bar-time{fill:#3789a9}.bar-time-neg{fill:#d0635b}@media(max-width:1080px){.cards{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:720px){main{padding:0 10px;margin:10px auto}.hero,.panel{padding:15px}.hero h1{font-size:24px}.cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.metric{padding:12px}.metric strong{font-size:20px}.grid{grid-template-columns:1fr;gap:10px}.control,.control.wide{min-width:100%;flex:1}.toolbar .button{width:100%}.chart-wrap{min-height:240px}.panel h2{font-size:17px}}
-.theme-nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.theme-nav a{display:inline-flex;align-items:center;min-height:34px;padding:6px 10px;border:1px solid var(--line);border-radius:9px;color:var(--blue);background:var(--card);text-decoration:none;font-size:12px;font-weight:700}.theme-nav a:hover{border-color:var(--teal);color:var(--teal)}.swatch-teal{background:#117d76}.swatch-zero{background:#9eb0be}.swatch-green{background:#1a9662}.swatch-red{background:#d0635b}
+.theme-nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.theme-nav a{display:inline-flex;align-items:center;min-height:34px;padding:6px 10px;border:1px solid var(--line);border-radius:9px;color:var(--blue);background:var(--card);text-decoration:none;font-size:12px;font-weight:700}.theme-nav a:hover{border-color:var(--teal);color:var(--teal)}.swatch-teal{background:#117d76}.swatch-zero{background:#9eb0be}.swatch-green{background:#1a9662}.swatch-red{background:#d0635b}.chart-options{display:flex;gap:8px;align-items:end;flex-wrap:wrap;margin:8px 0 10px}.chart-options .control{min-width:135px;flex:1}.chart-options .control select{height:36px;font-size:12px}.donut-legend{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px 12px;margin-top:8px}.donut-item{display:flex;align-items:center;gap:6px;min-width:0;color:var(--muted);font-size:12px}.donut-item span:last-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.donut-swatch{width:11px;height:11px;border-radius:3px;flex:0 0 auto;background:var(--donut-neutral)}.donut-swatch.positive,.donut-slice.positive{background:var(--donut-positive)!important;fill:var(--donut-positive)!important}.donut-swatch.positive.alt,.donut-slice.positive.alt{background:var(--donut-positive-2)!important;fill:var(--donut-positive-2)!important}.donut-swatch.negative,.donut-slice.negative{background:var(--donut-negative)!important;fill:var(--donut-negative)!important}.donut-swatch.negative.alt,.donut-slice.negative.alt{background:var(--donut-negative-2)!important;fill:var(--donut-negative-2)!important}.donut-swatch.neutral,.donut-slice.neutral{background:var(--donut-neutral)!important;fill:var(--donut-neutral)!important}
 .trade-row{cursor:pointer}.trade-row.selected{background:var(--soft)}.trade-row:focus-within{outline:2px solid var(--teal);outline-offset:-2px}.inspect-button{height:30px;border:1px solid #b9d5dc;border-radius:8px;background:transparent;color:var(--teal);padding:0 8px;font:inherit;font-size:12px;font-weight:700;cursor:pointer}.inspect-button:hover,.inspect-button:focus{background:var(--soft);border-color:var(--teal)}.inspect-panel[hidden]{display:none}.inspect-controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:12px 0}.inspect-status{color:var(--muted);font-size:12px}.inspect-selected{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:4px 0 12px}.inspect-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.inspect-card{min-width:0;border:1px solid var(--line);border-radius:12px;background:var(--card);padding:12px}.inspect-card h3{font-size:15px;margin:0 0 3px}.inspect-card .sub{font-size:11px;margin:0 0 8px}.inspect-chart{min-height:205px;overflow:hidden}.inspect-chart .chart{width:100%;height:auto}.inspect-chart .axis{font-size:10px}.inspect-chart .gridline{stroke:#e4ebf0;stroke-width:1}.inspect-chart .zero{stroke:#9eb0be;stroke-width:1.2}.inspect-chart .trade-line{stroke:#ec7b1b;stroke-width:1.5;stroke-dasharray:4 4}.inspect-chart .entry-mark{fill:#2a79b8;stroke:#fff;stroke-width:1.2}.inspect-chart .exit-mark{fill:#c84a45;stroke:#fff;stroke-width:1.2}.inspect-chart .wick-up{stroke:#1a9662;fill:#1a9662}.inspect-chart .wick-down{stroke:#d0635b;fill:#d0635b}.inspect-chart .bar-volume{fill:#80a9b8;opacity:.55}.inspect-source{margin:0 0 12px;padding:9px 11px;border:1px solid var(--line);border-radius:10px;color:var(--muted);font-size:12px}.inspect-source a{color:var(--blue)}.board-card{margin-top:12px}.board-reading{display:grid;grid-template-columns:1fr 1fr;gap:10px}.board-reading .mini{min-width:0}.book-levels{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}.book-side{font-size:11px;color:var(--muted)}.book-side strong{display:block;color:var(--ink);font-size:12px;margin-bottom:4px}.book-level{display:flex;justify-content:space-between;gap:8px;border-bottom:1px solid var(--line);padding:3px 0;font-variant-numeric:tabular-nums}.book-level.ask{color:#c84a45}.book-level.bid{color:#2a79b8}.imbalance-bar{height:8px;border-radius:999px;background:linear-gradient(90deg,#c84a45 0 50%,#2a79b8 50% 100%);position:relative;margin-top:8px;overflow:hidden}.imbalance-bar i{position:absolute;top:0;bottom:0;width:3px;background:var(--ink);transform:translateX(-50%)}@media(max-width:980px){.inspect-grid{grid-template-columns:1fr}.inspect-card{padding:10px}.inspect-chart{min-height:220px}}@media(max-width:720px){.board-reading,.book-levels{grid-template-columns:1fr}.inspect-controls .button{width:100%}}
+@media(max-width:720px){.chart-options .control{min-width:100%}.donut-legend{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -408,7 +409,7 @@ HTML = r'''<!doctype html>
   <section class="grid">
     <article class="panel"><h2>累積損益の推移</h2><p class="sub">絞り込み後の決済損益を日付順に積み上げています。</p><div class="chart-wrap" id="cumulativeChart"></div><div class="legend"><span class="swatch" style="background:#117d76"></span>累積損益　<span class="swatch" style="background:#9eb0be"></span>ゼロライン</div></article>
     <article class="panel"><h2>日別損益</h2><p class="sub">プラスの日とマイナスの日を色分けしています。</p><div class="chart-wrap" id="dailyChart"></div><div class="legend"><span class="swatch" style="background:#1a9662"></span>プラス　<span class="swatch" style="background:#d0635b"></span>マイナス</div></article>
-    <article class="panel"><h2>銘柄別の損益ランキング</h2><p class="sub">検索時は該当銘柄だけを表示します。未検索時は上位／下位を表示。</p><div class="chart-wrap" id="symbolChart"></div></article>
+    <article class="panel"><h2 id="symbolChartTitle">銘柄別の損益ランキング</h2><p class="sub" id="symbolChartSub">検索時は該当銘柄だけを表示します。未検索時は上位／下位を表示。</p><div class="chart-options" aria-label="銘柄グラフ設定"><label class="control">表示形式<select id="symbolChartType"><option value="bar">横棒グラフ</option><option value="donut">円グラフ（損益構成）</option></select></label><label class="control">並び順<select id="symbolSort"><option value="pnl">損益順</option><option value="pairs">件数順</option><option value="winRate">勝率順</option><option value="code">コード順</option></select></label><label class="control">表示数<select id="symbolLimit"><option value="10">上位10銘柄</option><option value="20" selected>上位20銘柄</option><option value="all">全銘柄</option></select></label></div><div class="chart-wrap" id="symbolChart"></div></article>
     <article class="panel"><h2>エントリー時刻別の傾向</h2><p class="sub">エントリー時刻を30分ごとにまとめ、損益と件数を表示しています。</p><div class="chart-wrap" id="timeChart"></div></article>
   </section>
 
@@ -485,16 +486,66 @@ function renderDaily(rows){
   labels.forEach(i=>body+=`<text class="axis" x="${L+i*slot+slot/2}" y="${H-10}" text-anchor="middle">${fmtDate(rows[i].date)}</text>`);
   return svgShell(W,H,body);
 }
+function symbolRowsForChart(rows){
+  const sort=$('symbolSort').value;
+  const sorted=[...rows].sort((a,b)=>{
+    if(sort==='pairs') return Number(b.pairs)-Number(a.pairs)||Number(b.pnl)-Number(a.pnl);
+    if(sort==='winRate') return Number(b.winRate)-Number(a.winRate)||Number(b.pnl)-Number(a.pnl);
+    if(sort==='code') return String(a.code).localeCompare(String(b.code),'ja');
+    return Number(b.pnl)-Number(a.pnl)||String(a.code).localeCompare(String(b.code),'ja');
+  });
+  const limit=$('symbolLimit').value;
+  return limit==='all'?sorted:sorted.slice(0,Number(limit));
+}
+function symbolSortLabel(){
+  const labels={pnl:'損益順',pairs:'件数順',winRate:'勝率順',code:'コード順'};
+  return labels[$('symbolSort').value]||'損益順';
+}
 function renderSymbolBars(rows){
   if(!rows.length) return noData('該当する銘柄がありません。');
-  const sorted=[...rows].sort((a,b)=>Number(b.pnl)-Number(a.pnl));
-  const chosen=sorted.length<=14?sorted:[...sorted.slice(0,7),...sorted.slice(-7)];
+  const chosen=rows;
   const W=760,H=Math.max(285,chosen.length*25+35),L=185,R=75,T=15,B=15;
   const maxAbs=niceMax(chosen.map(r=>r.pnl)); let body='';
   const zero=scale(0,-maxAbs,maxAbs,L,W-R);
   body += `<line class="zero" x1="${zero}" y1="${T}" x2="${zero}" y2="${H-B}"/>`;
-  chosen.forEach((row,i)=>{const y=T+i*25+4;const x=scale(row.pnl,-maxAbs,maxAbs,L,W-R);const left=Math.min(zero,x);const width=Math.max(1,Math.abs(x-zero));const label=escapeHtml(`${row.name}（${row.code}）`);body+=`<text class="rank-label" x="${L-10}" y="${y+13}" text-anchor="end">${label}</text><rect x="${left}" y="${y}" width="${width}" height="16" rx="4" class="${row.pnl>0?'bar-pos':row.pnl<0?'bar-neg':'bar-neutral'}"><title>${label} ${fmtYen(row.pnl)}</title></rect><text class="rank-value" x="${row.pnl>=0?left+width+6:left-6}" y="${y+13}" text-anchor="${row.pnl>=0?'start':'end'}">${fmtYen(row.pnl)}</text>`;});
+  chosen.forEach((row,i)=>{const y=T+i*25+4;const x=scale(row.pnl,-maxAbs,maxAbs,L,W-R);const left=Math.min(zero,x);const width=Math.max(1,Math.abs(x-zero));const label=escapeHtml(`${row.name}（${row.code}）`);body+=`<text class="rank-label" x="${L-10}" y="${y+13}" text-anchor="end">${label}</text><rect x="${left}" y="${y}" width="${width}" height="16" rx="4" class="${row.pnl>0?'bar-pos':row.pnl<0?'bar-neg':'bar-neutral'}"><title>${label} ${fmtYen(row.pnl)} / ${fmtInt(row.pairs)}件 / 勝率 ${fmtPct(row.winRate)}</title></rect><text class="rank-value" x="${row.pnl>=0?left+width+6:left-6}" y="${y+13}" text-anchor="${row.pnl>=0?'start':'end'}">${fmtYen(row.pnl)}</text>`;});
   return svgShell(W,H,body);
+}
+function donutPath(cx,cy,r,start,end){
+  const x1=cx+r*Math.cos(start),y1=cy+r*Math.sin(start),x2=cx+r*Math.cos(end),y2=cy+r*Math.sin(end),large=end-start>Math.PI?1:0;
+  return `M ${cx} ${cy} L ${x1} ${y1} A ${r} ${r} 0 ${large} 1 ${x2} ${y2} Z`;
+}
+function renderSymbolDonut(rows){
+  if(!rows.length) return noData('該当する銘柄がありません。');
+  const weighted=rows.map(row=>({...row,weight:Math.abs(Number(row.pnl)||0)}));
+  const total=weighted.reduce((sum,row)=>sum+row.weight,0);
+  if(total<=0) return noData('損益が0円のため、円グラフを表示できません。横棒グラフで件数を確認してください。');
+  const W=760,H=Math.max(300,Math.min(680,170+weighted.length*25)),cx=190,cy=H/2,r=Math.min(132,H/2-24),legendX=365;
+  let body=`<title>銘柄別の損益構成</title><desc>各銘柄の損益の絶対値を面積で比較しています。損益額は凡例に表示します。</desc>`;
+  let angle=-Math.PI/2;
+  weighted.forEach((row,i)=>{
+    const start=angle,end=angle+(row.weight/total)*Math.PI*2;angle=end;
+    const klass=row.pnl>0?'positive':row.pnl<0?'negative':'neutral';
+    const alt=i%2?' alt':'';
+    const label=escapeHtml(shortName(row.name,row.code));
+    body+=`<path class="donut-slice ${klass}${alt}" d="${donutPath(cx,cy,r,start,end)}" stroke="var(--card)" stroke-width="2"><title>${label} ${fmtYen(row.pnl)} / 構成 ${fmtPct(row.weight/total*100)}</title></path>`;
+  });
+  body+=`<circle cx="${cx}" cy="${cy}" r="${Math.max(52,r*.43)}" fill="var(--card)"/><text class="rank-label" x="${cx}" y="${cy-5}" text-anchor="middle">損益構成</text><text class="rank-value" x="${cx}" y="${cy+14}" text-anchor="middle">${fmtYen(weighted.reduce((sum,row)=>sum+Number(row.pnl||0),0))}</text>`;
+  const legend=weighted.map((row,i)=>{const klass=row.pnl>0?'positive':row.pnl<0?'negative':'neutral';const alt=i%2?' alt':'';const label=escapeHtml(shortName(row.name,row.code));const share=fmtPct(row.weight/total*100);return `<div class="donut-item"><i class="donut-swatch ${klass}${alt}"></i><span title="${label}">${label}　<b class="${signClass(row.pnl)}">${fmtYen(row.pnl)}</b> <small>(${share})</small></span></div>`}).join('');
+  body+=`<foreignObject x="${legendX}" y="20" width="365" height="${H-40}"><div xmlns="http://www.w3.org/1999/xhtml" class="donut-legend">${legend}</div></foreignObject>`;
+  return svgShell(W,H,body);
+}
+function renderSymbolChart(rows){
+  const chosen=symbolRowsForChart(rows);const type=$('symbolChartType').value;
+  const limitText=$('symbolLimit').value==='all'?'全銘柄':`上位${$('symbolLimit').value}銘柄`;
+  if(type==='donut'){
+    $('symbolChartTitle').textContent='銘柄別の損益構成';
+    $('symbolChartSub').textContent=`円グラフ：損益の絶対値を面積で比較（${symbolSortLabel()}・${limitText}）。中央の数値は表示銘柄の合計損益です。`;
+    return renderSymbolDonut(chosen);
+  }
+  $('symbolChartTitle').textContent='銘柄別の損益ランキング';
+  $('symbolChartSub').textContent=`横棒グラフ：${symbolSortLabel()}で並べた${limitText}。プラスとマイナスを色分けしています。`;
+  return renderSymbolBars(chosen);
 }
 function renderTimeBars(rows){
   if(!rows.length) return noData('該当するエントリー時刻データがありません。');
@@ -649,11 +700,11 @@ function renderTrades(trades){
 function update(){
   const query=$('symbolSearch').value.trim().toLocaleLowerCase('ja-JP');const period=$('periodSelect').value;const direction=$('directionSelect').value;
   const trades=DATA.trades.filter(row=>matchesPeriod(row.date,period)&&(!query||`${row.code} ${row.name}`.toLocaleLowerCase('ja-JP').includes(query))&&(direction==='all'||row.direction===direction));
-  const summary=aggregate(trades);renderKpis(summary,trades);$('cumulativeChart').innerHTML=renderCumulative(summary.daily);$('dailyChart').innerHTML=renderDaily(summary.daily);$('symbolChart').innerHTML=renderSymbolBars(summary.symbols);$('timeChart').innerHTML=renderTimeBars(summary.times);renderSymbolSummary(summary.symbols);renderTrades(trades);
+  const summary=aggregate(trades);renderKpis(summary,trades);$('cumulativeChart').innerHTML=renderCumulative(summary.daily);$('dailyChart').innerHTML=renderDaily(summary.daily);$('symbolChart').innerHTML=renderSymbolChart(summary.symbols);$('timeChart').innerHTML=renderTimeBars(summary.times);renderSymbolSummary(summary.symbols);renderTrades(trades);
   const queryText=query?`銘柄検索「${escapeHtml($('symbolSearch').value.trim())}」`:'全銘柄';const periodText=period==='all'?'保存済み全期間':period.length===4?`${period}年`:`${period.slice(0,4)}年${Number(period.slice(4))}月`;const directionText=direction==='all'?'全方向':direction==='long'?'ロング':'ショート';$('filterState').innerHTML=`現在の表示：<strong>${queryText}</strong>　<span class="tag">${periodText}</span><span class="tag">${directionText}</span>　${fmtInt(trades.length)}件 / ${fmtInt(DATA.trades.length)}件`;
 }
 populatePeriods();
-['symbolSearch','periodSelect','directionSelect'].forEach(id=>$(id).addEventListener('input',update));
+['symbolSearch','periodSelect','directionSelect','symbolChartType','symbolSort','symbolLimit'].forEach(id=>$(id).addEventListener('input',update));
 $('clearButton').addEventListener('click',()=>{$('symbolSearch').value='';$('periodSelect').value='all';$('directionSelect').value='all';update()});
 document.addEventListener('click',event=>{
   const button=event.target.closest('[data-inspect-key]');
@@ -671,7 +722,7 @@ $('sourceNote').textContent=`出典：${DATA.meta.startDate ? fmtDate(DATA.meta.
 
 
 DARK_CSS = r'''
-:root{color-scheme:dark;--ink:#e7f0f8;--muted:#9fb2c4;--line:#294156;--bg:#07131f;--card:#0d1e2d;--teal:#46d2c5;--blue:#76baff;--orange:#ffad5b;--red:#ff807a;--green:#52d69c;--soft:#102b3e;--shadow:0 10px 30px rgba(0,0,0,.28)}
+:root{color-scheme:dark;--ink:#e7f0f8;--muted:#9fb2c4;--line:#294156;--bg:#07131f;--card:#0d1e2d;--teal:#46d2c5;--blue:#76baff;--orange:#ffad5b;--red:#ff807a;--green:#52d69c;--soft:#102b3e;--shadow:0 10px 30px rgba(0,0,0,.28);--donut-positive:#46d2c5;--donut-positive-2:#76baff;--donut-negative:#ff807a;--donut-negative-2:#ffad5b;--donut-neutral:#7290a5}
 body{background:var(--bg);color:var(--ink)}.hero,.panel,.metric{background:var(--card);border-color:var(--line);box-shadow:var(--shadow)}.hero p,.panel .sub,.filter-state,.metric span,.metric small,.legend,.footer,.note{color:var(--muted)}.filter-state strong{color:var(--ink)}.control{color:var(--muted)}.control input,.control select,.button{border-color:#3b566d;background:#0a1826;color:var(--ink)}.control input::placeholder{color:#7e96aa}.button:hover{border-color:var(--teal);color:var(--teal)}.theme-nav a{border-color:#3b566d;background:#0a1826;color:var(--blue)}.theme-nav a:hover{border-color:var(--teal);color:var(--teal)}.chart .axis{fill:#a9bdcf!important}.chart .gridline{stroke:#294052!important}.chart .zero{stroke:#7893a8!important}.chart .tip{fill:#a9bdcf!important}.chart .rank-label{fill:#d4e4f0!important}.chart .rank-value{fill:#a9bdcf!important}.chart polyline{stroke:var(--teal)!important}.chart circle{fill:var(--teal)!important}.bar-pos{fill:var(--green)!important}.bar-neg,.bar-time-neg{fill:var(--red)!important}.bar-neutral{fill:#7290a5!important}.bar-time{fill:#56b2d4!important}.legend .swatch{opacity:.95}.legend .swatch:first-of-type{background:var(--teal)!important}.legend .swatch:last-of-type{background:#7893a8!important}.table-wrap{border-color:#294156}th,td{border-bottom-color:#203548}thead th{background:#122b3d;color:#c6d9e9}tbody tr:hover{background:#142e42}.dir-long{color:var(--blue)}.dir-short{color:var(--orange)}.empty{background:#102638;color:var(--muted)}.tag{border-color:#31576a;background:#10333d;color:#8ce5dd}.mini{border-color:var(--line);background:#102638}.positive{color:var(--green)!important}.negative{color:var(--red)!important}
 '''
 
