@@ -58,7 +58,8 @@ def fetch_live_homepage() -> str:
         if response.status != 200:
             raise RuntimeError(f"Could not read current DomainKing homepage: HTTP {response.status}")
         html = response.read().decode("utf-8")
-    if 'href="022tradeDaily/DairyHome.html"' not in html or "</nav>" not in html:
+    dashboard_marker = '<div class="container page active" id="page-dashboard">'
+    if 'href="022tradeDaily/DairyHome.html"' not in html or dashboard_marker not in html:
         raise RuntimeError("DomainKing homepage did not match the expected master page; no file was uploaded.")
     return html
 
@@ -70,7 +71,8 @@ def update_shortcuts(html: str) -> str:
         _, after = remainder.split(END, 1)
         html = before + block + after
     else:
-        html = html.replace("</nav>", "</nav>" + block, 1)
+        dashboard_marker = '<div class="container page active" id="page-dashboard">'
+        html = html.replace(dashboard_marker, dashboard_marker + block, 1)
 
     if STYLE_ID in html:
         start = html.index("<style", html.index(STYLE_ID) - 20)
