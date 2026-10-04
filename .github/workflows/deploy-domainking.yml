@@ -37,3 +37,12 @@ jobs:
             FTP_DEPLOY_SETUP.md
             .env
             .env.*
+
+      - name: Add requested shortcuts to the current DomainKing master homepage
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_ROOT_DIR: ${{ vars.FTP_ROOT_DIR }}
+          FTP_PORT: ${{ vars.FTP_PORT || '21' }}
+        run: python scripts/domainking_top_integration.py
