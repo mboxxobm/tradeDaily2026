@@ -178,7 +178,7 @@ function aggregateBars(points, startEpoch, endEpoch) {
   const result = [...bars.values()].sort((a, b) => a.t - b.t);
   for (let index = 0; index < result.length; index += 1) {
     const prior = result.slice(Math.max(0, index - 30), index).map((bar) => bar.volume);
-    result[index].rvol = prior.length ? result[index].volume / (prior.reduce((sum, value) => sum + value, 0) / prior.length || 1) : null;
+    result[index].rvol = prior.length === 30 ? result[index].volume / (prior.reduce((sum, value) => sum + value, 0) / prior.length || 1) : null;
     const lsmaWindow = result.slice(Math.max(0, index - 49), index + 1).map((bar) => bar.volume);
     const stdevWindow = result.slice(Math.max(0, index - 20), index + 1).map((bar) => bar.volume);
     const n = lsmaWindow.length;
@@ -191,7 +191,7 @@ function aggregateBars(points, startEpoch, endEpoch) {
     const lsma50 = intercept + slope * (n - 1);
     const mean = stdevWindow.reduce((sum, value) => sum + value, 0) / Math.max(1, stdevWindow.length);
     const stdev21 = Math.sqrt(stdevWindow.reduce((sum, value) => sum + ((value - mean) ** 2), 0) / Math.max(1, stdevWindow.length));
-    result[index].largeVolume = (result[index].volume - lsma50) > stdev21;
+    result[index].largeVolume = n === 50 && stdevWindow.length === 21 && (result[index].volume - lsma50) > stdev21;
   }
   return result;
 }
@@ -263,7 +263,7 @@ function chartSvg(item, bars, mode) {
   const largeBar = visible.filter((bar) => (bar.rvol || 0) >= 2 || bar.largeVolume).sort((a, b) => b.volume - a.volume)[0];
   const largeSummary = largeBar
     ? `大口候補 ${new Date(largeBar.t + 9 * 60 * 60 * 1000).toISOString().slice(11, 16)} 出来高 ${fmtQty(largeBar.volume)} / 推定Δ ${largeBar.delta >= 0 ? '+' : '−'}${fmtQty(Math.abs(largeBar.delta))} / RVOL ${largeBar.rvol.toFixed(1)}x`
-    : 'RVOL 2倍以上のバーなし';
+    : '大口出来高の条件該当なし';
   const title = `${item.dateDisplay} ${item.code} ${item.name}｜${mode === 'before' ? 'BEFORE 9:00→引け（ENTRY以降を非表示）' : 'AFTER 板データ連動'}`;
   const lines = [];
   lines.push(`<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${escXml(title)}">`);
