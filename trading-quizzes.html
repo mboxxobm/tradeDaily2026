@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b1020">
+<meta name="description" content="日誌に基づくチャート付きトレードクイズ一覧。根拠の種類から問題を選び、BEFORE・AFTERを見比べて学べます。">
+<title>トレードクイズ一覧｜エントリー根拠別</title>
+<style>
+:root{color-scheme:dark;--bg:#0b1020;--panel:#151e32;--line:#34425e;--text:#edf3ff;--muted:#b8c5d9;--blue:#91caff;--gold:#ffe08a;--green:#a7e6bd;--red:#ffabb2}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,#111a2b 0,var(--bg) 380px);color:var(--text);font:17px/1.7 -apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif}
+main{width:min(850px,100%);margin:auto;padding:18px 15px calc(48px + env(safe-area-inset-bottom))}
+header,.question,.summary{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:19px;margin:0 0 16px}
+.library-section{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:19px;margin:0 0 16px;scroll-margin-top:12px}
+h1{font-size:clamp(1.55rem,6vw,2.15rem);line-height:1.35;margin:0 0 8px}
+h2{font-size:1.26rem;line-height:1.45;margin:0 0 12px}
+p{margin:8px 0 14px}
+.muted,small,.note{color:var(--muted)}
+.toplinks{display:flex;flex-wrap:wrap;gap:9px;margin-top:15px}
+.toplinks a,.source{color:var(--blue)}
+.toplinks a{padding:8px 12px;border:1px solid var(--line);border-radius:999px;text-decoration:none}
+.eyebrow{color:var(--gold);font-size:.9rem;font-weight:700}
+.category-grid,.quiz-list{display:grid;gap:10px;margin:12px 0 0;padding:0;list-style:none}
+.category-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))}
+.category-card,.quiz-link{display:block;padding:13px;border:1px solid var(--line);border-radius:12px;background:#10182a;color:var(--text);text-decoration:none}
+.category-card strong,.quiz-link strong{display:block;color:var(--blue);margin-bottom:3px}
+.category-card small,.quiz-link small{display:block;color:var(--muted);font-size:.9rem}
+.tag-list{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0}
+.tag-pill{display:inline-block;padding:3px 9px;border:1px solid #497754;border-radius:999px;color:var(--green);font-size:.82rem}
+.question{scroll-margin-top:12px}
+.scenario{border-left:4px solid var(--gold);background:#292516;padding:12px 14px;border-radius:0 10px 10px 0}
+fieldset{border:0;padding:0;margin:15px 0}
+legend{font-weight:700;margin-bottom:8px}
+.choice{display:flex;gap:11px;align-items:flex-start;padding:12px;margin:9px 0;border:1px solid var(--line);border-radius:12px;background:#10182a;cursor:pointer}
+.choice input{width:20px;height:20px;flex:0 0 20px;margin:2px 0 0;accent-color:#8cc8ff}
+.choice:has(input:checked){border-color:var(--blue);background:#18273e}
+.choice:has(input:focus-visible){outline:3px solid var(--gold);outline-offset:2px}
+.actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:14px}
+button{min-height:46px;padding:10px 17px;border:1px solid #91caff;border-radius:11px;background:#20466a;color:white;font:inherit;font-weight:700;cursor:pointer}
+button:disabled{opacity:.55;cursor:default}
+.message{min-height:1.5em;color:var(--muted)}
+.answer{margin-top:18px;padding-top:17px;border-top:1px solid var(--line)}
+.answer[hidden]{display:none}
+.verdict{font-weight:800;font-size:1.15rem}
+.correct{color:var(--green)}.incorrect{color:var(--red)}
+figure{margin:15px 0 8px}
+figure a{display:block;cursor:zoom-in}
+.chart-before a{position:relative;overflow:hidden}
+.chart-before a::after{content:"右側の続きは回答後に表示";position:absolute;inset:0 0 0 52%;display:flex;align-items:center;justify-content:center;padding:12px;background:rgba(11,16,32,.96);border-left:2px dashed var(--gold);color:var(--gold);font-weight:700;text-align:center}
+figure img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#080d16}
+figcaption{margin-top:7px;color:var(--muted);font-size:.9rem}
+.result-list{padding-left:1.3em}
+.summary{border-color:#657a9d}
+.summary strong{color:var(--gold)}
+a{color:var(--blue);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+footer{color:var(--muted);font-size:.9rem;padding:8px 4px 22px}
+@media(max-width:480px){body{font-size:16px}main{padding:11px 10px calc(34px + env(safe-area-inset-bottom))}header,.question,.summary,.library-section{padding:15px;border-radius:13px}.choice{padding:11px}}
+</style>
+</head>
+<body>
+<main>
+<header>
+<div class="eyebrow">トレードクイズ｜エントリー根拠別</div>
+<h1>根拠を見て、入る場面を選ぶ</h1>
+<p class="muted">日誌の実例をBEFOREチャート付きの4択問題にしました。問題を選んで回答すると、答え・実際の約定・AFTERチャートがこのページ内に表示されます。今後の問題もこの一覧に追加します。</p>
+<nav class="toplinks" aria-label="関連ページ"><a href="index.html">TradeDaily2026トップ</a><a href="trading-rules.html">トレードルール</a></nav>
+</header>
+
+<section id="categories" class="library-section">
+<h2>エントリー根拠のカテゴリ</h2>
+<p class="muted">「勝てる」と決めつける分類ではなく、エントリー前に確認する根拠を整理しています。条件がそろわないときは見送ります。</p>
+<ul class="category-grid">
+<li><a class="category-card" href="#q1"><strong>1｜価格帯・位置</strong><small>サポート、レジスタンス、レンジ端など。どの位置で反応しているか。</small></a></li>
+<li><a class="category-card" href="#q1"><strong>2｜個別銘柄の価格反応</strong><small>出来高の後に価格が進むか止まるか、安値・高値更新が続くか。</small></a></li>
+<li><a class="category-card" href="#future-vacuum"><strong>3｜時間帯・真空ゾーン</strong><small>9:00〜9:05は原則見送り。板の薄い真空ゾーンを実際にブレイクした場合だけ例外。</small></a></li>
+<li><a class="category-card" href="#q2"><strong>4｜指数と個別の同期</strong><small>指数だけで決めず、個別銘柄の値動きでもエントリーを確認する。</small></a></li>
+<li><a class="category-card" href="#q1"><strong>5｜損切り位置・残る利幅</strong><small>シナリオが崩れる位置を決め、損失幅と利確候補を比べる。</small></a></li>
+</ul>
+<p id="future-vacuum" class="note">真空ゾーンの例外を扱う問題は、日誌のチャート例を追加してこの一覧に掲載します。</p>
+</section>
+
+<section id="quiz-index" class="library-section">
+<h2>クイズ一覧</h2>
+<ul class="quiz-list">
+<li><a class="quiz-link" href="#q1"><strong>2026年9月28日〜10月2日｜問題1：下げ止まり後のロング</strong><small>価格帯・価格反応・損切り位置｜実際の利益取引を振り返る</small></a></li>
+<li><a class="quiz-link" href="#q2"><strong>2026年9月28日〜10月2日｜問題2：寄り付き直後の先回り</strong><small>時間帯・指数と個別銘柄｜実際の損失取引を振り返る</small></a></li>
+</ul>
+</section>
+
+<section id="score" class="summary" aria-live="polite"><strong>回答済み 0 / 2</strong><br>2問に答えると、今週の振り返りが表示されます。</section>
+
+<article id="q1" class="question" data-answer="c">
+<div class="eyebrow">問題 1｜勝ち取引の根拠を確認</div>
+<h2>下げ止まりを確認してからのロング</h2>
+<div class="tag-list"><span class="tag-pill">価格帯・位置</span><span class="tag-pill">個別の価格反応</span><span class="tag-pill">損切り位置</span></div>
+<div class="scenario"><strong>BEFORE｜09:21ごろ・太陽誘電（6976）</strong><br>寄り付き後に下落。9,700円付近を一度下抜けたあと、大きな出来高を伴う買い戻しのピンバーが出て、安値更新が止まり始めています。次のエントリー判断として最も適切なのはどれでしょう？</div>
+<figure class="chart-before"><a href="diaries/2026-10-02/assets/chart_6976_15s_2m_ichimoku26.png" aria-label="太陽誘電の日中チャート。右半分を隠したBEFORE表示。タップで全体を拡大"><img src="diaries/2026-10-02/assets/chart_6976_15s_2m_ichimoku26.png" alt="太陽誘電10月2日の15秒足・2分足・出来高。右側を隠したBEFOREチャート" loading="eager" fetchpriority="high"></a><figcaption>BEFORE｜太陽誘電 6976｜10/2の日中チャート。右側を隠しています。タップすると全体を拡大できます。</figcaption></figure>
+<p class="note">チャートを見て、根拠と損切り位置を考えてから選んでください。回答後に同じチャートの全体を表示します。</p>
+<fieldset>
+<legend>選択肢を1つ選んでください</legend>
+<label class="choice"><input type="radio" name="q1" value="a"><span><strong>A.</strong> 出来高が大きいので、方向を確かめずにすぐショートする。</span></label>
+<label class="choice"><input type="radio" name="q1" value="b"><span><strong>B.</strong> 9,700円に触れただけでロングし、さらに下がったら損切り位置を下げる。</span></label>
+<label class="choice"><input type="radio" name="q1" value="c"><span><strong>C.</strong> 買い戻しと安値更新停止が続くことを短期足で確認してロングし、反転が崩れる位置に損切りを置く。</span></label>
+<label class="choice"><input type="radio" name="q1" value="d"><span><strong>D.</strong> 日経平均の方向だけで決め、太陽誘電の価格反応は見ない。</span></label>
+</fieldset>
+<div class="actions"><button type="button" class="check">答え合わせ</button><span class="message" aria-live="polite"></span></div>
+<section class="answer" hidden aria-live="polite">
+<div class="verdict"></div>
+<p><strong>正解：C</strong>。出来高が増えた事実だけでなく、その後に価格が安値を更新できないこと、買い戻しが続くことを確認します。無効化ラインを先に決めてから入る形です。</p>
+<p><strong>AFTER｜実際の約定：</strong>09:22に9,772円で100株ロング、09:23に9,802円で返済。価格差損益は <strong class="correct">＋3,000円</strong>。日誌では、この日の下げ止まりロングで最も根拠を説明しやすい取引と整理されています。</p>
+<figure><a href="diaries/2026-10-02/assets/chart_6976_15s_2m_ichimoku26.png"><img src="diaries/2026-10-02/assets/chart_6976_15s_2m_ichimoku26.png" alt="太陽誘電10月2日の15秒足・2分足・出来高と約定マーカー。AFTER全体チャート"></a><figcaption>AFTER｜太陽誘電 6976｜同じ日中チャートの全体。タップすると拡大できます。</figcaption></figure>
+<p class="note">出典：<a class="source" href="diaries/2026-10-02/diary_20261002.md">10/2 約定照合済み日誌</a></p>
+</section>
+</article>
+
+<article id="q2" class="question" data-answer="b">
+<div class="eyebrow">問題 2｜負け取引の根拠を確認</div>
+<h2>寄り付き直後の先回りロング</h2>
+<div class="tag-list"><span class="tag-pill">時間帯ルール</span><span class="tag-pill">指数と個別銘柄</span><span class="tag-pill">価格反応</span></div>
+<div class="scenario"><strong>BEFORE｜09:01・ソフトバンクグループ（9984）</strong><br>日経平均は上方向を意識しています。一方で寄り付き直後は売買が集中しており、個別銘柄では下げ止まりや買い継続をまだ確認できていません。あなたならどうしますか？</div>
+<figure class="chart-before"><a href="diaries/2026-10-02/assets/chart_9984_15s_2m_ichimoku26.png" aria-label="ソフトバンクグループの日中チャート。右半分を隠したBEFORE表示。タップで全体を拡大"><img src="diaries/2026-10-02/assets/chart_9984_15s_2m_ichimoku26.png" alt="ソフトバンクグループ10月2日の15秒足・2分足・出来高。右側を隠したBEFOREチャート" loading="eager"></a><figcaption>BEFORE｜ソフトバンクグループ 9984｜10/2の日中チャート。右側を隠しています。タップすると全体を拡大できます。</figcaption></figure>
+<p class="note">チャートを見て、根拠と損切り位置を考えてから選んでください。回答後に同じチャートの全体を表示します。</p>
+<fieldset>
+<legend>選択肢を1つ選んでください</legend>
+<label class="choice"><input type="radio" name="q2" value="a"><span><strong>A.</strong> 日経平均が上向きなら、寄り付きでロングして下がったら買い増す。</span></label>
+<label class="choice"><input type="radio" name="q2" value="b"><span><strong>B.</strong> 9:00〜9:05は見送り、個別の下げ止まりと買いの継続を確認できるまで待つ。</span></label>
+<label class="choice"><input type="radio" name="q2" value="c"><span><strong>C.</strong> 寄り付きの出来高が大きければ、買い方向が決まったと考えてロングする。</span></label>
+<label class="choice"><input type="radio" name="q2" value="d"><span><strong>D.</strong> 寄り付きの価格が下がったので、反発確認なしですぐショートする。</span></label>
+</fieldset>
+<div class="actions"><button type="button" class="check">答え合わせ</button><span class="message" aria-live="polite"></span></div>
+<section class="answer" hidden aria-live="polite">
+<div class="verdict"></div>
+<p><strong>正解：B</strong>。9:00〜9:05は原則エントリーを見送ります。例外は、板の薄い真空ゾーンを実際にブレイクした場合です。この場面ではその根拠がなく、指数の見立てや寄り付きの大出来高だけでは個別銘柄の買いを確認できません。9:05以降も、価格反応・損切り位置・残る利幅が揃うまでは待ちます。</p>
+<p><strong>AFTER｜実際の約定：</strong>09:01に6,667円で100株ロングし、09:02に6,568円で返済。価格差損益は <strong class="incorrect">−9,900円</strong>。9984全体では当日8組で−19,800円でした。日誌では、個別の値動きより日経平均の上向きと再上昇のイメージを優先した取引と振り返っています。</p>
+<figure><a href="diaries/2026-10-02/assets/chart_9984_15s_2m_ichimoku26.png"><img src="diaries/2026-10-02/assets/chart_9984_15s_2m_ichimoku26.png" alt="ソフトバンクグループ10月2日の15秒足・2分足・出来高と約定マーカー。AFTER全体チャート"></a><figcaption>AFTER｜ソフトバンクグループ 9984｜同じ日中チャートの全体。タップすると拡大できます。</figcaption></figure>
+<p class="note">出典：<a class="source" href="diaries/2026-10-02/diary_20261002.md">10/2 約定照合済み日誌</a></p>
+</section>
+</article>
+
+<section id="final" class="summary" hidden aria-live="polite"></section>
+<footer>実際の約定記録に基づく学習用クイズです。1週間・2例だけで手法の勝率は判断できません。答えの正誤より、入る前に確認できた情報と無効化条件を振り返ってください。</footer>
+</main>
+<script>
+(() => {
+  const cards = [...document.querySelectorAll('.question')];
+  let completed = 0;
+  let score = 0;
+  const scoreBox = document.querySelector('#score');
+  const finalBox = document.querySelector('#final');
+
+  for (const card of cards) {
+    const button = card.querySelector('.check');
+    const message = card.querySelector('.message');
+    const answer = card.querySelector('.answer');
+    button.addEventListener('click', () => {
+      const selected = card.querySelector('input[type="radio"]:checked');
+      if (!selected) {
+        message.textContent = '選択肢を選んでください。';
+        return;
+      }
+      const isCorrect = selected.value === card.dataset.answer;
+      completed += 1;
+      if (isCorrect) score += 1;
+      card.querySelectorAll('input[type="radio"]').forEach(input => { input.disabled = true; });
+      button.disabled = true;
+      message.textContent = '';
+      const verdict = answer.querySelector('.verdict');
+      verdict.textContent = isCorrect ? '正解です。' : '今回は不正解。実績と根拠を確認しましょう。';
+      verdict.classList.add(isCorrect ? 'correct' : 'incorrect');
+      answer.hidden = false;
+      scoreBox.innerHTML = `<strong>回答済み ${completed} / ${cards.length}｜${score}問正解</strong><br>${completed === cards.length ? '下のまとめで今週の要点を確認できます。' : 'もう1問に答えてください。'}`;
+      if (completed === cards.length) {
+        finalBox.innerHTML = `<h2>今週の振り返り</h2><p><strong>${score} / ${cards.length}問正解</strong></p><p>勝ちパターンでは<strong>下げ止まりの価格反応を確認してから入る</strong>こと、負けパターンでは<strong>寄り付きの時間制限を守り、指数ではなく個別の反応を待つ</strong>ことがポイントです。</p>`;
+        finalBox.hidden = false;
+      }
+    });
+  }
+})();
+</script>
+</body>
+</html>
