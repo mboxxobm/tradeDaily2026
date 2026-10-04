@@ -25,8 +25,6 @@ DomainKing 側が既存サイトのマスターです。現在のダッシュボ
 - `FTP_PORT`: サーバー指定のポート。明示がなければFTPSは通常 `21`
 - `FTP_DEPLOY_ENABLED`: 設定確認後に `true` にする
 
-FTPパスワードがチャットに書かれてしまったため、そのパスワードは使わず、サーバー管理画面で変更してから新しい値をSecretsに登録してください。
-
 `FTP_DEPLOY_ENABLED` が `true` になるまで公開ワークフローは動きません。設定後は `Actions → Deploy to DomainKing subdomain → Run workflow` で初回転送できます。以後はGitHub `main` の更新時に専用サブフォルダだけを同期します。
 
 ## 3. 既存サイトとの統合
