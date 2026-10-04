@@ -37,6 +37,8 @@ button:disabled{opacity:.55;cursor:default}
 .correct{color:var(--green)}.incorrect{color:var(--red)}
 figure{margin:15px 0 8px}
 figure a{display:block;cursor:zoom-in}
+.chart-before a{position:relative;overflow:hidden}
+.chart-before a::after{content:"右側の続きは回答後に表示";position:absolute;inset:0 0 0 52%;display:flex;align-items:center;justify-content:center;padding:12px;background:rgba(11,16,32,.96);border-left:2px dashed var(--gold);color:var(--gold);font-weight:700;text-align:center}
 figure img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#080d16}
 figcaption{margin-top:7px;color:var(--muted);font-size:.9rem}
 .result-list{padding-left:1.3em}
@@ -63,8 +65,8 @@ footer{color:var(--muted);font-size:.9rem;padding:8px 4px 22px}
 <div class="eyebrow">問題 1｜場面を見極める</div>
 <h2>下げ止まりを確認してからのロング</h2>
 <div class="scenario"><strong>BEFORE｜09:21ごろ・太陽誘電（6976）</strong><br>寄り付き後に下落。9,700円付近を一度下抜けたあと、大きな出来高を伴う買い戻しのピンバーが出て、安値更新が止まり始めています。次のエントリー判断として最も適切なのはどれでしょう？</div>
-<figure><a href="diaries/2026-10-02/assets/chart_6976_15s_2m_ichimoku26.png"><img src="diaries/2026-10-02/assets/chart_6976_15s_2m_ichimoku26.png" alt="太陽誘電10月2日の15秒足・2分足・出来高と約定マーカー" loading="eager" fetchpriority="high"></a><figcaption>太陽誘電 6976｜10/2の日中チャート（15秒足・2分足・出来高）。画像をタップすると拡大できます。</figcaption></figure>
-<p class="note">まずチャートを確認してから選んでください。答え合わせで約定結果と解説が開きます。</p>
+<figure class="chart-before"><a href="diaries/2026-10-02/assets/chart_6976_15s_2m_ichimoku26.png" aria-label="太陽誘電の日中チャート。右半分を隠したBEFORE表示。タップで全体を拡大"><img src="diaries/2026-10-02/assets/chart_6976_15s_2m_ichimoku26.png" alt="太陽誘電10月2日の15秒足・2分足・出来高。右側を隠したBEFOREチャート" loading="eager" fetchpriority="high"></a><figcaption>BEFORE｜太陽誘電 6976｜10/2の日中チャート。右側を隠しています。タップすると全体を拡大できます。</figcaption></figure>
+<p class="note">チャートを見て、根拠と損切り位置を考えてから選んでください。回答後に同じチャートの全体を表示します。</p>
 <fieldset>
 <legend>選択肢を1つ選んでください</legend>
 <label class="choice"><input type="radio" name="q1" value="a"><span><strong>A.</strong> 出来高が大きいので、方向を確かめずにすぐショートする。</span></label>
@@ -77,6 +79,7 @@ footer{color:var(--muted);font-size:.9rem;padding:8px 4px 22px}
 <div class="verdict"></div>
 <p><strong>正解：C</strong>。出来高が増えた事実だけでなく、その後に価格が安値を更新できないこと、買い戻しが続くことを確認します。無効化ラインを先に決めてから入る形です。</p>
 <p><strong>AFTER｜実際の約定：</strong>09:22に9,772円で100株ロング、09:23に9,802円で返済。価格差損益は <strong class="correct">＋3,000円</strong>。日誌では、この日の下げ止まりロングで最も根拠を説明しやすい取引と整理されています。</p>
+<figure><a href="diaries/2026-10-02/assets/chart_6976_15s_2m_ichimoku26.png"><img src="diaries/2026-10-02/assets/chart_6976_15s_2m_ichimoku26.png" alt="太陽誘電10月2日の15秒足・2分足・出来高と約定マーカー。AFTER全体チャート"></a><figcaption>AFTER｜太陽誘電 6976｜同じ日中チャートの全体。タップすると拡大できます。</figcaption></figure>
 <p class="note">出典：<a class="source" href="diaries/2026-10-02/diary_20261002.md">10/2 約定照合済み日誌</a></p>
 </section>
 </article>
@@ -85,8 +88,8 @@ footer{color:var(--muted);font-size:.9rem;padding:8px 4px 22px}
 <div class="eyebrow">問題 2｜負けた取引を振り返る</div>
 <h2>寄り付き直後の先回りロング</h2>
 <div class="scenario"><strong>BEFORE｜09:01・ソフトバンクグループ（9984）</strong><br>日経平均は上方向を意識しています。一方で寄り付き直後は売買が集中しており、個別銘柄では下げ止まりや買い継続をまだ確認できていません。あなたならどうしますか？</div>
-<figure><a href="diaries/2026-10-02/assets/chart_9984_15s_2m_ichimoku26.png"><img src="diaries/2026-10-02/assets/chart_9984_15s_2m_ichimoku26.png" alt="ソフトバンクグループ10月2日の15秒足・2分足・出来高と約定マーカー" loading="eager"></a><figcaption>ソフトバンクグループ 9984｜10/2の日中チャート（15秒足・2分足・出来高）。画像をタップすると拡大できます。</figcaption></figure>
-<p class="note">まずチャートを確認してから選んでください。答え合わせで約定結果と解説が開きます。</p>
+<figure class="chart-before"><a href="diaries/2026-10-02/assets/chart_9984_15s_2m_ichimoku26.png" aria-label="ソフトバンクグループの日中チャート。右半分を隠したBEFORE表示。タップで全体を拡大"><img src="diaries/2026-10-02/assets/chart_9984_15s_2m_ichimoku26.png" alt="ソフトバンクグループ10月2日の15秒足・2分足・出来高。右側を隠したBEFOREチャート" loading="eager"></a><figcaption>BEFORE｜ソフトバンクグループ 9984｜10/2の日中チャート。右側を隠しています。タップすると全体を拡大できます。</figcaption></figure>
+<p class="note">チャートを見て、根拠と損切り位置を考えてから選んでください。回答後に同じチャートの全体を表示します。</p>
 <fieldset>
 <legend>選択肢を1つ選んでください</legend>
 <label class="choice"><input type="radio" name="q2" value="a"><span><strong>A.</strong> 日経平均が上向きなら、寄り付きでロングして下がったら買い増す。</span></label>
@@ -99,6 +102,7 @@ footer{color:var(--muted);font-size:.9rem;padding:8px 4px 22px}
 <div class="verdict"></div>
 <p><strong>正解：B</strong>。9:00〜9:05は原則エントリーしないルールです。指数の見立てや寄り付きの大出来高だけでは、個別銘柄の買いを確認したことになりません。9:05以降も、価格反応・損切り位置・残る利幅が揃うまでは待ちます。</p>
 <p><strong>AFTER｜実際の約定：</strong>09:01に6,667円で100株ロングし、09:02に6,568円で返済。価格差損益は <strong class="incorrect">−9,900円</strong>。9984全体では当日8組で−19,800円でした。日誌では、個別の値動きより日経平均の上向きと再上昇のイメージを優先した取引と振り返っています。</p>
+<figure><a href="diaries/2026-10-02/assets/chart_9984_15s_2m_ichimoku26.png"><img src="diaries/2026-10-02/assets/chart_9984_15s_2m_ichimoku26.png" alt="ソフトバンクグループ10月2日の15秒足・2分足・出来高と約定マーカー。AFTER全体チャート"></a><figcaption>AFTER｜ソフトバンクグループ 9984｜同じ日中チャートの全体。タップすると拡大できます。</figcaption></figure>
 <p class="note">出典：<a class="source" href="diaries/2026-10-02/diary_20261002.md">10/2 約定照合済み日誌</a></p>
 </section>
 </article>
