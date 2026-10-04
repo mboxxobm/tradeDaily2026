@@ -52,3 +52,25 @@ python3 scripts/r2_fetch_walk_csv.py \
 ```
 
 クラウド側では、読み取り専用の一時認証または有効期限付きURLを使い、書き込み用のR2キーを渡さない構成にします。
+
+## BoardReadTools生データの同期
+
+元ファイルの内容を変えず、板読みデータだけをR2の`board_raw/`配下へ保存します。`.env`、`R2_ENV.txt`、アプリ本体、実行スクリプト、`.DS_Store`は公開データから除外します。
+
+対象確認：
+
+```bash
+python3 scripts/r2_sync_board_raw.py --dry-run
+```
+
+同期実行：
+
+```bash
+python3 scripts/r2_sync_board_raw.py --sync
+```
+
+同期後の一覧は次の公開キーです。
+
+```text
+board_raw/manifest.json
+```
