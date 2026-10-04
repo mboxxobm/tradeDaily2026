@@ -148,6 +148,14 @@ function pickSnapshot(snapshots, targetEpoch) {
   return best;
 }
 
+function auctionKind(bar) {
+  const date = new Date(bar.t + 9 * 60 * 60 * 1000);
+  const minute = date.getUTCHours() * 60 + date.getUTCMinutes();
+  if (minute === 9 * 60) return 'open';
+  if (minute === 15 * 60 + 30) return 'close';
+  return null;
+}
+
 function aggregateBars(points, startEpoch, endEpoch) {
   const bars = new Map();
   const barMs = 15 * 1000;
@@ -176,11 +184,20 @@ function aggregateBars(points, startEpoch, endEpoch) {
     existing.ticks += 1;
   }
   const result = [...bars.values()].sort((a, b) => a.t - b.t);
+  const ordinaryIndexes = result.map((bar, index) => auctionKind(bar) ? -1 : index).filter((index) => index >= 0);
+  const ordinaryPosition = new Map(ordinaryIndexes.map((index, position) => [index, position]));
   for (let index = 0; index < result.length; index += 1) {
-    const prior = result.slice(Math.max(0, index - 30), index).map((bar) => bar.volume);
+    const position = ordinaryPosition.get(index);
+    if (position === undefined) {
+      result[index].rvol = null;
+      result[index].largeVolume = false;
+      continue;
+    }
+    const priorIndexes = ordinaryIndexes.slice(Math.max(0, position - 30), position);
+    const prior = priorIndexes.map((at) => result[at].volume);
     result[index].rvol = prior.length === 30 ? result[index].volume / (prior.reduce((sum, value) => sum + value, 0) / prior.length || 1) : null;
-    const lsmaWindow = result.slice(Math.max(0, index - 49), index + 1).map((bar) => bar.volume);
-    const stdevWindow = result.slice(Math.max(0, index - 20), index + 1).map((bar) => bar.volume);
+    const lsmaWindow = ordinaryIndexes.slice(Math.max(0, position - 49), position + 1).map((at) => result[at].volume);
+    const stdevWindow = ordinaryIndexes.slice(Math.max(0, position - 20), position + 1).map((at) => result[at].volume);
     const n = lsmaWindow.length;
     const sumY = lsmaWindow.reduce((sum, value) => sum + value, 0);
     const sumXY = lsmaWindow.reduce((sum, value, at) => sum + value * at, 0);
@@ -273,7 +290,7 @@ function buildBeforeAnalysis(bars, snapshot, entryPrice) {
 function chartSvg(item, bars, mode) {
   const W = 1200;
   const H = 730;
-  const margins = { left: 82, right: 28, top: 78, bottom: 42 };
+  const margins = { left: 82, right: 28, top: 116, bottom: 42 };
   const priceBottom = 405;
   const volTop = 442;
   const volHeight = 62;
@@ -298,20 +315,29 @@ function chartSvg(item, bars, mode) {
   const x = (time) => margins.left + ((time - start) / Math.max(1, end - start)) * plotWidth;
   const y = (price) => margins.top + ((high - price) / Math.max(0.0001, high - low)) * plotHeight;
   const barWidth = Math.max(1, Math.min(9, plotWidth / Math.max(1, visible.length) * 0.72));
-  const maxVolume = Math.max(1, ...visible.map((bar) => bar.volume || 0));
+  const volumeKnown = mode === 'before' ? visible.filter((bar) => bar.t + 7500 <= entryEpoch) : visible;
+  const regularVolumes = volumeKnown.filter((bar) => !auctionKind(bar)).map((bar) => bar.volume || 0).sort((a, b) => a - b);
+  const capIndex = Math.max(0, Math.ceil(regularVolumes.length * 0.95) - 1);
+  const volumeScaleMax = Math.max(1, regularVolumes[capIndex] || 1);
   const maxDelta = Math.max(1, ...visible.map((bar) => Math.abs(bar.delta || 0)));
   const maxRvol = Math.max(2, ...visible.map((bar) => bar.rvol || 0));
-  const largeBar = visible.filter((bar) => (bar.rvol || 0) >= 2 || bar.largeVolume).sort((a, b) => b.volume - a.volume)[0];
+  const largeBar = volumeKnown.filter((bar) => !auctionKind(bar) && ((bar.rvol || 0) >= 2 || bar.largeVolume)).sort((a, b) => b.volume - a.volume)[0];
   const largeSummary = largeBar
-    ? `大口候補 ${new Date(largeBar.t + 9 * 60 * 60 * 1000).toISOString().slice(11, 16)} 出来高 ${fmtQty(largeBar.volume)} / 推定Δ ${largeBar.delta >= 0 ? '+' : '−'}${fmtQty(Math.abs(largeBar.delta))} / RVOL ${largeBar.rvol.toFixed(1)}x`
+    ? `通常時間の大口候補 ${new Date(largeBar.t + 9 * 60 * 60 * 1000).toISOString().slice(11, 16)} 出来高 ${fmtQty(largeBar.volume)}株 / RVOL ${largeBar.rvol?.toFixed(1) ?? '—'}x`
     : '大口出来高の条件該当なし';
+  const openAuction = visible.find((bar) => auctionKind(bar) === 'open');
+  const closeAuction = visible.find((bar) => auctionKind(bar) === 'close');
+  const auctionSummary = `寄り09:00 ${openAuction ? `${fmtQty(openAuction.volume)}株` : 'データなし'}　｜　引け15:30 ${mode === 'before' ? 'AFTERで表示' : closeAuction ? `${fmtQty(closeAuction.volume)}株` : 'データなし'}`;
   const title = `${item.dateDisplay} ${item.code} ${item.name}｜${mode === 'before' ? 'BEFORE 9:00→引け（ENTRY以降を非表示）' : 'AFTER 板データ連動'}`;
   const lines = [];
   lines.push(`<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${escXml(title)}">`);
   lines.push('<style>text{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",Meiryo,sans-serif}.title{fill:#edf6fb;font-size:20px;font-weight:800}.sub{fill:#a7bac7;font-size:12px}.grid{stroke:#29465a;stroke-width:1}.axis{fill:#a7bac7;font-size:11px}.up{fill:#5ce09f;stroke:#5ce09f}.down{fill:#ff8b98;stroke:#ff8b98}.wick{stroke-width:1}.vwap{fill:none;stroke:#f4c95d;stroke-width:1.6;stroke-dasharray:5 4}.entry{stroke:#f59e0b;stroke-width:2;stroke-dasharray:7 5}.exit{stroke:#77e3a9;stroke-width:2;stroke-dasharray:5 4}.label{fill:#071019;font-size:11px;font-weight:800}.box{fill:#f59e0b}.exitbox{fill:#77e3a9}.panel{fill:#0d1b27;stroke:#29465a}.axisline{stroke:#607887;stroke-width:1}.delta-pos{fill:#5ce09f}.delta-neg{fill:#ff8b98}.rvol{fill:none;stroke:#71d8ef;stroke-width:2}.large{stroke:#f4c95d;stroke-width:2}.mask{fill:#071019;fill-opacity:.94}.masktext{fill:#edf6fb;font-size:17px;font-weight:800}</style>');
   lines.push('<rect width="100%" height="100%" fill="#0b1219"/>');
   lines.push(`<text x="${margins.left}" y="27" class="title">${escXml(title)}</text>`);
-  lines.push(`<text x="${margins.left}" y="48" class="sub">15秒足｜黄色=VWAP｜出来高バー・推定デルタ・RVOL（直前30本平均比）　${visible.length}本　｜　${escXml(largeSummary)}</text>`);
+  lines.push(`<text x="${margins.left}" y="48" class="sub">15秒足｜黄色=VWAP｜出来高バー・推定デルタ・RVOL（通常時間の直前30本平均比）　${visible.length}本</text>`);
+  lines.push(`<text x="${margins.left}" y="68" class="sub">${escXml(auctionSummary)}</text>`);
+  lines.push(`<text x="${margins.left}" y="88" class="sub">通常時間の出来高目盛：0〜${escXml(fmtQty(volumeScaleMax))}株（目盛上限を超えるバーは上端の黄色印で表示）</text>`);
+  lines.push(`<text x="${margins.left}" y="106" class="sub">${escXml(largeSummary)}</text>`);
   for (let i = 0; i <= 5; i += 1) {
     const price = low + (high - low) * (i / 5);
     const yy = y(price);
@@ -320,7 +346,14 @@ function chartSvg(item, bars, mode) {
   }
   for (const [top, height, name] of [[volTop, volHeight, '出来高'], [deltaTop, deltaHeight, '推定Δ'], [rvolTop, rvolHeight, 'RVOL']]) {
     lines.push(`<rect x="${margins.left}" y="${top}" width="${plotWidth}" height="${height}" class="panel"/>`);
-    lines.push(`<text x="${margins.left - 8}" y="${top + 13}" text-anchor="end" class="axis">${name}</text>`);
+    const labelX = name === '出来高' ? margins.left + 5 : margins.left - 8;
+    const anchor = name === '出来高' ? 'start' : 'end';
+    lines.push(`<text x="${labelX}" y="${top + 13}" text-anchor="${anchor}" class="axis">${name}</text>`);
+  }
+  for (const fraction of [0, 0.5, 1]) {
+    const yy = volTop + volHeight - 4 - fraction * (volHeight - 8);
+    lines.push(`<line x1="${margins.left}" y1="${yy.toFixed(2)}" x2="${W - margins.right}" y2="${yy.toFixed(2)}" class="grid" opacity=".65"/>`);
+    lines.push(`<text x="${margins.left - 8}" y="${(yy + 4).toFixed(2)}" text-anchor="end" class="axis">${escXml(fmtQty(volumeScaleMax * fraction))}</text>`);
   }
   const tickCount = 8;
   for (let i = 0; i <= tickCount; i += 1) {
@@ -342,13 +375,14 @@ function chartSvg(item, bars, mode) {
     const height = Math.max(1.4, Math.abs(yyClose - yyOpen));
     lines.push(`<line x1="${xx.toFixed(2)}" y1="${yyHigh.toFixed(2)}" x2="${xx.toFixed(2)}" y2="${yyLow.toFixed(2)}" class="${color} wick"/>`);
     lines.push(`<rect x="${(xx - barWidth / 2).toFixed(2)}" y="${top.toFixed(2)}" width="${barWidth.toFixed(2)}" height="${height.toFixed(2)}" class="${color}"/>`);
-    const vh = (bar.volume || 0) / maxVolume * (volHeight - 8);
-    if (vh > 0) lines.push(`<rect x="${(xx - barWidth / 2).toFixed(2)}" y="${(volTop + volHeight - vh).toFixed(2)}" width="${barWidth.toFixed(2)}" height="${vh.toFixed(2)}" class="${color}" opacity=".8"/>`);
+    const vh = Math.min(bar.volume || 0, volumeScaleMax) / volumeScaleMax * (volHeight - 8);
+    if (vh > 0) lines.push(`<rect x="${(xx - barWidth / 2).toFixed(2)}" y="${(volTop + volHeight - vh).toFixed(2)}" width="${barWidth.toFixed(2)}" height="${vh.toFixed(2)}" class="${color}" opacity=".8"><title>${new Date(bar.t + 9 * 60 * 60 * 1000).toISOString().slice(11, 16)} 出来高 ${fmtQty(bar.volume)}株</title></rect>`);
+    if ((bar.volume || 0) > volumeScaleMax) lines.push(`<circle cx="${xx.toFixed(2)}" cy="${(volTop + 5).toFixed(2)}" r="3.2" fill="#f4c95d" class="large"><title>目盛上限超：${fmtQty(bar.volume)}株</title></circle>`);
     const dh = Math.abs(bar.delta || 0) / maxDelta * (deltaHeight / 2 - 4);
     if (dh > 0) lines.push(`<rect x="${(xx - barWidth / 2).toFixed(2)}" y="${bar.delta >= 0 ? deltaTop + deltaHeight / 2 - dh : deltaTop + deltaHeight / 2}" width="${barWidth.toFixed(2)}" height="${dh.toFixed(2)}" class="${bar.delta >= 0 ? 'delta-pos' : 'delta-neg'}"/>`);
     const rh = bar.rvol ? Math.min(rvolHeight - 5, bar.rvol / maxRvol * (rvolHeight - 5)) : 0;
     if (rh > 0) lines.push(`<rect x="${(xx - barWidth / 2).toFixed(2)}" y="${(rvolTop + rvolHeight - rh).toFixed(2)}" width="${barWidth.toFixed(2)}" height="${rh.toFixed(2)}" fill="#71d8ef" opacity=".55"/>`);
-    if ((bar.rvol || 0) >= 2 || bar.largeVolume) lines.push(`<circle cx="${xx.toFixed(2)}" cy="${(volTop + 5).toFixed(2)}" r="3.2" fill="#f4c95d" class="large"/>`);
+    if (!auctionKind(bar) && ((bar.rvol || 0) >= 2 || bar.largeVolume)) lines.push(`<circle cx="${xx.toFixed(2)}" cy="${(volTop + 5).toFixed(2)}" r="3.2" fill="#f4c95d" class="large"/>`);
   }
   const vwapPoints = visible.filter((bar) => Number.isFinite(bar.vwap)).map((bar) => `${x(bar.t + 7500).toFixed(2)},${y(bar.vwap).toFixed(2)}`);
   if (vwapPoints.length > 1) lines.push(`<polyline points="${vwapPoints.join(' ')}" class="vwap"/>`);
@@ -365,7 +399,7 @@ function chartSvg(item, bars, mode) {
     lines.push(`<rect x="${Math.min(W - 138, exitX + 6).toFixed(2)}" y="${margins.top + 36}" width="111" height="21" rx="5" class="exitbox"/><text x="${Math.min(W - 132, exitX + 12).toFixed(2)}" y="${margins.top + 51}" class="label">EXIT ${escXml(item.exitTime)}</text>`);
   }
   lines.push(`<line x1="${margins.left}" y1="${deltaTop + deltaHeight / 2}" x2="${W - margins.right}" y2="${deltaTop + deltaHeight / 2}" class="axisline"/>`);
-  lines.push(`<text x="${margins.left}" y="${H - 4}" class="sub">推定Δ=価格上昇時＋出来高／下落時−出来高（同値は0）｜RVOL=直前30本平均比｜点=RVOL 2倍以上または出来高異常</text>`);
+  lines.push(`<text x="${margins.left}" y="${H - 4}" class="sub">出来高バーは株数（上限超は黄色点。寄り・引けの実数は上に表示）｜RVOL基準からオークションを除外｜推定Δ=価格変化を使った参考値</text>`);
   lines.push('</svg>');
   return lines.join('');
 }
