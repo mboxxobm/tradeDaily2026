@@ -2,32 +2,91 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TradeDaily2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b1020">
+<meta name="description" content="TradeDaily2026の日誌、トレード結果、チャート、学習ページをまとめたホームです。">
+<title>TradeDaily2026｜トレード記録ホーム</title>
 <style>
-:root{color-scheme:dark}
-body{margin:0;background:#0b1020;color:#edf3ff;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-main{max-width:760px;margin:auto;padding:24px 16px}
-h1{font-size:1.6rem;margin:0 0 8px}
-p{color:#aebbd0;margin:0 0 22px}
-ul{list-style:none;padding:0;margin:0;display:grid;gap:12px}
-a{display:block;padding:17px 18px;border:1px solid #34425e;border-radius:14px;background:#151e32;color:#edf3ff;text-decoration:none}
-a:active{background:#20304b}
-small{display:block;color:#9eb0cc;margin-top:4px}
+:root{color-scheme:dark;--bg:#0b1020;--panel:#151e32;--panel2:#10182a;--line:#34425e;--text:#edf3ff;--muted:#b8c5d9;--blue:#91caff;--gold:#ffe08a;--green:#a7e6bd}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:16px}
+body{margin:0;background:radial-gradient(ellipse at 50% -12%,#213958 0,var(--bg) 46rem);color:var(--text);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif}
+main{width:min(1040px,100%);margin:auto;padding:14px 14px calc(48px + env(safe-area-inset-bottom))}
+a{color:var(--blue);text-underline-offset:3px}
+.hero,.section,.footer{border:1px solid var(--line);border-radius:18px;background:rgba(21,30,50,.96)}
+.hero{padding:clamp(22px,6vw,42px);margin-bottom:14px;background:linear-gradient(145deg,#1b2d49,#151e32 68%)}
+.eyebrow{margin:0 0 7px;color:var(--gold);font-size:.8rem;font-weight:800;letter-spacing:.14em}
+h1{margin:0;font-size:clamp(1.9rem,7vw,2.8rem);line-height:1.2}
+.lead{max-width:720px;margin:12px 0 0;color:var(--muted)}
+.quick{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:21px}
+.quick a,.card{display:block;border:1px solid var(--line);border-radius:13px;background:var(--panel2);color:var(--text);text-decoration:none;transition:border-color .15s,transform .15s}
+.quick a{min-height:94px;padding:13px}
+.quick a:hover,.card:hover,.quick a:focus-visible,.card:focus-visible{border-color:var(--blue);transform:translateY(-1px);outline:none}
+.quick strong,.card strong{display:block;color:var(--blue);line-height:1.4}
+.quick span,.card span{display:block;margin-top:5px;color:var(--muted);font-size:.9rem}
+.section{padding:20px;margin:14px 0;scroll-margin-top:12px}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:12px}
+h2{margin:0;font-size:1.2rem}
+.section-head p{margin:0;color:var(--muted);font-size:.88rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:10px}
+.card{min-height:103px;padding:14px}
+.label{display:inline-block!important;width:max-content;margin:0 0 7px!important;padding:2px 8px;border:1px solid #497754;border-radius:999px;color:var(--green)!important;font-size:.74rem!important}
+.footer{padding:14px 17px;color:var(--muted);font-size:.9rem}
+.footer a{margin-right:10px}
+@media(max-width:600px){main{padding:8px 9px calc(34px + env(safe-area-inset-bottom))}.hero,.section{border-radius:14px}.hero{padding:21px 17px}.quick{grid-template-columns:1fr;gap:8px;margin-top:17px}.quick a{min-height:0;padding:12px 14px}.section{padding:15px}.section-head{display:block}.section-head p{margin-top:3px}.card{min-height:0;padding:13px}h2{font-size:1.1rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
 </style>
 </head>
 <body>
 <main>
-<h1>TradeDaily2026</h1>
-<p>トレード日誌・チャート記録</p>
-<ul>
-<li><a href="trading-rules.html">トレードルール<small>勝ちやすい場面・エントリー前チェック</small></a></li>
-<li><a href="trading-quizzes.html">トレードクイズ一覧<small>根拠別に選べる｜このページ内で回答・チャート確認</small></a></li>
-<li><a href="diaries/2026-10-05/market_memo_20261005.html">本日の銘柄メモ<small>2026-10-05｜6976・8035・7974</small></a></li>
-<li><a href="GOLD/GOLD-20260814/">GOLD 2026-08-14<small>15:00 LONG / N DOW / 15分足 / TP 8月15日 01:00</small></a></li>
-<li><a href="GOLD/GOLD-20261002/">GOLD 2026-10-02<small>チャート一覧</small></a></li>
-<li><a href="2026-10-02/">2026-10-02 トレード日誌<small>取引記録・振り返り</small></a></li>
-</ul>
+<header class="hero">
+<p class="eyebrow">TRADE DAILY 2026</p>
+<h1>トレード記録ホーム</h1>
+<p class="lead">日々の日誌、損益グラフ、チャート記録、練習ページをここから開けます。スマートフォンでも見やすい一覧です。</p>
+<nav class="quick" aria-label="よく見るページ">
+<a href="diaries/"><strong>日誌を日付から探す</strong><span>日次・NY・週報を検索</span></a>
+<a href="2026%20Daily/annual_trade_dashboard.html"><strong>年間損益グラフ</strong><span>日別・銘柄別の結果を見る</span></a>
+<a href="2026-10-02/"><strong>最新の日誌</strong><span>2026年10月2日の記録</span></a>
+</nav>
+</header>
+
+<section class="section" id="diaries">
+<div class="section-head"><h2>日誌・取引記録</h2><p>日付別の記録と振り返り</p></div>
+<div class="grid">
+<a class="card" href="diaries/"><span class="label">日付検索</span><strong>トレード日誌一覧</strong><span>日付・キーワードで検索し、日次／NY／週報を絞り込みます。</span></a>
+<a class="card" href="2026-10-02/"><strong>10月2日｜日誌・取引まとめ</strong><span>当日の取引記録、チャート、振り返り。</span></a>
+<a class="card" href="2026-10-02/2026-10-02_trade_summary.html"><strong>10月2日｜取引サマリー</strong><span>取引結果をまとめたページ。</span></a>
+<a class="card" href="weekly_reports/weekly_report_2026-W40_20260928-20261002.html"><strong>第40週｜週次レポート</strong><span>9月28日〜10月2日のまとめ。</span></a>
+</div>
+</section>
+
+<section class="section" id="charts">
+<div class="section-head"><h2>グラフ・データ分析</h2><p>損益やエントリー時間を確認</p></div>
+<div class="grid">
+<a class="card" href="2026%20Daily/annual_trade_dashboard.html"><strong>年間トレードレビュー</strong><span>損益を日別・銘柄別に検索、絞り込み。</span></a>
+<a class="card" href="2026%20Daily/annual_trade_dashboard_dark.html"><strong>年間レビュー｜ダーク表示</strong><span>夜間に見やすい配色のグラフ。</span></a>
+<a class="card" href="entry_execution_time_5min_202607_202609.html"><strong>エントリー時間分析</strong><span>2026年7〜9月の5分ごとの約定数。</span></a>
+<a class="card" href="2026%20Daily/board_reading_quiz_20261004/"><strong>板読み連動チャート</strong><span>板・チャートをケース別に確認。</span></a>
+<a class="card" href="GOLD/GOLD-20261002/"><strong>GOLD｜10月2日チャート</strong><span>ゴールドの時間足チャート記録。</span></a>
+</div>
+</section>
+
+<section class="section" id="practice">
+<div class="section-head"><h2>ルール・練習</h2><p>確認と復習</p></div>
+<div class="grid">
+<a class="card" href="trading-rules.html"><strong>トレードルール</strong><span>エントリー前の確認と見送り条件。</span></a>
+<a class="card" href="trading-quizzes.html"><strong>トレードクイズ</strong><span>チャートを見て根拠を振り返る。</span></a>
+<a class="card" href="diaries/2026-10-05/market_memo_20261005.html"><strong>10月5日｜銘柄別相場メモ</strong><span>太陽誘電・東京エレクトロン・任天堂。</span></a>
+<a class="card" href="success_trade_quiz_20261003/"><strong>勝ちトレード復習</strong><span>過去のケースを使った練習ページ。</span></a>
+<a class="card" href="board-reading-guide.html"><strong>板の見方と歩み値</strong><span>板情報と約定の読み方。</span></a>
+</div>
+</section>
+
+<footer class="footer">
+<a href="explanation-pages.html">全ページ一覧</a>
+<a href="site_structure.html">サイト構成</a>
+<a href="https://github.com/mboxxobm/tradeDaily2026">GitHubリポジトリ</a>
+</footer>
 </main>
 </body>
 </html>

@@ -1,0 +1,49 @@
+name: Import GitHub pages into DomainKing
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: domainking-static-site
+  cancel-in-progress: false
+
+jobs:
+  import:
+    # Manual one-time import only. DomainKing remains the production master.
+    # Require both confirmed FTP paths before any remote write is allowed.
+    if: ${{ vars.FTP_DEPLOY_ENABLED == 'true' && vars.FTP_SERVER_DIR != '' && vars.FTP_ROOT_DIR != '' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout GitHub additions
+        uses: actions/checkout@v4
+
+      - name: Sync pages into the dedicated DomainKing subfolder
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ${{ vars.FTP_PROTOCOL || 'ftps' }}
+          port: ${{ vars.FTP_PORT || '21' }}
+          server-dir: ${{ vars.FTP_SERVER_DIR }}
+          local-dir: ./
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            .gitignore
+            FTP_DEPLOY_SETUP.md
+            .env
+            .env.*
+
+      - name: Add requested shortcuts to the current DomainKing master homepage
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_ROOT_DIR: ${{ vars.FTP_ROOT_DIR }}
+          FTP_PORT: ${{ vars.FTP_PORT || '21' }}
+        run: python scripts/domainking_top_integration.py

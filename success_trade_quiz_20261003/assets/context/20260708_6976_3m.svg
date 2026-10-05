@@ -1,0 +1,394 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1450" height="590" viewBox="0 0 1450 590" role="img" aria-label="2026-07-08　6976 太陽誘電｜3分足｜9:00–15:30">
+<style>
+text{font-family:-apple-system,BlinkMacSystemFont,'Hiragino Sans','Yu Gothic',Meiryo,sans-serif}.title{fill:#eef4f8;font-size:22px;font-weight:800}.subtitle{fill:#9eb0be;font-size:12px}.grid{stroke:#2d3b49;stroke-width:1}.axis{fill:#9eb0be;font-size:11px}.panel{fill:#101a24;stroke:#465a6b}.up{fill:#3bc497;stroke:#3bc497}.down{fill:#ec6275;stroke:#ec6275}.volume{fill:#4c86c5;opacity:.56}.volumeHigh{fill:#edae43;opacity:.84;stroke:#edae43}.high{stroke:#edae43;stroke-width:2}.lunch{fill:#ffffff;opacity:.035}.tradeLine{fill:none;stroke-width:1.8;opacity:.88}.entryLong{fill:#72b8ff;stroke:#061019;stroke-width:1.6}.entryShort{fill:#ffd166;stroke:#061019;stroke-width:1.6}.exit{stroke:#061019;stroke-width:1.6}.label{font-size:10px;font-weight:800;paint-order:stroke;stroke:#101a24;stroke-width:3px;stroke-linejoin:round}.muted{fill:#94a7b5;font-size:11px}.markerPositive{fill:#4fd394}.markerNegative{fill:#ff6b7a}.markerFlat{fill:#f1c75b}.hitNote{fill:#f5b94d;font-size:12px;font-weight:800}
+</style>
+<rect width="100%" height="100%" fill="#0b1219"/>
+<text x="76" y="28" class="title">2026-07-08　6976 太陽誘電｜3分足｜9:00–15:30</text>
+<text x="76" y="47" class="subtitle">約定 3件 / 実現損益プラス 1件 / 合計 −¥18,500 / 出来高上位5本=橙枠 / 歩み値: R2同期CSV</text>
+<rect x="76" y="62" width="1356" height="288" class="panel"/>
+<rect x="76" y="382" width="1356" height="118" class="panel"/>
+<rect x="597.5" y="62" width="208.6" height="438" class="lunch"/>
+<text x="701.8" y="78" text-anchor="middle" class="muted">昼休み</text>
+<line x1="76" y1="62.0" x2="1432" y2="62.0" class="grid"/>
+<text x="67" y="66.0" text-anchor="end" class="axis">17,006</text>
+<line x1="76" y1="119.6" x2="1432" y2="119.6" class="grid"/>
+<text x="67" y="123.6" text-anchor="end" class="axis">16,553.6</text>
+<line x1="76" y1="177.2" x2="1432" y2="177.2" class="grid"/>
+<text x="67" y="181.2" text-anchor="end" class="axis">16,101.2</text>
+<line x1="76" y1="234.8" x2="1432" y2="234.8" class="grid"/>
+<text x="67" y="238.8" text-anchor="end" class="axis">15,648.8</text>
+<line x1="76" y1="292.4" x2="1432" y2="292.4" class="grid"/>
+<text x="67" y="296.4" text-anchor="end" class="axis">15,196.4</text>
+<line x1="76" y1="350.0" x2="1432" y2="350.0" class="grid"/>
+<text x="67" y="354.0" text-anchor="end" class="axis">14,744</text>
+<line x1="76.0" y1="62" x2="76.0" y2="500" class="grid"/>
+<text x="76.0" y="523" text-anchor="middle" class="axis">09:00</text>
+<line x1="284.6" y1="62" x2="284.6" y2="500" class="grid"/>
+<text x="284.6" y="523" text-anchor="middle" class="axis">10:00</text>
+<line x1="493.2" y1="62" x2="493.2" y2="500" class="grid"/>
+<text x="493.2" y="523" text-anchor="middle" class="axis">11:00</text>
+<line x1="701.8" y1="62" x2="701.8" y2="500" class="grid"/>
+<text x="701.8" y="523" text-anchor="middle" class="axis">12:00</text>
+<line x1="910.5" y1="62" x2="910.5" y2="500" class="grid"/>
+<text x="910.5" y="523" text-anchor="middle" class="axis">13:00</text>
+<line x1="1119.1" y1="62" x2="1119.1" y2="500" class="grid"/>
+<text x="1119.1" y="523" text-anchor="middle" class="axis">14:00</text>
+<line x1="1327.7" y1="62" x2="1327.7" y2="500" class="grid"/>
+<text x="1327.7" y="523" text-anchor="middle" class="axis">15:00</text>
+<line x1="1432.0" y1="62" x2="1432.0" y2="500" class="grid"/>
+<text x="1432.0" y="523" text-anchor="middle" class="axis">15:30</text>
+<line x1="91.6" y1="193.3" x2="91.6" y2="279.2" class="up high"/>
+<rect x="86.9" y="200.3" width="9.5" height="48.4" class="up high"><title>09:03:00 始15,540 高15,975 安15,300 終15,920 出来高994,900株</title></rect>
+<rect x="86.9" y="382.0" width="9.5" height="118.0" class="volumeHigh"/>
+<text x="91.6" y="394.0" text-anchor="middle" class="hitNote">#1</text>
+<line x1="102.1" y1="168.4" x2="102.1" y2="213.0" class="up high"/>
+<rect x="97.3" y="195.2" width="9.5" height="4.5" class="up high"><title>09:06:00 始15,925 高16,170 安15,820 終15,960 出来高481,400株</title></rect>
+<rect x="97.3" y="442.9" width="9.5" height="57.1" class="volumeHigh"/>
+<line x1="112.5" y1="185.0" x2="112.5" y2="240.4" class="down high"/>
+<rect x="107.8" y="193.3" width="9.5" height="11.5" class="down high"><title>09:09:00 始15,975 高16,040 安15,605 終15,885 出来高459,200株</title></rect>
+<rect x="107.8" y="445.5" width="9.5" height="54.5" class="volumeHigh"/>
+<line x1="122.9" y1="186.3" x2="122.9" y2="215.5" class="up"/>
+<rect x="118.2" y="205.4" width="9.5" height="1.4" class="up"><title>09:12:00 始15,880 高16,030 安15,800 終15,880 出来高259,800株</title></rect>
+<rect x="118.2" y="469.2" width="9.5" height="30.8" class="volume"/>
+<line x1="133.4" y1="187.5" x2="133.4" y2="252.5" class="down"/>
+<rect x="128.6" y="199.0" width="9.5" height="49.7" class="down"><title>09:15:00 始15,930 高16,020 安15,510 終15,540 出来高379,400株</title></rect>
+<rect x="128.6" y="455.0" width="9.5" height="45.0" class="volume"/>
+<line x1="143.8" y1="217.5" x2="143.8" y2="250.6" class="up"/>
+<rect x="139.1" y="235.3" width="9.5" height="11.5" class="up"><title>09:18:00 始15,555 高15,785 安15,525 終15,645 出来高285,800株</title></rect>
+<rect x="139.1" y="466.1" width="9.5" height="33.9" class="volume"/>
+<line x1="154.2" y1="207.9" x2="154.2" y2="239.7" class="up"/>
+<rect x="149.5" y="217.5" width="9.5" height="20.4" class="up"><title>09:21:00 始15,625 高15,860 安15,610 終15,785 出来高302,300株</title></rect>
+<rect x="149.5" y="464.1" width="9.5" height="35.9" class="volume"/>
+<line x1="164.7" y1="183.7" x2="164.7" y2="218.7" class="up"/>
+<rect x="159.9" y="203.5" width="9.5" height="12.7" class="up"><title>09:24:00 始15,795 高16,050 安15,775 終15,895 出来高366,400株</title></rect>
+<rect x="159.9" y="456.5" width="9.5" height="43.5" class="volume"/>
+<line x1="175.1" y1="188.8" x2="175.1" y2="218.1" class="up"/>
+<rect x="170.4" y="191.4" width="9.5" height="13.4" class="up"><title>09:27:00 始15,885 高16,010 安15,780 終15,990 出来高291,400株</title></rect>
+<rect x="170.4" y="465.4" width="9.5" height="34.6" class="volume"/>
+<line x1="185.5" y1="188.8" x2="185.5" y2="221.3" class="down"/>
+<rect x="180.8" y="191.4" width="9.5" height="19.1" class="down"><title>09:30:00 始15,990 高16,010 安15,755 終15,840 出来高305,100株</title></rect>
+<rect x="180.8" y="463.8" width="9.5" height="36.2" class="volume"/>
+<line x1="196.0" y1="198.4" x2="196.0" y2="225.1" class="down"/>
+<rect x="191.2" y="206.6" width="9.5" height="17.8" class="down"><title>09:33:00 始15,870 高15,935 安15,725 終15,730 出来高228,700株</title></rect>
+<rect x="191.2" y="472.9" width="9.5" height="27.1" class="volume"/>
+<line x1="206.4" y1="197.7" x2="206.4" y2="223.8" class="up"/>
+<rect x="201.7" y="198.4" width="9.5" height="24.8" class="up"><title>09:36:00 始15,740 高15,940 安15,735 終15,935 出来高198,700株</title></rect>
+<rect x="201.7" y="476.4" width="9.5" height="23.6" class="volume"/>
+<line x1="216.8" y1="186.3" x2="216.8" y2="207.9" class="up"/>
+<rect x="212.1" y="193.3" width="9.5" height="4.5" class="up"><title>09:39:00 始15,940 高16,030 安15,860 終15,975 出来高244,200株</title></rect>
+<rect x="212.1" y="471.0" width="9.5" height="29.0" class="volume"/>
+<line x1="227.2" y1="147.4" x2="227.2" y2="193.9" class="up"/>
+<rect x="222.5" y="151.9" width="9.5" height="41.4" class="up"><title>09:42:00 始15,975 高16,335 安15,970 終16,300 出来高436,700株</title></rect>
+<rect x="222.5" y="448.2" width="9.5" height="51.8" class="volume"/>
+<line x1="237.7" y1="81.9" x2="237.7" y2="153.8" class="up high"/>
+<rect x="232.9" y="95.9" width="9.5" height="56.0" class="up high"><title>09:45:00 始16,300 高16,850 安16,285 終16,740 出来高897,300株</title></rect>
+<rect x="232.9" y="393.6" width="9.5" height="106.4" class="volumeHigh"/>
+<text x="237.7" y="394.0" text-anchor="middle" class="hitNote">#2</text>
+<line x1="248.1" y1="87.0" x2="248.1" y2="123.2" class="up"/>
+<rect x="243.4" y="95.9" width="9.5" height="2.5" class="up"><title>09:48:00 始16,720 高16,810 安16,525 終16,740 出来高446,600株</title></rect>
+<rect x="243.4" y="447.0" width="9.5" height="53.0" class="volume"/>
+<line x1="258.5" y1="88.9" x2="258.5" y2="130.9" class="down"/>
+<rect x="253.8" y="92.7" width="9.5" height="19.7" class="down"><title>09:51:00 始16,765 高16,795 安16,465 終16,610 出来高347,400株</title></rect>
+<rect x="253.8" y="458.8" width="9.5" height="41.2" class="volume"/>
+<line x1="269.0" y1="96.5" x2="269.0" y2="126.4" class="up"/>
+<rect x="264.2" y="97.1" width="9.5" height="15.3" class="up"><title>09:54:00 始16,610 高16,735 安16,500 終16,730 出来高251,100株</title></rect>
+<rect x="264.2" y="470.2" width="9.5" height="29.8" class="volume"/>
+<line x1="279.4" y1="88.9" x2="279.4" y2="125.8" class="down"/>
+<rect x="274.7" y="98.4" width="9.5" height="19.1" class="down"><title>09:57:00 始16,720 高16,795 安16,505 終16,570 出来高351,700株</title></rect>
+<rect x="274.7" y="458.3" width="9.5" height="41.7" class="volume"/>
+<line x1="289.8" y1="107.3" x2="289.8" y2="146.8" class="down"/>
+<rect x="285.1" y="115.6" width="9.5" height="23.6" class="down"><title>10:00:00 始16,585 高16,650 安16,340 終16,400 出来高303,900株</title></rect>
+<rect x="285.1" y="464.0" width="9.5" height="36.0" class="volume"/>
+<line x1="300.3" y1="134.7" x2="300.3" y2="159.5" class="down"/>
+<rect x="295.5" y="139.2" width="9.5" height="10.2" class="down"><title>10:03:00 始16,400 高16,435 安16,240 終16,320 出来高363,700株</title></rect>
+<rect x="295.5" y="456.9" width="9.5" height="43.1" class="volume"/>
+<line x1="310.7" y1="122.0" x2="310.7" y2="162.1" class="up"/>
+<rect x="306.0" y="130.9" width="9.5" height="19.1" class="up"><title>10:06:00 始16,315 高16,535 安16,220 終16,465 出来高332,300株</title></rect>
+<rect x="306.0" y="460.6" width="9.5" height="39.4" class="volume"/>
+<line x1="321.1" y1="120.7" x2="321.1" y2="162.1" class="down"/>
+<rect x="316.4" y="130.2" width="9.5" height="10.8" class="down"><title>10:09:00 始16,470 高16,545 安16,220 終16,385 出来高318,700株</title></rect>
+<rect x="316.4" y="462.2" width="9.5" height="37.8" class="volume"/>
+<line x1="331.6" y1="134.1" x2="331.6" y2="169.7" class="down"/>
+<rect x="326.8" y="141.1" width="9.5" height="26.1" class="down"><title>10:12:00 始16,385 高16,440 安16,160 終16,180 出来高291,300株</title></rect>
+<rect x="326.8" y="465.5" width="9.5" height="34.5" class="volume"/>
+<line x1="342.0" y1="163.3" x2="342.0" y2="186.9" class="down"/>
+<rect x="337.3" y="164.0" width="9.5" height="4.5" class="down"><title>10:15:00 始16,205 高16,210 安16,025 終16,170 出来高248,700株</title></rect>
+<rect x="337.3" y="470.5" width="9.5" height="29.5" class="volume"/>
+<line x1="352.4" y1="167.8" x2="352.4" y2="192.6" class="down"/>
+<rect x="347.7" y="171.0" width="9.5" height="21.0" class="down"><title>10:18:00 始16,150 高16,175 安15,980 終15,985 出来高204,800株</title></rect>
+<rect x="347.7" y="475.7" width="9.5" height="24.3" class="volume"/>
+<line x1="362.8" y1="187.5" x2="362.8" y2="221.9" class="down"/>
+<rect x="358.1" y="192.0" width="9.5" height="28.6" class="down"><title>10:21:00 始15,985 高16,020 安15,750 終15,760 出来高334,400株</title></rect>
+<rect x="358.1" y="460.3" width="9.5" height="39.7" class="volume"/>
+<line x1="373.3" y1="217.5" x2="373.3" y2="233.4" class="down"/>
+<rect x="368.5" y="221.9" width="9.5" height="2.5" class="down"><title>10:24:00 始15,750 高15,785 安15,660 終15,730 出来高299,400株</title></rect>
+<rect x="368.5" y="464.5" width="9.5" height="35.5" class="volume"/>
+<line x1="383.7" y1="211.7" x2="383.7" y2="246.7" class="down"/>
+<rect x="379.0" y="223.2" width="9.5" height="14.6" class="down"><title>10:27:00 始15,740 高15,830 安15,555 終15,625 出来高349,500株</title></rect>
+<rect x="379.0" y="458.5" width="9.5" height="41.5" class="volume"/>
+<line x1="394.1" y1="231.5" x2="394.1" y2="251.2" class="down"/>
+<rect x="389.4" y="239.7" width="9.5" height="7.6" class="down"><title>10:30:00 始15,610 高15,675 安15,520 終15,550 出来高318,000株</title></rect>
+<rect x="389.4" y="462.3" width="9.5" height="37.7" class="volume"/>
+<line x1="404.6" y1="246.7" x2="404.6" y2="281.8" class="down"/>
+<rect x="399.8" y="247.4" width="9.5" height="16.6" class="down"><title>10:33:00 始15,550 高15,555 安15,280 終15,420 出来高420,100株</title></rect>
+<rect x="399.8" y="450.2" width="9.5" height="49.8" class="volume"/>
+<line x1="415.0" y1="256.9" x2="415.0" y2="289.4" class="down"/>
+<rect x="410.3" y="263.9" width="9.5" height="21.6" class="down"><title>10:36:00 始15,420 高15,475 安15,220 終15,250 出来高294,600株</title></rect>
+<rect x="410.3" y="465.1" width="9.5" height="34.9" class="volume"/>
+<line x1="425.4" y1="269.7" x2="425.4" y2="287.5" class="down"/>
+<rect x="420.7" y="283.7" width="9.5" height="1.9" class="down"><title>10:39:00 始15,265 高15,375 安15,235 終15,250 出来高275,000株</title></rect>
+<rect x="420.7" y="467.4" width="9.5" height="32.6" class="volume"/>
+<line x1="435.9" y1="243.6" x2="435.9" y2="286.2" class="up"/>
+<rect x="431.1" y="257.6" width="9.5" height="24.8" class="up"><title>10:42:00 始15,275 高15,580 安15,245 終15,470 出来高297,200株</title></rect>
+<rect x="431.1" y="464.8" width="9.5" height="35.2" class="volume"/>
+<line x1="446.3" y1="231.5" x2="446.3" y2="254.4" class="up"/>
+<rect x="441.6" y="231.5" width="9.5" height="21.6" class="up"><title>10:45:00 始15,505 高15,675 安15,495 終15,675 出来高300,100株</title></rect>
+<rect x="441.6" y="464.4" width="9.5" height="35.6" class="volume"/>
+<line x1="456.7" y1="228.3" x2="456.7" y2="253.1" class="down"/>
+<rect x="452.0" y="231.5" width="9.5" height="4.5" class="down"><title>10:48:00 始15,675 高15,700 安15,505 終15,640 出来高212,100株</title></rect>
+<rect x="452.0" y="474.8" width="9.5" height="25.2" class="volume"/>
+<line x1="467.2" y1="234.0" x2="467.2" y2="256.9" class="down"/>
+<rect x="462.4" y="235.9" width="9.5" height="19.1" class="down"><title>10:51:00 始15,640 高15,655 安15,475 終15,490 出来高201,400株</title></rect>
+<rect x="462.4" y="476.1" width="9.5" height="23.9" class="volume"/>
+<line x1="477.6" y1="251.8" x2="477.6" y2="263.9" class="down"/>
+<rect x="472.9" y="255.7" width="9.5" height="1.9" class="down"><title>10:54:00 始15,485 高15,515 安15,420 終15,470 出来高190,800株</title></rect>
+<rect x="472.9" y="477.4" width="9.5" height="22.6" class="volume"/>
+<line x1="488.0" y1="238.5" x2="488.0" y2="260.7" class="up"/>
+<rect x="483.3" y="241.6" width="9.5" height="17.2" class="up"><title>10:57:00 始15,460 高15,620 安15,445 終15,595 出来高188,700株</title></rect>
+<rect x="483.3" y="477.6" width="9.5" height="22.4" class="volume"/>
+<line x1="498.4" y1="239.1" x2="498.4" y2="274.1" class="down"/>
+<rect x="493.7" y="240.4" width="9.5" height="30.6" class="down"><title>11:00:00 始15,605 高15,615 安15,340 終15,365 出来高168,800株</title></rect>
+<rect x="493.7" y="480.0" width="9.5" height="20.0" class="volume"/>
+<line x1="508.9" y1="265.2" x2="508.9" y2="286.8" class="down"/>
+<rect x="504.1" y="270.9" width="9.5" height="10.8" class="down"><title>11:03:00 始15,365 高15,410 安15,240 終15,280 出来高186,900株</title></rect>
+<rect x="504.1" y="477.8" width="9.5" height="22.2" class="volume"/>
+<line x1="519.3" y1="273.5" x2="519.3" y2="302.1" class="down"/>
+<rect x="514.6" y="280.5" width="9.5" height="21.6" class="down"><title>11:06:00 始15,290 高15,345 安15,120 終15,120 出来高311,800株</title></rect>
+<rect x="514.6" y="463.0" width="9.5" height="37.0" class="volume"/>
+<line x1="529.7" y1="297.0" x2="529.7" y2="309.8" class="down"/>
+<rect x="525.0" y="303.4" width="9.5" height="2.5" class="down"><title>11:09:00 始15,110 高15,160 安15,060 終15,090 出来高245,800株</title></rect>
+<rect x="525.0" y="470.8" width="9.5" height="29.2" class="volume"/>
+<line x1="540.2" y1="293.9" x2="540.2" y2="316.1" class="down"/>
+<rect x="535.4" y="308.5" width="9.5" height="3.2" class="down"><title>11:12:00 始15,070 高15,185 安15,010 終15,045 出来高279,800株</title></rect>
+<rect x="535.4" y="466.8" width="9.5" height="33.2" class="volume"/>
+<line x1="550.6" y1="302.8" x2="550.6" y2="320.6" class="up"/>
+<rect x="545.9" y="307.2" width="9.5" height="4.5" class="up"><title>11:15:00 始15,045 高15,115 安14,975 終15,080 出来高265,000株</title></rect>
+<rect x="545.9" y="468.6" width="9.5" height="31.4" class="volume"/>
+<line x1="561.0" y1="291.9" x2="561.0" y2="313.6" class="up"/>
+<rect x="556.3" y="305.3" width="9.5" height="3.8" class="up"><title>11:18:00 始15,065 高15,200 安15,030 終15,095 出来高236,400株</title></rect>
+<rect x="556.3" y="472.0" width="9.5" height="28.0" class="volume"/>
+<line x1="571.5" y1="298.9" x2="571.5" y2="312.3" class="up"/>
+<rect x="566.7" y="300.9" width="9.5" height="3.8" class="up"><title>11:21:00 始15,100 高15,145 安15,040 終15,130 出来高148,600株</title></rect>
+<rect x="566.7" y="482.4" width="9.5" height="17.6" class="volume"/>
+<line x1="581.9" y1="289.4" x2="581.9" y2="305.9" class="up"/>
+<rect x="577.2" y="290.0" width="9.5" height="11.5" class="up"><title>11:24:00 始15,125 高15,220 安15,090 終15,215 出来高175,000株</title></rect>
+<rect x="577.2" y="479.2" width="9.5" height="20.8" class="volume"/>
+<line x1="592.3" y1="281.1" x2="592.3" y2="293.9" class="up"/>
+<rect x="587.6" y="287.5" width="9.5" height="3.8" class="up"><title>11:27:00 始15,205 高15,285 安15,185 終15,235 出来高167,500株</title></rect>
+<rect x="587.6" y="480.1" width="9.5" height="19.9" class="volume"/>
+<line x1="602.8" y1="288.1" x2="602.8" y2="288.1" class="up"/>
+<rect x="598.0" y="288.1" width="9.5" height="1.4" class="up"><title>11:30:00 始15,230 高15,230 安15,230 終15,230 出来高5,300株</title></rect>
+<rect x="598.0" y="499.4" width="9.5" height="1.0" class="volume"/>
+<line x1="821.8" y1="207.9" x2="821.8" y2="253.7" class="down high"/>
+<rect x="817.1" y="220.6" width="9.5" height="10.8" class="down high"><title>12:33:00 始15,760 高15,860 安15,500 終15,675 出来高666,200株</title></rect>
+<rect x="817.1" y="421.0" width="9.5" height="79.0" class="volumeHigh"/>
+<text x="821.8" y="417.0" text-anchor="middle" class="hitNote">#3</text>
+<line x1="832.2" y1="223.8" x2="832.2" y2="241.0" class="down"/>
+<rect x="827.5" y="231.5" width="9.5" height="3.2" class="down"><title>12:36:00 始15,675 高15,735 安15,600 終15,650 出来高237,300株</title></rect>
+<rect x="827.5" y="471.9" width="9.5" height="28.1" class="volume"/>
+<line x1="842.7" y1="230.2" x2="842.7" y2="251.2" class="down"/>
+<rect x="837.9" y="234.6" width="9.5" height="7.6" class="down"><title>12:39:00 始15,650 高15,685 安15,520 終15,590 出来高211,700株</title></rect>
+<rect x="837.9" y="474.9" width="9.5" height="25.1" class="volume"/>
+<line x1="853.1" y1="219.4" x2="853.1" y2="243.6" class="up"/>
+<rect x="848.4" y="228.3" width="9.5" height="14.6" class="up"><title>12:42:00 始15,585 高15,770 安15,580 終15,700 出来高235,200株</title></rect>
+<rect x="848.4" y="472.1" width="9.5" height="27.9" class="volume"/>
+<line x1="863.5" y1="225.7" x2="863.5" y2="241.0" class="down"/>
+<rect x="858.8" y="228.3" width="9.5" height="12.7" class="down"><title>12:45:00 始15,700 高15,720 安15,600 終15,600 出来高151,100株</title></rect>
+<rect x="858.8" y="482.1" width="9.5" height="17.9" class="volume"/>
+<line x1="874.0" y1="216.2" x2="874.0" y2="241.0" class="up"/>
+<rect x="869.2" y="224.5" width="9.5" height="15.3" class="up"><title>12:48:00 始15,610 高15,795 安15,600 終15,730 出来高181,700株</title></rect>
+<rect x="869.2" y="478.4" width="9.5" height="21.6" class="volume"/>
+<line x1="884.4" y1="221.9" x2="884.4" y2="235.9" class="down"/>
+<rect x="879.7" y="223.8" width="9.5" height="2.5" class="down"><title>12:51:00 始15,735 高15,750 安15,640 終15,715 出来高122,300株</title></rect>
+<rect x="879.7" y="485.5" width="9.5" height="14.5" class="volume"/>
+<line x1="894.8" y1="224.5" x2="894.8" y2="239.1" class="down"/>
+<rect x="890.1" y="226.4" width="9.5" height="10.2" class="down"><title>12:54:00 始15,715 高15,730 安15,615 終15,635 出来高111,900株</title></rect>
+<rect x="890.1" y="486.7" width="9.5" height="13.3" class="volume"/>
+<line x1="905.2" y1="232.1" x2="905.2" y2="243.6" class="up"/>
+<rect x="900.5" y="236.6" width="9.5" height="1.4" class="up"><title>12:57:00 始15,635 高15,670 安15,580 終15,635 出来高146,800株</title></rect>
+<rect x="900.5" y="482.6" width="9.5" height="17.4" class="volume"/>
+<line x1="915.7" y1="229.6" x2="915.7" y2="246.7" class="up"/>
+<rect x="910.9" y="232.7" width="9.5" height="5.1" class="up"><title>13:00:00 始15,625 高15,690 安15,555 終15,665 出来高148,400株</title></rect>
+<rect x="910.9" y="482.4" width="9.5" height="17.6" class="volume"/>
+<line x1="926.1" y1="212.4" x2="926.1" y2="234.6" class="up"/>
+<rect x="921.4" y="225.7" width="9.5" height="7.6" class="up"><title>13:03:00 始15,660 高15,825 安15,650 終15,720 出来高168,100株</title></rect>
+<rect x="921.4" y="480.1" width="9.5" height="19.9" class="volume"/>
+<line x1="936.5" y1="224.5" x2="936.5" y2="239.1" class="down"/>
+<rect x="931.8" y="225.7" width="9.5" height="10.2" class="down"><title>13:06:00 始15,720 高15,730 安15,615 終15,640 出来高118,400株</title></rect>
+<rect x="931.8" y="486.0" width="9.5" height="14.0" class="volume"/>
+<line x1="947.0" y1="227.0" x2="947.0" y2="237.2" class="up"/>
+<rect x="942.2" y="228.9" width="9.5" height="6.4" class="up"><title>13:09:00 始15,645 高15,710 安15,630 終15,695 出来高97,200株</title></rect>
+<rect x="942.2" y="488.5" width="9.5" height="11.5" class="volume"/>
+<line x1="957.4" y1="221.9" x2="957.4" y2="232.1" class="up"/>
+<rect x="952.7" y="227.0" width="9.5" height="1.9" class="up"><title>13:12:00 始15,695 高15,750 安15,670 終15,710 出来高92,200株</title></rect>
+<rect x="952.7" y="489.1" width="9.5" height="10.9" class="volume"/>
+<line x1="967.8" y1="224.5" x2="967.8" y2="237.8" class="down"/>
+<rect x="963.1" y="227.6" width="9.5" height="9.5" class="down"><title>13:15:00 始15,705 高15,730 安15,625 終15,630 出来高108,900株</title></rect>
+<rect x="963.1" y="487.1" width="9.5" height="12.9" class="volume"/>
+<line x1="978.3" y1="213.0" x2="978.3" y2="237.2" class="up"/>
+<rect x="973.5" y="224.5" width="9.5" height="12.7" class="up"><title>13:18:00 始15,630 高15,820 安15,630 終15,730 出来高183,100株</title></rect>
+<rect x="973.5" y="478.3" width="9.5" height="21.7" class="volume"/>
+<line x1="988.7" y1="209.8" x2="988.7" y2="225.7" class="up"/>
+<rect x="984.0" y="211.7" width="9.5" height="13.4" class="up"><title>13:21:00 始15,725 高15,845 安15,720 終15,830 出来高144,600株</title></rect>
+<rect x="984.0" y="482.8" width="9.5" height="17.2" class="volume"/>
+<line x1="999.1" y1="210.5" x2="999.1" y2="232.7" class="down"/>
+<rect x="994.4" y="211.1" width="9.5" height="19.7" class="down"><title>13:24:00 始15,835 高15,840 安15,665 終15,680 出来高172,100株</title></rect>
+<rect x="994.4" y="479.6" width="9.5" height="20.4" class="volume"/>
+<line x1="1009.6" y1="229.6" x2="1009.6" y2="237.8" class="down"/>
+<rect x="1004.8" y="231.5" width="9.5" height="2.5" class="down"><title>13:27:00 始15,675 高15,690 安15,625 終15,655 出来高91,100株</title></rect>
+<rect x="1004.8" y="489.2" width="9.5" height="10.8" class="volume"/>
+<line x1="1020.0" y1="230.2" x2="1020.0" y2="247.4" class="down"/>
+<rect x="1015.3" y="232.7" width="9.5" height="14.6" class="down"><title>13:30:00 始15,665 高15,685 安15,550 終15,550 出来高148,700株</title></rect>
+<rect x="1015.3" y="482.4" width="9.5" height="17.6" class="volume"/>
+<line x1="1030.4" y1="239.7" x2="1030.4" y2="252.5" class="down"/>
+<rect x="1025.7" y="246.7" width="9.5" height="1.9" class="down"><title>13:33:00 始15,555 高15,610 安15,510 終15,540 出来高174,100株</title></rect>
+<rect x="1025.7" y="479.4" width="9.5" height="20.6" class="volume"/>
+<line x1="1040.8" y1="249.3" x2="1040.8" y2="262.0" class="down"/>
+<rect x="1036.1" y="249.9" width="9.5" height="2.5" class="down"><title>13:36:00 始15,530 高15,535 安15,435 終15,510 出来高173,800株</title></rect>
+<rect x="1036.1" y="479.4" width="9.5" height="20.6" class="volume"/>
+<line x1="1051.3" y1="242.9" x2="1051.3" y2="256.3" class="down"/>
+<rect x="1046.5" y="253.1" width="9.5" height="1.4" class="down"><title>13:39:00 始15,505 高15,585 安15,480 終15,500 出来高121,600株</title></rect>
+<rect x="1046.5" y="485.6" width="9.5" height="14.4" class="volume"/>
+<line x1="1061.7" y1="248.7" x2="1061.7" y2="264.6" class="down"/>
+<rect x="1057.0" y="253.7" width="9.5" height="8.3" class="down"><title>13:42:00 始15,500 高15,540 安15,415 終15,435 出来高91,900株</title></rect>
+<rect x="1057.0" y="489.1" width="9.5" height="10.9" class="volume"/>
+<line x1="1072.1" y1="262.7" x2="1072.1" y2="274.1" class="up"/>
+<rect x="1067.4" y="263.9" width="9.5" height="1.9" class="up"><title>13:45:00 始15,405 高15,430 安15,340 終15,420 出来高168,700株</title></rect>
+<rect x="1067.4" y="480.0" width="9.5" height="20.0" class="volume"/>
+<line x1="1082.6" y1="255.7" x2="1082.6" y2="267.8" class="down"/>
+<rect x="1077.8" y="262.7" width="9.5" height="3.2" class="down"><title>13:48:00 始15,430 高15,485 安15,390 終15,405 出来高107,700株</title></rect>
+<rect x="1077.8" y="487.2" width="9.5" height="12.8" class="volume"/>
+<line x1="1093.0" y1="265.8" x2="1093.0" y2="274.8" class="down"/>
+<rect x="1088.3" y="265.8" width="9.5" height="5.7" class="down"><title>13:51:00 始15,405 高15,405 安15,335 終15,360 出来高111,900株</title></rect>
+<rect x="1088.3" y="486.7" width="9.5" height="13.3" class="volume"/>
+<line x1="1103.4" y1="262.0" x2="1103.4" y2="276.7" class="up"/>
+<rect x="1098.7" y="265.8" width="9.5" height="6.4" class="up"><title>13:54:00 始15,355 高15,435 安15,320 終15,405 出来高135,800株</title></rect>
+<rect x="1098.7" y="483.9" width="9.5" height="16.1" class="volume"/>
+<line x1="1113.9" y1="253.7" x2="1113.9" y2="269.7" class="up"/>
+<rect x="1109.1" y="253.7" width="9.5" height="12.1" class="up"><title>13:57:00 始15,405 高15,500 安15,375 終15,500 出来高147,200株</title></rect>
+<rect x="1109.1" y="482.5" width="9.5" height="17.5" class="volume"/>
+<line x1="1124.3" y1="250.6" x2="1124.3" y2="267.1" class="down"/>
+<rect x="1119.6" y="257.6" width="9.5" height="2.5" class="down"><title>14:00:00 始15,470 高15,525 安15,395 終15,450 出来高144,300株</title></rect>
+<rect x="1119.6" y="482.9" width="9.5" height="17.1" class="volume"/>
+<line x1="1134.7" y1="244.8" x2="1134.7" y2="264.6" class="up"/>
+<rect x="1130.0" y="252.5" width="9.5" height="5.7" class="up"><title>14:03:00 始15,465 高15,570 安15,415 終15,510 出来高151,100株</title></rect>
+<rect x="1130.0" y="482.1" width="9.5" height="17.9" class="volume"/>
+<line x1="1145.2" y1="242.9" x2="1145.2" y2="255.0" class="down"/>
+<rect x="1140.4" y="251.8" width="9.5" height="2.5" class="down"><title>14:06:00 始15,515 高15,585 安15,490 終15,495 出来高120,100株</title></rect>
+<rect x="1140.4" y="485.8" width="9.5" height="14.2" class="volume"/>
+<line x1="1155.6" y1="246.7" x2="1155.6" y2="258.2" class="up"/>
+<rect x="1150.9" y="248.7" width="9.5" height="3.2" class="up"><title>14:09:00 始15,515 高15,555 安15,465 終15,540 出来高92,600株</title></rect>
+<rect x="1150.9" y="489.0" width="9.5" height="11.0" class="volume"/>
+<line x1="1166.0" y1="247.4" x2="1166.0" y2="256.9" class="down"/>
+<rect x="1161.3" y="247.4" width="9.5" height="7.6" class="down"><title>14:12:00 始15,550 高15,550 安15,475 終15,490 出来高76,900株</title></rect>
+<rect x="1161.3" y="490.9" width="9.5" height="9.1" class="volume"/>
+<line x1="1176.4" y1="246.7" x2="1176.4" y2="261.4" class="down"/>
+<rect x="1171.7" y="255.7" width="9.5" height="5.7" class="down"><title>14:15:00 始15,485 高15,555 安15,440 終15,440 出来高89,500株</title></rect>
+<rect x="1171.7" y="489.4" width="9.5" height="10.6" class="volume"/>
+<line x1="1186.9" y1="258.8" x2="1186.9" y2="263.9" class="down"/>
+<rect x="1182.1" y="261.4" width="9.5" height="1.9" class="down"><title>14:18:00 始15,440 高15,460 安15,420 終15,425 出来高60,500株</title></rect>
+<rect x="1182.1" y="492.8" width="9.5" height="7.2" class="volume"/>
+<line x1="1197.3" y1="256.3" x2="1197.3" y2="265.8" class="down"/>
+<rect x="1192.6" y="263.3" width="9.5" height="1.9" class="down"><title>14:21:00 始15,425 高15,480 安15,405 終15,410 出来高78,400株</title></rect>
+<rect x="1192.6" y="490.7" width="9.5" height="9.3" class="volume"/>
+<line x1="1207.7" y1="253.7" x2="1207.7" y2="266.5" class="up"/>
+<rect x="1203.0" y="256.3" width="9.5" height="8.3" class="up"><title>14:24:00 始15,415 高15,500 安15,400 終15,480 出来高91,600株</title></rect>
+<rect x="1203.0" y="489.1" width="9.5" height="10.9" class="volume"/>
+<line x1="1218.2" y1="249.3" x2="1218.2" y2="261.4" class="up"/>
+<rect x="1213.4" y="255.7" width="9.5" height="1.4" class="up"><title>14:27:00 始15,480 高15,535 安15,440 終15,485 出来高103,600株</title></rect>
+<rect x="1213.4" y="487.7" width="9.5" height="12.3" class="volume"/>
+<line x1="1228.6" y1="249.3" x2="1228.6" y2="267.8" class="down"/>
+<rect x="1223.9" y="256.3" width="9.5" height="10.2" class="down"><title>14:30:00 始15,480 高15,535 安15,390 終15,400 出来高125,700株</title></rect>
+<rect x="1223.9" y="485.1" width="9.5" height="14.9" class="volume"/>
+<line x1="1239.0" y1="265.8" x2="1239.0" y2="276.0" class="down"/>
+<rect x="1234.3" y="267.1" width="9.5" height="8.9" class="down"><title>14:33:00 始15,395 高15,405 安15,325 終15,325 出来高138,700株</title></rect>
+<rect x="1234.3" y="483.5" width="9.5" height="16.5" class="volume"/>
+<line x1="1249.5" y1="274.8" x2="1249.5" y2="289.4" class="down"/>
+<rect x="1244.7" y="276.0" width="9.5" height="10.8" class="down"><title>14:36:00 始15,325 高15,335 安15,220 終15,240 出来高165,500株</title></rect>
+<rect x="1244.7" y="480.4" width="9.5" height="19.6" class="volume"/>
+<line x1="1259.9" y1="281.1" x2="1259.9" y2="291.9" class="down"/>
+<rect x="1255.2" y="286.8" width="9.5" height="3.8" class="down"><title>14:39:00 始15,240 高15,285 安15,200 終15,210 出来高182,700株</title></rect>
+<rect x="1255.2" y="478.3" width="9.5" height="21.7" class="volume"/>
+<line x1="1270.3" y1="283.7" x2="1270.3" y2="291.9" class="down"/>
+<rect x="1265.6" y="287.5" width="9.5" height="3.2" class="down"><title>14:42:00 始15,235 高15,265 安15,200 終15,210 出来高119,800株</title></rect>
+<rect x="1265.6" y="485.8" width="9.5" height="14.2" class="volume"/>
+<line x1="1280.8" y1="286.2" x2="1280.8" y2="297.0" class="down"/>
+<rect x="1276.0" y="290.7" width="9.5" height="6.4" class="down"><title>14:45:00 始15,210 高15,245 安15,160 終15,160 出来高135,000株</title></rect>
+<rect x="1276.0" y="484.0" width="9.5" height="16.0" class="volume"/>
+<line x1="1291.2" y1="290.7" x2="1291.2" y2="299.6" class="up"/>
+<rect x="1286.5" y="295.1" width="9.5" height="1.4" class="up"><title>14:48:00 始15,165 高15,210 安15,140 終15,175 出来高150,000株</title></rect>
+<rect x="1286.5" y="482.2" width="9.5" height="17.8" class="volume"/>
+<line x1="1301.6" y1="287.5" x2="1301.6" y2="297.0" class="up"/>
+<rect x="1296.9" y="288.8" width="9.5" height="6.4" class="up"><title>14:51:00 始15,175 高15,235 安15,160 終15,225 出来高123,600株</title></rect>
+<rect x="1296.9" y="485.3" width="9.5" height="14.7" class="volume"/>
+<line x1="1312.0" y1="273.5" x2="1312.0" y2="290.0" class="up"/>
+<rect x="1307.3" y="275.4" width="9.5" height="14.6" class="up"><title>14:54:00 始15,215 高15,345 安15,215 終15,330 出来高139,800株</title></rect>
+<rect x="1307.3" y="483.4" width="9.5" height="16.6" class="volume"/>
+<line x1="1322.5" y1="272.8" x2="1322.5" y2="286.8" class="down"/>
+<rect x="1317.7" y="276.0" width="9.5" height="9.5" class="down"><title>14:57:00 始15,325 高15,350 安15,240 終15,250 出来高111,900株</title></rect>
+<rect x="1317.7" y="486.7" width="9.5" height="13.3" class="volume"/>
+<line x1="1332.9" y1="285.6" x2="1332.9" y2="311.0" class="down"/>
+<rect x="1328.2" y="286.8" width="9.5" height="23.6" class="down"><title>15:00:00 始15,240 高15,250 安15,050 終15,055 出来高232,800株</title></rect>
+<rect x="1328.2" y="472.4" width="9.5" height="27.6" class="volume"/>
+<line x1="1343.3" y1="309.1" x2="1343.3" y2="316.8" class="down"/>
+<rect x="1338.6" y="310.4" width="9.5" height="5.7" class="down"><title>15:03:00 始15,055 高15,065 安15,005 終15,010 出来高204,700株</title></rect>
+<rect x="1338.6" y="475.7" width="9.5" height="24.3" class="volume"/>
+<line x1="1353.8" y1="309.8" x2="1353.8" y2="318.7" class="up"/>
+<rect x="1349.0" y="311.7" width="9.5" height="4.5" class="up"><title>15:06:00 始15,010 高15,060 安14,990 終15,045 出来高332,100株</title></rect>
+<rect x="1349.0" y="460.6" width="9.5" height="39.4" class="volume"/>
+<line x1="1364.2" y1="309.1" x2="1364.2" y2="316.8" class="down"/>
+<rect x="1359.5" y="311.0" width="9.5" height="5.7" class="down"><title>15:09:00 始15,050 高15,065 安15,005 終15,005 出来高189,800株</title></rect>
+<rect x="1359.5" y="477.5" width="9.5" height="22.5" class="volume"/>
+<line x1="1374.6" y1="313.6" x2="1374.6" y2="323.1" class="down"/>
+<rect x="1369.9" y="316.8" width="9.5" height="4.5" class="down"><title>15:12:00 始15,005 高15,030 安14,955 終14,970 出来高224,200株</title></rect>
+<rect x="1369.9" y="473.4" width="9.5" height="26.6" class="volume"/>
+<line x1="1385.1" y1="318.0" x2="1385.1" y2="330.1" class="down"/>
+<rect x="1380.3" y="321.2" width="9.5" height="3.2" class="down"><title>15:15:00 始14,970 高14,995 安14,900 終14,945 出来高252,200株</title></rect>
+<rect x="1380.3" y="470.1" width="9.5" height="29.9" class="volume"/>
+<line x1="1395.5" y1="314.2" x2="1395.5" y2="323.8" class="up"/>
+<rect x="1390.8" y="318.0" width="9.5" height="5.1" class="up"><title>15:18:00 始14,955 高15,025 安14,950 終14,995 出来高163,300株</title></rect>
+<rect x="1390.8" y="480.6" width="9.5" height="19.4" class="volume"/>
+<line x1="1405.9" y1="315.5" x2="1405.9" y2="325.7" class="down"/>
+<rect x="1401.2" y="318.7" width="9.5" height="1.4" class="down"><title>15:21:00 始14,990 高15,015 安14,935 終14,980 出来高138,700株</title></rect>
+<rect x="1401.2" y="483.5" width="9.5" height="16.5" class="volume"/>
+<line x1="1416.4" y1="317.4" x2="1416.4" y2="324.4" class="down"/>
+<rect x="1411.6" y="318.7" width="9.5" height="2.5" class="down"><title>15:24:00 始14,990 高15,000 安14,945 終14,970 出来高35,800株</title></rect>
+<rect x="1411.6" y="495.8" width="9.5" height="4.2" class="volume"/>
+<line x1="1432.0" y1="321.9" x2="1432.0" y2="321.9" class="up"/>
+<rect x="1427.3" y="321.9" width="9.5" height="1.4" class="up"><title>15:30:00 始14,965 高14,965 安14,965 終14,965 出来高364,200株</title></rect>
+<rect x="1427.3" y="456.8" width="9.5" height="43.2" class="volume"/>
+<g><title>#1 SHORT ENTRY 09:06:00 15,900 → 09:07:00 16,055 −¥15,500 100株</title>
+<line x1="96.9" y1="202.8" x2="100.3" y2="183.1" class="tradeLine" stroke="#ff6b7a"/>
+<polygon points="96.9,212.8 90.9,199.8 102.9,199.8" class="entryShort"/>
+<circle cx="100.3" cy="183.1" r="4.2" class="exit" fill="#ff6b7a"/>
+<text x="103.9" y="222.8" text-anchor="start" class="label markerNegative">#1 E 15,900</text>
+<text x="107.3" y="199.1" text-anchor="start" class="label markerNegative">EXIT −¥15,500</text>
+</g>
+<g><title>#2 SHORT ENTRY 09:08:00 16,065 → 09:08:00 16,010 +¥5,500 100株</title>
+<line x1="103.8" y1="181.8" x2="103.8" y2="188.8" class="tradeLine" stroke="#4fd394"/>
+<polygon points="103.8,191.8 97.8,178.8 109.8,178.8" class="entryShort"/>
+<circle cx="103.8" cy="188.8" r="4.2" class="exit" fill="#4fd394"/>
+<text x="110.8" y="201.8" text-anchor="start" class="label markerPositive">#2 E 16,065</text>
+<text x="110.8" y="204.8" text-anchor="start" class="label markerPositive">TP +¥5,500</text>
+</g>
+<g><title>#3 SHORT ENTRY 09:12:00 15,915 → 09:13:00 16,000 −¥8,500 100株</title>
+<line x1="117.7" y1="200.9" x2="121.2" y2="190.1" class="tradeLine" stroke="#ff6b7a"/>
+<polygon points="117.7,210.9 111.7,197.9 123.7,197.9" class="entryShort"/>
+<circle cx="121.2" cy="190.1" r="4.2" class="exit" fill="#ff6b7a"/>
+<text x="124.7" y="220.9" text-anchor="start" class="label markerNegative">#3 E 15,915</text>
+<text x="128.2" y="206.1" text-anchor="start" class="label markerNegative">EXIT −¥8,500</text>
+</g>
+<text x="76" y="343" class="muted">価格（円） / 3分足</text>
+<text x="76" y="493" class="muted">出来高（株） / 橙枠=出来高上位5本</text>
+<text x="1432" y="523" text-anchor="end" class="axis">時刻</text>
+</svg>

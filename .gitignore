@@ -3,6 +3,7 @@
 
 # Keep this repository focused on the app code and publishing scripts.
 !.gitignore
+!index.html
 !DEPLOYMENT.md
 !apps/
 !apps/README.md
@@ -13,6 +14,25 @@
 !scripts/
 !scripts/build_daily_manifest.py
 !scripts/r2_publish.py
+!scripts/build_success_trade_quiz_20261003.js
+!scripts/build_board_reading_quiz_20261004.js
+!scripts/r2_fetch_walk_csv.py
+!scripts/r2_sync_board_raw.py
+!scripts/build_annual_trade_dashboard.py
+!R2_DATA_SOURCES.md
+!success_trade_quiz_20261003/
+!success_trade_quiz_20261003/**
+!2026 Daily/
+!2026 Daily/annual_trade_dashboard.html
+!2026 Daily/board_reading_quiz_20261004/
+!2026 Daily/board_reading_quiz_20261004/**
+!2026 Daily/board_reading_r2_upload_report_20261004.md
+success_trade_quiz_20261003/.DS_Store
+success_trade_quiz_20261003/**/.DS_Store
+2026 Daily/board_reading_quiz_20261004/.DS_Store
+2026 Daily/board_reading_quiz_20261004/**/.DS_Store
+success_trade_quiz_20261003/.DS_Store
+success_trade_quiz_20261003/**/.DS_Store
 
 # Never commit generated installs, builds, local app state, or credentials.
 **/node_modules/
@@ -39,3 +59,12 @@ Temp/
 *.mp3
 *.aiff
 *.wav
+!success_trade_quiz_20261003/
+!success_trade_quiz_20261003/**
+!2026 Daily/
+!2026 Daily/board_reading_quiz_20261004/
+!2026 Daily/board_reading_quiz_20261004/**
+success_trade_quiz_20261003/.DS_Store
+success_trade_quiz_20261003/**/.DS_Store
+2026 Daily/board_reading_quiz_20261004/.DS_Store
+2026 Daily/board_reading_quiz_20261004/**/.DS_Store

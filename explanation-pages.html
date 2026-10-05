@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b1020">
+<meta name="description" content="TradeDaily2026のトレード学習ページ、解説、クイズ、分析、日誌をまとめた一覧です。">
+<title>学習・振り返りページ一覧｜TradeDaily2026</title>
+<style>
+:root{color-scheme:dark;--bg:#0b1020;--panel:#151e32;--line:#34425e;--text:#edf3ff;--muted:#b8c5d9;--blue:#91caff;--gold:#ffe08a;--green:#a7e6bd}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(ellipse at 50% -10%,#213958 0,var(--bg) 48rem);color:var(--text);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif}
+main{width:min(1040px,100%);margin:auto;padding:18px 15px calc(52px + env(safe-area-inset-bottom))}
+a{color:var(--blue);text-underline-offset:3px}
+.hero,.group,.footer{background:rgba(21,30,50,.96);border:1px solid var(--line);border-radius:17px}
+.hero{padding:clamp(20px,5vw,36px);margin-bottom:18px}
+.eyebrow{margin:0 0 6px;color:var(--gold);font-size:.83rem;font-weight:800;letter-spacing:.13em}
+h1{font-size:clamp(1.75rem,6vw,2.6rem);line-height:1.25;margin:0 0 10px}
+.lead{max-width:760px;color:var(--muted);margin:0}
+.nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.nav a{padding:7px 11px;border:1px solid var(--line);border-radius:999px;text-decoration:none;background:#10182a;font-size:.9rem}
+.group{padding:20px;margin:14px 0;scroll-margin-top:12px}
+h2{font-size:1.22rem;margin:0 0 13px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:10px}
+.card{display:block;min-height:112px;padding:14px;border:1px solid var(--line);border-radius:13px;background:#10182a;color:var(--text);text-decoration:none;transition:transform .15s,border-color .15s}
+.card:hover,.card:focus-visible{transform:translateY(-2px);border-color:var(--blue);outline:none}
+.card strong{display:block;color:var(--blue);font-size:1.02rem;line-height:1.45}
+.card span{display:block;margin-top:5px;color:var(--muted);font-size:.91rem}
+.pill{display:inline-block!important;width:max-content;margin:0 0 7px!important;padding:2px 8px;border:1px solid #497754;border-radius:999px;color:var(--green)!important;font-size:.76rem!important}
+.footer{padding:15px 18px;margin-top:16px;color:var(--muted);font-size:.9rem}
+@media(max-width:480px){main{padding:10px 10px calc(36px + env(safe-area-inset-bottom))}.hero,.group{border-radius:13px}.group{padding:15px}.card{min-height:0;padding:13px}h2{font-size:1.12rem}}
+</style>
+</head>
+<body>
+<main>
+<header class="hero">
+<p class="eyebrow">TRADE DAILY 2026 · LIBRARY</p>
+<h1>学習・振り返りページ一覧</h1>
+<p class="lead">板読みの基本からトレードルール、練習クイズ、日々の記録まで、このページから開けます。カードをタップすると各ページへ移動します。スマートフォンでも見やすい表示に対応しています。</p>
+<nav class="nav" aria-label="ページ内リンク">
+<a href="#board">板読み</a><a href="#practice">ルール・クイズ</a><a href="#analysis">分析</a><a href="#diaries">日誌・週報</a><a href="#other">その他</a>
+</nav>
+</header>
+
+<section class="group" id="board">
+<h2>板読みを学ぶ</h2>
+<div class="grid">
+<a class="card" href="./board-reading-guide.html"><span class="pill">まずはこちら</span><strong>板の見方と歩み値</strong><span>売り注文は上段、買い注文は下段。板の偏りと実際の約定をどう読み分けるかを解説。</span></a>
+<a class="card" href="./2026%20Daily/board_reading_quiz_20261004/"><span class="pill">クイズ・3ケース</span><strong>板読み連動トレード復習</strong><span>ENTRY前のチャートと板を見て考え、約定後の値動きで振り返ります。</span></a>
+</div>
+</section>
+
+<section class="group" id="practice">
+<h2>ルールと練習クイズ</h2>
+<div class="grid">
+<a class="card" href="./trading-rules.html"><strong>トレードルール</strong><span>勝ちやすい場面、見送る条件、エントリー前のチェック。</span></a>
+<a class="card" href="./trading-quizzes.html"><strong>トレードクイズ一覧</strong><span>根拠別に問題を選び、チャートのBEFORE／AFTERを確認。</span></a>
+<a class="card" href="./success_trade_quiz_20261003/"><span class="pill">108ケース・216問</span><strong>勝ちトレード復習クイズ</strong><span>実際の勝ちトレードをケースごとに振り返る練習ページ。</span></a>
+<a class="card" href="./trading-quiz-2026-W40.html"><strong>週次トレードクイズ</strong><span>第40週のトレードを題材にした問題。</span></a>
+</div>
+</section>
+
+<section class="group" id="analysis">
+<h2>数字とチャートで分析</h2>
+<div class="grid">
+<a class="card" href="./2026%20Daily/annual_trade_dashboard.html"><strong>年間トレードビジュアルレビュー</strong><span>日別・銘柄別の損益を検索やフィルターで確認。</span></a>
+<a class="card" href="./2026%20Daily/"><strong>エントリー時刻別の実約定数</strong><span>CSVから時間帯ごとの約定数・株数を集計。</span></a>
+<a class="card" href="./2026%20Daily/trade_data_2025_2026/entry_execution_time_5min_202607_202609.html"><strong>7〜9月のエントリー時間分析</strong><span>5分ごとの実約定を詳しく見る個別レポート。</span></a>
+</div>
+</section>
+
+<section class="group" id="diaries">
+<h2>日々のトレード日誌</h2>
+<div class="grid">
+<a class="card" href="./diaries/"><span class="pill">日付検索・スマートフォン対応</span><strong>トレード日誌一覧</strong><span>日付やキーワードで探し、日次・NY・週報を絞り込めます。</span></a>
+<a class="card" href="./diaries/2026-10-02/"><strong>2026年10月2日</strong><span>日誌、取引のまとめ、場中メモ。</span></a>
+<a class="card" href="./diaries/2026-10-02/diary_20261002_ny.html"><strong>2026年10月2日・NY版</strong><span>NY時間帯の記録と振り返り。</span></a>
+<a class="card" href="./diaries/2026-10-01/diary_20261001.html"><strong>2026年10月1日</strong><span>日次の取引記録と振り返り。</span></a>
+<a class="card" href="./diaries/2026-09-30/diary_20260930.html"><strong>2026年9月30日</strong><span>日次の取引記録と振り返り。</span></a>
+<a class="card" href="./diaries/2026-09-29/diary_20260929.html"><strong>2026年9月29日</strong><span>日次の取引記録と振り返り。</span></a>
+<a class="card" href="./diaries/2026-09-28/diary_20260928.html"><strong>2026年9月28日</strong><span>日次の取引記録と振り返り。</span></a>
+<a class="card" href="./weekly_reports/weekly_report_2026-W40_20260928-20261002.html"><strong>第40週のトレード週報</strong><span>9月28日〜10月2日の週次まとめ。</span></a>
+</div>
+</section>
+
+<section class="group" id="other">
+<h2>その他の記録</h2>
+<div class="grid">
+<a class="card" href="./GOLD/GOLD-20261002/"><strong>GOLD・2026年10月2日</strong><span>ゴールドのチャート記録。</span></a>
+<a class="card" href="./GOLD/GOLD-20260814/"><strong>GOLD・2026年8月14日</strong><span>ゴールドのトレード記録。</span></a>
+</div>
+</section>
+
+<footer class="footer">TradeDaily2026の公開ページ一覧です。各ページの内容や記録は、作成時点のデータに基づきます。<br><a href="./">TradeDaily2026トップへ戻る</a></footer>
+</main>
+</body>
+</html>

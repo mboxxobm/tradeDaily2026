@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b1020">
+<meta name="description" content="TradeDaily2026の日次トレード日誌を日付から探せる一覧です。スマートフォンに対応しています。">
+<title>トレード日誌一覧｜TradeDaily2026</title>
+<style>
+:root{color-scheme:dark;--bg:#0b1020;--panel:#151e32;--line:#34425e;--text:#edf3ff;--muted:#b8c5d9;--blue:#91caff;--gold:#ffe08a;--green:#a7e6bd}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(ellipse at 50% -10%,#213958 0,var(--bg) 48rem);color:var(--text);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif}
+main{width:min(900px,100%);margin:auto;padding:14px 14px calc(42px + env(safe-area-inset-bottom))}
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+a{color:var(--blue);text-underline-offset:3px}
+.hero,.tools,.entry,.footer{background:rgba(21,30,50,.96);border:1px solid var(--line);border-radius:16px}
+.hero{padding:clamp(20px,5vw,34px);margin-bottom:14px}
+.eyebrow{margin:0 0 5px;color:var(--gold);font-size:.8rem;font-weight:800;letter-spacing:.13em}
+h1{font-size:clamp(1.8rem,7vw,2.5rem);line-height:1.25;margin:0 0 8px}
+.lead{margin:0;color:var(--muted)}
+.back{display:inline-flex;align-items:center;min-height:42px;margin-top:16px;padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:#10182a;text-decoration:none;font-size:.93rem}
+.tools{position:sticky;top:8px;z-index:2;padding:12px;margin-bottom:14px;box-shadow:0 8px 24px #060a13aa;backdrop-filter:blur(12px)}
+.search{display:block;width:100%;min-height:48px;padding:10px 13px;border:1px solid #52627d;border-radius:11px;background:#0d1424;color:var(--text);font:inherit;font-size:16px}
+.search::placeholder{color:#aab8cd}
+.filters{display:flex;gap:8px;margin-top:9px;overflow-x:auto;padding-bottom:2px}
+.filter{flex:0 0 auto;min-height:40px;padding:7px 13px;border:1px solid var(--line);border-radius:999px;background:#10182a;color:var(--text);font:inherit;font-size:.9rem}
+.filter[aria-pressed="true"]{border-color:var(--blue);background:#1b2b43;color:#fff}
+.count{margin:0 2px 9px;color:var(--muted);font-size:.9rem}
+.list{display:grid;gap:10px}
+.entry{display:grid;grid-template-columns:minmax(94px,120px) 1fr;gap:8px 14px;align-items:start;padding:15px;text-decoration:none;color:var(--text);transition:border-color .15s,transform .15s}
+.entry:hover,.entry:focus-visible{border-color:var(--blue);transform:translateY(-1px);outline:none}
+.date{color:var(--gold);font-size:.9rem;font-weight:750;white-space:nowrap}
+.title{display:block;color:var(--blue);font-size:1.04rem;font-weight:750;line-height:1.45}
+.detail{display:block;margin-top:4px;color:var(--muted);font-size:.91rem}
+.tag{display:inline-block;margin-top:8px;padding:1px 8px;border:1px solid #497754;border-radius:999px;color:var(--green);font-size:.75rem}
+.empty{display:none;padding:22px;border:1px dashed #52627d;border-radius:14px;color:var(--muted);text-align:center}
+.footer{padding:13px 16px;margin-top:16px;color:var(--muted);font-size:.9rem}
+@media(max-width:520px){main{padding:9px 9px calc(32px + env(safe-area-inset-bottom))}.hero,.tools,.entry{border-radius:13px}.hero{padding:20px 17px}.tools{top:5px;padding:10px}.entry{grid-template-columns:1fr;gap:3px;padding:13px}.detail{font-size:.88rem}.filters{margin-top:8px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+</style>
+</head>
+<body>
+<main>
+<header class="hero">
+<p class="eyebrow">TRADE DAILY 2026 · JOURNAL</p>
+<h1>トレード日誌一覧</h1>
+<p class="lead">日付を選ぶと、その日の記録を開けます。キーワード検索と「日次／NY」の絞り込みができます。</p>
+<a class="back" href="../explanation-pages.html">‹　ページ一覧へ戻る</a>
+</header>
+<section class="tools" aria-label="日誌を検索・絞り込み">
+<label for="search" class="visually-hidden">日付やキーワードで検索</label>
+<input class="search" id="search" type="search" placeholder="日付やキーワードで検索（例：10月2日、NY）" autocomplete="off">
+<div class="filters" role="group" aria-label="日誌の種類">
+<button class="filter" type="button" data-filter="all" aria-pressed="true">すべて</button>
+<button class="filter" type="button" data-filter="daily" aria-pressed="false">日次</button>
+<button class="filter" type="button" data-filter="ny" aria-pressed="false">NY</button>
+<button class="filter" type="button" data-filter="weekly" aria-pressed="false">週報</button>
+</div>
+</section>
+<p class="count" id="count" aria-live="polite"></p>
+<section class="list" id="entries" aria-label="日誌">
+<a class="entry" href="2026-10-02/diary_20261002.html" data-type="daily" data-search="2026 10月2日 10/2 日本株 日次 デイトレード 実況記録"><span class="date">2026.10.02</span><span><span class="title">10月2日｜日本株トレード日誌</span><span class="detail">日本株の場中記録、板読み、銘柄ごとの振り返り。</span><span class="tag">日次</span></span></a>
+<a class="entry" href="2026-10-02/diary_20261002_ny.html" data-type="ny" data-search="2026 10月2日 10/2 NY アメリカ 米国株 日次 夜"><span class="date">2026.10.02</span><span><span class="title">10月2日｜NY時間の記録</span><span class="detail">NY時間帯の値動きとトレードの振り返り。</span><span class="tag">NY</span></span></a>
+<a class="entry" href="2026-10-01/diary_20261001.html" data-type="daily" data-search="2026 10月1日 10/1 日本株 日次 デイトレード 実況記録"><span class="date">2026.10.01</span><span><span class="title">10月1日｜日本株トレード日誌</span><span class="detail">寄り前からの環境認識、取引と値動きの記録。</span><span class="tag">日次</span></span></a>
+<a class="entry" href="2026-09-30/diary_20260930.html" data-type="daily" data-search="2026 9月30日 09/30 日本株 日次 デイトレード 実況記録"><span class="date">2026.09.30</span><span><span class="title">9月30日｜日本株トレード日誌</span><span class="detail">指数と個別銘柄の動き、取引の振り返り。</span><span class="tag">日次</span></span></a>
+<a class="entry" href="2026-09-29/diary_20260929.html" data-type="daily" data-search="2026 9月29日 09/29 日本株 日次 デイトレード 実況記録"><span class="date">2026.09.29</span><span><span class="title">9月29日｜日本株トレード日誌</span><span class="detail">当日の環境認識と銘柄別の売買シナリオ。</span><span class="tag">日次</span></span></a>
+<a class="entry" href="2026-09-28/diary_20260928.html" data-type="daily" data-search="2026 9月28日 09/28 日本株 日次 デイトレード 実況記録"><span class="date">2026.09.28</span><span><span class="title">9月28日｜日本株トレード日誌</span><span class="detail">当日の取引記録と振り返り。</span><span class="tag">日次</span></span></a>
+<a class="entry" href="../weekly_reports/weekly_report_2026-W40_20260928-20261002.html" data-type="weekly" data-search="2026 第40週 週報 weekly 9月28日 10月2日"><span class="date">2026.09.28–10.02</span><span><span class="title">第40週｜トレード週報</span><span class="detail">9月28日から10月2日までの週次まとめ。</span><span class="tag">週報</span></span></a>
+</section>
+<p class="empty" id="empty">該当する日誌がありません。日付やキーワードを変えてください。</p>
+<footer class="footer">この一覧はスマートフォンでも見やすい表示に対応しています。日誌の内容は各ページで確認できます。</footer>
+</main>
+<script>
+const search=document.querySelector('#search');
+const entries=[...document.querySelectorAll('.entry')];
+const count=document.querySelector('#count');
+const empty=document.querySelector('#empty');
+let activeFilter='all';
+function updateList(){
+  const query=search.value.trim().toLocaleLowerCase('ja');
+  let visible=0;
+  for(const entry of entries){
+    const typeMatch=activeFilter==='all'||entry.dataset.type===activeFilter;
+    const text=(entry.dataset.search+' '+entry.innerText).toLocaleLowerCase('ja');
+    const searchMatch=!query||text.includes(query);
+    const show=typeMatch&&searchMatch;
+    entry.hidden=!show;
+    if(show)visible++;
+  }
+  count.textContent=`${visible}件の日誌`;
+  empty.style.display=visible?'none':'block';
+}
+search.addEventListener('input',updateList);
+for(const button of document.querySelectorAll('.filter')){
+  button.addEventListener('click',()=>{
+    activeFilter=button.dataset.filter;
+    for(const item of document.querySelectorAll('.filter')) item.setAttribute('aria-pressed',String(item===button));
+    updateList();
+  });
+}
+updateList();
+</script>
+</body>
+</html>
