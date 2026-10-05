@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b1020">
+<meta name="description" content="資金合計、レバレッジ、保有株数、株価から米国株の追加可能LOTを計算します。">
+<title>ポジション・最大LOT計算</title>
+<style>
+:root{color-scheme:dark;--bg:#0b1020;--panel:#151e32;--line:#34425e;--text:#edf3ff;--muted:#b8c5d9;--blue:#91caff;--gold:#ffe08a;--green:#a7e6bd;--red:#ffabb2}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,#111a2b 0,var(--bg) 420px);color:var(--text);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif}
+main{width:min(820px,100%);margin:auto;padding:14px 13px calc(42px + env(safe-area-inset-bottom))}
+header,.panel,.asset{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:17px;margin:0 0 13px}
+h1{font-size:clamp(1.55rem,6vw,2.1rem);line-height:1.3;margin:0 0 8px}
+h2{font-size:1.16rem;line-height:1.4;margin:0 0 12px}
+p{margin:7px 0 12px}
+.muted,.hint{color:var(--muted);font-size:.91rem}
+.nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:13px}
+.nav a{padding:7px 10px;border:1px solid var(--line);border-radius:999px;color:var(--blue);text-decoration:none}
+.inputs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+label{display:block;font-size:.92rem;font-weight:700}
+input{width:100%;min-height:46px;margin-top:5px;padding:9px 11px;border:1px solid #536583;border-radius:10px;background:#0e1728;color:var(--text);font:inherit;font-size:16px}
+input:focus{outline:3px solid #91caff66;border-color:var(--blue)}
+.summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.stat{min-width:0;padding:12px;border:1px solid var(--line);border-radius:12px;background:#10182a}
+.stat span{display:block;color:var(--muted);font-size:.83rem}
+.stat strong{display:block;margin-top:3px;font-size:clamp(1rem,4vw,1.25rem);overflow-wrap:anywhere}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.asset{margin:0;padding:14px}
+.asset-head{display:flex;align-items:center;justify-content:space-between;gap:9px;margin-bottom:9px}
+.ticker{font-size:1.12rem;font-weight:800;color:var(--blue)}
+.name{display:block;color:var(--muted);font-size:.82rem;font-weight:400}
+.calc{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:11px}
+.calc div{padding:9px;border-radius:9px;background:#10182a;min-width:0}
+.calc span{display:block;color:var(--muted);font-size:.79rem;line-height:1.35}
+.calc strong{display:block;margin-top:3px;overflow-wrap:anywhere}
+.max-lot{color:var(--green);font-size:1.2rem}
+.negative{color:var(--red)}
+.notice{border-left:4px solid var(--gold);padding:10px 12px;background:#292516;border-radius:0 10px 10px 0;color:#fff2c1}
+.actions{display:flex;justify-content:flex-end;margin-top:10px}
+button{min-height:42px;padding:8px 13px;border:1px solid var(--line);border-radius:10px;background:#202c44;color:var(--text);font:inherit;cursor:pointer}
+footer{padding:8px 3px 18px;color:var(--muted);font-size:.87rem}
+@media(max-width:560px){main{padding:9px 9px calc(30px + env(safe-area-inset-bottom))}header,.panel,.asset{padding:14px;border-radius:13px}.cards{grid-template-columns:1fr}.summary{gap:6px}.stat{padding:9px 8px}.stat span{font-size:.75rem}}
+</style>
+</head>
+<body>
+<main>
+<header>
+<h1>トレードポジション｜最大LOT計算</h1>
+<p class="muted">Webull証券の2倍レバレッジを初期設定。資金・株価・保有LOTを変えると、各銘柄に追加できる最大株数を自動計算します。</p>
+<nav class="nav" aria-label="関連ページ"><a href="index.html">TradeDailyトップ</a><a href="diaries/2026-10-05/diary_20261005.html">10月5日の日誌</a></nav>
+</header>
+
+<section class="panel" aria-labelledby="account-title">
+<h2 id="account-title">口座資金の設定</h2>
+<div class="inputs">
+<label for="capital">資金合計（USD）<input id="capital" type="number" min="0" step="100" value="6000" inputmode="decimal"></label>
+<label for="leverage">レバレッジ（倍）<input id="leverage" type="number" min="1" step="0.5" value="2" inputmode="decimal"></label>
+</div>
+<p class="hint">買付余力の概算 ＝ 資金合計 × レバレッジ。保有中の全銘柄の建玉額を差し引いて、残り余力を計算します。</p>
+</section>
+
+<section class="panel" aria-label="買付余力の計算結果">
+<div class="summary">
+<div class="stat"><span>資金合計</span><strong id="capital-out">—</strong></div>
+<div class="stat"><span>レバレッジ込み買付余力</span><strong id="power-out">—</strong></div>
+<div class="stat"><span>保有分差引後の残り余力</span><strong id="free-out">—</strong></div>
+</div>
+<p id="exposure-note" class="hint" aria-live="polite"></p>
+</section>
+
+<div class="notice">各銘柄の「追加可能LOT」は、残り余力をその銘柄だけに使った場合の上限です。表示された各銘柄のLOTを全部同時に建てられるという意味ではありません。</div>
+
+<section class="panel" aria-labelledby="stocks-title">
+<h2 id="stocks-title">銘柄別サイズ</h2>
+<div class="cards" id="assets">
+<article class="asset" data-ticker="MU">
+<div class="asset-head"><div><span class="ticker">MU</span><span class="name">Micron</span></div></div>
+<label>基準株価（USD）<input class="price" type="number" min="0.01" step="0.01" value="1092.00" inputmode="decimal" aria-label="MUの基準株価"></label>
+<label>現在保有LOT<input class="held" type="number" min="0" step="1" value="0" inputmode="numeric" aria-label="MUの現在保有LOT"></label>
+<div class="calc"><div><span>残り余力での追加可能LOT</span><strong class="max-lot result-lots">—</strong></div><div><span>最大発注額（概算）</span><strong class="result-value">—</strong></div><div><span>現在保有額</span><strong class="held-value">—</strong></div><div><span>発注後に残る余力</span><strong class="left-value">—</strong></div></div>
+</article>
+<article class="asset" data-ticker="INTC">
+<div class="asset-head"><div><span class="ticker">INTC</span><span class="name">Intel</span></div></div>
+<label>基準株価（USD）<input class="price" type="number" min="0.01" step="0.01" value="116.69" inputmode="decimal" aria-label="INTCの基準株価"></label>
+<label>現在保有LOT<input class="held" type="number" min="0" step="1" value="0" inputmode="numeric" aria-label="INTCの現在保有LOT"></label>
+<div class="calc"><div><span>残り余力での追加可能LOT</span><strong class="max-lot result-lots">—</strong></div><div><span>最大発注額（概算）</span><strong class="result-value">—</strong></div><div><span>現在保有額</span><strong class="held-value">—</strong></div><div><span>発注後に残る余力</span><strong class="left-value">—</strong></div></div>
+</article>
+<article class="asset" data-ticker="AMD">
+<div class="asset-head"><div><span class="ticker">AMD</span><span class="name">Advanced Micro Devices</span></div></div>
+<label>基準株価（USD）<input class="price" type="number" min="0.01" step="0.01" value="630.47" inputmode="decimal" aria-label="AMDの基準株価"></label>
+<label>現在保有LOT<input class="held" type="number" min="0" step="1" value="0" inputmode="numeric" aria-label="AMDの現在保有LOT"></label>
+<div class="calc"><div><span>残り余力での追加可能LOT</span><strong class="max-lot result-lots">—</strong></div><div><span>最大発注額（概算）</span><strong class="result-value">—</strong></div><div><span>現在保有額</span><strong class="held-value">—</strong></div><div><span>発注後に残る余力</span><strong class="left-value">—</strong></div></div>
+</article>
+<article class="asset" data-ticker="SNDK">
+<div class="asset-head"><div><span class="ticker">SNDK</span><span class="name">SanDisk｜現在保有 3 LOT</span></div></div>
+<label>基準株価（USD）<input class="price" type="number" min="0.01" step="0.01" value="1692.61" inputmode="decimal" aria-label="SNDKの基準株価"></label>
+<label>現在保有LOT<input class="held" type="number" min="0" step="1" value="3" inputmode="numeric" aria-label="SNDKの現在保有LOT"></label>
+<div class="calc"><div><span>残り余力での追加可能LOT</span><strong class="max-lot result-lots">—</strong></div><div><span>最大発注額（概算）</span><strong class="result-value">—</strong></div><div><span>現在保有額</span><strong class="held-value">—</strong></div><div><span>発注後に残る余力</span><strong class="left-value">—</strong></div></div>
+</article>
+<article class="asset" data-ticker="NVDA">
+<div class="asset-head"><div><span class="ticker">NVDA</span><span class="name">NVIDIA</span></div></div>
+<label>基準株価（USD）<input class="price" type="number" min="0.01" step="0.01" value="238.92" inputmode="decimal" aria-label="NVDAの基準株価"></label>
+<label>現在保有LOT<input class="held" type="number" min="0" step="1" value="0" inputmode="numeric" aria-label="NVDAの現在保有LOT"></label>
+<div class="calc"><div><span>残り余力での追加可能LOT</span><strong class="max-lot result-lots">—</strong></div><div><span>最大発注額（概算）</span><strong class="result-value">—</strong></div><div><span>現在保有額</span><strong class="held-value">—</strong></div><div><span>発注後に残る余力</span><strong class="left-value">—</strong></div></div>
+</article>
+<article class="asset" data-ticker="TSLA">
+<div class="asset-head"><div><span class="ticker">TSLA</span><span class="name">Tesla</span></div></div>
+<label>基準株価（USD）<input class="price" type="number" min="0.01" step="0.01" value="380.42" inputmode="decimal" aria-label="TSLAの基準株価"></label>
+<label>現在保有LOT<input class="held" type="number" min="0" step="1" value="0" inputmode="numeric" aria-label="TSLAの現在保有LOT"></label>
+<div class="calc"><div><span>残り余力での追加可能LOT</span><strong class="max-lot result-lots">—</strong></div><div><span>最大発注額（概算）</span><strong class="result-value">—</strong></div><div><span>現在保有額</span><strong class="held-value">—</strong></div><div><span>発注後に残る余力</span><strong class="left-value">—</strong></div></div>
+</article>
+</div>
+<div class="actions"><button type="button" id="reset">初期値に戻す</button></div>
+</section>
+
+<section class="panel">
+<h2>計算の前提</h2>
+<ul class="hint">
+<li>1 LOT＝1株として計算します。</li>
+<li>初期値は資金$6,000・2倍レバレッジ・SNDK 3株保有です。</li>
+<li>最大LOTは「残り買付余力 ÷ 株価」を小数切り捨てした値です。現在保有額は資金余力から差し引きます。</li>
+<li>株価は入力例です。価格欄を最新値に変更してから確認してください。</li>
+<li>これは概算用です。Webull上の実際の買付可能数量は、銘柄ごとの証拠金率、口座条件、手数料、価格変動で異なることがあります。</li>
+</ul>
+</section>
+<footer>各銘柄の追加可能LOTは同じ残り余力を別々に使う仮定の値です。複数銘柄を同時に買う場合は、建玉額の合計が買付余力を超えないように確認してください。</footer>
+</main>
+<script>
+(() => {
+  const capitalInput = document.querySelector('#capital');
+  const leverageInput = document.querySelector('#leverage');
+  const assets = [...document.querySelectorAll('.asset')];
+  const money = value => '$' + value.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
+  const integer = value => Math.floor(value + 1e-10);
+
+  function calculate() {
+    const capital = Math.max(0, Number(capitalInput.value) || 0);
+    const leverage = Math.max(0, Number(leverageInput.value) || 0);
+    const power = capital * leverage;
+    const positions = assets.map(card => ({
+      card,
+      price: Math.max(0, Number(card.querySelector('.price').value) || 0),
+      held: Math.max(0, integer(Number(card.querySelector('.held').value) || 0))
+    }));
+    const used = positions.reduce((sum, row) => sum + row.price * row.held, 0);
+    const free = power - used;
+    document.querySelector('#capital-out').textContent = money(capital);
+    document.querySelector('#power-out').textContent = money(power);
+    document.querySelector('#free-out').textContent = money(free);
+    document.querySelector('#free-out').classList.toggle('negative', free < 0);
+    document.querySelector('#exposure-note').textContent = `入力された保有分の建玉額：${money(used)}${free < 0 ? `｜買付余力を ${money(Math.abs(free))} 超過` : ''}`;
+    for (const row of positions) {
+      const {card, price, held} = row;
+      const lots = price > 0 && free > 0 ? integer(free / price) : 0;
+      const orderValue = lots * price;
+      card.querySelector('.result-lots').textContent = `${lots} LOT`;
+      card.querySelector('.result-value').textContent = money(orderValue);
+      card.querySelector('.held-value').textContent = money(held * price);
+      card.querySelector('.left-value').textContent = money(free - orderValue);
+    }
+  }
+
+  document.querySelectorAll('input').forEach(input => input.addEventListener('input', calculate));
+  document.querySelector('#reset').addEventListener('click', () => {
+    capitalInput.value = '6000'; leverageInput.value = '2';
+    const defaults = {MU:['1092.00','0'],INTC:['116.69','0'],AMD:['630.47','0'],SNDK:['1692.61','3'],NVDA:['238.92','0'],TSLA:['380.42','0']};
+    for (const card of assets) {
+      const [price,held] = defaults[card.dataset.ticker];
+      card.querySelector('.price').value = price; card.querySelector('.held').value = held;
+    }
+    calculate();
+  });
+  calculate();
+})();
+</script>
+</body>
+</html>
