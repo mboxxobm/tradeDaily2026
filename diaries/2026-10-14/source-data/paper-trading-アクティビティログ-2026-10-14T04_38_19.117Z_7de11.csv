@@ -1,0 +1,57 @@
+日時,テキスト
+2026-10-14 11:21:22,Order 3670400003 for symbol OANDA:JP225YJPY has been executed at price 68202.4 for 10 units
+2026-10-14 11:21:22,Order 3670400003 successfully placed
+2026-10-14 11:21:22,Call to place market order to buy 10 units of symbol OANDA:JP225YJPY 
+2026-10-14 11:21:18,Order 3670399796 for symbol OANDA:JP225YJPY has been executed at price 68197.4 for 1 units
+2026-10-14 11:21:18,Order 3670399796 successfully placed
+2026-10-14 11:21:18,Call to place market order to buy 1 units of symbol OANDA:JP225YJPY 
+2026-10-14 10:36:33,Order 3670076530 successfully cancelled
+2026-10-14 10:36:33,Order 3670076531 successfully cancelled
+2026-10-14 10:36:33,Order 3670076529 successfully cancelled
+2026-10-14 09:34:38,Order 3670076531 successfully placed
+2026-10-14 09:34:38,Order 3670076530 successfully placed
+2026-10-14 09:34:38,Order 3670076529 successfully placed
+2026-10-14 09:34:38,Call to place limit order to buy 100 units of symbol TSE:6857 at price 40650.00 with SL 40400 and TP 41400
+2026-10-13 23:24:24,Order 3667936933 for symbol NASDAQ:SPCX has been executed at price 156.88 for 3.98 units
+2026-10-13 23:24:24,Order 3667936933 successfully placed
+2026-10-13 23:24:24,Call to place market order to sell 3.98 units of symbol NASDAQ:SPCX 
+2026-10-13 10:20:20,Order 3665001838 for symbol TSE:285A has been executed at price 15400 for 200 units
+2026-10-13 10:20:20,Order 3665001838 successfully placed
+2026-10-13 10:20:20,Call to place market order to sell 200 units of symbol TSE:285A 
+2026-10-13 10:14:53,Order 3664982224 for symbol TSE:285A has been executed at price 15510 for 100 units
+2026-10-13 10:14:53,Order 3664982224 successfully placed
+2026-10-13 10:14:53,Call to place market order to buy 100 units of symbol TSE:285A 
+2026-10-13 10:14:50,Order 3664982034 for symbol TSE:285A has been executed at price 15505 for 100 units
+2026-10-13 10:14:50,Order 3664982034 successfully placed
+2026-10-13 10:14:50,Call to place market order to buy 100 units of symbol TSE:285A 
+2026-10-13 10:12:16,Order 3664973715 for symbol TSE:285A has been executed at price 15545 for 100 units
+2026-10-13 10:12:16,Order 3664973715 successfully placed
+2026-10-13 10:12:16,Call to place market order to sell 100 units of symbol TSE:285A 
+2026-10-13 10:11:37,Order 3664971149 for symbol TSE:285A has been executed at price 15525 for 100 units
+2026-10-13 10:11:37,Order 3664971149 successfully placed
+2026-10-13 10:11:37,Call to place market order to buy 100 units of symbol TSE:285A 
+2026-10-13 09:58:39,Order 3664925946 for symbol TSE:285A has been executed at price 15430 for 200 units
+2026-10-13 09:58:39,Order 3664925946 successfully placed
+2026-10-13 09:58:39,Order 3664911974 successfully cancelled
+2026-10-13 09:58:39,Order 3664911342 successfully cancelled
+2026-10-13 09:58:39,Call to place market order to sell 200 units of symbol TSE:285A 
+2026-10-13 09:54:19,Order 3664911974 successfully placed
+2026-10-13 09:54:19,Order 3664911342 modification confirmed
+2026-10-13 09:54:19,Modify position for symbol TSE:285A with SL 15375 and TP 15710
+2026-10-13 09:54:11,Order 3664911342 successfully placed
+2026-10-13 09:54:11,Modify position for symbol TSE:285A with SL 15375
+2026-10-13 09:53:20,Order 3664896755 successfully cancelled
+2026-10-13 09:53:19,Order 3664907827 for symbol TSE:285A has been executed at price 15430 for 100 units
+2026-10-13 09:53:19,Order 3664907827 successfully placed
+2026-10-13 09:53:19,Call to place market order to buy 100 units of symbol TSE:285A 
+2026-10-13 09:50:39,Order 3664896755 modification confirmed
+2026-10-13 09:50:39,Modified order 3664896755 for symbol TSE:285A with price 15420 for 100 units 
+2026-10-13 09:50:20,Order 3664896755 successfully placed
+2026-10-13 09:50:20,Call to place limit order to buy 100 units of symbol TSE:285A at price 15400.00 
+2026-10-13 09:45:05,Order 3664879269 for symbol TSE:285A has been executed at price 15505 for 100 units
+2026-10-13 09:45:05,Order 3664879269 successfully placed
+2026-10-13 09:45:05,Call to place market order to buy 100 units of symbol TSE:285A 
+2026-10-13 09:44:58,Order 3664878816 for symbol TSE:285A has been executed at price 15505 for 100 units
+2026-10-13 09:44:58,Order 3664878816 successfully placed
+2026-10-13 09:44:58,Order 3664877989 successfully cancelled
+2026-10-13 09:44:58,Call to place market order to buy 100 units of symbol TSE:285A 
