@@ -77,3 +77,19 @@ success_trade_quiz_20261003/**/.DS_Store
 !market_data/axiory/JP225_H1.csv
 !market_data/axiory/US100_M5.csv
 !market_data/axiory/US100_H1.csv
+
+# Reusable Axiory source-data and daily journal recipe outputs.
+!scripts/update_market_context.py
+!scripts/requirements-market-context.txt
+!diaries/
+!diaries/market_context_recipe.md
+!diaries/20??-??-??/
+!diaries/20??-??-??/market_context/
+!diaries/20??-??-??/market_context/market_context.md
+!diaries/20??-??-??/market_context/*.png
+!market_data/axiory/JP225_M1.csv
+!market_data/axiory/US100_M1.csv
+!market_data/axiory/JP225_D1.csv
+!market_data/axiory/US100_D1.csv
+!market_data/axiory/JP225_W1.csv
+!market_data/axiory/US100_W1.csv
