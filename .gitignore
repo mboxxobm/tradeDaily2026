@@ -68,3 +68,12 @@ success_trade_quiz_20261003/.DS_Store
 success_trade_quiz_20261003/**/.DS_Store
 2026 Daily/board_reading_quiz_20261004/.DS_Store
 2026 Daily/board_reading_quiz_20261004/**/.DS_Store
+
+# Axiory intraday market-context source bars (explicitly requested for this repository).
+!market_data/
+!market_data/axiory/
+!market_data/axiory/README.md
+!market_data/axiory/JP225_M5.csv
+!market_data/axiory/JP225_H1.csv
+!market_data/axiory/US100_M5.csv
+!market_data/axiory/US100_H1.csv
