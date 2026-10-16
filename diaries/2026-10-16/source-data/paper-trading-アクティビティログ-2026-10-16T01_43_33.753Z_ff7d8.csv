@@ -1,0 +1,51 @@
+日時,テキスト
+2026-10-16 10:04:08,Order 3680785653 for symbol TSE:285A has been executed at price 13450 for 300 units
+2026-10-16 10:04:08,Order 3680785654 successfully cancelled
+2026-10-16 10:02:10,Order 3680798215 for symbol TSE:285A has been executed at price 13405 for 100 units
+2026-10-16 10:02:10,Order 3680798215 successfully placed
+2026-10-16 10:02:10,Call to place market order to sell 100 units of symbol TSE:285A 
+2026-10-16 10:01:52,Order 3680785653 activated at price 13455
+2026-10-16 10:01:52,Order 3680785654 activated at price 12995
+2026-10-16 10:01:52,Order 3680785652 for symbol TSE:285A has been executed at price 13370 for 100 units
+2026-10-16 10:01:52,Order 3680789882 successfully cancelled
+2026-10-16 10:01:52,Order 3680790070 successfully cancelled
+2026-10-16 09:59:11,Order 3680785653 modification confirmed
+2026-10-16 09:59:11,Order 3680785652 modification confirmed
+2026-10-16 09:59:11,Modified order 3680785652 for symbol TSE:285A with price 13370 for 100 units with SL 13455 and TP 12995
+2026-10-16 09:59:08,Order 3680789882 modification confirmed
+2026-10-16 09:59:08,Order 3680790070 successfully placed
+2026-10-16 09:59:08,Modify position for symbol TSE:285A with SL 13450 and TP 13075
+2026-10-16 09:59:05,Order 3680789882 successfully placed
+2026-10-16 09:59:04,Modify position for symbol TSE:285A with TP 13075
+2026-10-16 09:58:24,Order 3680788179 for symbol TSE:285A has been executed at price 13265 for 100 units
+2026-10-16 09:58:24,Order 3680788179 successfully placed
+2026-10-16 09:58:24,Call to place market order to sell 100 units of symbol TSE:285A 
+2026-10-16 09:57:17,Order 3680785654 successfully placed
+2026-10-16 09:57:17,Order 3680785653 successfully placed
+2026-10-16 09:57:17,Order 3680785652 successfully placed
+2026-10-16 09:57:17,Call to place limit order to sell 100 units of symbol TSE:285A at price 13370.00 with SL 13495 and TP 12995
+2026-10-15 23:39:56,Order 3678683909 for symbol NASDAQ:SNDK has been executed at price 1326.34 for 2 units
+2026-10-15 23:39:56,Order 3678683909 successfully placed
+2026-10-15 23:39:56,Order 3678528800 successfully cancelled
+2026-10-15 23:39:56,Order 3678528046 successfully cancelled
+2026-10-15 23:39:56,Call to place market order to sell 2 units of symbol NASDAQ:SNDK 
+2026-10-15 23:39:52,Order 3678528800 modification confirmed
+2026-10-15 23:39:52,Order 3678528046 modification confirmed
+2026-10-15 23:39:52,Modify position for symbol NASDAQ:SNDK with SL 1317.59 and TP 1357.33
+2026-10-15 23:20:51,Order 3678528800 modification confirmed
+2026-10-15 23:20:51,Order 3678528046 modification confirmed
+2026-10-15 23:20:51,Modify position for symbol NASDAQ:SNDK with SL 1302.16 and TP 1357.33
+2026-10-15 23:20:46,Order 3678528800 successfully placed
+2026-10-15 23:20:46,Order 3678528046 modification confirmed
+2026-10-15 23:20:46,Modify position for symbol NASDAQ:SNDK with SL 1302.16 and TP 1334.11
+2026-10-15 23:20:42,Order 3678528046 successfully placed
+2026-10-15 23:20:42,Modify position for symbol NASDAQ:SNDK with SL 1302.16
+2026-10-15 23:20:36,Order 3678526912 for symbol NASDAQ:SNDK has been executed at price 1316.93 for 2 units
+2026-10-15 23:20:36,Order 3678526912 successfully placed
+2026-10-15 23:20:36,Call to place market order to buy 2 units of symbol NASDAQ:SNDK 
+2026-10-15 23:13:34,Order 3678427058 for symbol NASDAQ:SNDK has been executed at price 1300.30 for 2 units
+2026-10-15 23:11:16,Order 3678427058 successfully placed
+2026-10-15 23:11:16,Modify position for symbol NASDAQ:SNDK with SL 1300.89
+2026-10-15 23:04:06,Order 3678349854 for symbol NASDAQ:SNDK has been executed at price 1303.96 for 2 units
+2026-10-15 23:04:06,Order 3678349854 successfully placed
+2026-10-15 23:04:06,Call to place market order to buy 2 units of symbol NASDAQ:SNDK 
