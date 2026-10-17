@@ -1,0 +1,51 @@
+日時,テキスト
+2026-10-16 23:59:04,Order 3683833191 for symbol NASDAQ:SNDK has been executed at price 1346.98 for 2 units
+2026-10-16 23:59:04,Order 3683833191 successfully placed
+2026-10-16 23:59:04,Order 3683832169 successfully cancelled
+2026-10-16 23:59:04,Call to place market order to buy 2 units of symbol NASDAQ:SNDK 
+2026-10-16 23:58:55,Order 3683832169 successfully placed
+2026-10-16 23:58:55,Modify position for symbol NASDAQ:SNDK with TP 1339.44
+2026-10-16 23:51:03,Order 3683764250 for symbol NASDAQ:SNDK has been executed at price 1345.24 for 2 units
+2026-10-16 23:49:52,Order 3683764250 successfully placed
+2026-10-16 23:49:52,Call to place stop order to sell 2 units of symbol NASDAQ:SNDK at price 1345.50 
+2026-10-16 23:48:08,Order 3683752863 for symbol NASDAQ:SNDK has been executed at price 1350.28 for 2 units
+2026-10-16 23:48:08,Order 3683752863 successfully placed
+2026-10-16 23:48:08,Order 3683713426 successfully cancelled
+2026-10-16 23:48:08,Order 3683713793 successfully cancelled
+2026-10-16 23:48:08,Call to place market order to buy 2 units of symbol NASDAQ:SNDK 
+2026-10-16 23:46:35,Order 3683742100 for symbol NASDAQ:MU has been executed at price 904.64 for 4 units
+2026-10-16 23:46:35,Order 3683742100 successfully placed
+2026-10-16 23:46:35,Call to place market order to buy 4 units of symbol NASDAQ:MU 
+2026-10-16 23:45:13,Order 3683732305 for symbol NASDAQ:AMD has been executed at price 548.00 for 10 units
+2026-10-16 23:45:13,Order 3683732305 successfully placed
+2026-10-16 23:45:13,Call to place market order to sell 10 units of symbol NASDAQ:AMD 
+2026-10-16 23:42:35,Order 3683713426 modification confirmed
+2026-10-16 23:42:35,Order 3683713793 successfully placed
+2026-10-16 23:42:35,Modify position for symbol NASDAQ:SNDK with SL 1356.28 and TP 1339.50
+2026-10-16 23:42:32,Order 3683713426 successfully placed
+2026-10-16 23:42:32,Modify position for symbol NASDAQ:SNDK with TP 1339.50
+2026-10-16 23:42:27,Order 3683712823 for symbol NASDAQ:SNDK has been executed at price 1347.68 for 2 units
+2026-10-16 23:42:27,Order 3683712823 successfully placed
+2026-10-16 23:42:27,Call to place market order to sell 2 units of symbol NASDAQ:SNDK 
+2026-10-16 23:41:08,Order 3683702569 for symbol NASDAQ:MU has been executed at price 905.11 for 4 units
+2026-10-16 23:41:08,Order 3683702569 successfully placed
+2026-10-16 23:41:08,Call to place market order to sell 4 units of symbol NASDAQ:MU 
+2026-10-16 23:39:51,Order 3683675918 for symbol NASDAQ:MU has been executed at price 906.38 for 4 units
+2026-10-16 23:39:51,Order 3683675536 successfully cancelled
+2026-10-16 23:37:54,Order 3683675536 modification confirmed
+2026-10-16 23:37:54,Order 3683675918 successfully placed
+2026-10-16 23:37:54,Modify position for symbol NASDAQ:MU with SL 906.29 and TP 901.04
+2026-10-16 23:37:51,Order 3683675536 successfully placed
+2026-10-16 23:37:51,Modify position for symbol NASDAQ:MU with TP 901.04
+2026-10-16 23:37:42,Order 3683674452 for symbol NASDAQ:MU has been executed at price 903.31 for 4 units
+2026-10-16 23:37:42,Order 3683674452 successfully placed
+2026-10-16 23:37:42,Call to place market order to sell 4 units of symbol NASDAQ:MU 
+2026-10-16 23:35:22,Order 3683654998 for symbol NASDAQ:MU has been executed at price 903.85 for 16 units
+2026-10-16 23:35:22,Order 3683654998 successfully placed
+2026-10-16 23:35:22,Order 3683653930 successfully cancelled
+2026-10-16 23:35:22,Order 3683637079 successfully cancelled
+2026-10-16 23:35:22,Call to place market order to sell 16 units of symbol NASDAQ:MU 
+2026-10-16 23:35:20,Order 3683653930 modification confirmed
+2026-10-16 23:35:20,Order 3683637079 modification confirmed
+2026-10-16 23:35:20,Modify position for symbol NASDAQ:MU with SL 899.68 and TP 905.23
+2026-10-16 23:35:16,Order 3683653930 successfully placed

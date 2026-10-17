@@ -1,0 +1,94 @@
+{
+  "input_commit": "cff196c6491f2c2dd64393cf75d04b7ffe77b483",
+  "timezone": "Asia/Tokyo",
+  "session_date": "2026-10-16",
+  "attached": [
+    {
+      "path": "../source-data/paper-trading-取引履歴-2026-10-17T02_27_25.875Z.csv",
+      "sha256": "fcc5e6be75eb2c357b5d3ae2b3b9a57b3975ca6dfb521bdfd3707d199be13ded",
+      "bytes": 14800
+    },
+    {
+      "path": "../source-data/paper-trading-アクティビティログ-2026-10-17T02_27_25.290Z.csv",
+      "sha256": "e42cbffeb383ff2078449fac9e181f4dec29c337f92b3f7b52aefdc672062b0e",
+      "bytes": 3792
+    },
+    {
+      "path": "../source-data/paper-trading-残高履歴-2026-10-17T02_27_25.289Z.csv",
+      "sha256": "29279bc9801b7be0bb756428bd0b2b8ead81035b6ec019b3cc22d3e58c215c4d",
+      "bytes": 11946
+    },
+    {
+      "path": "../source-data/paper-trading-注文履歴-すべて-2026-10-17T02_27_25.288Z.csv",
+      "sha256": "64915a215047836b7083d64b86f6e97a29b5c35e3e96abb38fbaf1aa087c00e7",
+      "bytes": 12098
+    },
+    {
+      "path": "../source-data/paper-trading-ポジション-2026-10-17T02_27_24.703Z.csv",
+      "sha256": "332ccba2f96170089d3d364f84af2c6d95b8227ae8485649a338060128df93cd",
+      "bytes": 316
+    },
+    {
+      "path": "../source-data/BATS_SNDK, 30S.csv",
+      "sha256": "eeddd9d904257e9531eaa89de172989f46dc298091fdf258c0079e8ddd80333b",
+      "bytes": 195382
+    },
+    {
+      "path": "../source-data/BATS_AMD, 30S.csv",
+      "sha256": "d2e4eb15aa593ff89ad77d95fd88a8025f0afaf51507a308fa8b728bf07f4884",
+      "bytes": 176079
+    }
+  ],
+  "github_inputs": [
+    {
+      "path": "diaries/2026-10-16/diary_20261016.md",
+      "git_sha": "b0122f6f51aea3c5968c33a4312704b1a40ef61f",
+      "sha256": "2daef25401fc8d49531bae349555807b6390b352d1c3aefec75886eadf893d5b"
+    },
+    {
+      "path": "diaries/2026-10-16/source-data/BATS_MU, 30S_67556.csv",
+      "git_sha": "6de46f329f01754d86ef1f7666a4d4b0c327cda6",
+      "sha256": "e67cd2f97955fa0677f80a5c15745b42849b02a2256ffc811ceae7b3e85c78b2"
+    },
+    {
+      "path": "diaries/2026-10-16/source-data/BATS_SNDK, 15S_ddcda.csv",
+      "git_sha": "f0b8b30f753a19523d2d461fc785edf6f112d826",
+      "sha256": "3e15158f8c55b97e2ea30e2f8d508eac50e6cea97d3fa51af8c1e7ccece54ee4"
+    },
+    {
+      "path": "diaries/2026-10-16/source-data/BATS_SNDK, 1_f9796.csv",
+      "git_sha": "1092afb19b7387238e5ba73accaf66f906696e2b",
+      "sha256": "a82673842ba2746b97992f0da3dbb4b8122bd2d7042197804027cf1746afa261"
+    },
+    {
+      "path": "diaries/2026-10-16/source-data/PEPPERSTONE_NAS100, 20_93f4a.csv",
+      "git_sha": "07663bce15b9c8f1910d5d820f2f26af3217db26",
+      "sha256": "f69413df25aa0e3bfc35c62dabce760af96b1b96474ff53f0ba7f00712010941"
+    },
+    {
+      "path": "diaries/2026-10-16/source-data/paper-trading-アクティビティログ-2026-10-16T14_35_39.089Z_98949.csv",
+      "git_sha": "fabef71b0eb6b778101259a841927c0b860464fe",
+      "sha256": "31ed0a49d403a48acdc32e0daa96b60d0a4775cb515fc37bb67086c8724705bb"
+    },
+    {
+      "path": "diaries/2026-10-16/source-data/paper-trading-取引履歴-2026-10-16T14_35_39.877Z_abdf0.csv",
+      "git_sha": "89ae701234aec51f0d4840823abef8e8163497aa",
+      "sha256": "05225e44236c8a011a0afdd302babae49be1e0638e092d5144b6b6ea2fa624c1"
+    },
+    {
+      "path": "diaries/2026-10-16/source-data/paper-trading-残高履歴-2026-10-16T14_35_39.085Z_fcd0d.csv",
+      "git_sha": "9127d7c83b5783cb4a9dcd740a0c8be3c56fbff9",
+      "sha256": "a6a4f5d5f769c484ec323930cb9ca3fb8ceb7b32f9a9b2ae50144b6593407e10"
+    },
+    {
+      "path": "diaries/2026-10-16/source-data/paper-trading-注文-すべて-2026-10-16T14_35_38.242Z_d4337.csv",
+      "git_sha": "7b12b4507bc2f20a9f5368e55efbf12175118bee",
+      "sha256": "f7266aa7a982bb1582b47d3581cf893fc4d020f787848e6617dcdb828922e742"
+    },
+    {
+      "path": "diaries/2026-10-16/source-data/paper-trading-注文履歴-すべて-2026-10-16T14_35_39.081Z_d8239.csv",
+      "git_sha": "20cb595b368b45d9ab31756b7bdb6f49031e6d68",
+      "sha256": "89b4e2c8a5f819b47d1e20bb0d057c9a04f59d40040a9c90141c55bacc63f091"
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+[
+  {
+    "id": "2026-10-16:MU:ny-paper-review",
+    "case_id": "2026-10-16:MU:ny-paper-review",
+    "date": "2026-10-16",
+    "diary_id": "2026-10-16-ny",
+    "record_type": "trade_review",
+    "symbol": "MU",
+    "name": "MU・売買方向の切替と4→16株のロング",
+    "title": "MU・売買方向の切替と4→16株のロング",
+    "time_label": "10/16 NY時間／表記JST",
+    "tags": [
+      "NY時間",
+      "Paper Trading",
+      "売買方向切替",
+      "数量増加"
+    ],
+    "aliases": [],
+    "summary": "SHORT2回→LONG16株→SHORT2回。決済5トレード、実現＋757.67円。",
+    "execution_status": "Paper",
+    "execution_confirmed": true,
+    "included_in_realized_pnl": false,
+    "outcome": {
+      "value": 757.6694480180743,
+      "currency": "JPY",
+      "reported_text": "Paper実現／実口座とは別"
+    },
+    "classification_source": "添付CSVの注文・取引・残高照合",
+    "diary_href": "diary_2026-10-16_ny.html",
+    "scene_href": "diary_2026-10-16_ny.html#symbol-MU",
+    "diary_url": "diary_2026-10-16_ny.html#symbol-MU"
+  },
+  {
+    "id": "2026-10-16:SNDK:ny-paper-review",
+    "case_id": "2026-10-16:SNDK:ny-paper-review",
+    "date": "2026-10-16",
+    "diary_id": "2026-10-16-ny",
+    "record_type": "trade_review",
+    "symbol": "SNDK",
+    "name": "SNDK・当日ショート2回",
+    "title": "SNDK・当日ショート2回",
+    "time_label": "10/16 NY時間／表記JST",
+    "tags": [
+      "NY時間",
+      "Paper Trading",
+      "ショート",
+      "逆指値エントリー"
+    ],
+    "aliases": [],
+    "summary": "23:42と23:51に2株ずつ売り、当日2決済の合計−1,370.38円。",
+    "execution_status": "Paper",
+    "execution_confirmed": true,
+    "included_in_realized_pnl": false,
+    "outcome": {
+      "value": -1370.3820650577545,
+      "currency": "JPY",
+      "reported_text": "Paper実現／実口座とは別"
+    },
+    "classification_source": "添付CSVの注文・取引・残高照合",
+    "diary_href": "diary_2026-10-16_ny.html",
+    "scene_href": "diary_2026-10-16_ny.html#symbol-SNDK",
+    "diary_url": "diary_2026-10-16_ny.html#symbol-SNDK"
+  },
+  {
+    "id": "2026-10-16:AMD:ny-paper-review",
+    "case_id": "2026-10-16:AMD:ny-paper-review",
+    "date": "2026-10-16",
+    "diary_id": "2026-10-16-ny",
+    "record_type": "trade_review",
+    "symbol": "AMD",
+    "name": "AMD・10株ショート未決済",
+    "title": "AMD・10株ショート未決済",
+    "time_label": "10/16 NY時間／表記JST",
+    "tags": [
+      "NY時間",
+      "Paper Trading",
+      "ショート",
+      "未決済建玉"
+    ],
+    "aliases": [],
+    "summary": "23:45:13に10株@548。未決済。10/17書出しの含み益＋30,401.14円を実現へ合算しない。",
+    "execution_status": "Paper",
+    "execution_confirmed": true,
+    "included_in_realized_pnl": false,
+    "outcome": {
+      "value": null,
+      "currency": "JPY",
+      "reported_text": "未決済／含み益は実現へ加算しない"
+    },
+    "classification_source": "添付CSVの注文・取引・残高照合",
+    "diary_href": "diary_2026-10-16_ny.html",
+    "scene_href": "diary_2026-10-16_ny.html#symbol-AMD",
+    "diary_url": "diary_2026-10-16_ny.html#symbol-AMD"
+  }
+]
