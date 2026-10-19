@@ -11,7 +11,6 @@ from pathlib import Path
 from typing import Any
 from zoneinfo import ZoneInfo
 
-import matplotlib.dates as mdates
 import matplotlib.pyplot as plt
 import pandas as pd
 
@@ -502,10 +501,22 @@ def plot_candles(
     average_column: str,
     average_label: str,
     average_color: str,
-) -> None:
+) -> tuple[pd.DataFrame, list[float], list[datetime]]:
     view = frame.tail(limit).copy()
-    x_values = mdates.date2num(view["time_utc"].dt.tz_convert(JST).tolist())
-    bar_width = TIMEFRAMES[timeframe][1].total_seconds() / 86_400 * 0.68
+    local_times = [timestamp.to_pydatetime() for timestamp in view["time_utc"].dt.tz_convert(JST)]
+    x_values = [0.0]
+    interval = TIMEFRAMES[timeframe][1]
+    for previous, current in zip(local_times, local_times[1:]):
+        elapsed = current - previous
+        # Keep true time order but reduce every no-data interval to a small gap.
+        if elapsed >= interval * 2:
+            step = 3.0
+        elif elapsed > interval * 1.5:
+            step = 1.5
+        else:
+            step = 1.0
+        x_values.append(x_values[-1] + step)
+    bar_width = 0.68
     point = 0.01
     for x_value, row in zip(x_values, view.itertuples(index=False)):
         opening = float(row.open)
@@ -538,8 +549,89 @@ def plot_candles(
     axis.set_ylabel("Index points")
     axis.grid(axis="y", color="#d8dee8", linewidth=0.55, alpha=0.8)
     axis.legend(loc="upper left", frameon=False, fontsize=8)
-    axis.xaxis_date()
-    axis.margins(x=0.01)
+    set_compressed_time_ticks(axis, local_times, x_values, timeframe)
+    if timeframe in ("M5", "H1"):
+        add_intraday_date_lines(axis, local_times, x_values, timeframe, bar_width)
+    return view, x_values, local_times
+
+
+def set_compressed_time_ticks(
+    axis: Any,
+    local_times: list[datetime],
+    x_values: list[float],
+    timeframe: str,
+    *,
+    date_format: str | None = None,
+) -> None:
+    if not local_times:
+        return
+    tick_count = min(7, len(local_times))
+    if tick_count == 1:
+        tick_indices = {0}
+    else:
+        tick_indices = {
+            round(index * (len(local_times) - 1) / (tick_count - 1)) for index in range(tick_count)
+        }
+    if timeframe in ("M5", "H1"):
+        open_indices = []
+        for index in range(1, len(local_times)):
+            elapsed = local_times[index] - local_times[index - 1]
+            if local_times[index].weekday() == 0 and elapsed >= timedelta(hours=24):
+                open_indices.append(index)
+        for open_index in open_indices:
+            if open_index in tick_indices:
+                continue
+            replaceable = [index for index in tick_indices if index not in (0, len(local_times) - 1)]
+            if replaceable:
+                tick_indices.remove(min(replaceable, key=lambda index: abs(index - open_index)))
+                tick_indices.add(open_index)
+        if open_indices:
+            last_index = len(local_times) - 1
+            min_spacing = max(12, len(local_times) // 24)
+            if last_index - max(open_indices) < min_spacing:
+                tick_indices.discard(last_index)
+    tick_indices = sorted(tick_indices)
+    if date_format is None:
+        date_format = "%m-%d %H:%M" if timeframe in ("M5", "H1") else "%Y-%m"
+    axis.set_xticks([x_values[index] for index in tick_indices])
+    axis.set_xticklabels([local_times[index].strftime(date_format) for index in tick_indices])
+    axis.set_xlim(x_values[0] - 0.65, x_values[-1] + 0.65)
+
+
+def add_intraday_date_lines(
+    axis: Any,
+    local_times: list[datetime],
+    x_values: list[float],
+    timeframe: str,
+    bar_width: float,
+) -> None:
+    interval = TIMEFRAMES[timeframe][1]
+    for index in range(1, len(local_times)):
+        previous = local_times[index - 1]
+        current = local_times[index]
+        elapsed = current - previous
+        has_date_change = current.date() != previous.date()
+        has_session_gap = elapsed >= interval * 2
+        if not has_date_change and not has_session_gap:
+            continue
+        monday_open = current.weekday() == 0 and elapsed >= timedelta(hours=24)
+        if elapsed >= timedelta(hours=24):
+            axis.axvline(
+                x_values[index - 1] + bar_width / 2,
+                color="#8a94a6",
+                linewidth=0.65,
+                linestyle=":",
+                alpha=0.8,
+                zorder=1,
+            )
+        axis.axvline(
+            x_values[index] - bar_width / 2,
+            color="#475569" if monday_open else "#b0b8c5",
+            linewidth=1.0 if monday_open else 0.55,
+            linestyle="--" if monday_open else ":",
+            alpha=0.9 if monday_open else 0.75,
+            zorder=1,
+        )
 
 
 def create_market_chart(symbol: str, digits: int, chart_dir: Path, generated_at: datetime) -> Path:
@@ -564,10 +656,10 @@ def create_market_chart(symbol: str, digits: int, chart_dir: Path, generated_at:
     plot_candles(axes[0], frames["M5"], "M5", 360, "ema60", "EMA60 M5", "#00a84f")
     axes[0].set_title("M5 · 60 EMA (green)", loc="left", fontsize=10)
 
-    plot_candles(axes[1], frames["H1"], "H1", 240, "sma20", "SMA20 H1", "#d4a900")
+    h1_view, h1_x, h1_times = plot_candles(
+        axes[1], frames["H1"], "H1", 240, "sma20", "SMA20 H1", "#d4a900"
+    )
     axes[1].set_title("H1 · 20 SMA (yellow)", loc="left", fontsize=10)
-    h1_view = frames["H1"].tail(240)
-    h1_x = mdates.date2num(h1_view["time_utc"].dt.tz_convert(JST).tolist())
     axes[2].plot(h1_x, h1_view["wpr15"], color="#00a6b2", linewidth=1.0)
     axes[2].axhline(-40, color="#6c7a89", linewidth=0.7, linestyle="--")
     axes[2].axhline(-60, color="#6c7a89", linewidth=0.7, linestyle="--")
@@ -576,7 +668,8 @@ def create_market_chart(symbol: str, digits: int, chart_dir: Path, generated_at:
     axes[2].set_ylabel("W%R15")
     axes[2].set_title("H1 · Williams %R (15) · bands −60 / −40", loc="left", fontsize=9)
     axes[2].grid(axis="y", color="#d8dee8", linewidth=0.5, alpha=0.8)
-    axes[2].xaxis_date()
+    set_compressed_time_ticks(axes[2], h1_times, h1_x, "H1", date_format="%m-%d")
+    add_intraday_date_lines(axes[2], h1_times, h1_x, "H1", 0.68)
 
     plot_candles(axes[3], frames["D1"], "D1", 180, "sma20", "SMA20 D1", "#d64045")
     axes[3].set_title("D1 · 20 SMA (red)", loc="left", fontsize=10)
@@ -584,16 +677,9 @@ def create_market_chart(symbol: str, digits: int, chart_dir: Path, generated_at:
     plot_candles(axes[4], frames["W1"], "W1", 156, "sma20", "SMA20 W1", "#8b5cf6")
     axes[4].set_title("W1 · 20 SMA (purple)", loc="left", fontsize=10)
 
-    for axis, timeframe in zip((axes[0], axes[1], axes[3], axes[4]), ("M5", "H1", "D1", "W1")):
-        if timeframe in ("M5", "H1"):
-            axis.xaxis.set_major_formatter(mdates.DateFormatter("%m-%d %H:%M", tz=JST))
-        else:
-            axis.xaxis.set_major_formatter(mdates.DateFormatter("%Y-%m", tz=JST))
+    for axis in axes:
         axis.tick_params(axis="x", labelsize=8)
         axis.tick_params(axis="y", labelsize=8)
-    axes[2].xaxis.set_major_formatter(mdates.DateFormatter("%m-%d", tz=JST))
-    axes[2].tick_params(axis="x", labelsize=8)
-    axes[2].tick_params(axis="y", labelsize=8)
     figure.tight_layout(rect=(0.02, 0.01, 0.99, 0.96), h_pad=0.8)
     chart_dir.mkdir(parents=True, exist_ok=True)
     chart_path = chart_dir / f"{symbol}_market_context.png"
@@ -614,6 +700,7 @@ def build_daily_markdown(
         f"- 生成時刻: {generated_at.astimezone(JST).strftime('%Y-%m-%d %H:%M:%S JST')}",
         "- データ元: Axiory MetaTrader 5（銘柄名 JP225 / US100）。別口座のJP225Cash/US100Cashとは価格系列が異なります。",
         "- 時刻: CSVはUTC。日誌とチャートはJST。未確定足を除外しています。",
+        "- チャート表示: 足データのない時間帯は圧縮し、M5/H1にはJSTの日付線、月曜の最初のOPENには強調線を表示します。",
         "- 指標の読み方とチャート規約: [市場コンテキストのレシピ](../../market_context_recipe.md)",
         "",
         "| 銘柄 | M5終値 / EMA60（緑） | H1終値 / SMA20（黄） | W%R15 H1 | D1終値 / SMA20（赤） | W1終値 / SMA20（紫） | PO H1 / D1 / W1 |",
