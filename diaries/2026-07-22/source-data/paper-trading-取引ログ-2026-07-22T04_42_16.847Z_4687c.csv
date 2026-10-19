@@ -1,0 +1,108 @@
+日時,テキスト
+2026-07-22 13:41:29,Order 3315583099 successfully placed
+2026-07-22 13:41:29,Modify position for symbol OANDA:JP225YJPY with TP 1.0
+2026-07-22 13:41:14,Order 3315582720 for symbol TSE:7974 has been executed at price 7001 for 399.82 units
+2026-07-22 13:41:14,Order 3315582720 successfully placed
+2026-07-22 13:41:14,Call to place market order to sell 399.82 units of symbol TSE:7974 
+2026-07-22 13:41:11,Order 3315582608 for symbol TSE:8035 has been executed at price 67880 for 100.05 units
+2026-07-22 13:41:11,Order 3315582608 successfully placed
+2026-07-22 13:41:11,Call to place market order to sell 100.05 units of symbol TSE:8035 
+2026-07-22 13:20:42,Order 3315545248 for symbol TSE:1357 has been executed at price 2740 for 1 units
+2026-07-22 13:20:42,Order 3315545248 successfully placed
+2026-07-22 13:20:42,Call to place market order to sell 1 units of symbol TSE:1357 
+2026-07-22 13:18:19,Order 3315538303 for symbol TSE:6981 has been executed at price 8543 for 100 units
+2026-07-22 13:18:19,Order 3315538303 successfully placed
+2026-07-22 13:18:19,Call to place market order to buy 100 units of symbol TSE:6981 
+2026-07-22 12:55:41,Order 3315458266 for symbol OANDA:JP225YJPY has been executed at price 66829.7 for 2 units
+2026-07-22 12:55:41,Order 3315458266 successfully placed
+2026-07-22 12:55:41,Call to place market order to buy 2 units of symbol OANDA:JP225YJPY 
+2026-07-22 12:33:55,Order 3315413579 for symbol TSE:1357 has been executed at price 2734 for 1 units
+2026-07-22 12:33:55,Order 3315413579 successfully placed
+2026-07-22 12:33:55,Call to place market order to buy 1 units of symbol TSE:1357 
+2026-07-22 12:33:37,Order 3315412801 for symbol TSE:6981 has been executed at price 8565 for 100 units
+2026-07-22 12:33:37,Order 3315412801 successfully placed
+2026-07-22 12:33:37,Call to place market order to sell 100 units of symbol TSE:6981 
+2026-07-22 12:29:09,Order 3315401683 for symbol OANDA:JP225YJPY has been executed at price 67337.7 for 2 units
+2026-07-22 12:29:09,Order 3315401683 successfully placed
+2026-07-22 12:29:09,Call to place market order to sell 2 units of symbol OANDA:JP225YJPY 
+2026-07-22 12:13:53,Order 3315368081 for symbol OANDA:JP225YJPY has been executed at price 67152.7 for 2 units
+2026-07-22 12:13:53,Order 3315368081 successfully placed
+2026-07-22 12:13:53,Call to place market order to sell 2 units of symbol OANDA:JP225YJPY 
+2026-07-22 10:26:21,Order 3315119977 for symbol OANDA:JP225YJPY has been executed at price 67494.7 for 1 units
+2026-07-22 10:26:21,Order 3315119977 successfully placed
+2026-07-22 10:26:21,Call to place market order to buy 1 units of symbol OANDA:JP225YJPY 
+2026-07-22 10:12:21,Order 3315082298 for symbol OANDA:JP225YJPY has been executed at price 67167.7 for 2 units
+2026-07-22 10:12:21,Order 3315082298 successfully placed
+2026-07-22 10:12:21,Call to place market order to sell 2 units of symbol OANDA:JP225YJPY 
+2026-07-22 10:10:12,Order 3315076737 for symbol TSE:6976 has been executed at price 12940 for 100 units
+2026-07-22 10:10:12,Order 3315076737 successfully placed
+2026-07-22 10:10:12,Call to place market order to sell 100 units of symbol TSE:6976 
+2026-07-22 10:08:31,Order 3315072685 for symbol TSE:6976 has been executed at price 12995 for 100 units
+2026-07-22 10:08:31,Order 3315072685 successfully placed
+2026-07-22 10:08:31,Call to place market order to buy 100 units of symbol TSE:6976 
+2026-07-22 09:55:14,Order 3310626305 successfully cancelled
+2026-07-22 09:55:07,Order 3315035306 for symbol OANDA:JP225YJPY has been executed at price 67172.7 for 9 units
+2026-07-22 09:55:07,Order 3315035306 successfully placed
+2026-07-22 09:55:07,Call to place market order to sell 9 units of symbol OANDA:JP225YJPY 
+2026-07-22 09:47:32,Order 3315016526 for symbol TSE:6723 has been executed at price 4345 for 100 units
+2026-07-22 09:47:32,Order 3315016526 successfully placed
+2026-07-22 09:47:31,Call to place market order to buy 100 units of symbol TSE:6723 
+2026-07-22 09:40:55,Order 3315001257 for symbol TSE:6723 has been executed at price 4393 for 100 units
+2026-07-22 09:40:55,Order 3315001257 successfully placed
+2026-07-22 09:40:55,Call to place market order to sell 100 units of symbol TSE:6723 
+2026-07-22 09:39:35,Order 3314997259 for symbol TSE:6976 has been executed at price 12915 for 100 units
+2026-07-22 09:39:35,Order 3314997259 successfully placed
+2026-07-22 09:39:35,Call to place market order to buy 100 units of symbol TSE:6976 
+2026-07-22 09:35:48,Order 3314988024 for symbol TSE:6976 has been executed at price 13075 for 100 units
+2026-07-22 09:35:48,Order 3314988024 successfully placed
+2026-07-22 09:35:48,Call to place market order to sell 100 units of symbol TSE:6976 
+2026-07-22 09:30:30,Order 3314973256 for symbol TSE:6857 has been executed at price 31030 for 100 units
+2026-07-22 09:30:30,Order 3314973256 successfully placed
+2026-07-22 09:30:30,Call to place market order to buy 100 units of symbol TSE:6857 
+2026-07-22 09:24:54,Order 3314957909 for symbol TSE:6976 has been executed at price 13285 for 100 units
+2026-07-22 09:24:54,Order 3314957909 successfully placed
+2026-07-22 09:24:54,Call to place market order to sell 100 units of symbol TSE:6976 
+2026-07-22 09:13:50,Order 3314925331 for symbol TSE:5803 has been executed at price 4907 for 100 units
+2026-07-22 09:13:50,Order 3314925331 successfully placed
+2026-07-22 09:13:50,Call to place market order to sell 100 units of symbol TSE:5803 
+2026-07-22 09:12:34,Order 3314922362 for symbol TSE:6981 has been executed at price 8658 for 100 units
+2026-07-22 09:12:34,Order 3314922362 successfully placed
+2026-07-22 09:12:34,Call to place market order to sell 100 units of symbol TSE:6981 
+2026-07-22 09:08:09,Order 3314909882 for symbol TSE:6857 has been executed at price 30720 for 100 units
+2026-07-22 09:08:09,Order 3314909882 successfully placed
+2026-07-22 09:08:09,Call to place market order to sell 100 units of symbol TSE:6857 
+2026-07-22 09:07:16,Order 3314907208 for symbol TSE:6857 has been executed at price 30850 for 200 units
+2026-07-22 09:07:16,Order 3314907208 successfully placed
+2026-07-22 09:07:15,Call to place market order to sell 200 units of symbol TSE:6857 
+2026-07-22 09:01:29,Order 3314891501 for symbol TSE:6976 has been executed at price 12045 for 100 units
+2026-07-22 09:01:29,Order 3314891501 successfully placed
+2026-07-22 09:01:29,Call to place market order to buy 100 units of symbol TSE:6976 
+2026-07-22 09:01:12,Order 3314890839 for symbol TSE:5803 has been executed at price 4742 for 100 units
+2026-07-22 09:01:12,Order 3314890839 successfully placed
+2026-07-22 09:01:12,Call to place market order to buy 100 units of symbol TSE:5803 
+2026-07-22 09:00:56,Order 3314890091 for symbol TSE:6981 has been executed at price 8151 for 100 units
+2026-07-22 09:00:56,Order 3314890091 successfully placed
+2026-07-22 09:00:56,Call to place market order to buy 100 units of symbol TSE:6981 
+2026-07-22 09:00:43,Order 3314889525 for symbol TSE:6857 has been executed at price 30130 for 100 units
+2026-07-22 09:00:43,Order 3314889525 successfully placed
+2026-07-22 09:00:43,Call to place market order to buy 100 units of symbol TSE:6857 
+2026-07-22 09:00:36,Order 3314889146 for symbol TSE:6857 has been executed at price 30130 for 100 units
+2026-07-22 09:00:36,Order 3314889146 successfully placed
+2026-07-22 09:00:36,Call to place market order to buy 100 units of symbol TSE:6857 
+2026-07-21 11:20:20,Order 3310781806 for symbol OANDA:JP225YJPY has been executed at price 65104.1 for 10 units
+2026-07-21 11:20:20,Order 3310781806 successfully placed
+2026-07-21 11:20:20,Call to place market order to buy 10 units of symbol OANDA:JP225YJPY 
+2026-07-21 10:55:14,Order 3310724042 for symbol TSE:9984 has been executed at price 5654 for 299.96 units
+2026-07-21 10:55:14,Order 3310724042 successfully placed
+2026-07-21 10:55:14,Call to place market order to buy 299.96 units of symbol TSE:9984 
+2026-07-21 10:54:49,Order 3310723160 for symbol TSE:6981 has been executed at price 7464 for 99.89 units
+2026-07-21 10:54:49,Order 3310723160 successfully placed
+2026-07-21 10:54:49,Call to place market order to buy 99.89 units of symbol TSE:6981 
+2026-07-21 10:46:53,Order 3310706232 for symbol TSE:6857 has been executed at price 28730 for 100.1 units
+2026-07-21 10:46:53,Order 3310706232 successfully placed
+2026-07-21 10:46:53,Call to place market order to buy 100.1 units of symbol TSE:6857 
+2026-07-21 10:45:04,Order 3310701440 for symbol TSE:6857 has been executed at price 28595 for 141.23 units
+2026-07-21 10:45:04,Order 3310701440 successfully placed
+2026-07-21 10:45:04,Call to place market order to buy 141.23 units of symbol TSE:6857 
+2026-07-21 10:44:17,Order 3310699539 for symbol TSE:6976 has been executed at price 10840 for 125.21 units
+2026-07-21 10:44:17,Order 3310699539 successfully placed

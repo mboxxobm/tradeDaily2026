@@ -1,0 +1,83 @@
+日時,テキスト
+2026-07-10 10:07:07,Order 3273866737 for symbol FX:USDJPY has been executed at price 161.874 for 999 units
+2026-07-10 10:07:07,Order 3273867626 successfully cancelled
+2026-07-10 10:06:58,Order 3273890297 for symbol TSE:6976 has been executed at price 15005 for 100 units
+2026-07-10 10:06:58,Order 3273890297 successfully placed
+2026-07-10 10:06:58,Call to place market order to sell 100 units of symbol TSE:6976 
+2026-07-10 10:04:44,Order 3273866737 modification confirmed
+2026-07-10 10:04:44,Order 3273867626 modification confirmed
+2026-07-10 10:04:44,Modify position for symbol FX:USDJPY with SL 162.256 and TP 161.883
+2026-07-10 10:03:41,Order 3273882034 for symbol TSE:6976 has been executed at price 14935 for 100 units
+2026-07-10 10:03:41,Order 3273882034 successfully placed
+2026-07-10 10:03:41,Call to place market order to sell 100 units of symbol TSE:6976 
+2026-07-10 10:03:24,Order 3273826169 modification confirmed
+2026-07-10 10:03:24,Modify position for symbol TSE:6981 with TP 10001
+2026-07-10 10:02:12,Order 3273877904 for symbol TSE:5803 has been executed at price 5358 for 2000 units
+2026-07-10 10:02:12,Order 3273877904 successfully placed
+2026-07-10 10:02:11,Call to place market order to sell 2000 units of symbol TSE:5803 
+2026-07-10 09:58:18,Order 3273866737 modification confirmed
+2026-07-10 09:58:18,Order 3273867626 modification confirmed
+2026-07-10 09:58:18,Modify position for symbol FX:USDJPY with SL 162.256 and TP 161.679
+2026-07-10 09:58:08,Order 3273866737 modification confirmed
+2026-07-10 09:58:08,Order 3273867626 successfully placed
+2026-07-10 09:58:08,Modify position for symbol FX:USDJPY with SL 162.353 and TP 161.679
+2026-07-10 09:57:48,Order 3273866737 successfully placed
+2026-07-10 09:57:48,Modify position for symbol FX:USDJPY with TP 161.679
+2026-07-10 09:56:40,Order 3273863796 for symbol TSE:1321 has been executed at price 71330 for 400 units
+2026-07-10 09:56:40,Order 3273863796 successfully placed
+2026-07-10 09:56:40,Call to place market order to sell 400 units of symbol TSE:1321 
+2026-07-10 09:56:15,Order 3273812377 for symbol TSE:285A has been executed at price 83470 for 100 units
+2026-07-10 09:56:15,Order 3273812549 successfully cancelled
+2026-07-10 09:50:27,Order 3273851244 for symbol FX:USDJPY has been executed at price 162.100 for 999 units
+2026-07-10 09:50:27,Order 3273851244 successfully placed
+2026-07-10 09:50:26,Call to place market order to sell 999 units of symbol FX:USDJPY 
+2026-07-10 09:49:06,Order 3273848585 for symbol TSE:1321 has been executed at price 71090 for 100 units
+2026-07-10 09:49:06,Order 3273848585 successfully placed
+2026-07-10 09:49:06,Call to place market order to buy 100 units of symbol TSE:1321 
+2026-07-10 09:45:13,Order 3273840377 for symbol TSE:6976 has been executed at price 14870 for 100 units
+2026-07-10 09:45:13,Order 3273840377 successfully placed
+2026-07-10 09:45:13,Call to place market order to sell 100 units of symbol TSE:6976 
+2026-07-10 09:40:47,Order 3273830761 for symbol TSE:6976 has been executed at price 14560 for 100 units
+2026-07-10 09:40:47,Order 3273830761 successfully placed
+2026-07-10 09:40:46,Call to place market order to buy 100 units of symbol TSE:6976 
+2026-07-10 09:38:20,Order 3273826169 successfully placed
+2026-07-10 09:38:20,Modify position for symbol TSE:6981 with TP 10040
+2026-07-10 09:38:13,Order 3273825957 for symbol TSE:6981 has been executed at price 9994 for 100 units
+2026-07-10 09:38:13,Order 3273825957 successfully placed
+2026-07-10 09:38:13,Call to place market order to buy 100 units of symbol TSE:6981 
+2026-07-10 09:32:07,Order 3273812549 successfully placed
+2026-07-10 09:32:07,Order 3273812377 modification confirmed
+2026-07-10 09:32:07,Modify position for symbol TSE:285A with SL 83490 and TP 80170
+2026-07-10 09:32:02,Order 3273812377 successfully placed
+2026-07-10 09:32:02,Modify position for symbol TSE:285A with SL 83490
+2026-07-10 09:31:59,Order 3273812251 for symbol TSE:285A has been executed at price 82000 for 100 units
+2026-07-10 09:31:59,Order 3273812251 successfully placed
+2026-07-10 09:31:59,Call to place market order to sell 100 units of symbol TSE:285A 
+2026-07-10 09:31:11,Order 3273810711 for symbol TSE:7203 has been executed at price 2828.5 for 100 units
+2026-07-10 09:31:11,Order 3273810711 successfully placed
+2026-07-10 09:31:11,Call to place market order to buy 100 units of symbol TSE:7203 
+2026-07-10 09:30:01,Order 3273808161 for symbol TSE:5803 has been executed at price 5223 for 1000 units
+2026-07-10 09:30:01,Order 3273808161 successfully placed
+2026-07-10 09:30:01,Call to place market order to buy 1000 units of symbol TSE:5803 
+2026-07-10 09:29:57,Order 3273808005 for symbol TSE:5803 has been executed at price 5220 for 1000 units
+2026-07-10 09:29:57,Order 3273808005 successfully placed
+2026-07-10 09:29:57,Call to place market order to buy 1000 units of symbol TSE:5803 
+2026-07-10 09:28:55,Order 3273805900 for symbol TSE:1321 has been executed at price 70950 for 100 units
+2026-07-10 09:28:55,Order 3273805900 successfully placed
+2026-07-10 09:28:55,Call to place market order to buy 100 units of symbol TSE:1321 
+2026-07-10 09:25:39,Order 3273798946 for symbol TSE:7203 has been executed at price 2833.0 for 100 units
+2026-07-10 09:25:39,Order 3273798946 successfully placed
+2026-07-10 09:25:39,Call to place market order to sell 100 units of symbol TSE:7203 
+2026-07-10 09:11:51,Order 3273769058 for symbol TSE:6981 has been executed at price 9688 for 100 units
+2026-07-10 09:11:51,Order 3273769058 successfully placed
+2026-07-10 09:11:51,Call to place market order to sell 100 units of symbol TSE:6981 
+2026-07-10 09:11:45,Order 3273768882 for symbol TSE:6976 has been executed at price 14715 for 100 units
+2026-07-10 09:11:45,Order 3273768882 successfully placed
+2026-07-10 09:11:45,Call to place market order to sell 100 units of symbol TSE:6976 
+2026-07-10 09:11:34,Order 3273768540 for symbol TSE:9984 has been executed at price 6161 for 100 units
+2026-07-10 09:11:34,Order 3273768540 successfully placed
+2026-07-10 09:11:34,Call to place market order to sell 100 units of symbol TSE:9984 
+2026-07-10 09:11:23,Order 3273768167 for symbol TSE:6857 has been executed at price 29865 for 100 units
+2026-07-10 09:11:23,Order 3273768167 successfully placed
+2026-07-10 09:11:23,Call to place market order to sell 100 units of symbol TSE:6857 
+2026-07-10 09:10:44,Order 3273766673 for symbol TSE:7974 has been executed at price 7072 for 100 units

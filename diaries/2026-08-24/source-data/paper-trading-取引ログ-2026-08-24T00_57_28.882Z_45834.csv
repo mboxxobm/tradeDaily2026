@@ -1,0 +1,63 @@
+日時,テキスト
+2026-08-24 09:57:24,Order 3439632115 for symbol TSE:5201 has been executed at price 5760 for 1 units
+2026-08-24 09:57:24,Order 3439632115 successfully placed
+2026-08-24 09:57:24,Call to place market order to sell 1 units of symbol TSE:5201 
+2026-08-24 09:57:23,Order 3439632035 for symbol TSE:6920 has been executed at price 34890 for 1 units
+2026-08-24 09:57:23,Order 3439632035 successfully placed
+2026-08-24 09:57:23,Call to place market order to sell 1 units of symbol TSE:6920 
+2026-08-24 09:57:06,Order 3439631010 for symbol TSE:6857 has been executed at price 35680 for 200 units
+2026-08-24 09:57:06,Order 3439631010 successfully placed
+2026-08-24 09:57:06,Call to place market order to buy 200 units of symbol TSE:6857 
+2026-08-24 09:49:36,Order 3439607101 for symbol TSE:6857 has been executed at price 35580 for 100 units
+2026-08-24 09:49:36,Order 3439607101 successfully placed
+2026-08-24 09:49:36,Call to place market order to sell 100 units of symbol TSE:6857 
+2026-08-24 09:46:21,Order 3439596617 for symbol TSE:6981 has been executed at price 7143 for 300 units
+2026-08-24 09:46:21,Order 3439596617 successfully placed
+2026-08-24 09:46:21,Call to place market order to buy 300 units of symbol TSE:6981 
+2026-08-24 09:43:19,Order 3439587756 for symbol TSE:6981 has been executed at price 7169 for 300 units
+2026-08-24 09:43:19,Order 3439587756 successfully placed
+2026-08-24 09:43:19,Call to place market order to sell 300 units of symbol TSE:6981 
+2026-08-24 09:41:29,Order 3439583396 for symbol TSE:6981 has been executed at price 7168 for 300 units
+2026-08-24 09:41:29,Order 3439583396 successfully placed
+2026-08-24 09:41:29,Call to place market order to sell 300 units of symbol TSE:6981 
+2026-08-24 09:40:35,Order 3439580743 for symbol TSE:6981 has been executed at price 7166 for 300 units
+2026-08-24 09:40:35,Order 3439580743 successfully placed
+2026-08-24 09:40:35,Call to place market order to buy 300 units of symbol TSE:6981 
+2026-08-22 00:37:49,Order 3433806588 for symbol NASDAQ:MU has been executed at price 968.35 for 2 units
+2026-08-22 00:37:49,Order 3433806588 successfully placed
+2026-08-22 00:37:49,Order 3433793153 successfully cancelled
+2026-08-22 00:37:49,Order 3433792957 successfully cancelled
+2026-08-22 00:37:49,Call to place market order to sell 2 units of symbol NASDAQ:MU 
+2026-08-22 00:37:43,Order 3433805893 for symbol NASDAQ:SNDK has been executed at price 1594.06 for 1 units
+2026-08-22 00:37:43,Order 3433805893 successfully placed
+2026-08-22 00:37:43,Order 3433795495 successfully cancelled
+2026-08-22 00:37:43,Order 3433795080 successfully cancelled
+2026-08-22 00:37:43,Call to place market order to sell 1 units of symbol NASDAQ:SNDK 
+2026-08-22 00:37:40,Order 3433805606 for symbol NASDAQ:NVDA has been executed at price 216.23 for 10 units
+2026-08-22 00:37:40,Order 3433805606 successfully placed
+2026-08-22 00:37:40,Order 3433793664 successfully cancelled
+2026-08-22 00:37:40,Call to place market order to sell 10 units of symbol NASDAQ:NVDA 
+2026-08-22 00:36:04,Order 3433795495 successfully placed
+2026-08-22 00:36:04,Order 3433795080 modification confirmed
+2026-08-22 00:36:04,Modify position for symbol NASDAQ:SNDK with SL 1585.61 and TP 1599.66
+2026-08-22 00:36:01,Order 3433795080 successfully placed
+2026-08-22 00:36:01,Modify position for symbol NASDAQ:SNDK with SL 1585.61
+2026-08-22 00:35:48,Order 3433793664 successfully placed
+2026-08-22 00:35:48,Modify position for symbol NASDAQ:NVDA with SL 215.73
+2026-08-22 00:35:43,Order 3433793153 successfully placed
+2026-08-22 00:35:43,Order 3433792957 modification confirmed
+2026-08-22 00:35:43,Modify position for symbol NASDAQ:MU with SL 965.04 and TP 970.53
+2026-08-22 00:35:41,Order 3433792957 successfully placed
+2026-08-22 00:35:41,Modify position for symbol NASDAQ:MU with SL 965.04
+2026-08-22 00:22:56,Order 3433717635 for symbol NASDAQ:SNDK has been executed at price 1594.77 for 1 units
+2026-08-22 00:22:56,Order 3433717635 successfully placed
+2026-08-22 00:22:55,Call to place market order to buy 1 units of symbol NASDAQ:SNDK 
+2026-08-22 00:22:54,Order 3433717528 for symbol NASDAQ:NVDA has been executed at price 215.77 for 5 units
+2026-08-22 00:22:54,Order 3433717528 successfully placed
+2026-08-22 00:22:54,Call to place market order to buy 5 units of symbol NASDAQ:NVDA 
+2026-08-22 00:22:51,Order 3433717237 for symbol NASDAQ:NVDA has been executed at price 215.79 for 5 units
+2026-08-22 00:22:51,Order 3433717237 successfully placed
+2026-08-22 00:22:51,Call to place market order to buy 5 units of symbol NASDAQ:NVDA 
+2026-08-22 00:22:50,Order 3433717076 for symbol NASDAQ:MU has been executed at price 965.87 for 1 units
+2026-08-22 00:22:50,Order 3433717076 successfully placed
+2026-08-22 00:22:50,Call to place market order to buy 1 units of symbol NASDAQ:MU 
