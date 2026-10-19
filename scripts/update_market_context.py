@@ -906,7 +906,10 @@ def main() -> int:
     status = "成功"
     error: str | None = None
     exit_code = 0
-    if args.chunk_days < 1:
+    if started_at.astimezone(JST).weekday() >= 5:
+        status = "スキップ"
+        logger.info("JSTの土曜日・日曜日のため、データ取得・日誌・チャート生成をスキップします")
+    elif args.chunk_days < 1:
         status = "失敗"
         error = "--chunk-daysは1以上で指定してください。"
         logger.error(error)
