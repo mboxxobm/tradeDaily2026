@@ -445,6 +445,20 @@ def bar_close_jst(open_time: pd.Timestamp, interval: timedelta) -> str:
     return close_time.strftime("%Y-%m-%d %H:%M")
 
 
+def tail_trading_days(frame: pd.DataFrame, count: int) -> pd.DataFrame:
+    """Keep bars from the latest JST trading sessions (09:00 JST rollover)."""
+    if frame.empty or count <= 0:
+        return frame.iloc[0:0].copy()
+    local_times = frame["time_utc"].dt.tz_convert(JST)
+    session_dates = local_times.dt.normalize()
+    session_dates = session_dates.where(
+        local_times.dt.hour >= 9,
+        session_dates - pd.Timedelta(days=1),
+    )
+    recent_sessions = session_dates.drop_duplicates().tail(count)
+    return frame.loc[session_dates.isin(recent_sessions)].copy()
+
+
 def read_metrics(symbol: str, digits: int) -> dict[str, Any]:
     frames = {
         timeframe: calculate_indicators(read_existing(data_path(symbol, timeframe)))
@@ -598,6 +612,26 @@ def set_compressed_time_ticks(
     axis.set_xlim(x_values[0] - 0.65, x_values[-1] + 0.65)
 
 
+def set_trading_date_ticks(axis: Any, local_times: list[datetime], x_values: list[float]) -> None:
+    """Label each visible JST trading session once, rolling at 09:00 JST."""
+    if not local_times:
+        return
+    tick_indices: list[int] = []
+    session_dates = []
+    previous_date = None
+    for index, timestamp in enumerate(local_times):
+        session_date = timestamp.date()
+        if timestamp.hour < 9:
+            session_date -= timedelta(days=1)
+        session_dates.append(session_date)
+        if session_date != previous_date:
+            tick_indices.append(index)
+            previous_date = session_date
+    axis.set_xticks([x_values[index] for index in tick_indices])
+    axis.set_xticklabels([session_dates[index].strftime("%m-%d") for index in tick_indices])
+    axis.set_xlim(x_values[0] - 0.65, x_values[-1] + 0.65)
+
+
 def add_intraday_date_lines(
     axis: Any,
     local_times: list[datetime],
@@ -656,19 +690,20 @@ def create_market_chart(symbol: str, digits: int, chart_dir: Path, generated_at:
     plot_candles(axes[0], frames["M5"], "M5", 360, "ema60", "EMA60 M5", "#00a84f")
     axes[0].set_title("M5 · 60 EMA (green)", loc="left", fontsize=10)
 
+    h1_plot_data = tail_trading_days(frames["H1"], 5)
     h1_view, h1_x, h1_times = plot_candles(
-        axes[1], frames["H1"], "H1", 240, "sma20", "SMA20 H1", "#d4a900"
+        axes[1], h1_plot_data, "H1", len(h1_plot_data), "sma20", "SMA20 H1", "#d4a900"
     )
-    axes[1].set_title("H1 · 20 SMA (yellow)", loc="left", fontsize=10)
+    axes[1].set_title("H1 · 20 SMA (yellow) · last 5 trading sessions", loc="left", fontsize=10)
     axes[2].plot(h1_x, h1_view["wpr15"], color="#00a6b2", linewidth=1.0)
     axes[2].axhline(-40, color="#6c7a89", linewidth=0.7, linestyle="--")
     axes[2].axhline(-60, color="#6c7a89", linewidth=0.7, linestyle="--")
     axes[2].axhline(-50, color="#aab2bd", linewidth=0.55, linestyle=":")
     axes[2].set_ylim(-100, 0)
     axes[2].set_ylabel("W%R15")
-    axes[2].set_title("H1 · Williams %R (15) · bands −60 / −40", loc="left", fontsize=9)
+    axes[2].set_title("H1 · Williams %R (15) · last 5 trading sessions · bands −60 / −40", loc="left", fontsize=9)
     axes[2].grid(axis="y", color="#d8dee8", linewidth=0.5, alpha=0.8)
-    set_compressed_time_ticks(axes[2], h1_times, h1_x, "H1", date_format="%m-%d")
+    set_trading_date_ticks(axes[2], h1_times, h1_x)
     add_intraday_date_lines(axes[2], h1_times, h1_x, "H1", 0.68)
 
     plot_candles(axes[3], frames["D1"], "D1", 180, "sma20", "SMA20 D1", "#d64045")
@@ -700,7 +735,7 @@ def build_daily_markdown(
         f"- 生成時刻: {generated_at.astimezone(JST).strftime('%Y-%m-%d %H:%M:%S JST')}",
         "- データ元: Axiory MetaTrader 5（銘柄名 JP225 / US100）。別口座のJP225Cash/US100Cashとは価格系列が異なります。",
         "- 時刻: CSVはUTC。日誌とチャートはJST。未確定足を除外しています。",
-        "- チャート表示: 足データのない時間帯は圧縮し、M5/H1にはJSTの日付線、月曜の最初のOPENには強調線を表示します。",
+        "- チャート表示: 足データのない時間帯は圧縮します。H1とW%Rは直近5取引日（JST 09:00区切り）を表示し、M5/H1/W%RにはJSTの日付線、月曜の最初のOPENには強調線を表示します。",
         "- 指標の読み方とチャート規約: [市場コンテキストのレシピ](../../market_context_recipe.md)",
         "",
         "| 銘柄 | M5終値 / EMA60（緑） | H1終値 / SMA20（黄） | W%R15 H1 | D1終値 / SMA20（赤） | W1終値 / SMA20（紫） | PO H1 / D1 / W1 |",
