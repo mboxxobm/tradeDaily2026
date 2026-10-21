@@ -14,6 +14,7 @@
 
 - `market_data/axiory/{銘柄}_{時間足}.csv` は初回取得からの累積マスターです。
 - 平日更新時は最終時刻から2日分を重ねて再取得し、新しい足と修正足をUTC開始時刻で統合します。更新差分・実行ログは同フォルダのローカル補助フォルダへ保存します。
+- 期間の抜けを埋める場合は `--backfill-from YYYY-MM-DD` を指定します。指定日はJSTの午前0時として扱い、その日から全時間足を再取得して既存マスターに統合します。
 - 土曜日・日曜日は市場休場として、データ取得・日次日誌・チャート生成をスキップします。手動実行時もスクリプトがJSTの曜日を判定し、実行履歴に「スキップ」を記録します。
 - 未確定足は指標・チャートに含めません。初回取得要求は2023-01-03 UTCからですが、実際に入手できる最古の日付は時間足ごとに異なります。M1/M5/H1の疎な代替データは日ごとの本数基準で除外します。
 - MT5のCFDでは `real_volume` が0の場合があります。出来高やデルタ出来高の代用として `tick_volume` を扱わず、必要な分析ソースがない場合は「未取得」と記します。
@@ -55,6 +56,12 @@ Axiory MT5を起動・接続し、リポジトリのルートから実行しま�
 
 ```powershell
 & '..\mt5History\.venv-jp225\Scripts\python.exe' '.\scripts\update_market_context.py'
+```
+
+例: 2026-10-14（JST）以降を再取得して履歴を補完する場合:
+
+```powershell
+& '..\mt5History\.venv-jp225\Scripts\python.exe' '.\scripts\update_market_context.py' --backfill-from 2026-10-14
 ```
 
 必要なPythonパッケージは `scripts/requirements-market-context.txt` に記載します。環境が異なる場合、`MT5_TERMINAL_EXE` と `MT5_EXPECTED_DATA_DIR` 環境変数で端末実行ファイルと接続先データフォルダを指定できます。

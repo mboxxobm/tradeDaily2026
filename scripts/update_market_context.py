@@ -93,6 +93,10 @@ def parse_args() -> argparse.Namespace:
         help="保存済み足データを使わず、開始日から取得し直します",
     )
     parser.add_argument(
+        "--backfill-from",
+        help="既存マスターを保持したまま、指定日（JST 00:00）から再取得します（YYYY-MM-DD）",
+    )
+    parser.add_argument(
         "--chunk-days",
         type=int,
         default=CHUNK_DAYS,
@@ -121,6 +125,16 @@ def parse_start_date(value: str) -> datetime:
         return datetime.strptime(value, "%Y-%m-%d").replace(tzinfo=timezone.utc)
     except ValueError as exc:
         raise ValueError(f"開始日はYYYY-MM-DDで指定してください: {value}") from exc
+
+
+def parse_backfill_date(value: str | None) -> datetime | None:
+    if value is None:
+        return None
+    try:
+        local_midnight = datetime.strptime(value, "%Y-%m-%d").replace(tzinfo=JST)
+        return local_midnight.astimezone(timezone.utc)
+    except ValueError as exc:
+        raise ValueError(f"再取得開始日はYYYY-MM-DDで指定してください: {value}") from exc
 
 
 def normalized_path(path: str | Path) -> str:
@@ -312,6 +326,7 @@ def update_dataset(
     now_utc: datetime,
     chunk_days: int,
     full_refresh: bool,
+    backfill_from: datetime | None,
     logger: logging.Logger,
 ) -> DatasetResult:
     path = data_path(symbol, timeframe)
@@ -319,6 +334,8 @@ def update_dataset(
     initial_load = full_refresh or existing.empty
     if initial_load:
         fetch_start = start_date
+    elif backfill_from is not None:
+        fetch_start = backfill_from
     else:
         fetch_start = max(start_date, existing["time_utc"].max().to_pydatetime() - timedelta(days=OVERLAP_DAYS))
 
@@ -950,6 +967,7 @@ def run_update(args: argparse.Namespace, logger: logging.Logger) -> tuple[list[D
     if not TERMINAL_EXE.is_file():
         raise FileNotFoundError(f"MT5実行ファイルがありません: {TERMINAL_EXE}")
     start_date = parse_start_date(args.start_date)
+    backfill_from = parse_backfill_date(args.backfill_from)
     now_utc = datetime.now(timezone.utc)
     if not mt5.initialize(str(TERMINAL_EXE), timeout=60_000):
         raise RuntimeError(f"MT5に接続できません: {mt5.last_error()}")
@@ -998,6 +1016,7 @@ def run_update(args: argparse.Namespace, logger: logging.Logger) -> tuple[list[D
                     now_utc=now_utc,
                     chunk_days=args.chunk_days,
                     full_refresh=args.full_refresh,
+                    backfill_from=backfill_from,
                     logger=logger,
                 )
                 results.append(result)
