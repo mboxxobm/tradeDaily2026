@@ -1,0 +1,59 @@
+日時,テキスト
+2026-10-26 09:32:03,Order 3717162462 for symbol TSE:7974 has been executed at price 8533 for 100 units
+2026-10-26 09:32:03,Order 3717162462 successfully placed
+2026-10-26 09:32:03,Call to place market order to buy 100 units of symbol TSE:7974 
+2026-10-26 09:31:22,Order 3717160660 successfully placed
+2026-10-26 09:31:22,Modify position for symbol TSE:7974 with SL 8505
+2026-10-26 09:31:14,Order 3717160313 for symbol TSE:7974 has been executed at price 8532 for 100 units
+2026-10-26 09:31:14,Order 3717160313 successfully placed
+2026-10-26 09:31:14,Call to place market order to buy 100 units of symbol TSE:7974 
+2026-10-26 09:24:45,Order 3717143705 for symbol TSE:3042 has been executed at price 1395 for 101 units
+2026-10-26 09:24:45,Order 3717143705 successfully placed
+2026-10-26 09:24:45,Call to place market order to sell 101 units of symbol TSE:3042 
+2026-10-26 09:24:32,Order 3717143157 for symbol TSE:3042 has been executed at price 1357 for 100 units
+2026-10-26 09:24:32,Order 3717143157 successfully placed
+2026-10-26 09:24:32,Call to place market order to buy 100 units of symbol TSE:3042 
+2026-10-26 09:22:41,Order 3717138217 for symbol TSE:3042 has been executed at price 1385 for 1 units
+2026-10-26 09:22:41,Order 3717138217 successfully placed
+2026-10-26 09:22:41,Call to place market order to buy 1 units of symbol TSE:3042 
+2026-10-26 09:11:16,Order 3717098141 for symbol TSE:6976 has been executed at price 8585 for 400 units
+2026-10-26 09:10:51,Order 3717098141 successfully placed
+2026-10-26 09:10:51,Modify position for symbol TSE:6976 with TP 8585
+2026-10-26 09:10:41,Order 3717097425 for symbol TSE:6976 has been executed at price 8645 for 100 units
+2026-10-26 09:10:41,Order 3717097425 successfully placed
+2026-10-26 09:10:41,Call to place market order to sell 100 units of symbol TSE:6976 
+2026-10-26 09:10:25,Order 3717096121 for symbol TSE:6976 has been executed at price 8616 for 100 units
+2026-10-26 09:10:25,Order 3717096121 successfully placed
+2026-10-26 09:10:25,Call to place market order to sell 100 units of symbol TSE:6976 
+2026-10-26 09:10:18,Order 3717095647 for symbol TSE:6976 has been executed at price 8584 for 100 units
+2026-10-26 09:10:18,Order 3717095647 successfully placed
+2026-10-26 09:10:18,Call to place market order to sell 100 units of symbol TSE:6976 
+2026-10-26 09:10:14,Order 3717095454 for symbol TSE:6976 has been executed at price 8562 for 100 units
+2026-10-26 09:10:14,Order 3717095454 successfully placed
+2026-10-26 09:10:14,Call to place market order to sell 100 units of symbol TSE:6976 
+2026-10-26 08:32:59,Order 3716982601 for symbol OANDA:JP225YJPY has been executed at price 62733.7 for 10 units
+2026-10-26 08:32:59,Order 3716982601 successfully placed
+2026-10-26 08:32:59,Call to place market order to buy 10 units of symbol OANDA:JP225YJPY 
+2026-10-23 09:21:31,Order 3708474143 for symbol TSE:3042 has been executed at price 1272 for 1 units
+2026-10-23 09:21:31,Order 3708474143 successfully placed
+2026-10-23 09:21:31,Call to place market order to sell 1 units of symbol TSE:3042 
+2026-10-23 09:18:26,Order 3708465820 for symbol TSE:3042 has been executed at price 1205 for 1 units
+2026-10-23 09:18:26,Order 3708465820 successfully placed
+2026-10-23 09:18:26,Call to place market order to buy 1 units of symbol TSE:3042 
+2026-10-23 01:44:30,Order 3706860299 for symbol NASDAQ:AMD has been executed at price 510.66 for 10 units
+2026-10-23 01:44:30,Order 3706860546 successfully cancelled
+2026-10-23 01:13:33,Order 3706860546 modification confirmed
+2026-10-23 01:13:33,Order 3706860299 modification confirmed
+2026-10-23 01:13:33,Modify position for symbol NASDAQ:AMD with SL 510.73 and TP 522.09
+2026-10-23 01:10:50,Order 3706860546 modification confirmed
+2026-10-23 01:10:50,Order 3706860299 modification confirmed
+2026-10-23 01:10:50,Modify position for symbol NASDAQ:AMD with SL 509.30 and TP 522.09
+2026-10-23 00:44:45,Order 3706860546 modification confirmed
+2026-10-23 00:44:45,Order 3706860299 modification confirmed
+2026-10-23 00:44:44,Modify position for symbol NASDAQ:AMD with SL 507.76 and TP 522.09
+2026-10-23 00:42:50,Order 3706860546 successfully placed
+2026-10-23 00:42:50,Order 3706860299 modification confirmed
+2026-10-23 00:42:50,Modify position for symbol NASDAQ:AMD with SL 507.76 and TP 523.71
+2026-10-23 00:42:47,Order 3706860299 successfully placed
+2026-10-23 00:42:47,Modify position for symbol NASDAQ:AMD with SL 507.76
+2026-10-23 00:42:44,Order 3706860076 for symbol NASDAQ:AMD has been executed at price 511.50 for 10 units
