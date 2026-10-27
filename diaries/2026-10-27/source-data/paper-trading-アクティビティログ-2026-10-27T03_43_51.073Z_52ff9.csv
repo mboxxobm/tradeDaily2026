@@ -1,0 +1,51 @@
+日時,テキスト
+2026-10-27 11:20:33,Order 3722553526 for symbol TSE:285A has been executed at price 12500 for 100 units
+2026-10-27 11:20:33,Order 3722553831 successfully cancelled
+2026-10-27 11:03:50,Order 3722553831 successfully placed
+2026-10-27 11:03:50,Order 3722553526 modification confirmed
+2026-10-27 11:03:50,Modify position for symbol TSE:285A with SL 12505 and TP 12800
+2026-10-27 11:03:43,Order 3722553526 successfully placed
+2026-10-27 11:03:43,Modify position for symbol TSE:285A with SL 12505
+2026-10-27 10:54:54,Order 3722528937 for symbol TSE:285A has been executed at price 12520 for 100 units
+2026-10-27 10:54:54,Order 3722528937 successfully placed
+2026-10-27 10:54:54,Call to place market order to buy 100 units of symbol TSE:285A 
+2026-10-27 10:53:47,Order 3722493898 for symbol TSE:285A has been executed at price 12525 for 100 units
+2026-10-27 10:53:47,Order 3722494148 successfully cancelled
+2026-10-27 10:51:41,Order 3722494148 modification confirmed
+2026-10-27 10:51:41,Order 3722493898 modification confirmed
+2026-10-27 10:51:41,Modify position for symbol TSE:285A with SL 12525 and TP 12965
+2026-10-27 10:51:37,Order 3722493806 successfully cancelled
+2026-10-27 10:51:37,Order 3722494326 successfully cancelled
+2026-10-27 10:51:37,Order 3722493805 successfully cancelled
+2026-10-27 10:42:59,Order 3722494326 successfully placed
+2026-10-27 10:42:59,Order 3722493805 modification confirmed
+2026-10-27 10:42:59,Modified order 3722493805 for symbol TSE:285A with price 12475 for 100 units with SL 12350 and TP 13000
+2026-10-27 10:42:54,Order 3722494148 successfully placed
+2026-10-27 10:42:54,Order 3722493898 modification confirmed
+2026-10-27 10:42:54,Modify position for symbol TSE:285A with SL 12390 and TP 12965
+2026-10-27 10:42:47,Order 3722493898 successfully placed
+2026-10-27 10:42:47,Modify position for symbol TSE:285A with SL 12390
+2026-10-27 10:42:44,Order 3722493806 successfully placed
+2026-10-27 10:42:44,Order 3722493805 successfully placed
+2026-10-27 10:42:44,Call to place limit order to buy 100 units of symbol TSE:285A at price 12475.00 with SL 12350
+2026-10-27 10:42:12,Order 3722492576 for symbol TSE:285A has been executed at price 12525 for 100 units
+2026-10-27 10:42:12,Order 3722492576 successfully placed
+2026-10-27 10:42:12,Call to place market order to buy 100 units of symbol TSE:285A 
+2026-10-27 10:42:11,Order 3722492288 successfully cancelled
+2026-10-27 10:42:06,Order 3722492288 successfully placed
+2026-10-27 10:42:06,Call to place limit order to buy 100 units of symbol TSE:285A at price 12505.00 
+2026-10-27 09:52:58,Order 3722336585 for symbol TSE:9984 has been executed at price 4547 for 300 units
+2026-10-27 09:52:58,Order 3722336476 successfully cancelled
+2026-10-27 09:48:18,Order 3722336585 successfully placed
+2026-10-27 09:48:18,Order 3722336476 modification confirmed
+2026-10-27 09:48:18,Modify position for symbol TSE:9984 with SL 4446 and TP 4547
+2026-10-27 09:48:14,Order 3722336476 successfully placed
+2026-10-27 09:48:14,Modify position for symbol TSE:9984 with SL 4446
+2026-10-27 09:40:19,Order 3722317890 for symbol TSE:9984 has been executed at price 4507 for 100 units
+2026-10-27 09:40:19,Order 3722317890 successfully placed
+2026-10-27 09:40:19,Call to place market order to buy 100 units of symbol TSE:9984 
+2026-10-27 09:40:16,Order 3722317772 for symbol TSE:9984 has been executed at price 4505 for 100 units
+2026-10-27 09:40:16,Order 3722317772 successfully placed
+2026-10-27 09:40:16,Call to place market order to buy 100 units of symbol TSE:9984 
+2026-10-27 09:40:15,Order 3722317705 for symbol TSE:9984 has been executed at price 4504 for 100 units
+2026-10-27 09:40:15,Order 3722317705 successfully placed
