@@ -1,0 +1,78 @@
+日時,テキスト
+2026-10-28 23:14:21,Order 3729750005 for symbol NASDAQ:MU has been executed at price 971.35 for 8 units
+2026-10-28 23:14:21,Order 3729750005 successfully placed
+2026-10-28 23:14:21,Call to place market order to buy 8 units of symbol NASDAQ:MU 
+2026-10-28 23:09:50,Order 3729703995 for symbol NASDAQ:SNDK has been executed at price 1363.67 for 10 units
+2026-10-28 23:09:50,Order 3729703995 successfully placed
+2026-10-28 23:09:50,Call to place market order to buy 10 units of symbol NASDAQ:SNDK 
+2026-10-28 23:06:06,Order 3729664209 for symbol NASDAQ:SNDK has been executed at price 1368.69 for 2 units
+2026-10-28 23:06:06,Order 3729664209 successfully placed
+2026-10-28 23:06:05,Call to place market order to sell 2 units of symbol NASDAQ:SNDK 
+2026-10-28 22:59:09,Order 3729587662 for symbol NASDAQ:SNDK has been executed at price 1365.56 for 2 units
+2026-10-28 22:59:09,Order 3729587662 successfully placed
+2026-10-28 22:59:09,Call to place market order to sell 2 units of symbol NASDAQ:SNDK 
+2026-10-28 22:59:07,Order 3729587297 for symbol NASDAQ:MU has been executed at price 973.06 for 4 units
+2026-10-28 22:59:07,Order 3729587297 successfully placed
+2026-10-28 22:59:07,Call to place market order to sell 4 units of symbol NASDAQ:MU 
+2026-10-28 22:56:19,Order 3729558594 for symbol NASDAQ:SNDK has been executed at price 1359.87 for 2 units
+2026-10-28 22:56:19,Order 3729558594 successfully placed
+2026-10-28 22:56:19,Call to place market order to sell 2 units of symbol NASDAQ:SNDK 
+2026-10-28 22:56:17,Order 3729558299 for symbol NASDAQ:SNDK has been executed at price 1359.25 for 2 units
+2026-10-28 22:56:17,Order 3729558299 successfully placed
+2026-10-28 22:56:17,Call to place market order to sell 2 units of symbol NASDAQ:SNDK 
+2026-10-28 22:52:10,Order 3729517632 for symbol NASDAQ:MU has been executed at price 964.63 for 4 units
+2026-10-28 22:52:10,Order 3729517632 successfully placed
+2026-10-28 22:52:10,Call to place market order to sell 4 units of symbol NASDAQ:MU 
+2026-10-28 22:49:13,Order 3729486022 for symbol NASDAQ:SNDK has been executed at price 1351.25 for 2 units
+2026-10-28 22:49:13,Order 3729486022 successfully placed
+2026-10-28 22:49:13,Call to place market order to sell 2 units of symbol NASDAQ:SNDK 
+2026-10-28 14:23:30,Order 3727773934 for symbol TSE:285A has been executed at price 14520 for 200 units
+2026-10-28 14:23:30,Order 3727773847 successfully cancelled
+2026-10-28 13:44:12,Order 3727773934 modification confirmed
+2026-10-28 13:44:12,Order 3727773847 modification confirmed
+2026-10-28 13:44:12,Modify position for symbol TSE:285A with SL 14200 and TP 14520
+2026-10-28 13:43:54,Order 3727773934 successfully placed
+2026-10-28 13:43:54,Order 3727773847 modification confirmed
+2026-10-28 13:43:54,Modify position for symbol TSE:285A with SL 14200 and TP 14520
+2026-10-28 13:43:50,Order 3727773847 successfully placed
+2026-10-28 13:43:49,Modify position for symbol TSE:285A with SL 14200
+2026-10-28 13:43:08,Order 3727772743 for symbol TSE:285A has been executed at price 14345 for 100 units
+2026-10-28 13:43:08,Order 3727772743 successfully placed
+2026-10-28 13:43:08,Call to place market order to buy 100 units of symbol TSE:285A 
+2026-10-28 13:43:01,Order 3727772497 for symbol TSE:285A has been executed at price 14330 for 100 units
+2026-10-28 13:43:01,Order 3727772497 successfully placed
+2026-10-28 13:43:01,Call to place market order to buy 100 units of symbol TSE:285A 
+2026-10-28 13:42:50,Order 3727772199 for symbol TSE:285A has been executed at price 14310 for 100 units
+2026-10-28 13:42:50,Order 3727772199 successfully placed
+2026-10-28 13:42:50,Call to place market order to buy 100 units of symbol TSE:285A 
+2026-10-28 13:35:59,Order 3727758817 for symbol TSE:285A has been executed at price 14285 for 100 units
+2026-10-28 13:35:59,Order 3727758817 successfully placed
+2026-10-28 13:35:59,Call to place market order to sell 100 units of symbol TSE:285A 
+2026-10-28 12:48:20,Order 3727664652 for symbol TSE:3778 has been executed at price 3440 for 200 units
+2026-10-28 12:48:20,Order 3727664652 successfully placed
+2026-10-28 12:48:20,Call to place market order to sell 200 units of symbol TSE:3778 
+2026-10-28 12:45:46,Order 3727658697 for symbol OANDA:JP225YJPY has been executed at price 64268.6 for 30 units
+2026-10-28 12:45:46,Order 3727658697 successfully placed
+2026-10-28 12:45:46,Order 3722218014 successfully cancelled
+2026-10-28 12:45:46,Call to place market order to sell 30 units of symbol OANDA:JP225YJPY 
+2026-10-28 11:27:06,Order 3727429743 for symbol TSE:3042 has been executed at price 1475 for 600 units
+2026-10-28 11:27:06,Order 3727429651 successfully cancelled
+2026-10-28 11:08:40,Order 3727429651 modification confirmed
+2026-10-28 11:08:40,Order 3727429743 successfully placed
+2026-10-28 11:08:40,Modify position for symbol TSE:3042 with SL 1482 and TP 1634
+2026-10-28 11:08:38,Order 3727429651 successfully placed
+2026-10-28 11:08:38,Modify position for symbol TSE:3042 with TP 1634
+2026-10-28 11:08:27,Order 3727429267 for symbol TSE:3042 has been executed at price 1543 for 600 units
+2026-10-28 11:08:27,Order 3727429267 successfully placed
+2026-10-28 11:08:27,Call to place market order to buy 600 units of symbol TSE:3042 
+2026-10-28 11:07:35,Order 3727427059 for symbol TSE:3042 has been executed at price 1533 for 600 units
+2026-10-28 11:07:35,Order 3727427059 successfully placed
+2026-10-28 11:07:35,Modify position for symbol TSE:3042 with TP 1481
+2026-10-28 11:07:14,Order 3727426245 for symbol TSE:3042 has been executed at price 1537 for 600 units
+2026-10-28 11:07:14,Order 3727426245 successfully placed
+2026-10-28 11:07:14,Call to place market order to buy 600 units of symbol TSE:3042 
+2026-10-28 10:58:55,Order 3727389409 for symbol TSE:3042 has been executed at price 1514 for 500 units
+2026-10-28 10:58:55,Order 3727390044 successfully cancelled
+2026-10-28 10:55:56,Order 3727390044 modification confirmed
+2026-10-28 10:55:56,Order 3727389409 modification confirmed
+2026-10-28 10:55:56,Modify position for symbol TSE:3042 with SL 1512 and TP 1831
