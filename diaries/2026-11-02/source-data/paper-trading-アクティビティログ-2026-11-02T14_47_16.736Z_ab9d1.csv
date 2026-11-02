@@ -1,0 +1,66 @@
+日時,テキスト
+2026-11-02 23:45:07,Order 3748975733 for symbol NASDAQ:SNDK has been executed at price 1125.00 for 3 units
+2026-11-02 23:45:07,Order 3748975733 successfully placed
+2026-11-02 23:45:07,Order 3748957800 successfully cancelled
+2026-11-02 23:45:07,Call to place market order to buy 3 units of symbol NASDAQ:SNDK 
+2026-11-02 23:43:21,Order 3748957800 successfully placed
+2026-11-02 23:43:20,Modify position for symbol NASDAQ:SNDK with TP 1123.21
+2026-11-02 23:42:57,Order 3748953408 for symbol NASDAQ:SNDK has been executed at price 1131.17 for 1 units
+2026-11-02 23:42:57,Order 3748953408 successfully placed
+2026-11-02 23:42:57,Call to place market order to sell 1 units of symbol NASDAQ:SNDK 
+2026-11-02 23:41:16,Order 3748932092 for symbol NASDAQ:SNDK has been executed at price 1127.00 for 1 units
+2026-11-02 23:41:16,Order 3748932092 successfully placed
+2026-11-02 23:41:16,Call to place market order to sell 1 units of symbol NASDAQ:SNDK 
+2026-11-02 23:41:14,Order 3748931742 for symbol NASDAQ:SNDK has been executed at price 1127.60 for 1 units
+2026-11-02 23:41:14,Order 3748931742 successfully placed
+2026-11-02 23:41:14,Call to place market order to sell 1 units of symbol NASDAQ:SNDK 
+2026-11-02 14:30:29,Order 3747014076 for symbol TSE:1570 has been executed at price 63040 for 20 units
+2026-11-02 14:30:29,Order 3747014076 successfully placed
+2026-11-02 14:30:29,Order 3746316083 successfully cancelled
+2026-11-02 14:30:29,Call to place market order to sell 20 units of symbol TSE:1570 
+2026-11-02 10:28:01,Order 3746399257 for symbol OANDA:JP225YJPY has been executed at price 63257.2 for 40 units
+2026-11-02 10:28:01,Order 3746399257 successfully placed
+2026-11-02 10:28:00,Call to place market order to sell 40 units of symbol OANDA:JP225YJPY 
+2026-11-02 10:03:01,Order 3746316083 successfully placed
+2026-11-02 10:03:01,Modify position for symbol TSE:1570 with SL 62410
+2026-11-02 10:02:35,Order 3746314692 for symbol TSE:3042 has been executed at price 1075 for 400 units
+2026-11-02 10:02:35,Order 3746314692 successfully placed
+2026-11-02 10:02:35,Call to place market order to sell 400 units of symbol TSE:3042 
+2026-11-02 09:52:31,Order 3746283150 for symbol TSE:6857 has been executed at price 35000 for 100 units
+2026-11-02 09:52:31,Order 3746283150 successfully placed
+2026-11-02 09:52:31,Call to place market order to buy 100 units of symbol TSE:6857 
+2026-11-02 09:51:15,Order 3746278737 for symbol TSE:6857 has been executed at price 35090 for 100 units
+2026-11-02 09:51:15,Order 3746278737 successfully placed
+2026-11-02 09:51:15,Call to place market order to sell 100 units of symbol TSE:6857 
+2026-11-02 09:51:00,Order 3746277795 for symbol TSE:6857 has been executed at price 35130 for 200 units
+2026-11-02 09:51:00,Order 3746277795 successfully placed
+2026-11-02 09:51:00,Order 3746256988 successfully cancelled
+2026-11-02 09:51:00,Order 3746256987 successfully cancelled
+2026-11-02 09:51:00,Call to place market order to sell 200 units of symbol TSE:6857 
+2026-11-02 09:49:29,Order 3746200193 successfully cancelled
+2026-11-02 09:49:29,Order 3746200194 successfully cancelled
+2026-11-02 09:49:29,Order 3746200192 successfully cancelled
+2026-11-02 09:48:09,Order 3746256987 modification confirmed
+2026-11-02 09:48:09,Modify position for symbol TSE:6857 with SL 34660 and TP 35430
+2026-11-02 09:45:16,Order 3746256987 activated at price 34520
+2026-11-02 09:45:16,Order 3746256988 activated at price 35430
+2026-11-02 09:45:16,Order 3746256986 for symbol TSE:6857 has been executed at price 34820 for 100 units
+2026-11-02 09:44:46,Order 3746258748 for symbol TSE:6857 has been executed at price 34930 for 100 units
+2026-11-02 09:44:46,Order 3746258748 successfully placed
+2026-11-02 09:44:46,Call to place market order to buy 100 units of symbol TSE:6857 
+2026-11-02 09:43:58,Order 3746256988 successfully placed
+2026-11-02 09:43:58,Order 3746256987 successfully placed
+2026-11-02 09:43:58,Order 3746256986 successfully placed
+2026-11-02 09:43:58,Call to place limit order to buy 100 units of symbol TSE:6857 at price 34840.00 with SL 34520 and TP 35430
+2026-11-02 09:34:05,Order 3746232179 for symbol TSE:6857 has been executed at price 35010 for 100 units
+2026-11-02 09:34:05,Order 3746232179 successfully placed
+2026-11-02 09:34:05,Call to place market order to sell 100 units of symbol TSE:6857 
+2026-11-02 09:32:54,Order 3746228263 for symbol TSE:3042 has been executed at price 1142 for 200 units
+2026-11-02 09:32:40,Order 3746228721 for symbol TSE:6857 has been executed at price 34920 for 100 units
+2026-11-02 09:32:40,Order 3746228721 successfully placed
+2026-11-02 09:32:40,Call to place market order to buy 100 units of symbol TSE:6857 
+2026-11-02 09:32:32,Order 3746228369 for symbol TSE:3042 has been executed at price 1150 for 200 units
+2026-11-02 09:32:32,Order 3746228369 successfully placed
+2026-11-02 09:32:32,Call to place market order to buy 200 units of symbol TSE:3042 
+2026-11-02 09:32:30,Order 3746228263 successfully placed
+2026-11-02 09:32:30,Call to place limit order to buy 200 units of symbol TSE:3042 at price 1143.00 
