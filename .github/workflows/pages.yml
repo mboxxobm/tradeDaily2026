@@ -4,6 +4,11 @@ on:
   push:
     branches:
       - main
+    # 足データだけの自動コミットではサイト全体を再デプロイしない。
+    # ほかのファイルも含まれるコミットでは、これまでどおりデプロイする。
+    paths-ignore:
+      - "market_data/dukascopy/**"
+      - ".github/workflows/dukascopy_candles.yml"
   workflow_dispatch:
 
 permissions:
