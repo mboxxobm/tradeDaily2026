@@ -93,3 +93,9 @@ success_trade_quiz_20261003/**/.DS_Store
 !market_data/axiory/US100_D1.csv
 !market_data/axiory/JP225_W1.csv
 !market_data/axiory/US100_W1.csv
+
+# GOLD retail bias collector + data + indicators (committed by GitHub Actions).
+!GOLDandForex/
+!GOLDandForex/**
+GOLDandForex/raw_responses/
+GOLDandForex/**/__pycache__/
