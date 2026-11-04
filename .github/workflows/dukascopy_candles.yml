@@ -1,0 +1,85 @@
+name: Dukascopy JP225 US100 candles
+
+on:
+  schedule:
+    # 00:30 UTC = 09:30 JST。土日も実行する（金曜深夜〜日曜夕方の足を取りこぼさない）。
+    - cron: "30 0 * * *"
+  workflow_dispatch:
+    inputs:
+      backfill_from:
+        description: "このUTC日付から未取得日を埋める (YYYY-MM-DD)。空なら末尾の差分だけ（古い穴は埋めない）"
+        required: false
+        default: ""
+        type: string
+      max_days:
+        description: "1回の実行で取る日数の上限。0は無制限。既定40。足りなければ同じ入力でもう一度実行する"
+        required: false
+        default: "40"
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: dukascopy-candles
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: scripts/requirements-dukascopy.txt
+
+      - name: Install dependencies
+        run: python -m pip install -r scripts/requirements-dukascopy.txt
+
+      - name: Collect Dukascopy BID candles
+        id: collect
+        env:
+          BACKFILL_FROM: ${{ inputs.backfill_from }}
+          MAX_DAYS: ${{ inputs.max_days || '40' }}
+        run: |
+          args=(--max-days "${MAX_DAYS:-40}")
+          if [ -n "${BACKFILL_FROM}" ]; then
+            args+=(--backfill-from "${BACKFILL_FROM}")
+          fi
+          python -u scripts/collect_dukascopy_candles.py "${args[@]}"
+
+      - name: Commit and push if changed
+        if: steps.collect.outcome == 'success' || steps.collect.outcome == 'failure'
+        run: |
+          if [ -z "$(git status --porcelain -- market_data/dukascopy)" ]; then
+            echo "market_data/dukascopy に変更はありません"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add market_data/dukascopy
+            git commit -m "Dukascopy candles: update $(date -u +%Y-%m-%d)"
+            delays=(4 8 16 32 32)
+            for delay in "${delays[@]}"; do
+              if git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then
+                exit 0
+              fi
+              echo "push に失敗したため rebase を取り消して再試行します (${delay}s)"
+              git rebase --abort || true
+              sleep "${delay}"
+            done
+            exit 1
+          fi
+
+      - name: Fail the job when collection was incomplete
+        if: steps.collect.outcome == 'failure'
+        run: |
+          echo "一部の日を取得できませんでした。保存できた分は push 済みです。次の実行が穴を埋めます。"
+          exit 1

@@ -18,6 +18,7 @@ import pandas as pd
 REPO_DIR = Path(__file__).resolve().parents[1]
 OUTPUT_DIR = REPO_DIR / "market_data" / "axiory"
 BARS_DIR = OUTPUT_DIR
+DUKASCOPY_BARS_DIR = REPO_DIR / "market_data" / "dukascopy"
 DELTA_DIR = OUTPUT_DIR / "delta"
 DAILY_DIR = REPO_DIR / "diaries"
 LOG_FILE = OUTPUT_DIR / "update.log"
@@ -102,20 +103,32 @@ def parse_args() -> argparse.Namespace:
         default=CHUNK_DAYS,
         help="MT5への1回の要求期間（日数、初期値: 30）",
     )
+    parser.add_argument(
+        "--source",
+        choices=("auto", "axiory", "dukascopy"),
+        default="auto",
+        help="チャートと指標の読取元。auto は Axiory のCSVが無いときだけ Dukascopy を使う（初期値: auto）",
+    )
+    parser.add_argument(
+        "--report-only",
+        action="store_true",
+        help="MT5へ接続せず、保存済みCSVから日誌用レポートとチャートだけ作ります",
+    )
     return parser.parse_args()
 
 
-def configure_logging() -> logging.Logger:
-    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+def configure_logging(log_file: Path | None = LOG_FILE) -> logging.Logger:
     logger = logging.getLogger("market_journal")
     logger.setLevel(logging.INFO)
     logger.handlers.clear()
     formatter = logging.Formatter("%(asctime)s %(levelname)s %(message)s")
-    file_handler = logging.FileHandler(LOG_FILE, encoding="utf-8")
-    file_handler.setFormatter(formatter)
+    if log_file is not None:
+        log_file.parent.mkdir(parents=True, exist_ok=True)
+        file_handler = logging.FileHandler(log_file, encoding="utf-8")
+        file_handler.setFormatter(formatter)
+        logger.addHandler(file_handler)
     console_handler = logging.StreamHandler()
     console_handler.setFormatter(formatter)
-    logger.addHandler(file_handler)
     logger.addHandler(console_handler)
     return logger
 
@@ -143,6 +156,54 @@ def normalized_path(path: str | Path) -> str:
 
 def data_path(symbol: str, timeframe: str) -> Path:
     return BARS_DIR / f"{symbol}_{timeframe}.csv"
+
+
+def bar_path(symbol: str, timeframe: str, source: str) -> Path:
+    root = DUKASCOPY_BARS_DIR if source == "dukascopy" else BARS_DIR
+    return root / f"{symbol}_{timeframe}.csv"
+
+
+def csv_has_data_row(path: Path) -> bool:
+    if not path.exists() or path.stat().st_size == 0:
+        return False
+    with path.open(encoding="utf-8") as handle:
+        header = handle.readline()
+        if not header:
+            return False
+        return bool(handle.readline())
+
+
+def resolve_bar_source(symbol: str, source: str) -> str:
+    """auto のとき、Axiory の M5/H1/D1/W1 が揃っていれば従来どおり Axiory を使う。"""
+    if source == "axiory":
+        return "axiory"
+    if source == "dukascopy":
+        return "dukascopy"
+    needed = ("M5", "H1", "D1", "W1")
+    if all(csv_has_data_row(bar_path(symbol, timeframe, "axiory")) for timeframe in needed):
+        return "axiory"
+    if all(csv_has_data_row(bar_path(symbol, timeframe, "dukascopy")) for timeframe in needed):
+        return "dukascopy"
+    return "axiory"
+
+
+def read_symbol_timeframe(symbol: str, timeframe: str, source: str) -> pd.DataFrame:
+    if source == "dukascopy" and timeframe == "M1":
+        folder = DUKASCOPY_BARS_DIR / "m1"
+        frames = [
+            read_existing(path)
+            for path in sorted(folder.glob(f"{symbol}_M1_????-??.csv"))
+        ] if folder.exists() else []
+        frames = [frame for frame in frames if not frame.empty]
+        if not frames:
+            return pd.DataFrame(columns=BAR_COLUMNS)
+        return (
+            pd.concat(frames, ignore_index=True)
+            .sort_values("time_utc")
+            .drop_duplicates("time_utc", keep="last")
+            .reset_index(drop=True)
+        )
+    return read_existing(bar_path(symbol, timeframe, source))
 
 
 def read_existing(path: Path) -> pd.DataFrame:
@@ -476,9 +537,10 @@ def tail_trading_days(frame: pd.DataFrame, count: int) -> pd.DataFrame:
     return frame.loc[session_dates.isin(recent_sessions)].copy()
 
 
-def read_metrics(symbol: str, digits: int) -> dict[str, Any]:
+def read_metrics(symbol: str, digits: int, source: str = "auto") -> dict[str, Any]:
+    chosen = resolve_bar_source(symbol, source)
     frames = {
-        timeframe: calculate_indicators(read_existing(data_path(symbol, timeframe)))
+        timeframe: calculate_indicators(read_symbol_timeframe(symbol, timeframe, chosen))
         for timeframe in ("M5", "H1", "D1", "W1")
     }
     if any(frame.empty for frame in frames.values()):
@@ -491,6 +553,7 @@ def read_metrics(symbol: str, digits: int) -> dict[str, Any]:
     item: dict[str, Any] = {
         "symbol": symbol,
         "digits": digits,
+        "bar_source": chosen,
         "m5_close_time": bar_close_jst(m5_row["time_utc"], TIMEFRAMES["M5"][1]),
         "m5_close": m5_row["close"],
         "ema60": m5_row["ema60"],
@@ -685,9 +748,15 @@ def add_intraday_date_lines(
         )
 
 
-def create_market_chart(symbol: str, digits: int, chart_dir: Path, generated_at: datetime) -> Path:
+def create_market_chart(
+    symbol: str,
+    digits: int,
+    chart_dir: Path,
+    generated_at: datetime,
+    source: str = "axiory",
+) -> Path:
     frames = {
-        timeframe: calculate_indicators(read_existing(data_path(symbol, timeframe)))
+        timeframe: calculate_indicators(read_symbol_timeframe(symbol, timeframe, source))
         for timeframe in ("M5", "H1", "D1", "W1")
     }
     for timeframe, frame in frames.items():
@@ -702,7 +771,8 @@ def create_market_chart(symbol: str, digits: int, chart_dir: Path, generated_at:
     )
     figure.patch.set_facecolor("white")
     title_time = generated_at.astimezone(JST).strftime("%Y-%m-%d %H:%M JST")
-    figure.suptitle(f"Axiory {symbol} — Market context through {title_time}", fontsize=14, x=0.08, ha="left")
+    source_label = "Dukascopy" if source == "dukascopy" else "Axiory"
+    figure.suptitle(f"{source_label} {symbol} — Market context through {title_time}", fontsize=14, x=0.08, ha="left")
 
     plot_candles(axes[0], frames["M5"], "M5", 360, "ema60", "EMA60 M5", "#00a84f")
     axes[0].set_title("M5 · 60 EMA (green)", loc="left", fontsize=10)
@@ -746,11 +816,24 @@ def build_daily_markdown(
     dataset_results: list[DatasetResult],
 ) -> str:
     day = generated_at.astimezone(JST).date()
+    sources = {item.get("bar_source", "axiory") for item in metrics}
+    if sources == {"axiory"}:
+        source_line = "- データ元: Axiory MetaTrader 5（銘柄名 JP225 / US100）。別口座のJP225Cash/US100Cashとは価格系列が異なります。"
+    elif "axiory" in sources:
+        source_line = (
+            "- データ元: 銘柄ごとに Axiory MetaTrader 5、または Axiory のCSVが無い場合の Dukascopy BID 足。"
+            "Dukascopy は Axiory の JP225/US100 に近い CFD ですが、価格は同一ではありません。"
+        )
+    else:
+        source_line = (
+            "- データ元: Dukascopy datafeed の BID 足（JPNIDXJPY を JP225、USATECHIDXUSD を US100 として保存）。"
+            "Axiory の CSV が無いときの代替です。価格は Axiory の JP225/US100 に近い CFD ですが、同一ではありません。"
+        )
     lines = [
         f"# US100・JP225 日次マーケット指標 — {day.isoformat()}（JST）",
         "",
         f"- 生成時刻: {generated_at.astimezone(JST).strftime('%Y-%m-%d %H:%M:%S JST')}",
-        "- データ元: Axiory MetaTrader 5（銘柄名 JP225 / US100）。別口座のJP225Cash/US100Cashとは価格系列が異なります。",
+        source_line,
         "- 時刻: CSVはUTC。日誌とチャートはJST。未確定足を除外しています。",
         "- チャート表示: 足データのない時間帯は圧縮します。H1/W%Rは直近5取引日、D1は90本、W1は78本を表示します。M5/H1/W%RにはJSTの日付線、月曜の最初のOPENには強調線を表示します。",
         "- 指標の読み方とチャート規約: [市場コンテキストのレシピ](../../market_context_recipe.md)",
@@ -790,15 +873,27 @@ def build_daily_markdown(
     lines.extend(["", "## ソースCSV", ""])
     for item in metrics:
         symbol = item["symbol"]
-        links = " / ".join(
-            f"[{timeframe}](../../../market_data/axiory/{symbol}_{timeframe}.csv)"
-            for timeframe in TIMEFRAMES
-        )
+        if item.get("bar_source") == "dukascopy":
+            links = " / ".join(
+                [f"[M1 月次](../../../market_data/dukascopy/m1/)"]
+                + [
+                    f"[{timeframe}](../../../market_data/dukascopy/{symbol}_{timeframe}.csv)"
+                    for timeframe in ("M5", "H1", "D1", "W1")
+                ]
+            )
+        else:
+            links = " / ".join(
+                f"[{timeframe}](../../../market_data/axiory/{symbol}_{timeframe}.csv)"
+                for timeframe in TIMEFRAMES
+            )
         lines.append(f"- {symbol}: {links}")
     lines.extend(["", "## チャート", ""])
     for item in metrics:
         symbol = item["symbol"]
-        lines.extend([f"### {symbol}", "", f"![Axiory {symbol} multi-timeframe chart]({symbol}_market_context.png)", ""])
+        chart_label = "Dukascopy" if item.get("bar_source") == "dukascopy" else "Axiory"
+        lines.extend(
+            [f"### {symbol}", "", f"![{chart_label} {symbol} multi-timeframe chart]({symbol}_market_context.png)", ""]
+        )
     lines.extend(
         [
             "## データ範囲",
@@ -827,7 +922,11 @@ def build_daily_markdown(
             "",
             "## 保存ファイル",
             "",
-            "- M1/M5/H1/D1/W1履歴: `market_data/axiory/`",
+            (
+                "- M1/M5/H1/D1/W1履歴: `market_data/axiory/`"
+                if sources == {"axiory"}
+                else "- M5/H1/D1/W1履歴: `market_data/dukascopy/`。M1は月次 `market_data/dukascopy/m1/`。Axiory のCSVとは混ぜていません。"
+            ),
             "- 差分CSV・詳細ログ・実行履歴: ローカルの `market_data/axiory/` 配下（Gitでは追跡しません）",
             "",
         ]
@@ -852,12 +951,24 @@ def atomic_write_text(text: str, path: Path) -> None:
 
 def build_diary_context_block(metrics: list[dict[str, Any]], generated_at: datetime) -> str:
     generated_jst = generated_at.astimezone(JST)
+    sources = {item.get("bar_source", "axiory") for item in metrics}
+    if "dukascopy" in sources and "axiory" not in sources:
+        heading = "## 指数の定量マーケットコンテキスト（Dukascopy・Axiory代替）"
+        note_lines = [
+            f"> データ取得: {generated_jst.strftime('%Y-%m-%d %H:%M JST')}。Dukascopy の `JP225` / `US100`（BID）の参考値です。",
+            "> Axiory の CSV が無いときの代替です。価格は Axiory に近い CFD ですが同一ではないため、約定価格や損益の照合には使いません。",
+        ]
+    else:
+        heading = "## 指数の定量マーケットコンテキスト（Axiory）"
+        note_lines = [
+            f"> データ取得: {generated_jst.strftime('%Y-%m-%d %H:%M JST')}。Axiory `JP225` / `US100` の参考値です。",
+            "> `JP225Cash` / `US100Cash` を扱う別口座とは価格系列が異なるため、約定価格や損益の照合には使いません。",
+        ]
     lines = [
         "<!-- AUTO MARKET CONTEXT START -->",
-        "## 指数の定量マーケットコンテキスト（Axiory）",
+        heading,
         "",
-        f"> データ取得: {generated_jst.strftime('%Y-%m-%d %H:%M JST')}。Axiory `JP225` / `US100` の参考値です。",
-        "> `JP225Cash` / `US100Cash` を扱う別口座とは価格系列が異なるため、約定価格や損益の照合には使いません。",
+        *note_lines,
         "",
         "| 銘柄 | M5終値 / EMA60 | H1終値 / SMA20 | H1 W%R15 | D1終値 / SMA20 | W1終値 / SMA20 | PO H1 / D1 / W1 |",
         "|---|---|---|---:|---|---|---|",
@@ -892,12 +1003,13 @@ def build_diary_context_block(metrics: list[dict[str, Any]], generated_at: datet
     )
     for item in metrics:
         symbol = item["symbol"]
+        label = "Dukascopy" if item.get("bar_source") == "dukascopy" else "Axiory"
         lines.extend(
             [
                 "",
-                f"### {symbol}（Axiory）",
+                f"### {symbol}（{label}）",
                 "",
-                f"![Axiory {symbol} M5/H1/D1/W1 chart](market_context/{symbol}_market_context.png)",
+                f"![{label} {symbol} M5/H1/D1/W1 chart](market_context/{symbol}_market_context.png)",
             ]
         )
     lines.extend(["", "<!-- AUTO MARKET CONTEXT END -->"])
@@ -1021,13 +1133,13 @@ def run_update(args: argparse.Namespace, logger: logging.Logger) -> tuple[list[D
                 )
                 results.append(result)
         metrics = [
-            read_metrics(symbol, int(getattr(mt5.symbol_info(symbol), "digits", 2)))
+            read_metrics(symbol, int(getattr(mt5.symbol_info(symbol), "digits", 2)), args.source)
             for symbol in args.symbols
         ]
         journal_day = now_utc.astimezone(JST).date().isoformat()
         chart_dir = DAILY_DIR / journal_day / "market_context"
         for item in metrics:
-            create_market_chart(item["symbol"], item["digits"], chart_dir, now_utc)
+            create_market_chart(item["symbol"], item["digits"], chart_dir, now_utc, item["bar_source"])
         report_text = build_daily_markdown(metrics, now_utc, results)
         report_path = chart_dir / "market_context.md"
         atomic_write_text(report_text, report_path)
@@ -1038,16 +1150,56 @@ def run_update(args: argparse.Namespace, logger: logging.Logger) -> tuple[list[D
         mt5.shutdown()
 
 
+def run_report_only(args: argparse.Namespace, logger: logging.Logger) -> tuple[list[DatasetResult], Path]:
+    """MT5 を使わず、保存済みCSVからレポートとチャートを作る。Axiory 側のCSVは更新しない。"""
+    now_utc = datetime.now(timezone.utc)
+    metrics: list[dict[str, Any]] = []
+    results: list[DatasetResult] = []
+    for symbol in args.symbols:
+        chosen = resolve_bar_source(symbol, args.source)
+        digits = 3 if chosen == "dukascopy" else 2
+        metrics.append(read_metrics(symbol, digits, chosen))
+        for timeframe in TIMEFRAMES:
+            frame = read_symbol_timeframe(symbol, timeframe, chosen)
+            if frame.empty:
+                logger.info("レポート用の足がありません %s %s source=%s", symbol, timeframe, chosen)
+                continue
+            results.append(
+                DatasetResult(
+                    symbol=symbol,
+                    timeframe=timeframe,
+                    path=bar_path(symbol, timeframe, chosen),
+                    rows=len(frame),
+                    delta_rows=0,
+                    first_time=frame["time_utc"].min(),
+                    last_time=frame["time_utc"].max(),
+                    newest_fetch=now_utc,
+                )
+            )
+    if not metrics:
+        raise RuntimeError("レポートを作る銘柄がありません")
+    journal_day = now_utc.astimezone(JST).date().isoformat()
+    chart_dir = DAILY_DIR / journal_day / "market_context"
+    for item in metrics:
+        create_market_chart(item["symbol"], item["digits"], chart_dir, now_utc, item["bar_source"])
+    report_text = build_daily_markdown(metrics, now_utc, results)
+    report_path = chart_dir / "market_context.md"
+    atomic_write_text(report_text, report_path)
+    logger.info("日次Markdownを作成（report-only, source=%s）: %s", args.source, report_path)
+    update_daily_diary(metrics, now_utc, logger)
+    return results, report_path
+
+
 def main() -> int:
     args = parse_args()
-    logger = configure_logging()
+    logger = configure_logging(None if args.report_only else LOG_FILE)
     started_at = datetime.now(timezone.utc)
     results: list[DatasetResult] = []
     report_path: Path | None = None
     status = "成功"
     error: str | None = None
     exit_code = 0
-    if started_at.astimezone(JST).weekday() >= 5:
+    if started_at.astimezone(JST).weekday() >= 5 and not args.report_only:
         status = "スキップ"
         logger.info("JSTの土曜日・日曜日のため、データ取得・日誌・チャート生成をスキップします")
     elif args.chunk_days < 1:
@@ -1062,13 +1214,19 @@ def main() -> int:
         exit_code = 2
     else:
         try:
-            results, report_path = run_update(args, logger)
+            if args.report_only:
+                results, report_path = run_report_only(args, logger)
+            else:
+                results, report_path = run_update(args, logger)
         except Exception as exc:
             status = "失敗"
             error = f"{type(exc).__name__}: {exc}"
             logger.exception("日次マーケットデータ更新に失敗しました")
             exit_code = 1
     finished_at = datetime.now(timezone.utc)
+    if args.report_only:
+        logger.info("report-only のため Axiory の実行履歴は更新しません")
+        return exit_code
     try:
         append_execution_log(status, started_at, finished_at, report_path, results, error)
         logger.info("実行履歴: %s", EXECUTION_LOG_FILE)

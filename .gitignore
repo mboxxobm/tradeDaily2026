@@ -94,6 +94,23 @@ success_trade_quiz_20261003/**/.DS_Store
 !market_data/axiory/JP225_W1.csv
 !market_data/axiory/US100_W1.csv
 
+# Dukascopy BID candles (separate from Axiory). M1 is split by month.
+!market_data/dukascopy/
+!market_data/dukascopy/m1/
+!market_data/dukascopy/README.md
+!market_data/dukascopy/*.csv
+!market_data/dukascopy/m1/*.csv
+!scripts/collect_dukascopy_candles.py
+!scripts/test_dukascopy_candles.py
+!scripts/requirements-dukascopy.txt
+!scripts/vercel_ignore_dukascopy_only.sh
+!vercel.json
+!.github/
+!.github/workflows/
+!.github/workflows/dukascopy_candles.yml
+!docs/
+!docs/dukascopy_collector_handoff.md
+
 # GOLD retail bias collector + data + indicators (committed by GitHub Actions).
 !GOLDandForex/
 !GOLDandForex/**
