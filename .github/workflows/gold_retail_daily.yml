@@ -1,0 +1,45 @@
+name: GOLD retail bias daily
+
+on:
+  schedule:
+    - cron: "30 22 * * *"   # 07:30 JST
+    - cron: "15 0 * * *"    # 09:15 JST
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gold-retail-daily
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Collect forexsentiment.live GOLD retail positioning
+        run: python GOLDandForex/collect_forexsentiment.py
+
+      - name: Commit and push if changed
+        run: |
+          if [ -z "$(git status --porcelain -- GOLDandForex/)" ]; then
+            echo "No changes in GOLDandForex/"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add GOLDandForex/
+          git commit -m "GOLD retail bias: update $(date -u +%Y-%m-%d)"
+          for i in 1 2 3; do
+            git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && exit 0
+            echo "push failed, retrying ($i)"; sleep 10
+          done
+          exit 1
