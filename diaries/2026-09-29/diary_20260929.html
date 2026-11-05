@@ -107,22 +107,22 @@ main{width:min(1500px,100%);margin:auto;padding:26px 24px 76px}h1{font-size:clam
 
 <section id="full-session-chart">
 <h2>5. 9:00–15:30板読み復習チャート</h2>
-<figure class="wide-figure"><img src="../../assets/2026-09-29/board_reading/board-reading-9984-20260929.png" alt="9984 ソフトバンクグループ 2026年9月29日 9時から15時30分の板読み復習チャート"><figcaption>9984 ソフトバンクグループ｜9:00–15:30。5分集約の価格・累積出来高差分・VWAP・板の厚みを同じ時間軸で表示し、ENTRY候補、第一利確、第二利確、午後安値を記録。</figcaption></figure>
+<figure class="wide-figure"><img src="board-reading-9984-20260929.png" alt="9984 ソフトバンクグループ 2026年9月29日 9時から15時30分の板読み復習チャート"><figcaption>9984 ソフトバンクグループ｜9:00–15:30。5分集約の価格・累積出来高差分・VWAP・板の厚みを同じ時間軸で表示し、ENTRY候補、第一利確、第二利確、午後安値を記録。</figcaption></figure>
 <p>この形式を板読みデータがある日誌の標準とする。出来高欄には、添付されたRelative Volumeの考え方に合わせ、<code>RVOL = 当該バーの出来高 ÷ 直前30本の平均出来高</code> をオシレーターとして追加した。1.0xが平均、2.0x以上は出来高異常候補として見る。RVOLは異常値を検知し、板読みを開始するための指標合図として必要だが、トレンド・売買方向・ENTRYを確定するものではない。RVOL上昇を合図に、陰線・安値更新停止・板の反応・VWAP・相関を続けて読む。昼休みのデータ欠落は補間せず、実約定・DEMO・理想シナリオを分けて記録する。なお、このチャートの6,023円は板読み上の候補であり、松井証券CSVで確認した実約定は6,025円買い・6,037円売りである。9:00開始のため、オシレーター先頭部分は表示範囲内で利用できる直前本数による暫定値である。</p>
 </section>
 
 <section id="evidence">
 <h2>6. 画像資料</h2>
 <div class="gallery">
-<figure><img src="../../assets/2026-09-29/volume_accumulation/softbank_9984_20260929.png" alt="9984 ソフトバンクグループ 2026年9月29日チャート"><figcaption>9984 ソフトバンクグループ｜10:16の反転期待値ZONE、第一利確6,135–6,145円、第二利確6,176–6,180円。</figcaption></figure>
-<figure><img src="../../assets/2026-09-29/volume_accumulation/nintendo_7974_20260929.png" alt="7974 任天堂 2026年9月29日チャート"><figcaption>7974 任天堂｜低ボラティリティ下で支持帯を割った比較例。</figcaption></figure>
+<figure><img src="softbank_9984_20260929.png" alt="9984 ソフトバンクグループ 2026年9月29日チャート"><figcaption>9984 ソフトバンクグループ｜10:16の反転期待値ZONE、第一利確6,135–6,145円、第二利確6,176–6,180円。</figcaption></figure>
+<figure><img src="nintendo_7974_20260929.png" alt="7974 任天堂 2026年9月29日チャート"><figcaption>7974 任天堂｜低ボラティリティ下で支持帯を割った比較例。</figcaption></figure>
 </div>
 <p class="small">生成した9:00–15:30板読みチャート（RVOLオシレーター付き）：<code>/Users/th/.codex/visualizations/2026/09/10/01a08b56-f5f1-70c0-95ab-d3f4a4fe5ca5/board-reading-9984-20260929.html</code></p>
 </section>
 
 <section id="github-log">
 <h2>7. GitHubの2026-09-29 MDを追記・整理</h2>
-<div class="panel"><p><a href="https://github.com/mboxxobm/tradeDaily2026/blob/main/2026-09-29_daytrading_log.md">日本株デイトレード実況記録</a> と <a href="https://github.com/mboxxobm/tradeDaily2026/blob/main/2026-09-29_trade_review.md">トレード振り返り</a> を、本日誌の補足記録として整理した。</p><p class="small">GitHub MDは実況・観察・振り返り。時刻・価格・数量・損益の確定には松井証券CSVを優先する。MDにある9984の6,038円→6,100円は実況・検証上の記録であり、CSVで確認した実約定6,025円→6,037円（+1,200円）とは分けて保存する。</p></div>
+<div class="panel"><p><a href="2026-09-29_daytrading_log.md">日本株デイトレード実況記録</a> と <a href="2026-09-29_trade_review.md">トレード振り返り</a> を、本日誌の補足記録として整理した。</p><p class="small">GitHub MDは実況・観察・振り返り。時刻・価格・数量・損益の確定には松井証券CSVを優先する。MDにある9984の6,038円→6,100円は実況・検証上の記録であり、CSVで確認した実約定6,025円→6,037円（+1,200円）とは分けて保存する。</p></div>
 <div class="two">
 <div class="panel"><h3>地合いとシナリオ</h3><ul><li>日経平均は60分SMA・％R・CFD全体が下方向。15分足％R60、60分足％R15を確認し、-50以下を下方向として扱う。</li><li>NASDAQ（US100）はN字上昇を試す一方、インジケーターは下方向。下げ継続Sellか、下げ止まりからの反発LONGかを分ける。</li><li>大きく下げた後は、出来高急増、吸収、ピンバー、ダイバージェンス、安値更新失敗を確認してから反発を検討する。</li></ul></div>
 <div class="panel"><h3>周辺銘柄・特殊要因</h3><ul><li>285Aは3分割後、8035は5分割後、4062は2分割後の価格帯を基準に見る。</li><li>配当・権利落ちと実際の売り圧力を分け、前日比マイナスをすべて弱さと決めつけない。</li><li>6533はストップ高への再接近で、剥がれ後の売り板吸収と再張り付きの買いを観察する。</li></ul></div>

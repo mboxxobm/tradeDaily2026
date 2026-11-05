@@ -82,7 +82,7 @@
           "serial": 4
         }
       ],
-      "chart": "/Users/th/Documents/TradeDayReport20260821/assets/2026-09-30/board_reading/board-reading-285A-20260930.png",
+      "chart": "board-reading-285A-20260930.png",
       "interpretation_note": "板スナップショットと累積出来高から作った9:00–15:30観察。価格の方向・約定・損益はCSV/価格反応を別に確認する。"
     },
     "7974": {
@@ -176,7 +176,7 @@
           "serial": 6
         }
       ],
-      "chart": "/Users/th/Documents/TradeDayReport20260821/assets/2026-09-30/board_reading/board-reading-7974-20260930.png",
+      "chart": "board-reading-7974-20260930.png",
       "interpretation_note": "板スナップショットと累積出来高から作った9:00–15:30観察。価格の方向・約定・損益はCSV/価格反応を別に確認する。"
     },
     "9984": {
@@ -191,7 +191,7 @@
       "last_vwap": 6381.0759,
       "cumulative_trading_volume": 65194500.0,
       "csv_trades": [],
-      "chart": "/Users/th/Documents/TradeDayReport20260821/assets/2026-09-30/board_reading/board-reading-9984-20260930.png",
+      "chart": "board-reading-9984-20260930.png",
       "interpretation_note": "板スナップショットと累積出来高から作った9:00–15:30観察。価格の方向・約定・損益はCSV/価格反応を別に確認する。"
     },
     "6857": {
@@ -206,7 +206,7 @@
       "last_vwap": 34283.1203,
       "cumulative_trading_volume": 23723400.0,
       "csv_trades": [],
-      "chart": "/Users/th/Documents/TradeDayReport20260821/assets/2026-09-30/board_reading/board-reading-6857-20260930.png",
+      "chart": "board-reading-6857-20260930.png",
       "interpretation_note": "板スナップショットと累積出来高から作った9:00–15:30観察。価格の方向・約定・損益はCSV/価格反応を別に確認する。"
     },
     "1321": {
@@ -221,7 +221,7 @@
       "last_vwap": 69225.8253,
       "cumulative_trading_volume": 247472.0,
       "csv_trades": [],
-      "chart": "/Users/th/Documents/TradeDayReport20260821/assets/2026-09-30/board_reading/board-reading-1321-20260930.png",
+      "chart": "board-reading-1321-20260930.png",
       "interpretation_note": "板スナップショットと累積出来高から作った9:00–15:30観察。価格の方向・約定・損益はCSV/価格反応を別に確認する。"
     },
     "6981": {
@@ -250,7 +250,7 @@
           "serial": 1
         }
       ],
-      "chart": "/Users/th/Documents/TradeDayReport20260821/assets/2026-09-30/board_reading/board-reading-6981-20260930.png",
+      "chart": "board-reading-6981-20260930.png",
       "interpretation_note": "板スナップショットと累積出来高から作った9:00–15:30観察。価格の方向・約定・損益はCSV/価格反応を別に確認する。"
     }
   },

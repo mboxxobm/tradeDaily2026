@@ -4,7 +4,7 @@
 - データ元: Axiory MetaTrader 5（銘柄名 JP225 / US100）。別口座のJP225Cash/US100Cashとは価格系列が異なります。
 - 時刻: CSVはUTC。日誌とチャートはJST。未確定足を除外しています。
 - チャート表示: 足データのない時間帯は圧縮します。H1/W%Rは直近5取引日、D1は90本、W1は78本を表示します。M5/H1/W%RにはJSTの日付線、月曜の最初のOPENには強調線を表示します。
-- 指標の読み方とチャート規約: [市場コンテキストのレシピ](../../market_context_recipe.md)
+- 指標の読み方とチャート規約: [市場コンテキストのレシピ](../market_context_recipe.md)
 
 | 銘柄 | M5終値 / EMA60（緑） | H1終値 / SMA20（黄） | W%R15 H1 | D1終値 / SMA20（赤） | W1終値 / SMA20（紫） | PO H1 / D1 / W1 |
 |---|---|---|---:|---|---|---|
@@ -13,8 +13,8 @@
 
 ## ソースCSV
 
-- JP225: [M1](../../../market_data/axiory/JP225_M1.csv) / [M5](../../../market_data/axiory/JP225_M5.csv) / [H1](../../../market_data/axiory/JP225_H1.csv) / [D1](../../../market_data/axiory/JP225_D1.csv) / [W1](../../../market_data/axiory/JP225_W1.csv)
-- US100: [M1](../../../market_data/axiory/US100_M1.csv) / [M5](../../../market_data/axiory/US100_M5.csv) / [H1](../../../market_data/axiory/US100_H1.csv) / [D1](../../../market_data/axiory/US100_D1.csv) / [W1](../../../market_data/axiory/US100_W1.csv)
+- JP225: [M1](../../market_data/axiory/JP225_M1.csv) / [M5](../../market_data/axiory/JP225_M5.csv) / [H1](../../market_data/axiory/JP225_H1.csv) / [D1](../../market_data/axiory/JP225_D1.csv) / [W1](../../market_data/axiory/JP225_W1.csv)
+- US100: [M1](../../market_data/axiory/US100_M1.csv) / [M5](../../market_data/axiory/US100_M5.csv) / [H1](../../market_data/axiory/US100_H1.csv) / [D1](../../market_data/axiory/US100_D1.csv) / [W1](../../market_data/axiory/US100_W1.csv)
 
 ## チャート
 

@@ -11,7 +11,7 @@ A cumulative snapshot of completed MT5 bars used by the daily trading journal. T
 | Axiory `US100` | `US100_D1.csv` | 2023-01-03 00:00 |
 | Axiory `US100` | `US100_W1.csv` | 2023-01-08 00:00 |
 
-The currently available row counts and latest completed-bar boundaries are listed in each daily report under `diaries/YYYY-MM-DD/market_context/market_context.md`.
+The currently available row counts and latest completed-bar boundaries are listed in each daily report at `diaries/YYYY-MM-DD/market_context.md`, next to `JP225_market_context.png` and `US100_market_context.png`.
 
 ## CSV format
 

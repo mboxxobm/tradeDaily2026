@@ -84,9 +84,11 @@ success_trade_quiz_20261003/**/.DS_Store
 !diaries/
 !diaries/market_context_recipe.md
 !diaries/20??-??-??/
-!diaries/20??-??-??/market_context/
-!diaries/20??-??-??/market_context/market_context.md
-!diaries/20??-??-??/market_context/*.png
+# Flat layout: the daily report and its two charts live directly in the date folder.
+# *.csv and *.png above still ignore other new CSV/PNG files. Track those with `git add -f`.
+!diaries/20??-??-??/market_context.md
+!diaries/20??-??-??/JP225_market_context.png
+!diaries/20??-??-??/US100_market_context.png
 !market_data/axiory/JP225_M1.csv
 !market_data/axiory/US100_M1.csv
 !market_data/axiory/JP225_D1.csv

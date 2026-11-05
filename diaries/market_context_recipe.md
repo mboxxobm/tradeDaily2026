@@ -46,7 +46,7 @@
 
 ## 日誌への追加
 
-- 自動出力先: `diaries/YYYY-MM-DD/market_context/market_context.md` と、`JP225_market_context.png` / `US100_market_context.png`。
+- 自動出力先: `diaries/YYYY-MM-DD/` 直下の `market_context.md` と、`JP225_market_context.png` / `US100_market_context.png`。`market_context/` サブフォルダは作らない。
 - 同日の日誌 `diary_YYYYMMDD.md` が存在する場合、スクリプトはマーカー付きのマーケットコンテキスト欄を追加または更新し、レポートへの相対リンクとPNGを埋め込みます。日誌本文がまだない場合も、独立レポートとチャートは作成します。取引対象が別口座のCash銘柄なら、Axioryの指標は「参考コンテキスト」と明記し、約定価格・損益の照合には使いません。
 - このデータは価格の整理・表示用であり、売買推奨ではありません。
 

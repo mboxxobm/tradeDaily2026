@@ -31,7 +31,7 @@
       "last_unconfirmed_start": 1792161390,
       "rows": 314,
       "duplicate_volume_equal": true,
-      "path": "data/2026-10-16/ny/github/diaries/2026-10-16/source-data/BATS_MU, 30S_67556.csv"
+      "path": "data/2026-10-16/ny/github/diaries/2026-10-16/BATS_MU, 30S_67556.csv"
     },
     "SNDK": {
       "native_seconds": 30,

@@ -836,7 +836,7 @@ def build_daily_markdown(
         source_line,
         "- 時刻: CSVはUTC。日誌とチャートはJST。未確定足を除外しています。",
         "- チャート表示: 足データのない時間帯は圧縮します。H1/W%Rは直近5取引日、D1は90本、W1は78本を表示します。M5/H1/W%RにはJSTの日付線、月曜の最初のOPENには強調線を表示します。",
-        "- 指標の読み方とチャート規約: [市場コンテキストのレシピ](../../market_context_recipe.md)",
+        "- 指標の読み方とチャート規約: [市場コンテキストのレシピ](../market_context_recipe.md)",
         "",
         "| 銘柄 | M5終値 / EMA60（緑） | H1終値 / SMA20（黄） | W%R15 H1 | D1終値 / SMA20（赤） | W1終値 / SMA20（紫） | PO H1 / D1 / W1 |",
         "|---|---|---|---:|---|---|---|",
@@ -997,7 +997,7 @@ def build_diary_context_block(metrics: list[dict[str, Any]], generated_at: datet
     lines.extend(
         [
             "",
-            "- [指標レポート・対象期間・元CSV](market_context/market_context.md)",
+            "- [指標レポート・対象期間・元CSV](market_context.md)",
             "- [計算・チャート作成レシピ](../market_context_recipe.md)",
         ]
     )
@@ -1009,7 +1009,7 @@ def build_diary_context_block(metrics: list[dict[str, Any]], generated_at: datet
                 "",
                 f"### {symbol}（{label}）",
                 "",
-                f"![{label} {symbol} M5/H1/D1/W1 chart](market_context/{symbol}_market_context.png)",
+                f"![{label} {symbol} M5/H1/D1/W1 chart]({symbol}_market_context.png)",
             ]
         )
     lines.extend(["", "<!-- AUTO MARKET CONTEXT END -->"])
@@ -1137,7 +1137,7 @@ def run_update(args: argparse.Namespace, logger: logging.Logger) -> tuple[list[D
             for symbol in args.symbols
         ]
         journal_day = now_utc.astimezone(JST).date().isoformat()
-        chart_dir = DAILY_DIR / journal_day / "market_context"
+        chart_dir = DAILY_DIR / journal_day
         for item in metrics:
             create_market_chart(item["symbol"], item["digits"], chart_dir, now_utc, item["bar_source"])
         report_text = build_daily_markdown(metrics, now_utc, results)
@@ -1179,7 +1179,7 @@ def run_report_only(args: argparse.Namespace, logger: logging.Logger) -> tuple[l
     if not metrics:
         raise RuntimeError("レポートを作る銘柄がありません")
     journal_day = now_utc.astimezone(JST).date().isoformat()
-    chart_dir = DAILY_DIR / journal_day / "market_context"
+    chart_dir = DAILY_DIR / journal_day
     for item in metrics:
         create_market_chart(item["symbol"], item["digits"], chart_dir, now_utc, item["bar_source"])
     report_text = build_daily_markdown(metrics, now_utc, results)
