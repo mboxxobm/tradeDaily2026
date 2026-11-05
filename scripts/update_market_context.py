@@ -107,7 +107,12 @@ def parse_args() -> argparse.Namespace:
         "--source",
         choices=("auto", "axiory", "dukascopy"),
         default="auto",
-        help="チャートと指標の読取元。auto は Axiory のCSVが無いときだけ Dukascopy を使う（初期値: auto）",
+        help="チャートと指標の読取元。auto は対象日の足が Axiory にあれば Axiory、無ければ Dukascopy（初期値: auto）",
+    )
+    parser.add_argument(
+        "--as-of",
+        dest="as_of",
+        help="参照対象日（JST、YYYY-MM-DD）。未指定時は実行時点のJST日付。auto の切替判定と report-only の出力日に使う",
     )
     parser.add_argument(
         "--report-only",
@@ -173,18 +178,102 @@ def csv_has_data_row(path: Path) -> bool:
         return bool(handle.readline())
 
 
-def resolve_bar_source(symbol: str, source: str) -> str:
-    """auto のとき、Axiory の M5/H1/D1/W1 が揃っていれば従来どおり Axiory を使う。"""
+def parse_as_of_date(value: str | None) -> date:
+    if value is None:
+        return datetime.now(JST).date()
+    try:
+        return datetime.strptime(value, "%Y-%m-%d").date()
+    except ValueError as exc:
+        raise ValueError(f"対象日はYYYY-MM-DDで指定してください: {value}") from exc
+
+
+def read_time_utc_series(symbol: str, timeframe: str, source: str) -> pd.Series:
+    """足の time_utc だけを読む（対象日カバー判定用）。"""
+    if source == "dukascopy" and timeframe == "M1":
+        frame = read_symbol_timeframe(symbol, timeframe, source)
+        if frame.empty:
+            return pd.Series(dtype="datetime64[ns, UTC]")
+        return frame["time_utc"]
+    path = bar_path(symbol, timeframe, source)
+    if not path.exists() or path.stat().st_size == 0:
+        return pd.Series(dtype="datetime64[ns, UTC]")
+    try:
+        frame = pd.read_csv(path, usecols=["time_utc"])
+    except (ValueError, pd.errors.EmptyDataError):
+        return pd.Series(dtype="datetime64[ns, UTC]")
+    times = pd.to_datetime(frame["time_utc"], utc=True, errors="coerce").dropna()
+    return times.reset_index(drop=True)
+
+
+def timeframe_covers_jst_date(symbol: str, timeframe: str, source: str, as_of: date) -> bool:
+    """指定ソースのその時間足CSVに、JSTカレンダー日 as_of の足があるか。"""
+    times = read_time_utc_series(symbol, timeframe, source)
+    if times.empty:
+        return False
+    jst_dates = times.dt.tz_convert(JST).dt.date
+    if timeframe == "W1":
+        # 週足は週の開始時刻なので、as_of を含む週があればカバーとみなす
+        for open_day in jst_dates:
+            if open_day <= as_of < open_day + timedelta(days=7):
+                return True
+        return False
+    return bool((jst_dates == as_of).any())
+
+
+def source_has_required_files(symbol: str, source: str) -> bool:
+    needed = ("M5", "H1", "D1", "W1")
+    return all(csv_has_data_row(bar_path(symbol, timeframe, source)) for timeframe in needed)
+
+
+def source_covers_as_of(symbol: str, source: str, as_of: date) -> bool:
+    """
+    auto 判定用。M5/H1 に対象日（JST）の足があり、D1/W1 ファイルも読めること。
+    D1/W1 は確定が遅れがちなので「対象日そのもの」の行は必須にしない。
+    """
+    if not source_has_required_files(symbol, source):
+        return False
+    return all(
+        timeframe_covers_jst_date(symbol, timeframe, source, as_of)
+        for timeframe in ("M5", "H1")
+    )
+
+
+def resolve_bar_source(
+    symbol: str,
+    source: str,
+    as_of: date | None = None,
+    logger: logging.Logger | None = None,
+) -> str:
+    """auto のとき、対象日の M5/H1 が Axiory にあれば Axiory、無ければ Dukascopy。"""
     if source == "axiory":
         return "axiory"
     if source == "dukascopy":
         return "dukascopy"
-    needed = ("M5", "H1", "D1", "W1")
-    if all(csv_has_data_row(bar_path(symbol, timeframe, "axiory")) for timeframe in needed):
-        return "axiory"
-    if all(csv_has_data_row(bar_path(symbol, timeframe, "dukascopy")) for timeframe in needed):
-        return "dukascopy"
-    return "axiory"
+    target = as_of or datetime.now(JST).date()
+    axiory_ok = source_covers_as_of(symbol, "axiory", target)
+    dukascopy_ok = source_covers_as_of(symbol, "dukascopy", target)
+    if axiory_ok:
+        chosen = "axiory"
+    elif dukascopy_ok:
+        chosen = "dukascopy"
+    elif source_has_required_files(symbol, "dukascopy"):
+        chosen = "dukascopy"
+    else:
+        chosen = "axiory"
+    if logger is not None:
+        detail = ", ".join(
+            f"{timeframe}:axiory={'yes' if timeframe_covers_jst_date(symbol, timeframe, 'axiory', target) else 'no'}"
+            f"/dukascopy={'yes' if timeframe_covers_jst_date(symbol, timeframe, 'dukascopy', target) else 'no'}"
+            for timeframe in ("M5", "H1", "D1", "W1")
+        )
+        logger.info(
+            "bar source %s -> %s (as_of=%s, %s)",
+            symbol,
+            chosen,
+            target.isoformat(),
+            detail,
+        )
+    return chosen
 
 
 def read_symbol_timeframe(symbol: str, timeframe: str, source: str) -> pd.DataFrame:
@@ -537,8 +626,14 @@ def tail_trading_days(frame: pd.DataFrame, count: int) -> pd.DataFrame:
     return frame.loc[session_dates.isin(recent_sessions)].copy()
 
 
-def read_metrics(symbol: str, digits: int, source: str = "auto") -> dict[str, Any]:
-    chosen = resolve_bar_source(symbol, source)
+def read_metrics(
+    symbol: str,
+    digits: int,
+    source: str = "auto",
+    as_of: date | None = None,
+    logger: logging.Logger | None = None,
+) -> dict[str, Any]:
+    chosen = resolve_bar_source(symbol, source, as_of=as_of, logger=logger)
     frames = {
         timeframe: calculate_indicators(read_symbol_timeframe(symbol, timeframe, chosen))
         for timeframe in ("M5", "H1", "D1", "W1")
@@ -1080,6 +1175,7 @@ def run_update(args: argparse.Namespace, logger: logging.Logger) -> tuple[list[D
         raise FileNotFoundError(f"MT5実行ファイルがありません: {TERMINAL_EXE}")
     start_date = parse_start_date(args.start_date)
     backfill_from = parse_backfill_date(args.backfill_from)
+    as_of = parse_as_of_date(args.as_of)
     now_utc = datetime.now(timezone.utc)
     if not mt5.initialize(str(TERMINAL_EXE), timeout=60_000):
         raise RuntimeError(f"MT5に接続できません: {mt5.last_error()}")
@@ -1133,10 +1229,16 @@ def run_update(args: argparse.Namespace, logger: logging.Logger) -> tuple[list[D
                 )
                 results.append(result)
         metrics = [
-            read_metrics(symbol, int(getattr(mt5.symbol_info(symbol), "digits", 2)), args.source)
+            read_metrics(
+                symbol,
+                int(getattr(mt5.symbol_info(symbol), "digits", 2)),
+                args.source,
+                as_of=as_of,
+                logger=logger,
+            )
             for symbol in args.symbols
         ]
-        journal_day = now_utc.astimezone(JST).date().isoformat()
+        journal_day = as_of.isoformat()
         chart_dir = DAILY_DIR / journal_day
         for item in metrics:
             create_market_chart(item["symbol"], item["digits"], chart_dir, now_utc, item["bar_source"])
@@ -1152,13 +1254,14 @@ def run_update(args: argparse.Namespace, logger: logging.Logger) -> tuple[list[D
 
 def run_report_only(args: argparse.Namespace, logger: logging.Logger) -> tuple[list[DatasetResult], Path]:
     """MT5 を使わず、保存済みCSVからレポートとチャートを作る。Axiory 側のCSVは更新しない。"""
+    as_of = parse_as_of_date(args.as_of)
     now_utc = datetime.now(timezone.utc)
     metrics: list[dict[str, Any]] = []
     results: list[DatasetResult] = []
     for symbol in args.symbols:
-        chosen = resolve_bar_source(symbol, args.source)
+        chosen = resolve_bar_source(symbol, args.source, as_of=as_of, logger=logger)
         digits = 3 if chosen == "dukascopy" else 2
-        metrics.append(read_metrics(symbol, digits, chosen))
+        metrics.append(read_metrics(symbol, digits, chosen, as_of=as_of, logger=None))
         for timeframe in TIMEFRAMES:
             frame = read_symbol_timeframe(symbol, timeframe, chosen)
             if frame.empty:
@@ -1178,7 +1281,7 @@ def run_report_only(args: argparse.Namespace, logger: logging.Logger) -> tuple[l
             )
     if not metrics:
         raise RuntimeError("レポートを作る銘柄がありません")
-    journal_day = now_utc.astimezone(JST).date().isoformat()
+    journal_day = as_of.isoformat()
     chart_dir = DAILY_DIR / journal_day
     for item in metrics:
         create_market_chart(item["symbol"], item["digits"], chart_dir, now_utc, item["bar_source"])
