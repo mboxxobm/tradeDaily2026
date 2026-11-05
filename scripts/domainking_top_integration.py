@@ -39,7 +39,7 @@ SECTION = """<!-- codex-github-shortcuts:start -->
   <div class="codex-additions-grid">
     <a href="/022tradeDaily/codex2026/diaries/"><strong>日誌を日付から探す</strong><span>日次・NY・週報を検索</span></a>
     <a href="/022tradeDaily/codex2026/2026%20Daily/annual_trade_dashboard.html"><strong>年間損益グラフ</strong><span>日別・銘柄別の結果を見る</span></a>
-    <a href="/022tradeDaily/codex2026/2026-10-02/"><strong>最新の日誌</strong><span>2026年10月2日の記録</span></a>
+    <a href="/022tradeDaily/codex2026/diaries/2026-10-02/"><strong>最新の日誌</strong><span>2026年10月2日の記録</span></a>
   </div>
 </section>
 <!-- codex-github-shortcuts:end -->"""

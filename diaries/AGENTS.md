@@ -11,6 +11,19 @@
 - 既存の日誌と照合して重複追記を避ける。原資料・CSV・画像は保持する。追記のために過去の日誌や別ファイルを削除・移動しない。
 - GitHubへの保存が成功したことを確認してから、更新した日誌へのリンクを伝える。保存失敗を成功として報告しない。
 
+## 日付フォルダはフラット
+
+`diaries/YYYY-MM-DD/` の直下に Markdown、CSV、画像を置く。次のサブフォルダは作らない。
+
+- `source-data/`
+- `screenshots/`
+- `assets/`
+- `market_context/`
+- `ny-source-data/`
+- `ニューヨーク時間/`
+
+マーケットコンテキストの出力は `market_context.md`、`JP225_market_context.png`、`US100_market_context.png` として同じ日付フォルダへ書く。別日のファイルは、ファイル名の日付が指す `diaries/YYYY-MM-DD/` へ置く。リポジトリ直下の日付フォルダや `assets/YYYY-MM-DD/` には置かない。`2026 Daily/`、`success_trade_quiz_20261003/`、`GOLD/`、`weekly_reports/`、`market_data/`、`scripts/`、`docs/`、サイト用HTMLは日付フォルダへ移さない。
+
 ## 収集データ・時系列の追加要件（2026-11-01）
 
 - 日誌作成時には [JOURNAL_REQUIREMENTS.md](JOURNAL_REQUIREMENTS.md) と [データ取り込み手順書](requirements/TRADE_DIARY_DATA_IMPORT_PROCEDURE.md) を読み、松井証券CSV・TradingViewペーパートレード・日経平均1分足・個別銘柄の板と歩み値・OneDriveの当日チャート画像を、実際に参照できる範囲で関連付ける。
