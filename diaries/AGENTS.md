@@ -26,7 +26,8 @@
 
 ## 収集データ・時系列の追加要件（2026-11-01）
 
-- 日誌作成時には [JOURNAL_REQUIREMENTS.md](JOURNAL_REQUIREMENTS.md) と [データ取り込み手順書](requirements/TRADE_DIARY_DATA_IMPORT_PROCEDURE.md) を読み、松井証券CSV・TradingViewペーパートレード・日経平均1分足・個別銘柄の板と歩み値・OneDriveの当日チャート画像を、実際に参照できる範囲で関連付ける。
+- 日誌作成時には [JOURNAL_REQUIREMENTS.md](JOURNAL_REQUIREMENTS.md) と [データ取り込み手順書](requirements/TRADE_DIARY_DATA_IMPORT_PROCEDURE.md) を読み、松井証券CSV・TradingViewペーパートレード・日経平均／JP225・US100足・個別銘柄の板と歩み値・OneDriveの当日チャート画像を、実際に参照できる範囲で関連付ける。
+- JP225 / US100 の足CSVは **Dukascopy（`market_data/dukascopy/`、`coverage.csv` で対象日確認）を主**、Axiory（`market_data/axiory/`）は当該日があるときだけの副とする。詳細は [market_context_recipe.md](market_context_recipe.md) と手順書の「JP225 / US100 足CSV」。使った参照先を日誌に明記し、無い日は未受領とする。
 - 各取引について、9時台のビフォー、エントリー直前、エントリー10分後、前引け11:30、大引け15:30の5時点を記録する。各時点の終値には銘柄・時間足・足の時刻・確定状態・出典を付け、未取得の資料や価格は推測せず明記する。
 - 新しい記録がない日は、テンプレートだけの空の日誌を作らず、変更なしとする。
 

@@ -4,15 +4,27 @@
 
 ## データ元と銘柄
 
-- データ元はAxiory MetaTrader 5。取得銘柄は `JP225` と `US100`。
-- 口座によって `JP225Cash` / `US100Cash` と表示される銘柄は別の価格配信系列です。今回の日誌コンテキストはAxiory系列に統一し、XM等の別口座の取引価格と混ぜません。
-- 保存する足は `M1`, `M5`, `H1`, `D1`, `W1` のOHLC。CSVの `time_utc` は足の開始時刻を示すUTC時刻です。日誌・チャートの表示時刻はJSTへ変換します。
-- `tick_volume` はその足の価格更新回数です。各ティックの時刻・価格を並べた生ティックデータではありません。今回の移動平均・W%R・ローソク足チャートに生ティックは不要です。
+取得銘柄は `JP225` と `US100`。日誌作成・資料確認時の足データの参照優先順位は次のとおり。
+
+1. **主系（常時参照）**：`market_data/dukascopy/`（GitHub Actionsで日次更新。PCの有無に依存しない）
+   - 対象日が取れたかは `market_data/dukascopy/coverage.csv` で確認する（`ok` の日付のみ利用可。最新の確定日は通常「前日」。Actionsは 00:30 UTC 予定だが数時間遅れることがある）。無い日は「未受領」と報告する。
+   - M5/H1/D1/W1：`market_data/dukascopy/{銘柄}_{時間足}.csv`
+   - M1：月次ファイル `market_data/dukascopy/m1/{銘柄}_M1_YYYY-MM.csv`
+   - 列は Axiory と同じ（`time_utc`, `open`, `high`, `low`, `close`, `tick_volume`, `spread`, `real_volume`。`spread` / `real_volume` は 0）。
+   - `time_utc` は Axiory MT5 サーバ時刻に揃えてある（冬 UTC+2 / 夏 UTC+3）。JSTへは冬 +7時間、夏 +6時間。日誌・チャートの表示はJST。
+   - US100 も同じ場所。意図的な欠損期間 `2025-09-10`〜`2026-09-29` がある。Dukascopy と Axiory の終値は近くても一致しないため、約定・損益照合には使わない。
+2. **副系（当該日があるときのみ）**：`market_data/axiory/{銘柄}_{時間足}.csv`（Windows PC の Axiory MT5）。当該日の足が揃っている場合のみ、ブローカー価格により近い参考として併用可。無い・古い場合は「Axiory未受領」とし、Dukascopy を使う。
+
+日誌・資料一覧では、実際に使った参照先（dukascopy / axiory）を明記する。口座の `JP225Cash` / `US100Cash` 等とは混ぜない。
+
+- 保存する足は `M1`, `M5`, `H1`, `D1`, `W1` のOHLC。CSVの `time_utc` は足の開始時刻を示す（上記のサーバ時刻揃え）。日誌・チャートの表示時刻はJSTへ変換します。
+- `tick_volume` はその足の価格更新回数（Axiory）または足出来高（Dukascopy）です。各ティックの時刻・価格を並べた生ティックデータではありません。今回の移動平均・W%R・ローソク足チャートに生ティックは不要です。
 - 列: `time_utc`, `open`, `high`, `low`, `close`, `tick_volume`, `spread`, `real_volume`。
 
 ## 保存と更新
 
-- `market_data/axiory/{銘柄}_{時間足}.csv` は初回取得からの累積マスターです。
+- `market_data/dukascopy/` はクラウド主系の累積マスター（詳細は同フォルダの README）。
+- `market_data/axiory/{銘柄}_{時間足}.csv` は PC 由来の累積マスター（副系）。
 - 平日更新時は最終時刻から2日分を重ねて再取得し、新しい足と修正足をUTC開始時刻で統合します。更新差分・実行ログは同フォルダのローカル補助フォルダへ保存します。
 - 期間の抜けを埋める場合は `--backfill-from YYYY-MM-DD` を指定します。指定日はJSTの午前0時として扱い、その日から全時間足を再取得して既存マスターに統合します。
 - 土曜日・日曜日は市場休場として、データ取得・日次日誌・チャート生成をスキップします。手動実行時もスクリプトがJSTの曜日を判定し、実行履歴に「スキップ」を記録します。
