@@ -1,0 +1,119 @@
+日時,テキスト
+2026-11-05 09:38:14,Order 3761839774 successfully cancelled
+2026-11-05 09:38:14,Order 3761839775 successfully cancelled
+2026-11-05 09:38:13,Order 3761839773 successfully cancelled
+2026-11-05 09:38:08,Order 3761844716 for symbol TSE:7974 has been executed at price 8836 for 200 units
+2026-11-05 09:38:08,Order 3761844716 successfully placed
+2026-11-05 09:38:08,Order 3761836911 successfully cancelled
+2026-11-05 09:38:08,Order 3761836361 successfully cancelled
+2026-11-05 09:38:08,Call to place market order to buy 200 units of symbol TSE:7974 
+2026-11-05 09:38:07,Order 3761836361 modification confirmed
+2026-11-05 09:38:07,Modify position for symbol TSE:7974 with SL 8889 and TP 8809
+2026-11-05 09:37:00,Order 3761819905 for symbol TSE:285A has been executed at price 9860 for 200 units
+2026-11-05 09:37:00,Order 3761819906 successfully cancelled
+2026-11-05 09:36:21,Order 3761839775 successfully placed
+2026-11-05 09:36:21,Order 3761839774 successfully placed
+2026-11-05 09:36:21,Order 3761839773 successfully placed
+2026-11-05 09:36:20,Call to place limit order to sell 100 units of symbol TSE:7974 at price 8890.00 with SL 8915 and TP 8815
+2026-11-05 09:35:28,Order 3761836911 successfully placed
+2026-11-05 09:35:28,Modify position for symbol TSE:7974 with SL 8907 and TP 8809
+2026-11-05 09:35:18,Order 3761836361 successfully placed
+2026-11-05 09:35:18,Modify position for symbol TSE:7974 with SL 8907
+2026-11-05 09:33:44,Order 3761832418 for symbol TSE:285A has been executed at price 9991 for 100 units
+2026-11-05 09:33:44,Order 3761832418 successfully placed
+2026-11-05 09:33:43,Call to place market order to buy 100 units of symbol TSE:285A 
+2026-11-05 09:33:38,Order 3761832170 for symbol TSE:7974 has been executed at price 8881 for 100 units
+2026-11-05 09:33:38,Order 3761832170 successfully placed
+2026-11-05 09:33:38,Call to place market order to sell 100 units of symbol TSE:7974 
+2026-11-05 09:33:33,Order 3761819905 activated at price 9865
+2026-11-05 09:33:33,Order 3761819906 activated at price 10280
+2026-11-05 09:33:32,Order 3761819904 for symbol TSE:285A has been executed at price 9986 for 100 units
+2026-11-05 09:33:30,Order 3761831815 for symbol TSE:7974 has been executed at price 8881 for 100 units
+2026-11-05 09:33:30,Order 3761831815 successfully placed
+2026-11-05 09:33:30,Call to place market order to sell 100 units of symbol TSE:7974 
+2026-11-05 09:29:56,Order 3761819906 modification confirmed
+2026-11-05 09:29:56,Modified order 3761819904 for symbol TSE:285A with price 9990 for 100 units with SL 9865 and TP 10280
+2026-11-05 09:29:37,Order 3761819906 successfully placed
+2026-11-05 09:29:37,Order 3761819905 successfully placed
+2026-11-05 09:29:37,Order 3761819904 successfully placed
+2026-11-05 09:29:37,Call to place limit order to buy 100 units of symbol TSE:285A at price 9990.00 with SL 9865 and TP 10120
+2026-11-05 09:19:41,Order 3761793076 for symbol TSE:7974 has been executed at price 8801 for 400 units
+2026-11-05 09:19:40,Order 3761793076 successfully placed
+2026-11-05 09:19:40,Order 3761785489 successfully cancelled
+2026-11-05 09:19:40,Call to place market order to sell 400 units of symbol TSE:7974 
+2026-11-05 09:17:03,Order 3761785489 successfully placed
+2026-11-05 09:17:03,Modify position for symbol TSE:7974 with TP 8819
+2026-11-05 09:15:43,Order 3761782273 for symbol TSE:7974 has been executed at price 8726 for 100 units
+2026-11-05 09:15:43,Order 3761782273 successfully placed
+2026-11-05 09:15:43,Call to place market order to buy 100 units of symbol TSE:7974 
+2026-11-05 09:15:42,Order 3761782214 for symbol TSE:7974 has been executed at price 8733 for 100 units
+2026-11-05 09:15:42,Order 3761782214 successfully placed
+2026-11-05 09:15:42,Call to place market order to buy 100 units of symbol TSE:7974 
+2026-11-05 09:15:41,Order 3761782167 for symbol TSE:7974 has been executed at price 8733 for 100 units
+2026-11-05 09:15:41,Order 3761782167 successfully placed
+2026-11-05 09:15:40,Call to place market order to buy 100 units of symbol TSE:7974 
+2026-11-05 09:15:39,Order 3761782094 for symbol TSE:7974 has been executed at price 8725 for 100 units
+2026-11-05 09:15:39,Order 3761782094 successfully placed
+2026-11-05 09:15:39,Call to place market order to buy 100 units of symbol TSE:7974 
+2026-11-05 09:15:28,Order 3761781635 for symbol TSE:7974 has been executed at price 8727 for 300 units
+2026-11-05 09:15:27,Order 3761781635 successfully placed
+2026-11-05 09:15:27,Call to place market order to sell 300 units of symbol TSE:7974 
+2026-11-05 09:14:51,Order 3761780245 for symbol TSE:7974 has been executed at price 8766 for 100 units
+2026-11-05 09:14:51,Order 3761780245 successfully placed
+2026-11-05 09:14:51,Call to place market order to buy 100 units of symbol TSE:7974 
+2026-11-05 09:14:49,Order 3761780201 for symbol TSE:7974 has been executed at price 8774 for 100 units
+2026-11-05 09:14:49,Order 3761780201 successfully placed
+2026-11-05 09:14:49,Call to place market order to buy 100 units of symbol TSE:7974 
+2026-11-05 09:14:48,Order 3761780149 for symbol TSE:7974 has been executed at price 8774 for 100 units
+2026-11-05 09:14:48,Order 3761780149 successfully placed
+2026-11-05 09:14:48,Call to place market order to buy 100 units of symbol TSE:7974 
+2026-11-04 23:44:01,Order 3759373912 for symbol NASDAQ:AMD has been executed at price 505.82 for 20 units
+2026-11-04 23:44:01,Order 3759373912 successfully placed
+2026-11-04 23:44:00,Call to place market order to buy 20 units of symbol NASDAQ:AMD 
+2026-11-04 23:42:15,Order 3759351295 for symbol NASDAQ:AMD has been executed at price 504.91 for 10 units
+2026-11-04 23:42:15,Order 3759351295 successfully placed
+2026-11-04 23:42:15,Call to place market order to sell 10 units of symbol NASDAQ:AMD 
+2026-11-04 23:41:11,Order 3759336246 for symbol NASDAQ:AMD has been executed at price 501.79 for 10 units
+2026-11-04 23:41:11,Order 3759336246 successfully placed
+2026-11-04 23:41:11,Call to place market order to sell 10 units of symbol NASDAQ:AMD 
+2026-11-04 23:39:54,Order 3759316944 for symbol NASDAQ:AMD has been executed at price 497.86 for 10 units
+2026-11-04 23:39:54,Order 3759316944 successfully placed
+2026-11-04 23:39:54,Call to place market order to sell 10 units of symbol NASDAQ:AMD 
+2026-11-04 23:38:37,Order 3759299974 for symbol NASDAQ:AMD has been executed at price 488.48 for 10 units
+2026-11-04 23:38:37,Order 3759299974 successfully placed
+2026-11-04 23:38:37,Call to place market order to buy 10 units of symbol NASDAQ:AMD 
+2026-11-04 17:03:18,Order 3757744136 for symbol OANDA:XAUUSD has been executed at price 4027.240 for 1 units
+2026-11-04 17:03:18,Order 3757743851 successfully cancelled
+2026-11-04 17:01:11,Order 3757744136 modification confirmed
+2026-11-04 17:01:11,Modify position for symbol OANDA:XAUUSD with SL 4026.647 and TP 4017.227
+2026-11-04 17:01:06,Order 3757744136 modification confirmed
+2026-11-04 17:01:06,Modify position for symbol OANDA:XAUUSD with SL 4026.168 and TP 4017.227
+2026-11-04 16:56:00,Order 3757744136 modification confirmed
+2026-11-04 16:56:00,Modify position for symbol OANDA:XAUUSD with SL 4026.839 and TP 4017.227
+2026-11-04 16:49:37,Order 3757744136 successfully placed
+2026-11-04 16:49:37,Modify position for symbol OANDA:XAUUSD with SL 4034.147 and TP 4017.227
+2026-11-04 16:49:30,Order 3757743851 successfully placed
+2026-11-04 16:49:30,Modify position for symbol OANDA:XAUUSD with TP 4017.227
+2026-11-04 16:48:34,Order 3757741491 for symbol OANDA:XAUUSD has been executed at price 4027.520 for 1 units
+2026-11-04 16:48:34,Order 3757741491 successfully placed
+2026-11-04 16:48:34,Call to place market order to sell 1 units of symbol OANDA:XAUUSD 
+2026-11-04 16:36:12,Order 3757652275 for symbol OANDA:XAUUSD has been executed at price 4027.610 for 1 units
+2026-11-04 16:36:12,Order 3757652276 successfully cancelled
+2026-11-04 16:36:10,Order 3757652275 activated at price 4027.025
+2026-11-04 16:36:10,Order 3757652276 activated at price 4026.925
+2026-11-04 16:36:10,Order 3757652274 for symbol OANDA:XAUUSD has been executed at price 4027.080 for 1 units
+2026-11-04 16:28:36,Order 3757690041 for symbol OANDA:XAUUSD has been executed at price 4023.400 for 1 units
+2026-11-04 16:28:36,Order 3757690041 successfully placed
+2026-11-04 16:28:36,Order 3757651440 successfully cancelled
+2026-11-04 16:28:36,Order 3757651525 successfully cancelled
+2026-11-04 16:28:36,Call to place market order to sell 1 units of symbol OANDA:XAUUSD 
+2026-11-04 16:15:01,Order 3757652276 successfully placed
+2026-11-04 16:15:01,Order 3757652275 successfully placed
+2026-11-04 16:15:01,Order 3757652274 successfully placed
+2026-11-04 16:15:01,Call to place limit order to sell 1 units of symbol OANDA:XAUUSD at price 4027.00 with SL 4027.025 and TP 4026.925
+2026-11-04 16:14:44,Order 3757651525 successfully placed
+2026-11-04 16:14:44,Modify position for symbol OANDA:XAUUSD with SL 4014.795 and TP 4027.620
+2026-11-04 16:14:42,Order 3757651440 successfully placed
+2026-11-04 16:14:42,Modify position for symbol OANDA:XAUUSD with TP 4027.620
+2026-11-04 16:14:39,Order 3757651288 for symbol OANDA:XAUUSD has been executed at price 4020.340 for 1 units
+2026-11-04 16:14:39,Order 3757651288 successfully placed
