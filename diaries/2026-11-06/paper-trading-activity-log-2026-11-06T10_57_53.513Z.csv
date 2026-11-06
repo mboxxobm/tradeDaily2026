@@ -1,0 +1,51 @@
+Time,Text
+2026-11-06 16:25:46,Order 3767849013 for symbol OANDA:JP225YJPY has been executed at price 57055.9 for 20 units
+2026-11-06 12:33:02,Order 3767552570 for symbol TSE:3042 has been executed at price 863 for 300 units
+2026-11-06 12:33:02,Order 3767552571 successfully cancelled
+2026-11-06 12:30:03,Order 3767552570 activated at price 855
+2026-11-06 12:30:03,Order 3767552571 activated at price 781
+2026-11-06 12:30:03,Order 3767552569 for symbol TSE:3042 has been executed at price 847 for 100 units
+2026-11-06 12:30:03,Order 3767551919 successfully cancelled
+2026-11-06 12:30:03,Order 3767551258 successfully cancelled
+2026-11-06 12:13:23,Order 3767849013 successfully placed
+2026-11-06 12:13:23,Modify position for symbol OANDA:JP225YJPY with SL 57065.5
+2026-11-06 10:46:11,Order 3767589931 for symbol OANDA:JP225YJPY has been executed at price 57307.9 for 10 units
+2026-11-06 10:46:11,Order 3767589931 successfully placed
+2026-11-06 10:46:11,Call to place market order to buy 10 units of symbol OANDA:JP225YJPY 
+2026-11-06 10:46:10,Order 3767589887 for symbol OANDA:JP225YJPY has been executed at price 57302.9 for 10 units
+2026-11-06 10:46:10,Order 3767589887 successfully placed
+2026-11-06 10:46:10,Call to place market order to buy 10 units of symbol OANDA:JP225YJPY 
+2026-11-06 10:34:44,Order 3767555723 for symbol TSE:1321 has been executed at price 599.1 for 10 units
+2026-11-06 10:34:44,Order 3767555723 successfully placed
+2026-11-06 10:34:44,Call to place market order to buy 10 units of symbol TSE:1321 
+2026-11-06 10:34:14,Order 3767552571 modification confirmed
+2026-11-06 10:34:14,Modified order 3767552569 for symbol TSE:3042 with price 830 for 100 units with SL 855 and TP 781
+2026-11-06 10:33:57,Order 3767552741 for symbol TSE:3042 has been executed at price 822 for 100 units
+2026-11-06 10:33:57,Order 3767552741 successfully placed
+2026-11-06 10:33:57,Call to place market order to sell 100 units of symbol TSE:3042 
+2026-11-06 10:33:55,Order 3767552571 successfully placed
+2026-11-06 10:33:55,Order 3767552570 successfully placed
+2026-11-06 10:33:54,Order 3767552569 successfully placed
+2026-11-06 10:33:54,Call to place limit order to sell 100 units of symbol TSE:3042 at price 830.00 with SL 855 and TP 755
+2026-11-06 10:33:42,Order 3767551919 successfully placed
+2026-11-06 10:33:42,Modify position for symbol TSE:3042 with SL 853 and TP 778
+2026-11-06 10:33:32,Order 3767551258 successfully placed
+2026-11-06 10:33:32,Modify position for symbol TSE:3042 with SL 853
+2026-11-06 10:33:26,Order 3767550848 for symbol TSE:3042 has been executed at price 810 for 100 units
+2026-11-06 10:33:26,Order 3767550848 successfully placed
+2026-11-06 10:33:25,Call to place market order to sell 100 units of symbol TSE:3042 
+2026-11-06 10:24:14,Order 3767388019 for symbol OANDA:JP225YJPY has been executed at price 56805.9 for 10 units
+2026-11-06 10:24:14,Order 3767388020 successfully cancelled
+2026-11-06 10:20:46,Order 3767424603 for symbol TSE:4062 has been executed at price 5741 for 600 units
+2026-11-06 10:20:46,Order 3767438382 successfully cancelled
+2026-11-06 10:06:01,Order 3767211820 successfully cancelled
+2026-11-06 10:05:57,Order 3767451328 for symbol TSE:5803 has been executed at price 2845 for 300 units
+2026-11-06 10:05:57,Order 3767451328 successfully placed
+2026-11-06 10:05:57,Call to place market order to sell 300 units of symbol TSE:5803 
+2026-11-06 10:04:07,Order 3767424603 modification confirmed
+2026-11-06 10:04:07,Modify position for symbol TSE:4062 with SL 5725 and TP 5729
+2026-11-06 10:02:09,Order 3767438382 successfully placed
+2026-11-06 10:02:09,Modify position for symbol TSE:4062 with SL 5725 and TP 5910
+2026-11-06 09:59:11,Order 3767424603 modification confirmed
+2026-11-06 09:59:11,Modify position for symbol TSE:4062 with TP 5910
+2026-11-06 09:58:43,Order 3767424603 modification confirmed
