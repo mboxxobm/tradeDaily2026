@@ -1,0 +1,4 @@
+Symbol,Side,Quantity,Avg fill price,Take profit,Stop loss,Last price,Unrealized PnL (value),Unrealized PnL (currency),Unrealized PnL %,Trade value,Market value,Leverage,Margin,Expiration date
+TSE:1321,Long,11,598.7272727272727,,,611,135.0000000000003,JPY,+2.05%,"6,586.00 JPY","6,721.00 JPY",4x,"1,680.25 JPY",
+TSE:3778,Long,400,2806,,,2808,800,JPY,+0.07%,"1,122,400.00 JPY","1,123,200.00 JPY",4x,"280,800.00 JPY",
+NASDAQ:MRVL,Short,1,146.35,,,141.44,777.6369971491923,JPY,+3.35%,"23,178.65 JPY","23,956.29 JPY",4x,"5,989.07 JPY",

@@ -1,0 +1,5 @@
+Symbol,Side,Type,Quantity,Limit price,Stop price,Fill price,Take profit,Stop loss,Instruction,Status,Placing time,Order ID,Level ID,Expiry,Leverage,Margin
+NASDAQ:AMD,Buy,Limit,10,431,,,,,,Working,2026-11-06 23:32:52,3769963496,,2026-11-13 23:32:52,4x,"170,652.52 JPY"
+OANDA:XAUUSD,Buy,Limit,1,4036,,,4150.22,3997.42,,Working,2026-11-09 09:06:12,3775141744,,2026-11-16 09:06:12,50x,"12,784.29 JPY"
+OANDA:XAUUSD,Sell,Stop Loss,1,,3997.42,,,,,Inactive,2026-11-09 09:06:16,3775141919,,2027-01-16 09:06:12,,
+OANDA:XAUUSD,Sell,Take Profit,1,4150.22,,,,,,Inactive,2026-11-09 09:06:20,3775142114,,2027-01-16 09:06:12,,

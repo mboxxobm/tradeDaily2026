@@ -1,0 +1,51 @@
+Time,Text
+2026-11-09 10:56:43,Order 3775511239 for symbol TSE:6976 has been executed at price 6825 for 100 units
+2026-11-09 10:56:43,Order 3775511239 successfully placed
+2026-11-09 10:56:43,Call to place market order to buy 100 units of symbol TSE:6976 
+2026-11-09 10:56:07,Order 3775509384 for symbol TSE:6976 has been executed at price 6803 for 100 units
+2026-11-09 10:56:07,Order 3775509384 successfully placed
+2026-11-09 10:56:07,Call to place market order to sell 100 units of symbol TSE:6976 
+2026-11-09 10:41:21,Order 3775460877 for symbol TSE:6976 has been executed at price 6813 for 100 units
+2026-11-09 10:41:21,Order 3775460877 successfully placed
+2026-11-09 10:41:21,Call to place market order to buy 100 units of symbol TSE:6976 
+2026-11-09 10:40:37,Order 3775457662 for symbol TSE:6976 has been executed at price 6802 for 100 units
+2026-11-09 10:40:37,Order 3775457662 successfully placed
+2026-11-09 10:40:37,Call to place market order to sell 100 units of symbol TSE:6976 
+2026-11-09 10:40:17,Order 3775456455 for symbol TSE:6976 has been executed at price 6782 for 400 units
+2026-11-09 10:40:17,Order 3775456455 successfully placed
+2026-11-09 10:40:17,Call to place market order to sell 400 units of symbol TSE:6976 
+2026-11-09 10:30:48,Order 3775425143 for symbol TSE:6976 has been executed at price 6685 for 100 units
+2026-11-09 10:30:48,Order 3775425143 successfully placed
+2026-11-09 10:30:47,Call to place market order to buy 100 units of symbol TSE:6976 
+2026-11-09 10:30:40,Order 3775424767 for symbol TSE:6976 has been executed at price 6691 for 100 units
+2026-11-09 10:30:40,Order 3775424767 successfully placed
+2026-11-09 10:30:39,Call to place market order to buy 100 units of symbol TSE:6976 
+2026-11-09 10:30:39,Order 3775424721 for symbol TSE:6976 has been executed at price 6690 for 100 units
+2026-11-09 10:30:39,Order 3775424721 successfully placed
+2026-11-09 10:30:38,Call to place market order to buy 100 units of symbol TSE:6976 
+2026-11-09 10:30:38,Order 3775424656 for symbol TSE:6976 has been executed at price 6686 for 100 units
+2026-11-09 10:30:38,Order 3775424656 successfully placed
+2026-11-09 10:30:37,Call to place market order to buy 100 units of symbol TSE:6976 
+2026-11-09 10:30:07,Order 3775422965 for symbol TSE:6976 has been executed at price 6665 for 100 units
+2026-11-09 10:30:07,Order 3775422965 successfully placed
+2026-11-09 10:30:07,Call to place market order to sell 100 units of symbol TSE:6976 
+2026-11-09 10:28:00,Order 3775417258 for symbol TSE:6976 has been executed at price 6692 for 100 units
+2026-11-09 10:28:00,Order 3775417258 successfully placed
+2026-11-09 10:28:00,Call to place market order to buy 100 units of symbol TSE:6976 
+2026-11-09 10:27:35,Order 3775416128 for symbol TSE:6976 has been executed at price 6685 for 200 units
+2026-11-09 10:27:35,Order 3775416128 successfully placed
+2026-11-09 10:27:35,Order 3775411102 successfully cancelled
+2026-11-09 10:27:35,Call to place market order to sell 200 units of symbol TSE:6976 
+2026-11-09 10:25:50,Order 3775411102 successfully placed
+2026-11-09 10:25:50,Modify position for symbol TSE:6976 with TP 6751
+2026-11-09 10:25:39,Order 3775410531 for symbol TSE:6976 has been executed at price 6707 for 100 units
+2026-11-09 10:25:39,Order 3775410531 successfully placed
+2026-11-09 10:25:39,Call to place market order to buy 100 units of symbol TSE:6976 
+2026-11-09 10:25:31,Order 3775410179 for symbol TSE:6976 has been executed at price 6721 for 100 units
+2026-11-09 10:25:31,Order 3775410179 successfully placed
+2026-11-09 10:25:31,Call to place market order to buy 100 units of symbol TSE:6976 
+2026-11-09 10:23:57,Order 3775396469 for symbol TSE:6976 has been executed at price 6701 for 100 units
+2026-11-09 10:23:57,Order 3775396906 successfully cancelled
+2026-11-09 10:21:02,Order 3775396906 successfully placed
+2026-11-09 10:21:02,Modify position for symbol TSE:6976 with SL 6698 and TP 6548
+2026-11-09 10:20:53,Order 3775396469 successfully placed
