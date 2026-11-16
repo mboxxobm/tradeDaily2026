@@ -1,0 +1,69 @@
+Time,Text
+2026-11-17 00:04:12,Order 3811503964 modification confirmed
+2026-11-17 00:04:12,Modified order 3811503961 for symbol NASDAQ:SNDK with price 810.00 for 10 units with SL 802.23 and TP 848.77
+2026-11-17 00:04:07,Order 3811503964 modification confirmed
+2026-11-17 00:04:07,Modified order 3811503961 for symbol NASDAQ:SNDK with price 810.00 for 10 units with SL 802.23 and TP 854.47
+2026-11-17 00:04:01,Order 3811503963 modification confirmed
+2026-11-17 00:04:01,Modified order 3811503961 for symbol NASDAQ:SNDK with price 810.00 for 10 units with SL 802.23 and TP 810.78
+2026-11-17 00:03:55,Order 3811503964 modification confirmed
+2026-11-17 00:03:55,Modified order 3811503961 for symbol NASDAQ:SNDK with price 810.00 for 10 units with SL 809.75 and TP 810.78
+2026-11-17 00:03:52,Order 3811503964 modification confirmed
+2026-11-17 00:03:52,Modified order 3811503961 for symbol NASDAQ:SNDK with price 810.00 for 10 units with SL 809.75 and TP 809.83
+2026-11-17 00:03:44,Order 3811503964 successfully placed
+2026-11-17 00:03:44,Order 3811503963 successfully placed
+2026-11-17 00:03:44,Order 3811503961 successfully placed
+2026-11-17 00:03:43,Call to place limit order to buy 10 units of symbol NASDAQ:SNDK at price 810.00 with SL 809.75 and TP 810.75
+2026-11-16 23:55:20,Order 3811398596 for symbol NASDAQ:GOOG has been executed at price 285.82 for 10 units
+2026-11-16 23:55:20,Call to place market order to buy 10 units of symbol NASDAQ:GOOG 
+2026-11-16 23:40:22,Order 3811201428 for symbol NASDAQ:AMD has been executed at price 521.35 for 1 units
+2026-11-16 23:40:22,Call to place market order to buy 1 units of symbol NASDAQ:AMD 
+2026-11-16 10:33:02,Order 3808428484 for symbol TSE:7974 has been executed at price 8893 for 600 units
+2026-11-16 10:32:59,Order 3808428484 activated at price 8894
+2026-11-16 10:32:59,Order 3808427798 for symbol TSE:7974 has been executed at price 8890 for 300 units
+2026-11-16 10:32:59,Order 3808429056 successfully cancelled
+2026-11-16 10:32:59,Order 3808428380 successfully cancelled
+2026-11-16 10:32:39,Order 3808429056 successfully placed
+2026-11-16 10:32:39,Modify position for symbol TSE:7974 with SL 8893 and TP 8837
+2026-11-16 10:32:29,Order 3808428484 successfully placed
+2026-11-16 10:32:29,Modified order 3808427798 for symbol TSE:7974 with price 8890 for 300 units with SL 8894
+2026-11-16 10:32:27,Order 3808428380 successfully placed
+2026-11-16 10:32:27,Modify position for symbol TSE:7974 with SL 8893
+2026-11-16 10:32:19,Order 3808427943 for symbol TSE:7974 has been executed at price 8878 for 300 units
+2026-11-16 10:32:19,Call to place market order to sell 300 units of symbol TSE:7974 
+2026-11-16 10:32:17,Order 3808427798 successfully placed
+2026-11-16 10:32:17,Call to place limit order to sell 300 units of symbol TSE:7974 at price 8890.00 
+2026-11-16 10:32:03,Order 3808427079 for symbol TSE:7974 has been executed at price 8880 for 300 units
+2026-11-16 10:32:03,Order 3808426164 successfully cancelled
+2026-11-16 10:32:03,Order 3808427079 successfully placed
+2026-11-16 10:32:03,Call to place limit order to buy 300 units of symbol TSE:7974 at price 8890.00 
+2026-11-16 10:31:44,Order 3808426164 successfully placed
+2026-11-16 10:31:44,Modify position for symbol TSE:7974 with SL 8892
+2026-11-16 10:31:21,Order 3808425070 for symbol TSE:7974 has been executed at price 8871 for 100 units
+2026-11-16 10:31:21,Call to place market order to sell 100 units of symbol TSE:7974 
+2026-11-16 10:31:20,Order 3808424984 for symbol TSE:7974 has been executed at price 8871 for 100 units
+2026-11-16 10:31:20,Call to place market order to sell 100 units of symbol TSE:7974 
+2026-11-16 10:31:17,Order 3808424865 for symbol TSE:7974 has been executed at price 8870 for 100 units
+2026-11-16 10:31:17,Call to place market order to sell 100 units of symbol TSE:7974 
+2026-11-16 10:27:31,Order 3808402587 for symbol TSE:7974 has been executed at price 8869 for 300 units
+2026-11-16 10:27:31,Order 3808402386 successfully cancelled
+2026-11-16 10:24:46,Order 3808402587 successfully placed
+2026-11-16 10:24:46,Modify position for symbol TSE:7974 with SL 8870 and TP 8891
+2026-11-16 10:24:41,Order 3808402386 successfully placed
+2026-11-16 10:24:41,Modify position for symbol TSE:7974 with TP 8891
+2026-11-16 10:24:32,Order 3808402019 for symbol TSE:7974 has been executed at price 8885 for 100 units
+2026-11-16 10:24:32,Call to place market order to buy 100 units of symbol TSE:7974 
+2026-11-16 10:24:31,Order 3808401948 for symbol TSE:7974 has been executed at price 8885 for 100 units
+2026-11-16 10:24:31,Call to place market order to buy 100 units of symbol TSE:7974 
+2026-11-16 10:24:28,Order 3808401835 for symbol TSE:7974 has been executed at price 8884 for 100 units
+2026-11-16 10:24:28,Call to place market order to buy 100 units of symbol TSE:7974 
+2026-11-16 10:24:14,Order 3808369767 for symbol TSE:7974 has been executed at price 8885 for 300 units
+2026-11-16 10:24:14,Order 3808369374 successfully cancelled
+2026-11-16 10:18:22,Order 3808369374 modification confirmed
+2026-11-16 10:18:22,Modify position for symbol TSE:7974 with SL 8885 and TP 8789
+2026-11-16 10:17:53,Order 3808369767 successfully placed
+2026-11-16 10:17:53,Modify position for symbol TSE:7974 with SL 8885 and TP 8823
+2026-11-16 10:17:46,Order 3808369374 successfully placed
+2026-11-16 10:17:46,Modify position for symbol TSE:7974 with TP 8823
+2026-11-16 10:16:31,Order 3808365336 for symbol TSE:7974 has been executed at price 8864 for 100 units
+2026-11-16 10:16:31,Call to place market order to sell 100 units of symbol TSE:7974 
+2026-11-16 10:16:20,Order 3808364762 for symbol TSE:7974 has been executed at price 8868 for 100 units
