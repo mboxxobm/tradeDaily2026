@@ -86,7 +86,7 @@ datetime_utc,datetime_jst,long_pct,short_pct,price_if_any,source
 2026-10-19 00:00:04,2026-10-19 09:00:04,54,46,4184.52,"forexsentiment.live /api/chart-bars.php tf=H1 (r, ra); price=open of H1 bar containing read"
 2026-10-19 03:00:04,2026-10-19 12:00:04,52,48,4176.63,"forexsentiment.live /api/chart-bars.php tf=H1 (r, ra); price=open of H1 bar containing read"
 2026-10-19 06:00:06,2026-10-19 15:00:06,51,49,,"forexsentiment.live /api/chart-bars.php tf=H1 (r, ra); price=open of H1 bar containing read"
-2026-10-19 09:00:06,2026-10-19 18:00:06,53,47,4170.95,"forexsentiment.live /api/chart-bars.php tf=H1 (r, ra); price=open of H1 bar containing read"
+2026-10-19 09:00:06,2026-10-19 18:00:06,53,47,,"forexsentiment.live /api/chart-bars.php tf=H1 (r, ra); price=open of H1 bar containing read"
 2026-10-19 12:00:05,2026-10-19 21:00:05,52,48,4161.2,"forexsentiment.live /api/chart-bars.php tf=H1 (r, ra); price=open of H1 bar containing read"
 2026-10-19 15:00:04,2026-10-20 00:00:04,54,46,4146.12,"forexsentiment.live /api/chart-bars.php tf=H1 (r, ra); price=open of H1 bar containing read"
 2026-10-19 18:00:05,2026-10-20 03:00:05,57,43,4145.83,"forexsentiment.live /api/chart-bars.php tf=H1 (r, ra); price=open of H1 bar containing read"
@@ -251,3 +251,4 @@ datetime_utc,datetime_jst,long_pct,short_pct,price_if_any,source
 2026-11-16 21:00:04,2026-11-17 06:00:04,64,36,3851.45,"forexsentiment.live /api/chart-bars.php tf=H1 (r, ra); price=open of H1 bar containing read"
 2026-11-17 00:00:04,2026-11-17 09:00:04,62,38,3862.74,"forexsentiment.live /api/chart-bars.php tf=H1 (r, ra); price=open of H1 bar containing read"
 2026-11-17 03:00:06,2026-11-17 12:00:06,63,37,3870.27,"forexsentiment.live /api/chart-bars.php tf=H1 (r, ra); price=open of H1 bar containing read"
+2026-11-17 06:00:05,2026-11-17 15:00:05,59,41,3881.05,"forexsentiment.live /api/chart-bars.php tf=H1 (r, ra); price=open of H1 bar containing read"
