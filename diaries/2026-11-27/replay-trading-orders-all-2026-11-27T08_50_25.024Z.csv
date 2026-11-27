@@ -1,0 +1,4 @@
+Symbol,Side,Type,Quantity,Limit price,Stop price,Take profit,Stop loss,Placing time,Status,Commission
+OANDA:JP225YJPY,Sell,Market,20,,,,,2026-11-27 07:00:00,Filled,
+OANDA:JP225YJPY,Buy,Market,10,,,,,2026-11-27 07:00:00,Filled,
+OANDA:JP225YJPY,Buy,Market,10,,,,,2026-11-27 07:00:00,Filled,

@@ -1,0 +1,5 @@
+Symbol,Trade number,Type,Date and time,Order ID,Signal,Price,Size (qty),Size (value),Net PnL USD,Return %,Commission USD,Cumulative PnL USD,Cumulative PnL %
+OANDA:JP225YJPY,1,Exit long,"Nov 27, 2026, 07:00",order_342d1de4-1220-4526-bd02-d0bf36b61d81,order_342d1de4-1220-4526-bd02-d0bf36b61d81,58705.5,10,3674.744182429208,10.2,0.28,,10.2,0
+OANDA:JP225YJPY,1,Entry long,"Nov 27, 2026, 07:00",order_45af7f80-1cf6-44cc-985d-a1c1143bc6e8,order_45af7f80-1cf6-44cc-985d-a1c1143bc6e8,58543,10,3674.744182429208,10.2,0.28,,10.2,0
+OANDA:JP225YJPY,2,Exit short,"Nov 27, 2026, 07:00",order_26976019-0264-4d1c-9dc4-e014381d1384,order_26976019-0264-4d1c-9dc4-e014381d1384,58543,10,3684.944235,10.2,0.28,,20.4,0
+OANDA:JP225YJPY,2,Entry short,"Nov 27, 2026, 07:00",order_342d1de4-1220-4526-bd02-d0bf36b61d81,order_342d1de4-1220-4526-bd02-d0bf36b61d81,58705.5,10,3684.944235,10.2,0.28,,20.4,0
